@@ -1,0 +1,48 @@
+# EIA OpenClaw Sync - .gitignore
+# 禁止上传原始文件、企业敏感材料、重量级二进制文件
+
+# === 原始环评报告 ===
+*.doc
+*.docx
+*.pdf
+*.zip
+*.rar
+*.7z
+
+# === 图片/视频 ===
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.avi
+media/
+
+# === 数据备份 ===
+*.bak
+*.backup
+*~
+
+# === 临时文件 ===
+*.tmp
+*.temp
+~$*
+.DS_Store
+Thumbs.db
+
+# === 企业敏感信息 ===
+# 已在文件中删除, 此规则作追加防护
+*企业联系人*
+*身份证*
+
+# === Python ===
+__pycache__/
+*.pyc
+*.pyo
+
+# === Node ===
+node_modules/
+
+# === IDE ===
+.vscode/
+.idea/
