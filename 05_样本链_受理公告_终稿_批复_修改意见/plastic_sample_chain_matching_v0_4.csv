@@ -1,0 +1,6 @@
+﻿project_id,project_name,construction_unit,industry_code,industry_name,is_plastic_guide_applicable,has_glue,has_coating,has_lamination_or_composite,has_curing,has_vocs,has_activated_carbon,has_acceptance_announcement,has_review_comment,has_supplement_notice,has_final_report,has_pre_approval_report,has_approval,sample_chain_level,recommended_use,notes
+SH_001,金来塑料制品新建项目,佛山市金来塑料制品有限公司,C2929,塑料零件及其他塑料制品制造,Y,Y,Y,Y,Y,Y,Y,Y,Y,N,N,N,Y,B,mvp_benchmark,"3环链(报告+审查+批复),批复号环03(2024)10号,有技术审查意见"
+SH_002,金能塑料制品新建项目,佛山市金能塑料制品有限公司,C2929,塑料零件及其他塑料制品制造,Y,Y,Y,Y,N,Y,Y,Y,Y,N,N,N,Y,B,mvp_benchmark,3环链(报告+审查+批复)
+SH_003,广辰伟合新材料新建项目,广东广辰伟合新材料有限公司,C2929,塑料零件及其他塑料制品制造,Y,N,Y,N,Y,Y,N,Y,N,N,N,N,Y,B,reference_only,"PMMA/PC板材,涉涂料非胶水,批复号环0303(2021)第0026号"
+SH_004,康明新材料厂新建项目,佛山市顺德区康明新材料厂,C2929,塑料零件及其他塑料制品制造,Y,Y,Y,Y,Y,Y,Y,N,Y,N,N,N,N,D,experience_source,"ai_package: 165KB body.md + 19条comments.jsonl, 涂布135次+胶粘剂29次, 无批复"
+SH_005,亚马逊涂料迁建项目,佛山市顺德区亚马逊涂料有限公司,C2641,涂料制造,PARTIAL,Y,Y,Y,Y,Y,Y,N,Y,N,N,N,N,D,experience_source,"ai_package: 涂料项目,指南边缘适用"
