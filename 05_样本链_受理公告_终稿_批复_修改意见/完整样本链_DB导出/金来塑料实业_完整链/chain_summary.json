@@ -1,0 +1,14 @@
+{
+  "project_name": "佛山市顺德区金来塑料实业有限公司迁建项目",
+  "sp_id": "8AAE622A-E2DF-4598-A512-001AD629736C_zh",
+  "industry": "C2929 塑料零件及其他塑料制品制造",
+  "chain": {
+    "proj_files": 5,
+    "tech_files": 1,
+    "approval_files": 2
+  },
+  "approval_doc_num": "环03[2024]10号",
+  "approval_year": "2024",
+  "disk_files_found": 1,
+  "notes": "DB中有技术审查意见(hp_tech_file), 但文件未被迁移到新服务器; 批复文件已在磁盘找到"
+}
