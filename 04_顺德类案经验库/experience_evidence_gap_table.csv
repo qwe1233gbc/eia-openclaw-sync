@@ -1,0 +1,9 @@
+﻿experience_id,name,has_real_comment,has_approval_match,evidence_gap,needs_manual_verification
+EXP_01,注塑VOCs源强被低估,N,N,缺少真实批注原文和批复对照,Y
+EXP_02,胶水VOCs含量超限值,N,N,缺少真实批注原文和批复对照,Y
+EXP_03,活性炭更换周期虚长,N,N,缺少真实批注原文和批复对照,Y
+EXP_04,收集效率取95%但非全密闭,N,N,缺少真实批注原文和批复对照,Y
+EXP_05,废活性炭危废管理缺失,N,N,缺少真实批注原文和批复对照,Y
+EXP_06,冷却水排放路径不清,N,N,缺少真实批注原文和批复对照,Y
+EXP_07,VOCs总量替代方案不实,N,N,缺少真实批注原文和批复对照,Y
+EXP_08,设备产能与产品产量不匹配,N,N,缺少真实批注原文和批复对照,Y

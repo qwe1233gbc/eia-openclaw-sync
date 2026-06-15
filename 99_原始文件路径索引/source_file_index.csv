@@ -1,0 +1,12 @@
+﻿file_id,file_name,source_path,copied_to_pack,file_type,related_module,notes
+GUIDE_001,佛山市塑胶行业指南_原件,D:\华南理工项目\佛山市环评报告编制指南（8个行业）\佛山市塑胶行业建设项目环评文件编制技术参考指南（试行）.pdf,01_塑胶指南原文与适用范围/,pdf,01,
+GUIDE_002,佛山市塑胶行业指南_MinerU解析,E:\软件\openclaw_workspace\parsed_texts\foshan_guide\佛山市塑胶行业建设项目环评文件编制技术参考指南_试行.md,01_塑胶指南原文与适用范围/,md,01,46个HTML表格
+STD_001,标准条款库_updated,E:\软件\openclaw_workspace\updated_standard_clause_library.jsonl,03_指南解析_明文标准库/,jsonl,03,17条
+EXP_001,类案经验库_JSONL,E:\软件\openclaw_workspace\experiment_v0_1\experience_cards_mvp.jsonl,04_顺德类案经验库/,jsonl,04,8条
+SAMPLE_001,受理公告_塑胶91个,E:\软件\openclaw_workspace\knowledge\reports\plastic_industry_matched,05_样本链/,dir,05,91个PDF
+SAMPLE_002,终稿批复_12个,E:\软件\openclaw_workspace\knowledge\reports\final_approvals_plastic,05_样本链/,dir,05,12个PDF
+SAMPLE_003,原始Word修改意见,E:\软件\openclaw_workspace\knowledge\approvals\ai_packages\原始Word修改意见文件,05_样本链/,dir,05,30个docx
+BENCH_001,Benchmark v0.3,E:\软件\openclaw_workspace\experiment_v0_1\benchmark_items_mvp.jsonl,06_Benchmark最小实验/,jsonl,06,10题
+RAW_001,环评原始数据_顺德受理,E:\软件\环评原始数据\顺德区受理报告,—,dir,02,2812个PDF
+RAW_002,环评原始数据_全文数据库,E:\软件\环评原始数据\顺德顺德,—,dir,02,3194个PDF
+RAW_003,8个行业指南全部,D:\华南理工项目\佛山市环评报告编制指南（8个行业）,—,dir,01,8个PDF
