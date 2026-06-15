@@ -1,0 +1,4 @@
+﻿project_id,project_name,industry_code,has_glue,has_coating,has_composite,has_vocs,has_carbon,has_acceptance,has_review,has_final,has_approval,chain_level,usable_for_questions,usable_real_error,usable_cross_check,risk_leakage,notes
+SH_004,康明新材料厂,C2929,Y,Y,Y,Y,Y,N,Y,N,N,D,ALL,Y,Y,LOW,主样本: body.md+19条修改意见
+SH_001,金来塑料,C2929,Y,Y,Y,Y,Y,Y,Y,N,Y,B,Q07-Q12,N,N,LOW,"辅样本: 3环链,有批复"
+SH_002,金能塑料,C2929,Y,Y,Y,Y,Y,Y,Y,N,Y,B,Q07-Q12,N,N,LOW,辅样本: 3环链
