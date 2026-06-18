@@ -1,4 +1,4 @@
-# v0.4 File Existence Report
+﻿# v0.4 File Existence Report
 
 All OK: True
 
