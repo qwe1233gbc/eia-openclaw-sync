@@ -1,7 +1,0 @@
-﻿id,correction_type,field,old_value,new_value,reason
-STD_12,split,requirement,涂胶量+VOCs混,涂胶干量公式(非VOCs量),避免将涂胶量核算与VOCs核算混淆
-STD_13,added,module,—,胶粘剂VOCs核算,补充分离VOCs核算步骤
-STD_15,fix_formula,requirement,Q=F*V*3600,Q=(10x2+F)Vx,指南附件三实际公式
-STD_17,clarify_source,requirement,蜂窝>=600mm,标注来自佛环函70号非指南,区分指南原文与后续文件
-STD_18,fix_value,requirement,S=15%,S=10%(指南)或15%(70号),指南附件四明确S一般取10%
-ALL,add_fields,—,—,source_file/source_section/source_page_or_table/source_type,补充来源追溯
