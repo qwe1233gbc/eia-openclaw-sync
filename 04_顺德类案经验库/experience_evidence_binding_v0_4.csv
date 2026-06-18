@@ -1,9 +1,0 @@
-﻿id,classification,evidence_level,source_project,source_file,source_comment,approval_match,evidence_status,notes
-EXP_01,core,A,康明新材料厂(ai_package),comments.jsonl C002/C007,'800 蜂窝状'/'MSDS分析不充分',none,partially_supported,
-EXP_02,core,A,康明新材料厂(ai_package),comments.jsonl C001,'重点管理 2kg/h',none,partially_supported,
-EXP_03,core,A,康明新材料厂(ai_package),comments.jsonl C018,'罩口风速0.5 是否达标 控制风速是否能达到0.3',none,partially_supported,
-EXP_04,reference,B,康明新材料厂(ai_package),body.md工艺描述,涂布+烘干工序产品描述,none,partially_supported,
-EXP_05,pending,B,—,—,—,none,pending,
-EXP_06,reference,B,康明新材料厂(ai_package),comments.jsonl C004,'分局分配',none,partially_supported,
-EXP_07,pending,C,—,—,—,none,pending,
-EXP_08,pending,C,康明新材料厂(ai_package),comments.jsonl C013,'是否单纯冷却水',none,pending,
