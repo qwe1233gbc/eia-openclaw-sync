@@ -1,13 +1,13 @@
-﻿project_id,project_name,industry_code,industry_name,town,has_acceptance_report,has_final_report,has_approval,has_review_comment,has_plastic_guide_keywords,has_glue_or_composite_process,has_vocs,has_activated_carbon,has_hazardous_waste,recommended_use,notes
-SH_001,广辰伟业新材料 PMMA/PC,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,mvp_benchmark,有批复文号 环0303[2021]第0026号
-SH_002,顺德利兴塑料包装,C2926,塑料包装,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,mvp_benchmark,有批复文号
-SH_003,顺德翔润塑料制品 注塑模具50t,C2929,塑料零件,顺德,Y,Y,Y,N,Y,N,Y,Y,Y,reference_only,"纯注塑,非典型适用"
-SH_004,顺德区百洛涂料 粉末涂料600t,C2641,涂料制造,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,standard_application_case,"涂料行业,指南边缘适用"
-SH_005,顺德容桂注兴塑料制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,mvp_benchmark,有批复文号 环0304[2022]第0028号
-SH_006,佛山泰合塑料制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,N,Y,Y,Y,reference_only,需确认是否有胶水工艺
-SH_007,佛山集美精塑料制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,N,Y,Y,Y,reference_only,2025年批复
-SH_008,顺德容桂注兴塑料制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,experience_rule_source,注塑+胶水复合工艺
-SH_009,金亮塑胶科技 PET 500t,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,mvp_benchmark,DB有完整链:报告+审查+批复
-SH_010,海翔塑胶制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,experience_rule_source,DB有完整链
-SH_011,N森塑胶制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,reference_only,需确认工艺
-SH_012,安创塑胶制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,mvp_benchmark,2024年批复 环0303[2024]29号
+﻿project_id,project_name,industry_code,industry_name,town,has_acceptance_report,has_final_report,has_approval,has_review_comment,has_plastic_guide_keywords,has_glue_or_composite_process,has_vocs,has_activated_carbon,has_hazardous_waste,recommended_use,notes,industry_code_level,process_feature_p1_glue,process_feature_p2_coating,process_feature_p3_composite,process_feature_p4_printing,process_feature_p5_curing,bonus_b1_vocs,bonus_b2_activated_carbon,bonus_b3_waste_carbon,sample_grade,chain_description
+SH_001,广辰伟业新材料 PMMA/PC,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,mvp_benchmark,有批复文号 环0303[2021]第0026号,core,1,0,1,0,1,1,1,1,B,受理+批复(3/4件)
+SH_002,顺德利兴塑料包装,C2926,塑料包装,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,mvp_benchmark,有批复文号,core,1,0,1,0,1,1,1,1,B,受理+批复(3/4件)
+SH_003,顺德翔润塑料制品 注塑模具50t,C2929,塑料零件,顺德,Y,Y,Y,N,Y,N,Y,Y,Y,reference_only,"纯注塑,非典型适用",core,0,0,0,0,0,1,1,1,B,受理+批复(3/4件)
+SH_004,顺德区百洛涂料 粉末涂料600t,C2641,涂料制造,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,standard_application_case,"涂料行业,指南边缘适用",edge,1,0,1,0,1,1,1,1,B,受理+批复(3/4件)
+SH_005,顺德容桂注兴塑料制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,mvp_benchmark,有批复文号 环0304[2022]第0028号,core,1,0,1,0,1,1,1,1,B,受理+批复(3/4件)
+SH_006,佛山泰合塑料制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,N,Y,Y,Y,reference_only,需确认是否有胶水工艺,core,0,0,0,0,0,1,1,1,B,受理+批复(3/4件)
+SH_007,佛山集美精塑料制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,N,Y,Y,Y,reference_only,2025年批复,core,0,0,0,0,0,1,1,1,B,受理+批复(3/4件)
+SH_008,顺德容桂注兴塑料制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,experience_rule_source,注塑+胶水复合工艺,core,1,0,1,0,1,1,1,1,B,受理+批复(3/4件)
+SH_009,金亮塑胶科技 PET 500t,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,mvp_benchmark,DB有完整链:报告+审查+批复,core,1,0,1,0,1,1,1,1,B,受理+批复(3/4件)
+SH_010,海翔塑胶制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,experience_rule_source,DB有完整链,core,1,0,1,0,1,1,1,1,B,受理+批复(3/4件)
+SH_011,N森塑胶制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,reference_only,需确认工艺,core,1,0,1,0,1,1,1,1,B,受理+批复(3/4件)
+SH_012,安创塑胶制品,C2929,塑料零件,顺德,Y,Y,Y,N,Y,Y,Y,Y,Y,mvp_benchmark,2024年批复 环0303[2024]29号,core,1,0,1,0,1,1,1,1,B,受理+批复(3/4件)
