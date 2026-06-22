@@ -1,0 +1,6 @@
+﻿project_id,project_name,industry_code,industry_name,has_acceptance_announcement_report,has_pre_approval_report,has_final_report,has_approval,has_review_comment,has_supplement_notice,has_expert_opinion,can_be_input_text,can_be_reference_answer,can_be_real_error_label,recommended_use,notes
+SH_001,广辰伟业新材料,C2929,塑料零件,Y,N,N,Y,N,N,N,Y,N,N,mvp_benchmark,"仅有批复,缺修改意见"
+SH_005,容桂注兴塑料,C2929,塑料零件,Y,N,N,Y,N,N,N,Y,N,N,mvp_benchmark,仅有批复
+SH_009,金亮塑胶科技,C2929,塑料零件,Y,N,N,Y,N,N,N,Y,N,N,mvp_benchmark,DB完整链:报告+审查+批复
+AI_001,云晟新材料,C2929,塑料零件,Y,Y,N,N,Y,N,N,Y,Y,Y,experience_rule_source,ai_package含修改意见
+AI_002,启卓工程塑料,C2929,塑料零件,Y,Y,N,N,Y,N,N,Y,Y,Y,experience_rule_source,ai_package
