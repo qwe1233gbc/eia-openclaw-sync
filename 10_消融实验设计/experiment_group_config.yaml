@@ -1,0 +1,33 @@
+groups:
+  A:
+    name: LLM
+    inputs:
+    - report
+    - question
+    law_library: false
+    skill_library: false
+  B:
+    name: LLM+法规库
+    inputs:
+    - report
+    - question
+    - law_library_evidence
+    law_library: true
+    skill_library: false
+  C:
+    name: LLM+技能库
+    inputs:
+    - report
+    - question
+    - skill_instruction
+    law_library: false
+    skill_library: true
+  D:
+    name: LLM+法规库+技能库
+    inputs:
+    - report
+    - question
+    - law_library_evidence
+    - skill_instruction
+    law_library: true
+    skill_library: true

@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "required": [
+    "skill_id",
+    "skill_name",
+    "conclusion",
+    "key_findings",
+    "evidence_used",
+    "law_basis_used",
+    "review_comment",
+    "manual_review_needed"
+  ],
+  "properties": {
+    "skill_id": {
+      "type": "string"
+    },
+    "skill_name": {
+      "type": "string"
+    },
+    "conclusion": {
+      "type": "string",
+      "enum": [
+        "匹配",
+        "不匹配",
+        "部分匹配",
+        "无法判断"
+      ]
+    },
+    "key_findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "law_basis_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_comment": {
+      "type": "string"
+    },
+    "manual_review_needed": {
+      "type": "boolean"
+    }
+  }
+}
