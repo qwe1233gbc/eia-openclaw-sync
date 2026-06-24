@@ -1,5 +1,0 @@
-{"id": "CAND_01", "name": "安全设施缺失", "status": "candidate", "reason": "Negative control prevents use in v0.6a", "notes": "Cannot be used in Q06 negative control"}
-{"id": "CAND_02", "name": "设备产能不匹配", "status": "candidate", "reason": "EXP_07 covers注塑 only,涂布产能 needs separate card"}
-{"id": "CAND_03", "name": "风量核算虚高", "status": "candidate", "reason": "New module, not yet verified against real comments"}
-{"id": "CAND_04", "name": "冷却水隐性排放", "status": "candidate", "reason": "EXP_08 is pending, needs evidence upgrade first"}
-{"id": "CAND_05", "name": "环境风险遗漏", "status": "candidate", "reason": "New module, need real case binding"}
