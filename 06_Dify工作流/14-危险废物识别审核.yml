@@ -1,0 +1,52 @@
+app:
+  description: 审核危废识别完整性、贮存规范性、处置合规性及一般固废管理
+  icon: ☢
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 14-危险废物识别审核
+kind: app
+version: 0.6.0
+workflow:
+  graph:
+    nodes:
+    - id: start
+      data:
+        type: start
+        title: 开始
+    - id: extract
+      data:
+        type: code
+        title: 提取危废固废相关文本
+        code: "KEYWORDS = [\n    (\"危险废物|危废|HW|900-\", 38),\n    (\"废活性炭|废胶水桶|废机油|废溶剂|废抹布|污泥|废过滤棉\"\
+          , 36),\n    (\"一般固废|SW|废边角料|废包装|次品\", 28),\n    (\"危废暂存|贮存|防渗|防风|防雨|防晒|防漏\"\
+          , 34),\n    (\"危废处置|委托|资质|转移联单|处置合同|有资质单位\", 32),\n    (\"危废产生量|t/a|年产生|年处置\"\
+          , 30),\n]\nSECTION_STARTS = [\"固体废物\",\"危险废物\",\"主要环境影响和保护措施\"]\nSECTION_ENDS\
+          \ = [\"环境风险\",\"环境保护措施监督检查清单\",\"结论\"]\nMAX_LEN = 30000\n"
+    - id: review
+      data:
+        type: llm
+        title: 审核危废识别与处置
+        prompt: '你是环评审核专家。审核危险废物管理:
+
+          1.危废识别:是否列出全部?除废活性炭外还应识别废胶水桶/废机油/废溶剂桶/含胶废抹布/废过滤棉等
+
+          2.一般固废:废边角料/废包装是否分类,是否说明去向
+
+          3.危废贮存:防风防雨防晒防渗漏?液态设围堰?分区存放?
+
+          4.危废处置:委托有资质单位?处置能力>=产生量?附转移联单?
+
+          5.产生量核对:废活性炭=装填量x更换次数+吸附量
+
+          输出JSON:{"conclusion":"","findings":[],"missing_hazards":[],"review_comment":""}'
+    - id: end
+      data:
+        type: end
+        title: 输出结果
+    edges:
+    - source: start
+      target: extract
+    - source: extract
+      target: review
+    - source: review
+      target: end

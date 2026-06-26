@@ -1,0 +1,61 @@
+app:
+  description: 审核活性炭碘值、比表面积、过滤风速、装填量、更换周期、安全设施及废活性炭产生量
+  icon: 🧪
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 13-活性炭参数审核
+kind: app
+version: 0.6.0
+workflow:
+  graph:
+    nodes:
+    - id: start
+      data:
+        type: start
+        title: 开始
+    - id: extract
+      data:
+        type: code
+        title: 提取活性炭相关文本
+        code: "# Keywords for text extraction (score-weighted)\nKEYWORDS = [\n   \
+          \ (\"活性炭|颗粒炭|蜂窝炭|纤维炭|吸附\", 38),\n    (\"碘值|比表面积|800mg|650mg|900m\", 36),\n\
+          \    (\"过滤风速|停留时间|0.5m/s|1.2m/s|0.15m/s\", 36),\n    (\"装填量|装填厚度|300mm|600mm|2.8m\"\
+          , 34),\n    (\"更换周期|更换频次|吸附容量|10%|S=\", 36),\n    (\"废活性炭|HW49|900-039|危废\"\
+          , 32),\n    (\"压差计|温度传感器|防火阀|报警|70C|83C\", 28),\n    (\"水喷淋|干式过滤|预处理|降温|除湿\"\
+          , 24),\n    (\"治理效率|处理效率|净化效率|去除率\", 28),\n]\nSECTION_STARTS = [\"运营期\"\
+          ,\"废气\",\"主要环境影响和保护措施\",\"环保工程\",\"污染防治措施\"]\nSECTION_ENDS = [\"废水\",\"\
+          噪声\",\"固体废物\",\"环境风险\",\"环境保护措施监督检查清单\"]\nMAX_LEN = 50000\n"
+    - id: review
+      data:
+        type: llm
+        title: 审核活性炭参数
+        prompt: '你是环评审核专家。审核活性炭治理设施参数:
+
+          1.碘值:颗粒炭>=800mg/g,蜂窝>=650mg/g(HJ 2026-2013)
+
+          2.过滤风速:颗粒<0.5m/s,蜂窝<1.2m/s,停留时间>=0.5s
+
+          3.装填量:>=2.8m3/万m3/h,炭层>=300mm
+
+          4.更换周期:T=MxS/(Cx10-6xQxt),S=10%
+
+          5.废活性炭:年产生量=装填量x更换次数+吸附量,HW49
+
+          6.安全设施:压差计+温度传感器+防火阀
+
+          7.预处理:水喷淋+干式过滤,温度<40C,湿度<80%
+
+          8.治理效率:单级50-75%,不得简单相加
+
+          输出JSON:{"conclusion":"","findings":[],"missing_params":[],"review_comment":""}'
+    - id: end
+      data:
+        type: end
+        title: 输出结果
+    edges:
+    - source: start
+      target: extract
+    - source: extract
+      target: review
+    - source: review
+      target: end

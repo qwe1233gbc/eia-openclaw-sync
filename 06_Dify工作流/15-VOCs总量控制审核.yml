@@ -1,0 +1,52 @@
+app:
+  description: 审核VOCs总量指标、削减替代方案、低VOCs替代论证及总量一致性
+  icon: 📊
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 15-VOCs总量控制审核
+kind: app
+version: 0.6.0
+workflow:
+  graph:
+    nodes:
+    - id: start
+      data:
+        type: start
+        title: 开始
+    - id: extract
+      data:
+        type: code
+        title: 提取总量控制相关文本
+        code: "KEYWORDS = [\n    (\"VOCs总量|挥发性有机物总量|排放总量|t/a\", 38),\n    (\"削减替代|减二增一|2:1|替代方案|替代来源\"\
+          , 36),\n    (\"总量指标|总量控制|总量来源|总量确认\", 34),\n    (\"低VOCs替代|水性替代|不可替代论证|溶剂型\"\
+          , 32),\n    (\"有组织.*无组织|总VOCs|NMHC|非甲烷总烃\", 28),\n    (\"排放量汇总|总量平衡|污染物排放量汇总\"\
+          , 26),\n]\nSECTION_STARTS = [\"总量控制\",\"主要环境影响和保护措施\",\"环境影响分析\"]\nSECTION_ENDS\
+          \ = [\"环境风险\",\"环境保护措施监督检查清单\",\"结论\"]\nMAX_LEN = 30000\n"
+    - id: review
+      data:
+        type: llm
+        title: 审核VOCs总量控制
+        prompt: '你是环评审核专家。审核VOCs总量控制:
+
+          1.总量指标:是否明确有组织+无组织年排放总量(t/a)?
+
+          2.削减替代(顺德区VOCs>=300kg/a):是否2:1替代?来源是否已确认(书面文件)?不得仅写由区统筹
+
+          3.低VOCs替代论证:使用溶剂型胶粘剂/油墨/清洗剂是否评估替代可行性?若不可替代是否说明技术原因?
+
+          4.总量一致性:源强核算/总量章节/附表中的VOCs数据是否一致?
+
+          5.COD/氨氮总量:是否同时明确水污染物总量?
+
+          输出JSON:{"conclusion":"","findings":[],"substitution_status":"","review_comment":""}'
+    - id: end
+      data:
+        type: end
+        title: 输出结果
+    edges:
+    - source: start
+      target: extract
+    - source: extract
+      target: review
+    - source: review
+      target: end
