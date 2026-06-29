@@ -19,13 +19,16 @@ sources:
       - "**/*.json"
       - "**/*.jsonl"
     evidence_type: standard
+
   - name: qa_tasks
     root: 05_QA测试集
     glob:
       - "**/*.xlsx"
       - "**/*.csv"
       - "**/*.jsonl"
+      - "**/*.md"
     evidence_type: qa_task
+
   - name: experiment_design
     root: 10_消融实验设计
     glob:
@@ -33,6 +36,7 @@ sources:
       - "**/*.csv"
       - "**/*.yaml"
     evidence_type: experiment_design
+
   - name: audit_skills
     root: 09_环评审核技能库
     glob:

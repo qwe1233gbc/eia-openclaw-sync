@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EIA Audit Evaluation Record",
+  "type": "object",
+  "required": [
+    "question_id",
+    "score_total",
+    "score_band",
+    "error_tags",
+    "manual_review_required",
+    "reviewer_decision"
+  ],
+  "properties": {
+    "question_id": {
+      "type": "string"
+    },
+    "knowledge_condition": {
+      "type": "string",
+      "enum": [
+        "A_report_only",
+        "B_report_standard",
+        "C_report_standard_skill",
+        "D_report_standard_skill_case",
+        "other"
+      ]
+    },
+    "task_labels": {
+      "type": "object",
+      "properties": {
+        "cognitive_level": {
+          "type": "string",
+          "enum": ["L1_understanding", "L2_application", "L3_analysis"]
+        },
+        "audit_domain": {
+          "type": "string"
+        },
+        "reasoning_type": {
+          "type": "string",
+          "enum": [
+            "factual_descriptive",
+            "mechanistic",
+            "quantitative",
+            "comparative",
+            "cross_document_synthesis"
+          ]
+        },
+        "functional_capability": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "knowledge_grounding",
+              "numerical_fidelity",
+              "logical_reasoning",
+              "evidence_integration",
+              "review_comment_actionability"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "score_evidence_grounding": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 25
+    },
+    "score_standard_applicability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 20
+    },
+    "score_reasoning_logic": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 20
+    },
+    "score_calculation": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 15
+        },
+        {
+          "type": "string",
+          "const": "not_applicable"
+        }
+      ]
+    },
+    "score_actionability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 15
+    },
+    "score_risk_awareness": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "score_total": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "score_band": {
+      "type": "string",
+      "enum": [
+        "90_100_high_quality",
+        "70_89_minor_revision",
+        "50_69_major_gap",
+        "30_49_failure",
+        "10_29_reject"
+      ]
+    },
+    "error_tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "vacuous_source",
+          "question_source_mismatch",
+          "unsupported_numeric_claim",
+          "unsupported_standard_claim",
+          "contextual_misinterpretation",
+          "terminology_inaccuracy",
+          "case_overgeneralization",
+          "reasoning_chain_error",
+          "numeric_propagation_error",
+          "missing_actionable_comment",
+          "expert_review_needed"
+        ]
+      }
+    },
+    "manual_review_required": {
+      "type": "boolean"
+    },
+    "reviewer_decision": {
+      "type": "string",
+      "enum": ["retain", "revise_needed", "reject", "expert_panel_review"]
+    },
+    "reviewer_notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -10,6 +10,28 @@
       "type": "string",
       "description": "例如：国民经济行业分类、三线一单、废气收集效率、活性炭参数、危险废物识别等。"
     },
+    "task_labels": {
+      "type": "object",
+      "description": "参考 Chen 2026 SI 的四维测试集分类框架。",
+      "properties": {
+        "cognitive_level": {
+          "type": "string",
+          "enum": ["L1_understanding", "L2_application", "L3_analysis"]
+        },
+        "reasoning_type": {
+          "type": "string",
+          "enum": ["factual_descriptive", "mechanistic", "quantitative", "comparative", "cross_document_synthesis"]
+        },
+        "functional_capability": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["knowledge_grounding", "numerical_fidelity", "logical_reasoning", "evidence_integration", "review_comment_actionability"]
+          }
+        }
+      },
+      "additionalProperties": true
+    },
     "evidence": {
       "type": "array",
       "items": {
@@ -39,7 +61,19 @@
       "type": "array",
       "items": {
         "type": "string",
-        "enum": ["evidence_missing", "standard_uncalibrated", "case_overgeneralized", "calculation_needed", "expert_review_needed"]
+        "enum": [
+          "evidence_missing",
+          "standard_uncalibrated",
+          "case_overgeneralized",
+          "calculation_needed",
+          "expert_review_needed",
+          "vacuous_source",
+          "question_source_mismatch",
+          "unsupported_numeric_claim",
+          "unsupported_standard_claim",
+          "contextual_misinterpretation",
+          "numeric_propagation_error"
+        ]
       }
     },
     "review_status": {
@@ -48,4 +82,3 @@
     }
   }
 }
-

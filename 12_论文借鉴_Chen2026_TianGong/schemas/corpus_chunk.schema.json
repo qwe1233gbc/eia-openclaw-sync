@@ -9,7 +9,7 @@
     "source_path": { "type": "string" },
     "evidence_type": {
       "type": "string",
-      "enum": ["standard", "regulation", "sample_report", "review_comment", "case_experience", "benchmark_task", "audit_skill", "other"]
+      "enum": ["standard", "regulation", "sample_report", "review_comment", "case_experience", "qa_task", "experiment_design", "benchmark_task", "audit_skill", "other"]
     },
     "chunk_index": { "type": "integer", "minimum": 0 },
     "section_hint": { "type": "string" },
@@ -22,4 +22,3 @@
     }
   }
 }
-
