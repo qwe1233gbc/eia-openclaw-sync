@@ -52,6 +52,5 @@
 
 - Pinecone -> 先用本地 SQLite 向量表，后续可替换。
 - OpenSearch -> 先用 SQLite FTS5，后续可替换。
-- LangGraph -> 先用 Dify/OpenClaw 或 Python 脚本串联，后续可服务化。
+- LangGraph -> 先用 Dify 或 Python 脚本串联，后续可服务化。
 - 教材 QA -> 改为环评审核 QA，包括标准依据、报告证据、类案经验和人工复核。
-

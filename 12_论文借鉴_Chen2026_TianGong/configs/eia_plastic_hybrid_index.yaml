@@ -19,22 +19,20 @@ sources:
       - "**/*.json"
       - "**/*.jsonl"
     evidence_type: standard
-  - name: regulation_library
-    root: 03_法规库_明文依据
-    glob:
-      - "**/*.md"
-      - "**/*.txt"
-      - "**/*.csv"
-      - "**/*.json"
-      - "**/*.jsonl"
-    evidence_type: regulation
   - name: qa_tasks
-    root: 06_Benchmark最小实验
+    root: 05_QA测试集
+    glob:
+      - "**/*.xlsx"
+      - "**/*.csv"
+      - "**/*.jsonl"
+    evidence_type: qa_task
+  - name: experiment_design
+    root: 10_消融实验设计
     glob:
       - "**/*.md"
       - "**/*.csv"
-      - "**/*.jsonl"
-    evidence_type: benchmark_task
+      - "**/*.yaml"
+    evidence_type: experiment_design
   - name: audit_skills
     root: 09_环评审核技能库
     glob:
@@ -42,4 +40,3 @@ sources:
       - "**/*.json"
       - "**/*.yaml"
     evidence_type: audit_skill
-
