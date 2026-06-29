@@ -1,20 +1,27 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EIA Review Skill Common Output Schema",
   "type": "object",
   "required": [
     "skill_id",
     "skill_name",
+    "source_workflow",
     "conclusion",
-    "key_findings",
-    "evidence_used",
-    "law_basis_used",
-    "review_comment",
-    "manual_review_needed"
+    "confidence",
+    "manual_review_needed",
+    "evidence_units",
+    "check_items",
+    "review_comment"
   ],
   "properties": {
     "skill_id": {
-      "type": "string"
+      "type": "string",
+      "pattern": "^(0[1-9]|1[0-5]|99)$"
     },
     "skill_name": {
+      "type": "string"
+    },
+    "source_workflow": {
       "type": "string"
     },
     "conclusion": {
@@ -23,32 +30,137 @@
         "匹配",
         "不匹配",
         "部分匹配",
-        "无法判断"
+        "无法判断",
+        "不适用"
       ]
     },
-    "key_findings": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
     },
-    "evidence_used": {
+    "manual_review_needed": {
+      "type": "boolean"
+    },
+    "evidence_units": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "source_section",
+          "source_location",
+          "quote",
+          "extracted_fields"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "source_section": {
+            "type": "string"
+          },
+          "source_location": {
+            "type": "string",
+            "description": "页码/章节/表名/分块ID，不能为空；未知时写'位置缺失'"
+          },
+          "quote": {
+            "type": "string",
+            "description": "报告原文短证据，不超过300字"
+          },
+          "extracted_fields": {
+            "type": "object"
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        }
       }
     },
     "law_basis_used": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+          "basis_id": {
+            "type": "string"
+          },
+          "basis_name": {
+            "type": "string"
+          },
+          "clause": {
+            "type": "string"
+          },
+          "applicability_reason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "check_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "review_point",
+          "status",
+          "finding",
+          "evidence_id",
+          "law_basis_id",
+          "manual_review_reason"
+        ],
+        "properties": {
+          "review_point": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "通过",
+              "不通过",
+              "部分通过",
+              "证据不足",
+              "不适用"
+            ]
+          },
+          "finding": {
+            "type": "string"
+          },
+          "evidence_id": {
+            "type": "string"
+          },
+          "law_basis_id": {
+            "type": "string"
+          },
+          "manual_review_reason": {
+            "type": "string"
+          }
+        }
       }
     },
     "review_comment": {
-      "type": "string"
+      "type": "string",
+      "description": "给环评经办人的可执行审核意见"
     },
-    "manual_review_needed": {
-      "type": "boolean"
+    "missing_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "calculation_trace": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }

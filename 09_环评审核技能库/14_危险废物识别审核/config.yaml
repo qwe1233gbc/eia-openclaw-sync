@@ -1,0 +1,49 @@
+skill_id: '14'
+skill_name: 危险废物识别审核
+source_workflow: 未发现独立 Dify 工作流；从建设内容、源强核算、活性炭和固废章节抽取证据
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 危险废物
+  weight: 40
+- term: 危废
+  weight: 35
+- term: 废活性炭
+  weight: 35
+- term: 废包装桶
+  weight: 30
+- term: 废胶水/废油墨/废清洗剂
+  weight: 30
+- term: HW49
+  weight: 25
+- term: 900-
+  weight: 20
+- term: 危废暂存间
+  weight: 35
+- term: 贮存
+  weight: 25
+- term: 转移联单
+  weight: 18
+- term: 委托处置
+  weight: 22
+extracted_fields:
+- hazardous_waste_items
+- generation_amount
+- source_process
+- hazardous_property
+- storage_method
+- disposal_destination
+- omitted_waste_risks

@@ -1,0 +1,45 @@
+skill_id: '05'
+skill_name: 环境质量现状数据审核
+source_workflow: 06_Dify工作流/6-环境质量现状数据引用是否有误.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 区域环境质量现状
+  weight: 35
+- term: 环境空气质量
+  weight: 30
+- term: 地表水环境质量
+  weight: 25
+- term: 声环境质量
+  weight: 25
+- term: 监测数据
+  weight: 25
+- term: 引用
+  weight: 18
+- term: 达标区/不达标区
+  weight: 22
+- term: 监测点位
+  weight: 20
+- term: 监测时间
+  weight: 20
+- term: 现状评价
+  weight: 22
+extracted_fields:
+- air_quality_data
+- water_quality_data
+- noise_data
+- other_data
+- citation_metadata

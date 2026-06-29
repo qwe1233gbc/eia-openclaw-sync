@@ -1,0 +1,45 @@
+skill_id: '07'
+skill_name: 污染物排放标准审核
+source_workflow: 06_Dify工作流/8-污染物排放标准内容判断.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 污染物排放标准
+  weight: 35
+- term: 大气污染物排放限值
+  weight: 30
+- term: 挥发性有机物
+  weight: 28
+- term: 非甲烷总烃
+  weight: 25
+- term: 厂界
+  weight: 22
+- term: 排气筒
+  weight: 22
+- term: 废水排放标准
+  weight: 25
+- term: 噪声排放标准
+  weight: 25
+- term: 危险废物贮存
+  weight: 20
+- term: 无组织排放
+  weight: 24
+extracted_fields:
+- exhaust_standards
+- wastewater_standards
+- noise_standards
+- solid_waste_standards
+- missing_pollutants

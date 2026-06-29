@@ -1,0 +1,51 @@
+skill_id: '04'
+skill_name: 建设内容完整性审核
+source_workflow: 06_Dify工作流/5-建设内容编制完整性判断.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 建设内容
+  weight: 35
+- term: 项目组成
+  weight: 30
+- term: 主体工程
+  weight: 25
+- term: 辅助工程
+  weight: 20
+- term: 储运工程
+  weight: 20
+- term: 公用工程
+  weight: 20
+- term: 环保工程
+  weight: 25
+- term: 产品方案
+  weight: 30
+- term: 主要设备
+  weight: 30
+- term: 原辅材料
+  weight: 30
+- term: 水平衡/物料平衡
+  weight: 20
+- term: 工艺流程
+  weight: 25
+extracted_fields:
+- project_composition
+- product_capacity
+- equipment_list
+- raw_materials
+- energy_water
+- process_flow
+- pollution_generation_nodes

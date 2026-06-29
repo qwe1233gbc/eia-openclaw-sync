@@ -1,0 +1,45 @@
+skill_id: '10'
+skill_name: 废气收集形式审核
+source_workflow: 06_Dify工作流/17-废气收集形式及排气量计算.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 废气收集
+  weight: 35
+- term: 集气罩
+  weight: 30
+- term: 密闭收集
+  weight: 30
+- term: 负压
+  weight: 25
+- term: 局部收集
+  weight: 20
+- term: 整体换风
+  weight: 20
+- term: 排气量
+  weight: 22
+- term: 收集方式
+  weight: 30
+- term: 产污点
+  weight: 25
+- term: 涂布/复合/熟化/印刷/注塑
+  weight: 20
+extracted_fields:
+- pollution_source_points
+- collection_method
+- enclosure_status
+- ducting_path
+- uncollected_sources
