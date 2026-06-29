@@ -1,0 +1,271 @@
+[
+  {
+    "standard_id": "STD-DIFY-08-001",
+    "title": "塑料制品业废气产污系数选用边界",
+    "domain": "产污系数",
+    "card_type": "lookup",
+    "skill_ids": [
+      "08_产污系数合理性",
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "9-运营期间产污系数使用合理性判断",
+      "10-运营期间产污系数与定量核算判定"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#9_塑料制品业产污系数_废气.json",
+      "03_指南解析_明文标准库/Dify工作流知识库/#9_塑料制品业产污系数_废气_速查.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#10_产污系数定量核算指南.md"
+    ],
+    "source_basis": [
+      "HJ 1122-2020 表22；广东省工业源VOCs减排量核算方法(2023修订版)"
+    ],
+    "applicable_scope": "用于判断塑料制品业 VOCs/非甲烷总烃产污系数是否与产品类型、工艺和产量匹配。",
+    "trigger_keywords": [
+      "产污系数",
+      "塑料薄膜",
+      "塑料包装容器",
+      "日用塑料制品",
+      "泡沫塑料",
+      "2.50",
+      "2.70",
+      "30"
+    ],
+    "evidence_fields": [
+      "产品类型",
+      "工艺",
+      "产量",
+      "产污系数",
+      "系数来源",
+      "污染物"
+    ],
+    "normative_requirements": [
+      "产污系数选用应与行业类别和产品类型匹配。",
+      "VOCs 产污系数须有来源依据。"
+    ],
+    "thresholds": [
+      {
+        "product": "塑料薄膜",
+        "process": "配料-挤出",
+        "factor": "2.50 kg/t"
+      },
+      {
+        "product": "塑料包装容器",
+        "factor": "2.70 kg/t"
+      },
+      {
+        "product": "日用塑料制品",
+        "factor": "2.70 kg/t"
+      },
+      {
+        "product": "泡沫塑料",
+        "process": "模塑发泡",
+        "factor": "30 kg/t"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [
+      "抽取产品类型、工艺、产量和报告采用的系数。",
+      "检索标准库同产品/工艺的系数。",
+      "若报告系数与标准库不一致且未说明更适用来源，判为系数选用依据不足。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ1122",
+      "产污系数",
+      "塑料制品业",
+      "VOCs",
+      "非甲烷总烃"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-09-001",
+    "title": "产污量定量核算公式完整性",
+    "domain": "产污系数",
+    "card_type": "formula",
+    "skill_ids": [
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "10-运营期间产污系数与定量核算判定"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#10_产污系数定量核算指南.md"
+    ],
+    "source_basis": [
+      "HJ 1122-2020 表22；广东省工业源VOCs减排量核算方法(2023修订版)"
+    ],
+    "applicable_scope": "用于审核产污量是否按产污系数与产量进行完整计算。",
+    "trigger_keywords": [
+      "E=sum",
+      "产污量",
+      "产污系数",
+      "产量",
+      "kg/t"
+    ],
+    "evidence_fields": [
+      "产污系数",
+      "产量",
+      "产品类别",
+      "核算公式",
+      "单位换算",
+      "年运行时间"
+    ],
+    "normative_requirements": [
+      "核算公式须完整：E = Σ(产污系数 × 产量)。",
+      "多产品、多工艺应分项核算后汇总。"
+    ],
+    "thresholds": [],
+    "formulas": [
+      {
+        "name": "产污量",
+        "expression": "E = Σ(产污系数 × 产量)",
+        "unit_note": "kg/a 或 t/a，需做 kg↔t 换算"
+      }
+    ],
+    "check_logic": [
+      "识别是否存在分产品/分工艺产量。",
+      "逐项计算产污量。",
+      "比对报告汇总值，误差超过允许四舍五入范围时输出计算错误。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "产污量",
+      "定量核算",
+      "E=sum",
+      "产量"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-007",
+    "title": "排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "08_产污系数合理性",
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_1122-2020.md"
+    ],
+    "source_basis": [
+      "排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 1122-2020",
+      "排污许可证申请与核发技术规范"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_1122-2020",
+      "排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-010",
+    "title": "污染源源强核算技术指南 准则 HJ884",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "04_建设内容",
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_884-2018.md"
+    ],
+    "source_basis": [
+      "污染源源强核算技术指南 准则 HJ884"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 884-2018",
+      "污染源源强核算技术指南"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_884-2018",
+      "污染源源强核算技术指南 准则 HJ884"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

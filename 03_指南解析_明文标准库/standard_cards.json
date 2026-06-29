@@ -1,0 +1,2643 @@
+[
+  {
+    "standard_id": "STD-DIFY-01-001",
+    "title": "国民经济行业分类代码字段规范化与匹配",
+    "domain": "行业分类",
+    "card_type": "lookup",
+    "skill_ids": [
+      "01_国民经济行业类别"
+    ],
+    "workflow_ids": [
+      "1-国民经济分类判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/national_economic_classification.json",
+      "03_指南解析_明文标准库/Dify工作流知识库/national_economic_classification.jsonl"
+    ],
+    "source_basis": [
+      "GB/T 4754 国民经济行业分类；Dify 知识库索引说明：1770条记录已规范化"
+    ],
+    "applicable_scope": "用于核对报告表中行业类别、行业代码、项目性质描述是否一致。",
+    "trigger_keywords": [
+      "国民经济行业类别",
+      "行业代码",
+      "C292",
+      "C291",
+      "塑料制品业",
+      "橡胶制品业"
+    ],
+    "evidence_fields": [
+      "报告行业名称",
+      "报告行业代码",
+      "产品名称",
+      "主要工艺",
+      "项目类别"
+    ],
+    "normative_requirements": [
+      "行业代码应能在 national_economic_classification.jsonl 中命中。",
+      "代码、行业名称、产品和工艺描述应相互一致。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "提取报告中的行业代码与行业名称。",
+      "检索标准库中同代码条目。",
+      "若代码存在但名称不一致，判为名称不一致；若代码不存在，判为未命中标准分类。",
+      "若产品/工艺明显落入塑料制品或橡胶制品边界，但代码填报为无关行业，判为行业分类疑似错误。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB/T4754",
+      "national_economic_classification",
+      "行业代码",
+      "C292",
+      "C291"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-01-002",
+    "title": "塑料制品业 C292 适用边界",
+    "domain": "行业分类",
+    "card_type": "boundary",
+    "skill_ids": [
+      "01_国民经济行业类别"
+    ],
+    "workflow_ids": [
+      "1-国民经济分类判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/plastic_rubber_industry_classification_checked.md"
+    ],
+    "source_basis": [
+      "塑料/橡胶行业分类边界校验文件"
+    ],
+    "applicable_scope": "用于塑料薄膜、塑料包装容器、日用塑料制品、泡沫塑料、塑料零件等项目分类边界审核。",
+    "trigger_keywords": [
+      "塑料制品业",
+      "C2921",
+      "C2922",
+      "C2924",
+      "C2926",
+      "C2927",
+      "注塑",
+      "挤出",
+      "吹膜",
+      "发泡"
+    ],
+    "evidence_fields": [
+      "产品名称",
+      "主要原料",
+      "生产工艺",
+      "行业类别",
+      "行业代码"
+    ],
+    "normative_requirements": [
+      "塑料薄膜制造通常对应 C2921。",
+      "塑料包装箱及容器制造通常对应 C2926。",
+      "日用塑料制品制造通常对应 C2927。",
+      "泡沫塑料制造通常对应 C2924。",
+      "塑料零件及其他塑料制品制造通常对应 C2929。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "以产品为主、工艺为辅进行行业分类核对。",
+      "报告只写“塑料制品业”但未细分到四位代码时，提示补充细分类别。",
+      "存在橡胶硫化、炼胶等工艺时，不应简单归入塑料制品业。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "塑料制品业",
+      "C292",
+      "C2921",
+      "C2926",
+      "C2927",
+      "C2929"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-02-001",
+    "title": "总投资与项目规模匹配性审核",
+    "domain": "项目基本情况",
+    "card_type": "review_rule",
+    "skill_ids": [
+      "02_环保投资"
+    ],
+    "workflow_ids": [
+      "2-环评投资核算"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#2_环评投资核算指南.md"
+    ],
+    "source_basis": [
+      "环办环评[2020]33号 附件2；Dify 知识库投资核算指南"
+    ],
+    "applicable_scope": "用于核对总投资、环保投资、产能、治理设施配置之间是否明显失衡。",
+    "trigger_keywords": [
+      "总投资",
+      "环保投资",
+      "投资占比",
+      "项目规模",
+      "产能"
+    ],
+    "evidence_fields": [
+      "总投资",
+      "环保投资",
+      "环保投资占比",
+      "产品产能",
+      "主要治理设施"
+    ],
+    "normative_requirements": [
+      "总投资额应与项目规模、产能匹配。",
+      "环保投资应覆盖废气、废水、噪声、固废治理设施。"
+    ],
+    "thresholds": [
+      {
+        "name": "环保投资占比经验阈值",
+        "operator": ">=",
+        "value": "5%",
+        "hard_law": false,
+        "note": "Dify 知识库使用的一般性审核经验，不宜直接写成强制法定限值。"
+      }
+    ],
+    "formulas": [
+      {
+        "name": "环保投资占比",
+        "expression": "环保投资 / 总投资 × 100%"
+      }
+    ],
+    "check_logic": [
+      "计算环保投资占比。",
+      "逐项核对环保投资是否覆盖废气、废水、噪声、固体废物/危废治理。",
+      "环保投资偏低但治理工程复杂时，输出人工复核。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [
+      "总投资或环保投资单位缺失。",
+      "环保投资占比低于5%。",
+      "治理设施复杂但未列设施费用明细。"
+    ],
+    "retrieval_tags": [
+      "环保投资",
+      "总投资",
+      "环办环评[2020]33号",
+      "投资占比"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-03-001",
+    "title": "顺德三线一单管控单元匹配",
+    "domain": "三线一单",
+    "card_type": "lookup",
+    "skill_ids": [
+      "03_三线一单"
+    ],
+    "workflow_ids": [
+      "4-三线一单管控内容一致性判定"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/三线一单_顺德管控单元_完整.json",
+      "03_指南解析_明文标准库/Dify工作流知识库/三线一单_顺德管控单元.json"
+    ],
+    "source_basis": [
+      "顺德区三线一单管控单元结构化文件"
+    ],
+    "applicable_scope": "用于根据项目镇街、园区、地址、经纬度或所在片区匹配管控单元。",
+    "trigger_keywords": [
+      "三线一单",
+      "管控单元",
+      "顺德",
+      "环境管控单元",
+      "准入清单"
+    ],
+    "evidence_fields": [
+      "项目地址",
+      "镇街",
+      "园区",
+      "经纬度",
+      "报告引用的管控单元名称",
+      "报告引用的管控单元编码"
+    ],
+    "normative_requirements": [
+      "报告引用的管控单元名称/编码应与标准库匹配。",
+      "不能只写区域政策结论而缺少具体管控单元。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "优先用管控单元编码精确匹配。",
+      "无编码时用镇街、园区、地址关键词进行候选匹配。",
+      "若报告管控单元与项目地址不一致，判为三线一单引用疑似错误。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [
+      "项目地址无法定位到唯一管控单元。",
+      "报告只写“符合三线一单”但未列管控单元。"
+    ],
+    "retrieval_tags": [
+      "三线一单",
+      "顺德",
+      "管控单元",
+      "环境管控单元"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-03-002",
+    "title": "顺德管控单元准入清单一致性审核",
+    "domain": "三线一单",
+    "card_type": "rule",
+    "skill_ids": [
+      "03_三线一单"
+    ],
+    "workflow_ids": [
+      "4-三线一单管控内容一致性判定"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/三线一单_顺德管控单元准入清单.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/三线一单_顺德管控单元准入清单.json"
+    ],
+    "source_basis": [
+      "顺德管控单元准入清单结构化文件"
+    ],
+    "applicable_scope": "用于核对报告三线一单章节是否覆盖空间布局约束、污染物排放管控、环境风险防控、资源利用效率等要求。",
+    "trigger_keywords": [
+      "空间布局约束",
+      "污染物排放管控",
+      "环境风险防控",
+      "资源利用效率",
+      "准入清单"
+    ],
+    "evidence_fields": [
+      "管控单元",
+      "项目行业",
+      "工艺",
+      "原辅材料",
+      "污染物",
+      "风险物质",
+      "能耗/水耗"
+    ],
+    "normative_requirements": [
+      "报告应逐项回应准入清单中的适用管控要求。",
+      "不能将不相关单元的准入要求套用到本项目。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先匹配管控单元，再读取对应准入清单。",
+      "按四类管控要求拆分核对报告文本。",
+      "报告结论为符合但缺少逐项分析时，判为依据不足。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "准入清单",
+      "空间布局约束",
+      "污染物排放管控",
+      "环境风险防控",
+      "资源利用效率"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-04-001",
+    "title": "建设内容工程组成完整性",
+    "domain": "建设内容",
+    "card_type": "rule",
+    "skill_ids": [
+      "04_建设内容"
+    ],
+    "workflow_ids": [
+      "5-建设内容编制完整性判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#5_建设内容编制完整性指南.md"
+    ],
+    "source_basis": [
+      "环办环评[2020]33号 附件2；HJ 884；Dify 建设内容完整性指南"
+    ],
+    "applicable_scope": "用于检查建设内容是否覆盖主体工程、辅助工程、公用工程、环保工程、依托工程。",
+    "trigger_keywords": [
+      "主体工程",
+      "辅助工程",
+      "公用工程",
+      "环保工程",
+      "依托工程",
+      "建设内容"
+    ],
+    "evidence_fields": [
+      "工程组成表",
+      "产品方案",
+      "生产线",
+      "车间",
+      "仓储",
+      "供水",
+      "供电",
+      "废气治理",
+      "废水治理",
+      "固废暂存"
+    ],
+    "normative_requirements": [
+      "主体工程应列明各车间/生产线产品名称和产能。",
+      "辅助工程应说明办公、仓储、公用设施。",
+      "公用工程应说明供水、供电、供气。",
+      "环保工程应说明废气、废水、噪声、固废治理设施。",
+      "改扩建项目应说明依托工程。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "抽取工程组成表。",
+      "逐项检查五类工程是否出现。",
+      "对改扩建项目强制检查依托工程和现有工程关系。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "建设内容",
+      "工程组成",
+      "主体工程",
+      "辅助工程",
+      "公用工程",
+      "环保工程",
+      "依托工程"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-05-001",
+    "title": "顺德区环境状态公报数据引用核对",
+    "domain": "环境质量现状",
+    "card_type": "evidence_source",
+    "skill_ids": [
+      "05_环境质量现状数据"
+    ],
+    "workflow_ids": [
+      "6-环境质量现状数据引用是否有误"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#6_2023年佛山市顺德区生态环境状态公报.txt",
+      "03_指南解析_明文标准库/Dify工作流知识库/#6_2024年佛山市顺德区生态环境状态公报.txt"
+    ],
+    "source_basis": [
+      "佛山市顺德区生态环境状态公报 2023/2024"
+    ],
+    "applicable_scope": "用于核对报告引用的区域环境空气、地表水、声环境等现状数据年份和数据来源。",
+    "trigger_keywords": [
+      "环境质量现状",
+      "生态环境状态公报",
+      "2023年",
+      "2024年",
+      "达标区",
+      "引用数据"
+    ],
+    "evidence_fields": [
+      "引用年份",
+      "数据来源名称",
+      "监测因子",
+      "评价结论",
+      "所在行政区"
+    ],
+    "normative_requirements": [
+      "现状数据来源应明确到年份和文件名称。",
+      "报告引用年份应与评价基准年逻辑一致。",
+      "不能将非顺德区或非项目评价范围数据直接作为本项目区域现状。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "抽取报告现状数据来源名称和年份。",
+      "检索对应年度公报。",
+      "比对报告中引用的监测因子、浓度或达标结论。",
+      "数据年份过旧、来源不明或行政区不一致时提示人工复核。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "环境状态公报",
+      "顺德",
+      "环境质量现状",
+      "数据引用"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-06-001",
+    "title": "环境空气质量标准 GB3095 一级/二级适用",
+    "domain": "环境质量标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "06_环境质量执行标准"
+    ],
+    "workflow_ids": [
+      "7-环境质量执行标准准确性判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_环境质量标准限值速查.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_3095-2012.md"
+    ],
+    "source_basis": [
+      "GB 3095-2012；2018年修改单；Dify 环境质量标准限值速查"
+    ],
+    "applicable_scope": "用于判断大气环境质量功能区与执行等级是否匹配。",
+    "trigger_keywords": [
+      "GB3095",
+      "环境空气",
+      "一级标准",
+      "二级标准",
+      "SO2",
+      "NO2",
+      "PM10",
+      "PM2.5",
+      "O3",
+      "CO"
+    ],
+    "evidence_fields": [
+      "环境空气功能区类别",
+      "执行等级",
+      "污染因子",
+      "报告限值"
+    ],
+    "normative_requirements": [
+      "一类区执行 GB3095 一级标准。",
+      "二类区执行 GB3095 二级标准。",
+      "常规因子应至少覆盖 SO2、NO2、PM10、PM2.5、O3、CO。"
+    ],
+    "thresholds": [
+      {
+        "factor": "SO2",
+        "period": "年平均",
+        "level1": "20 μg/m³",
+        "level2": "60 μg/m³"
+      },
+      {
+        "factor": "PM10",
+        "period": "年平均",
+        "level1": "40 μg/m³",
+        "level2": "70 μg/m³"
+      },
+      {
+        "factor": "PM2.5",
+        "period": "年平均",
+        "level1": "15 μg/m³",
+        "level2": "35 μg/m³"
+      },
+      {
+        "factor": "O3",
+        "period": "日最大8小时平均",
+        "level1": "100 μg/m³",
+        "level2": "160 μg/m³"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB3095",
+      "环境空气质量标准",
+      "大气环境",
+      "PM2.5",
+      "O3"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-06-002",
+    "title": "地表水环境质量标准 GB3838 类别限值",
+    "domain": "环境质量标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "06_环境质量执行标准"
+    ],
+    "workflow_ids": [
+      "7-环境质量执行标准准确性判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_环境质量标准限值速查.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_3838-2002.md"
+    ],
+    "source_basis": [
+      "GB 3838-2002；Dify 环境质量标准限值速查"
+    ],
+    "applicable_scope": "用于判断受纳水体水质类别、评价因子和限值是否匹配。",
+    "trigger_keywords": [
+      "GB3838",
+      "地表水",
+      "III类",
+      "IV类",
+      "COD",
+      "BOD5",
+      "氨氮",
+      "总磷",
+      "pH"
+    ],
+    "evidence_fields": [
+      "受纳水体",
+      "水质目标",
+      "评价类别",
+      "污染因子",
+      "报告限值"
+    ],
+    "normative_requirements": [
+      "地表水 pH 值 I–V 类均为 6–9。",
+      "III 类 COD≤20mg/L、氨氮≤1.0mg/L。",
+      "IV 类 COD≤30mg/L、氨氮≤1.5mg/L。"
+    ],
+    "thresholds": [
+      {
+        "factor": "pH",
+        "class_I_to_V": "6-9"
+      },
+      {
+        "factor": "COD",
+        "class_III": "≤20 mg/L",
+        "class_IV": "≤30 mg/L",
+        "class_V": "≤40 mg/L"
+      },
+      {
+        "factor": "NH3-N",
+        "class_III": "≤1.0 mg/L",
+        "class_IV": "≤1.5 mg/L",
+        "class_V": "≤2.0 mg/L"
+      },
+      {
+        "factor": "BOD5",
+        "class_III": "≤4 mg/L",
+        "class_IV": "≤6 mg/L",
+        "class_V": "≤10 mg/L"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB3838",
+      "地表水",
+      "COD",
+      "氨氮",
+      "水质类别"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-06-003",
+    "title": "顺德污水厂受纳水体与地表水类别速查",
+    "domain": "环境质量标准",
+    "card_type": "lookup",
+    "skill_ids": [
+      "06_环境质量执行标准"
+    ],
+    "workflow_ids": [
+      "7-环境质量执行标准准确性判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_收纳水体地表水执行标准.csv",
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_环境质量标准限值速查.md"
+    ],
+    "source_basis": [
+      "顺德区污水处理厂入河排污口受纳水体与水质目标整理表"
+    ],
+    "applicable_scope": "用于核对报告所接入污水厂、受纳水体、地表水目标类别是否一致。",
+    "trigger_keywords": [
+      "污水处理厂",
+      "受纳水体",
+      "桂洲水道",
+      "洪奇沥水道",
+      "李家沙水道",
+      "潭洲水道",
+      "III类",
+      "II类",
+      "IV类"
+    ],
+    "evidence_fields": [
+      "污水处理厂名称",
+      "排入水体",
+      "受纳水体",
+      "报告执行水质类别"
+    ],
+    "normative_requirements": [
+      "报告应按污水厂尾水实际受纳水体确定地表水类别。",
+      "不能只写项目附近河涌类别而忽略污水厂尾水受纳水体。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "抽取报告接入污水处理厂。",
+      "检索标准库中的对应排污口、排入水体、受纳水体和水质类别。",
+      "比对报告写法，输出一致/不一致/缺证据。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "顺德污水厂",
+      "受纳水体",
+      "地表水执行标准",
+      "GB3838"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-06-004",
+    "title": "声环境质量标准 GB3096 功能区限值",
+    "domain": "环境质量标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "06_环境质量执行标准"
+    ],
+    "workflow_ids": [
+      "7-环境质量执行标准准确性判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_环境质量标准限值速查.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_3096-2008.md"
+    ],
+    "source_basis": [
+      "GB 3096-2008；Dify 环境质量标准限值速查；已加入一致性校验"
+    ],
+    "applicable_scope": "用于判断声环境功能区类别与昼夜限值是否匹配。",
+    "trigger_keywords": [
+      "GB3096",
+      "声环境",
+      "昼间",
+      "夜间",
+      "2类",
+      "3类",
+      "4a类",
+      "4b类"
+    ],
+    "evidence_fields": [
+      "声环境功能区类别",
+      "昼间限值",
+      "夜间限值",
+      "厂界/环境质量场景"
+    ],
+    "normative_requirements": [
+      "0类：昼间50、夜间40 dB(A)。",
+      "1类：昼间55、夜间45 dB(A)。",
+      "2类：昼间60、夜间50 dB(A)。",
+      "3类：昼间65、夜间55 dB(A)。",
+      "4a类：昼间70、夜间55 dB(A)。",
+      "4b类：昼间70、夜间60 dB(A)。"
+    ],
+    "thresholds": [
+      {
+        "class": "0",
+        "day": 50,
+        "night": 40,
+        "unit": "dB(A)"
+      },
+      {
+        "class": "1",
+        "day": 55,
+        "night": 45,
+        "unit": "dB(A)"
+      },
+      {
+        "class": "2",
+        "day": 60,
+        "night": 50,
+        "unit": "dB(A)"
+      },
+      {
+        "class": "3",
+        "day": 65,
+        "night": 55,
+        "unit": "dB(A)"
+      },
+      {
+        "class": "4a",
+        "day": 70,
+        "night": 55,
+        "unit": "dB(A)"
+      },
+      {
+        "class": "4b",
+        "day": 70,
+        "night": 60,
+        "unit": "dB(A)"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [
+      "Dify 原速查文件局部文字存在 3类/4a类夜间限值误写为40 dB(A) 的风险；本卡按 GB3096-2008 表1校正。"
+    ],
+    "retrieval_tags": [
+      "GB3096",
+      "声环境质量标准",
+      "噪声",
+      "昼间",
+      "夜间"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-001",
+    "title": "塑料制品业 NMHC 有组织排放 GB31572 限值",
+    "domain": "排放标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_GB31572表4排放限值.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_31572-2015.md"
+    ],
+    "source_basis": [
+      "GB 31572-2015 表4；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于注塑、挤出、吹膜、压延、发泡等塑料加工废气有组织非甲烷总烃排放标准核对。",
+    "trigger_keywords": [
+      "GB31572",
+      "合成树脂工业污染物排放标准",
+      "非甲烷总烃",
+      "NMHC",
+      "有组织",
+      "100mg/m3"
+    ],
+    "evidence_fields": [
+      "工序",
+      "污染因子",
+      "排放形式",
+      "执行标准",
+      "限值"
+    ],
+    "normative_requirements": [
+      "塑料加工相关有组织废气中非甲烷总烃可执行 GB31572 表4，最高允许排放浓度 100 mg/m³。"
+    ],
+    "thresholds": [
+      {
+        "factor": "非甲烷总烃",
+        "limit": "100 mg/m³",
+        "scenario": "有组织"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB31572",
+      "非甲烷总烃",
+      "有组织排放",
+      "塑料制品业"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-002",
+    "title": "广东固定污染源 VOCs 综合排放 DB44/2367 限值",
+    "domain": "排放标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_2367-2022.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md"
+    ],
+    "source_basis": [
+      "DB44/2367-2022；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于厂区内无组织 VOCs 以及适用场景下有组织 NMHC 排放标准核对。",
+    "trigger_keywords": [
+      "DB44/2367",
+      "固定污染源挥发性有机物综合排放标准",
+      "厂区内无组织",
+      "NMHC",
+      "6mg/m3",
+      "20mg/m3",
+      "80mg/m3"
+    ],
+    "evidence_fields": [
+      "排放形式",
+      "监控点",
+      "平均时间",
+      "报告限值",
+      "执行标准"
+    ],
+    "normative_requirements": [
+      "厂区内无组织 NMHC 监测点处 1h 平均浓度值应核对 6 mg/m³。",
+      "厂区内无组织 NMHC 监测点处任意一次浓度值应核对 20 mg/m³。",
+      "Dify 典型污染源文件中还列出适用场景下有组织 NMHC 80 mg/m³。"
+    ],
+    "thresholds": [
+      {
+        "factor": "非甲烷总烃",
+        "scenario": "厂区内无组织",
+        "period": "1h平均",
+        "limit": "6 mg/m³"
+      },
+      {
+        "factor": "非甲烷总烃",
+        "scenario": "厂区内无组织",
+        "period": "任意一次",
+        "limit": "20 mg/m³"
+      },
+      {
+        "factor": "非甲烷总烃",
+        "scenario": "有组织",
+        "limit": "80 mg/m³",
+        "note": "按具体适用行业/地方标准关系复核"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "DB44/2367",
+      "VOCs",
+      "厂区内无组织",
+      "NMHC"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-003",
+    "title": "臭气浓度 GB14554 有组织与厂界无组织限值",
+    "domain": "排放标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_14554-93.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md"
+    ],
+    "source_basis": [
+      "GB 14554-93；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于塑料加工废气伴生异味/臭气浓度标准核对。",
+    "trigger_keywords": [
+      "GB14554",
+      "恶臭污染物排放标准",
+      "臭气浓度",
+      "2000",
+      "20"
+    ],
+    "evidence_fields": [
+      "工序",
+      "污染因子",
+      "排放形式",
+      "执行标准",
+      "限值"
+    ],
+    "normative_requirements": [
+      "有组织臭气浓度按 GB14554 表2核对。",
+      "厂界无组织臭气浓度按 GB14554 表1核对。"
+    ],
+    "thresholds": [
+      {
+        "factor": "臭气浓度",
+        "scenario": "有组织",
+        "limit": "2000（无量纲）"
+      },
+      {
+        "factor": "臭气浓度",
+        "scenario": "厂界无组织",
+        "limit": "20（无量纲）"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB14554",
+      "臭气浓度",
+      "恶臭污染物"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-004",
+    "title": "颗粒物 DB44/27 第二时段限值",
+    "domain": "排放标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_27-2001.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md"
+    ],
+    "source_basis": [
+      "DB44/27-2001 第二时段；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于投料、混料、切粒、破碎、机加工等颗粒物排放标准核对。",
+    "trigger_keywords": [
+      "DB44/27",
+      "颗粒物",
+      "投料",
+      "混料",
+      "破碎",
+      "机加工",
+      "120mg/m3",
+      "1.0mg/m3"
+    ],
+    "evidence_fields": [
+      "工序",
+      "污染因子",
+      "排放形式",
+      "执行标准",
+      "限值"
+    ],
+    "normative_requirements": [
+      "颗粒物有组织排放最高允许排放浓度 120 mg/m³。",
+      "颗粒物厂界无组织排放监控浓度限值 1.0 mg/m³。"
+    ],
+    "thresholds": [
+      {
+        "factor": "颗粒物",
+        "scenario": "有组织",
+        "limit": "120 mg/m³"
+      },
+      {
+        "factor": "颗粒物",
+        "scenario": "厂界无组织",
+        "limit": "1.0 mg/m³"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "DB44/27",
+      "颗粒物",
+      "有组织",
+      "厂界无组织"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-005",
+    "title": "工业企业厂界环境噪声排放 GB12348 限值",
+    "domain": "排放标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_GB12348噪声排放限值.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_12348-2008.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md"
+    ],
+    "source_basis": [
+      "GB 12348-2008；Dify 噪声排放限值文件"
+    ],
+    "applicable_scope": "用于审核厂界噪声执行类别及昼夜限值。",
+    "trigger_keywords": [
+      "GB12348",
+      "厂界噪声",
+      "昼间",
+      "夜间",
+      "工业企业厂界环境噪声排放标准"
+    ],
+    "evidence_fields": [
+      "厂界声环境功能类别",
+      "昼间限值",
+      "夜间限值",
+      "报告执行标准"
+    ],
+    "normative_requirements": [
+      "厂界噪声执行 GB12348，类别应与项目所在声环境功能区/规划用途相匹配。"
+    ],
+    "thresholds": [
+      {
+        "class": "1类",
+        "day": "55 dB(A)",
+        "night": "45 dB(A)"
+      },
+      {
+        "class": "2类",
+        "day": "60 dB(A)",
+        "night": "50 dB(A)"
+      },
+      {
+        "class": "3类",
+        "day": "65 dB(A)",
+        "night": "55 dB(A)"
+      },
+      {
+        "class": "4类",
+        "day": "70 dB(A)",
+        "night": "55 dB(A)"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB12348",
+      "厂界噪声",
+      "工业企业厂界"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-006",
+    "title": "生活污水预处理与尾水排放标准衔接",
+    "domain": "排放标准",
+    "card_type": "rule",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_26-2001.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_环境质量标准限值速查.md"
+    ],
+    "source_basis": [
+      "DB44/26-2001；GB18918-2002；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于生活污水经预处理排入市政污水处理厂项目的执行标准核对。",
+    "trigger_keywords": [
+      "生活污水",
+      "CODCr",
+      "氨氮",
+      "SS",
+      "BOD5",
+      "DB44/26",
+      "GB18918",
+      "一级A"
+    ],
+    "evidence_fields": [
+      "污水去向",
+      "污水处理厂",
+      "预处理标准",
+      "尾水标准",
+      "受纳水体"
+    ],
+    "normative_requirements": [
+      "生活污水预处理排放应核对 DB44/26-2001 等适用地方标准。",
+      "污水厂尾水应结合受纳水体核对 GB18918 一级A 与 DB44/26 第二时段一级较严值。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "识别生活污水是否排入市政污水处理厂。",
+      "若直接外排或生产废水外排，应切换到对应工业废水标准，不可套用生活污水预处理逻辑。",
+      "接入污水厂时，同时输出污水厂、受纳水体和尾水标准。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "生活污水",
+      "DB44/26",
+      "GB18918",
+      "尾水",
+      "污水处理厂"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-08-001",
+    "title": "塑料制品业废气产污系数选用边界",
+    "domain": "产污系数",
+    "card_type": "lookup",
+    "skill_ids": [
+      "08_产污系数合理性",
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "9-运营期间产污系数使用合理性判断",
+      "10-运营期间产污系数与定量核算判定"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#9_塑料制品业产污系数_废气.json",
+      "03_指南解析_明文标准库/Dify工作流知识库/#9_塑料制品业产污系数_废气_速查.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#10_产污系数定量核算指南.md"
+    ],
+    "source_basis": [
+      "HJ 1122-2020 表22；广东省工业源VOCs减排量核算方法(2023修订版)"
+    ],
+    "applicable_scope": "用于判断塑料制品业 VOCs/非甲烷总烃产污系数是否与产品类型、工艺和产量匹配。",
+    "trigger_keywords": [
+      "产污系数",
+      "塑料薄膜",
+      "塑料包装容器",
+      "日用塑料制品",
+      "泡沫塑料",
+      "2.50",
+      "2.70",
+      "30"
+    ],
+    "evidence_fields": [
+      "产品类型",
+      "工艺",
+      "产量",
+      "产污系数",
+      "系数来源",
+      "污染物"
+    ],
+    "normative_requirements": [
+      "产污系数选用应与行业类别和产品类型匹配。",
+      "VOCs 产污系数须有来源依据。"
+    ],
+    "thresholds": [
+      {
+        "product": "塑料薄膜",
+        "process": "配料-挤出",
+        "factor": "2.50 kg/t"
+      },
+      {
+        "product": "塑料包装容器",
+        "factor": "2.70 kg/t"
+      },
+      {
+        "product": "日用塑料制品",
+        "factor": "2.70 kg/t"
+      },
+      {
+        "product": "泡沫塑料",
+        "process": "模塑发泡",
+        "factor": "30 kg/t"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [
+      "抽取产品类型、工艺、产量和报告采用的系数。",
+      "检索标准库同产品/工艺的系数。",
+      "若报告系数与标准库不一致且未说明更适用来源，判为系数选用依据不足。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ1122",
+      "产污系数",
+      "塑料制品业",
+      "VOCs",
+      "非甲烷总烃"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-09-001",
+    "title": "产污量定量核算公式完整性",
+    "domain": "产污系数",
+    "card_type": "formula",
+    "skill_ids": [
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "10-运营期间产污系数与定量核算判定"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#10_产污系数定量核算指南.md"
+    ],
+    "source_basis": [
+      "HJ 1122-2020 表22；广东省工业源VOCs减排量核算方法(2023修订版)"
+    ],
+    "applicable_scope": "用于审核产污量是否按产污系数与产量进行完整计算。",
+    "trigger_keywords": [
+      "E=sum",
+      "产污量",
+      "产污系数",
+      "产量",
+      "kg/t"
+    ],
+    "evidence_fields": [
+      "产污系数",
+      "产量",
+      "产品类别",
+      "核算公式",
+      "单位换算",
+      "年运行时间"
+    ],
+    "normative_requirements": [
+      "核算公式须完整：E = Σ(产污系数 × 产量)。",
+      "多产品、多工艺应分项核算后汇总。"
+    ],
+    "thresholds": [],
+    "formulas": [
+      {
+        "name": "产污量",
+        "expression": "E = Σ(产污系数 × 产量)",
+        "unit_note": "kg/a 或 t/a，需做 kg↔t 换算"
+      }
+    ],
+    "check_logic": [
+      "识别是否存在分产品/分工艺产量。",
+      "逐项计算产污量。",
+      "比对报告汇总值，误差超过允许四舍五入范围时输出计算错误。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "产污量",
+      "定量核算",
+      "E=sum",
+      "产量"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-10-001",
+    "title": "废气收集形式与控制风速要求",
+    "domain": "废气收集",
+    "card_type": "rule",
+    "skill_ids": [
+      "10_废气收集形式及排气量"
+    ],
+    "workflow_ids": [
+      "17-废气收集形式及排气量计算"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#17_废气收集形式及排气量计算指南.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_2026-2013.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_37822-2019.md"
+    ],
+    "source_basis": [
+      "HJ 2026-2013 6.2；GB 37822-2019；Dify 废气收集形式指南"
+    ],
+    "applicable_scope": "用于审核密闭负压、包围式集气罩、外部集气罩等收集方式是否与设备布局和控制风速匹配。",
+    "trigger_keywords": [
+      "密闭负压",
+      "包围式集气罩",
+      "外部集气罩",
+      "控制风速",
+      "0.5m/s",
+      "0.3m/s"
+    ],
+    "evidence_fields": [
+      "工序",
+      "设备密闭情况",
+      "集气罩形式",
+      "罩口面积",
+      "控制风速",
+      "收集点数量"
+    ],
+    "normative_requirements": [
+      "密闭负压：设备/车间密闭，负压收集，控制风速不作要求。",
+      "包围式集气罩：三面围挡一面开口，开口面控制风速 ≥0.5 m/s。",
+      "外部集气罩：顶吸/侧吸，控制风速 ≥0.3 m/s。"
+    ],
+    "thresholds": [
+      {
+        "collection_type": "包围式集气罩",
+        "control_velocity": "≥0.5 m/s"
+      },
+      {
+        "collection_type": "外部集气罩",
+        "control_velocity": "≥0.3 m/s"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [
+      "先识别收集形式。",
+      "再核对是否提供罩口面积和控制风速。",
+      "外部集气罩声称高收集效率但无风速计算时，联动调用收集效率 skill。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "废气收集",
+      "集气罩",
+      "控制风速",
+      "HJ2026",
+      "GB37822"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-10-002",
+    "title": "集气罩排气量计算公式",
+    "domain": "废气收集",
+    "card_type": "formula",
+    "skill_ids": [
+      "10_废气收集形式及排气量"
+    ],
+    "workflow_ids": [
+      "17-废气收集形式及排气量计算"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#17_废气收集形式及排气量计算指南.md"
+    ],
+    "source_basis": [
+      "Dify 废气收集形式及排气量计算指南"
+    ],
+    "applicable_scope": "用于审核集气罩单点排气量计算是否完整。",
+    "trigger_keywords": [
+      "Q=3600Fv",
+      "罩口面积",
+      "控制风速",
+      "排气量"
+    ],
+    "evidence_fields": [
+      "罩口面积F",
+      "控制风速v",
+      "集气罩数量",
+      "单罩口风量",
+      "总风量"
+    ],
+    "normative_requirements": [
+      "排气量计算公式：Q = 3600 × F × v，其中 F 为罩口面积(m²)，v 为控制风速(m/s)。"
+    ],
+    "thresholds": [],
+    "formulas": [
+      {
+        "name": "单罩口排气量",
+        "expression": "Q = 3600 × F × v",
+        "unit": "m³/h"
+      }
+    ],
+    "check_logic": [
+      "抽取 F 和 v。",
+      "计算单罩口 Q。",
+      "多罩口按数量累加。",
+      "若报告只给设计风量未给计算过程，判为计算依据不足。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "Q=3600Fv",
+      "排气量",
+      "罩口面积"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-11-001",
+    "title": "设计风量、漏风系数与风机匹配",
+    "domain": "废气收集",
+    "card_type": "formula",
+    "skill_ids": [
+      "11_废气收集风量与设计风量"
+    ],
+    "workflow_ids": [
+      "18-废气收集风量与设计风量核算"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#18_废气收集风量与设计风量核算指南.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_2026-2013.md"
+    ],
+    "source_basis": [
+      "HJ 2026-2013 6.2；广东省工业源VOCs减排量核算方法(2023修订版)；Dify 风量核算指南"
+    ],
+    "applicable_scope": "用于审核支管风量汇总、漏风系数、风机风量风压和排气筒高度。",
+    "trigger_keywords": [
+      "设计风量",
+      "漏风系数",
+      "10-20%",
+      "风机",
+      "排气筒",
+      "15m"
+    ],
+    "evidence_fields": [
+      "各支管风量",
+      "漏风系数",
+      "设计风量",
+      "风机风量",
+      "风机风压",
+      "排气筒高度"
+    ],
+    "normative_requirements": [
+      "设计风量 = 各支管风量之和 × (1 + 漏风系数)。",
+      "漏风系数一般取 10%–20%。",
+      "有组织排气筒高度应核对是否 ≥15m。"
+    ],
+    "thresholds": [
+      {
+        "name": "漏风系数",
+        "range": "10%-20%"
+      },
+      {
+        "name": "排气筒高度",
+        "operator": ">=",
+        "value": "15 m"
+      }
+    ],
+    "formulas": [
+      {
+        "name": "设计风量",
+        "expression": "Q_design = ΣQ_branch × (1 + leakage_ratio)"
+      }
+    ],
+    "check_logic": [
+      "逐项抽取支管风量并求和。",
+      "检查漏风系数是否在 10%–20%。",
+      "比对风机额定风量是否覆盖设计风量。",
+      "排气筒低于15m时输出高风险。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "设计风量",
+      "漏风系数",
+      "风机",
+      "排气筒"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-11-002",
+    "title": "废气管道与排气筒设计风速",
+    "domain": "废气收集",
+    "card_type": "threshold",
+    "skill_ids": [
+      "11_废气收集风量与设计风量"
+    ],
+    "workflow_ids": [
+      "18-废气收集风量与设计风量核算"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#18_废气收集风量与设计风量核算指南.md"
+    ],
+    "source_basis": [
+      "Dify 风量与设计风量核算指南"
+    ],
+    "applicable_scope": "用于审核支管、主管、排气筒出口风速是否落入设计区间。",
+    "trigger_keywords": [
+      "支管风速",
+      "主管风速",
+      "排气筒出口风速",
+      "8-12",
+      "10-15",
+      "15-20"
+    ],
+    "evidence_fields": [
+      "管径",
+      "风量",
+      "风速",
+      "支管/主管/排气筒类型"
+    ],
+    "normative_requirements": [
+      "支管风速 8–12 m/s。",
+      "主管风速 10–15 m/s。",
+      "排气筒出口风速 15–20 m/s。"
+    ],
+    "thresholds": [
+      {
+        "pipe_type": "支管",
+        "velocity": "8-12 m/s"
+      },
+      {
+        "pipe_type": "主管",
+        "velocity": "10-15 m/s"
+      },
+      {
+        "pipe_type": "排气筒出口",
+        "velocity": "15-20 m/s"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [
+      "若报告给出管径与风量，计算风速。",
+      "若只给出风机风量，不给管径或风速，判为设计参数不足。",
+      "风速低于区间可能沉积或收集不足；高于区间可能阻力和噪声偏大。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "管道风速",
+      "支管",
+      "主管",
+      "排气筒出口"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-12-001",
+    "title": "VOCs 废气收集效率取值表",
+    "domain": "废气收集",
+    "card_type": "threshold",
+    "skill_ids": [
+      "12_废气收集效率"
+    ],
+    "workflow_ids": [
+      "19-废气收集效率判定"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#19_废气收集效率判定指南.md"
+    ],
+    "source_basis": [
+      "广东省工业源VOCs减排量核算方法(2023修订版) 表23；Dify 收集效率判定指南"
+    ],
+    "applicable_scope": "用于审核报告采用的收集效率是否高于对应收集方式上限。",
+    "trigger_keywords": [
+      "收集效率",
+      "单层密闭负压",
+      "双层密闭",
+      "设备排气口直连",
+      "包围式",
+      "外部式",
+      "无收集设施"
+    ],
+    "evidence_fields": [
+      "收集方式",
+      "密闭证据",
+      "控制风速",
+      "报告收集效率",
+      "治理设施"
+    ],
+    "normative_requirements": [
+      "单层密闭负压 95%。",
+      "单层密闭正压 85%。",
+      "双层密闭空间 99%。",
+      "设备排气口直连 95%。",
+      "包围式风速≥0.5m/s 为 80%。",
+      "包围式风速0.3–0.5m/s 为 60%。",
+      "外部式风速≥0.5m/s 为 40%。",
+      "外部式风速0.3–0.5m/s 为 20%–40%。",
+      "无收集设施 0%。"
+    ],
+    "thresholds": [
+      {
+        "collection_type": "单层密闭负压",
+        "efficiency": "95%"
+      },
+      {
+        "collection_type": "单层密闭正压",
+        "efficiency": "85%"
+      },
+      {
+        "collection_type": "双层密闭空间",
+        "efficiency": "99%"
+      },
+      {
+        "collection_type": "设备排气口直连",
+        "efficiency": "95%"
+      },
+      {
+        "collection_type": "包围式，风速≥0.5m/s",
+        "efficiency": "80%"
+      },
+      {
+        "collection_type": "包围式，风速0.3-0.5m/s",
+        "efficiency": "60%"
+      },
+      {
+        "collection_type": "外部式，风速≥0.5m/s",
+        "efficiency": "40%"
+      },
+      {
+        "collection_type": "外部式，风速0.3-0.5m/s",
+        "efficiency": "20%-40%"
+      },
+      {
+        "collection_type": "无收集设施",
+        "efficiency": "0%"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [
+      "提取报告收集效率和收集方式。",
+      "按收集方式检索效率上限。",
+      "报告效率高于标准卡上限时判为不合理。",
+      "密闭负压、直连、包围式均需对应证据，不应只写结论。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "收集效率",
+      "VOCs",
+      "表23",
+      "密闭负压",
+      "包围式",
+      "外部式"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-13-001",
+    "title": "活性炭吸附治理参数完整性",
+    "domain": "废气治理",
+    "card_type": "rule",
+    "skill_ids": [
+      "13_活性炭参数"
+    ],
+    "workflow_ids": [
+      "13-活性炭参数审核"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_2026-2013.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_37822-2019.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_2367-2022.md"
+    ],
+    "source_basis": [
+      "HJ 2026-2013；GB 37822-2019；DB44/2367-2022；Dify 标准文本库"
+    ],
+    "applicable_scope": "用于审核采用活性炭吸附治理 VOCs 的报告是否给出箱体、填装量、更换周期、废活性炭去向等关键参数。",
+    "trigger_keywords": [
+      "活性炭",
+      "吸附",
+      "填装量",
+      "更换周期",
+      "废活性炭",
+      "碘值",
+      "停留时间"
+    ],
+    "evidence_fields": [
+      "治理设施名称",
+      "活性炭类型",
+      "填装量",
+      "更换周期",
+      "吸附效率",
+      "废活性炭产生量",
+      "危废代码"
+    ],
+    "normative_requirements": [
+      "报告应说明活性炭吸附装置主要设计参数。",
+      "活性炭更换周期应与 VOCs 削减量、吸附容量、运行时间相互校核。",
+      "废活性炭应进入危险废物识别与贮存审核。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "抽取活性炭箱数量、单箱填装量、总填装量和更换周期。",
+      "基于 VOCs 削减量反推理论更换周期。",
+      "若更换周期明显偏长、填装量缺失或吸附效率无依据，输出人工复核。",
+      "联动调用危险废物识别 skill 检查废活性炭属性。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [
+      "Dify 知识库未发现单独的活性炭参数速查文件，建议后续补充“活性炭吸附参数卡”。"
+    ],
+    "retrieval_tags": [
+      "活性炭",
+      "VOCs治理",
+      "吸附",
+      "废活性炭"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-14-001",
+    "title": "危险废物识别、贮存与一般固废区分",
+    "domain": "固体废物",
+    "card_type": "rule",
+    "skill_ids": [
+      "14_危险废物识别"
+    ],
+    "workflow_ids": [
+      "14-危险废物识别审核"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_18597-2023.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_18599-2020.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md"
+    ],
+    "source_basis": [
+      "GB18597-2023；GB18599-2020；国家危险废物名录；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于审核废活性炭、废抹布、废包装桶、废油墨/胶水桶等是否正确识别为危废或一般固废。",
+    "trigger_keywords": [
+      "危险废物",
+      "一般固废",
+      "废活性炭",
+      "废包装桶",
+      "废抹布",
+      "GB18597",
+      "GB18599",
+      "国家危险废物名录"
+    ],
+    "evidence_fields": [
+      "固废名称",
+      "产生环节",
+      "主要成分",
+      "危废代码",
+      "产生量",
+      "暂存方式",
+      "处置去向"
+    ],
+    "normative_requirements": [
+      "危险废物贮存应执行 GB18597-2023。",
+      "一般工业固体废物贮存应执行 GB18599-2020。",
+      "涉及吸附有机废气的废活性炭应作为重点危废候选项审核。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "抽取固废清单。",
+      "按名称、成分、产生环节检索危废候选项。",
+      "危废代码缺失、属性前后不一致或暂存要求错误时输出问题。",
+      "一般固废与危废混写时标记高风险。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "危险废物",
+      "GB18597",
+      "GB18599",
+      "废活性炭",
+      "危废代码"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-15-001",
+    "title": "VOCs 产生量、收集量、削减量、排放量总量链条",
+    "domain": "总量控制",
+    "card_type": "formula_chain",
+    "skill_ids": [
+      "15_VOCs总量控制"
+    ],
+    "workflow_ids": [
+      "15-VOCs总量控制审核"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#10_产污系数定量核算指南.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#19_废气收集效率判定指南.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_2367-2022.md"
+    ],
+    "source_basis": [
+      "广东省工业源VOCs减排量核算方法(2023修订版)；Dify 产污系数与收集效率指南"
+    ],
+    "applicable_scope": "用于审核 VOCs 总量控制章节中产生量、收集效率、治理效率、排放量、削减量之间的计算链条。",
+    "trigger_keywords": [
+      "VOCs总量",
+      "产生量",
+      "收集效率",
+      "治理效率",
+      "削减量",
+      "排放量",
+      "替代削减"
+    ],
+    "evidence_fields": [
+      "VOCs产生量",
+      "收集效率",
+      "治理效率",
+      "无组织排放量",
+      "有组织排放量",
+      "削减量",
+      "总量指标"
+    ],
+    "normative_requirements": [
+      "VOCs 总量核算应与产污系数、收集效率、治理效率联动一致。",
+      "收集效率取值不得高于对应收集方式标准卡上限。",
+      "排放量应等于有组织排放量与无组织排放量之和。"
+    ],
+    "thresholds": [],
+    "formulas": [
+      {
+        "name": "收集量",
+        "expression": "收集量 = 产生量 × 收集效率"
+      },
+      {
+        "name": "未收集量",
+        "expression": "未收集量 = 产生量 × (1 - 收集效率)"
+      },
+      {
+        "name": "治理后有组织排放量",
+        "expression": "有组织排放量 = 收集量 × (1 - 治理效率)"
+      },
+      {
+        "name": "总排放量",
+        "expression": "总排放量 = 有组织排放量 + 未收集量"
+      },
+      {
+        "name": "削减量",
+        "expression": "削减量 = 收集量 × 治理效率"
+      }
+    ],
+    "check_logic": [
+      "调用产污系数标准卡核对产生量。",
+      "调用收集效率标准卡核对收集效率。",
+      "调用治理设施参数核对治理效率。",
+      "重算排放量和削减量。",
+      "与报告总量控制指标比对。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "VOCs总量",
+      "削减量",
+      "排放量",
+      "收集效率",
+      "治理效率"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-001",
+    "title": "大气污染物综合排放标准 GB16297",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_16297-1996.md"
+    ],
+    "source_basis": [
+      "大气污染物综合排放标准 GB16297"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 16297-1996",
+      "大气污染物综合排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_16297-1996",
+      "大气污染物综合排放标准 GB16297"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-002",
+    "title": "广东家具制造行业挥发性有机化合物排放标准 DB44/814",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_814-2010.md"
+    ],
+    "source_basis": [
+      "广东家具制造行业挥发性有机化合物排放标准 DB44/814"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "DB44 814-2010",
+      "广东家具制造行业挥发性有机化合物排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "DB44_814-2010",
+      "广东家具制造行业挥发性有机化合物排放标准 DB44/814"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-003",
+    "title": "广东印刷行业挥发性有机化合物排放标准 DB44/815",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_815-2010.md"
+    ],
+    "source_basis": [
+      "广东印刷行业挥发性有机化合物排放标准 DB44/815"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "DB44 815-2010",
+      "广东印刷行业挥发性有机化合物排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "DB44_815-2010",
+      "广东印刷行业挥发性有机化合物排放标准 DB44/815"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-004",
+    "title": "胶粘剂挥发性有机化合物限量 GB33372",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_33372-2020.md"
+    ],
+    "source_basis": [
+      "胶粘剂挥发性有机化合物限量 GB33372"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 33372-2020",
+      "胶粘剂挥发性有机化合物限量"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_33372-2020",
+      "胶粘剂挥发性有机化合物限量 GB33372"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-005",
+    "title": "清洗剂挥发性有机化合物含量限值 GB38508",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_38508-2020.md"
+    ],
+    "source_basis": [
+      "清洗剂挥发性有机化合物含量限值 GB38508"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 38508-2020",
+      "清洗剂挥发性有机化合物含量限值"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_38508-2020",
+      "清洗剂挥发性有机化合物含量限值 GB38508"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-006",
+    "title": "印刷工业大气污染物排放标准 GB41616",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_41616-2022.md"
+    ],
+    "source_basis": [
+      "印刷工业大气污染物排放标准 GB41616"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 41616-2022",
+      "印刷工业大气污染物排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_41616-2022",
+      "印刷工业大气污染物排放标准 GB41616"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-007",
+    "title": "排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "08_产污系数合理性",
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_1122-2020.md"
+    ],
+    "source_basis": [
+      "排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 1122-2020",
+      "排污许可证申请与核发技术规范"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_1122-2020",
+      "排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-008",
+    "title": "排污单位自行监测技术指南 橡胶和塑料制品 HJ1207",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_1207-2021.md"
+    ],
+    "source_basis": [
+      "排污单位自行监测技术指南 橡胶和塑料制品 HJ1207"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 1207-2021",
+      "排污单位自行监测技术指南"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_1207-2021",
+      "排污单位自行监测技术指南 橡胶和塑料制品 HJ1207"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-009",
+    "title": "排污单位自行监测技术指南 总则 HJ819",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_819-2017.md"
+    ],
+    "source_basis": [
+      "排污单位自行监测技术指南 总则 HJ819"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 819-2017",
+      "排污单位自行监测技术指南"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_819-2017",
+      "排污单位自行监测技术指南 总则 HJ819"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-010",
+    "title": "污染源源强核算技术指南 准则 HJ884",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "04_建设内容",
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_884-2018.md"
+    ],
+    "source_basis": [
+      "污染源源强核算技术指南 准则 HJ884"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 884-2018",
+      "污染源源强核算技术指南"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_884-2018",
+      "污染源源强核算技术指南 准则 HJ884"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

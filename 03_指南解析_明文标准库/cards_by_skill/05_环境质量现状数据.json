@@ -1,0 +1,69 @@
+[
+  {
+    "standard_id": "STD-DIFY-05-001",
+    "title": "顺德区环境状态公报数据引用核对",
+    "domain": "环境质量现状",
+    "card_type": "evidence_source",
+    "skill_ids": [
+      "05_环境质量现状数据"
+    ],
+    "workflow_ids": [
+      "6-环境质量现状数据引用是否有误"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#6_2023年佛山市顺德区生态环境状态公报.txt",
+      "03_指南解析_明文标准库/Dify工作流知识库/#6_2024年佛山市顺德区生态环境状态公报.txt"
+    ],
+    "source_basis": [
+      "佛山市顺德区生态环境状态公报 2023/2024"
+    ],
+    "applicable_scope": "用于核对报告引用的区域环境空气、地表水、声环境等现状数据年份和数据来源。",
+    "trigger_keywords": [
+      "环境质量现状",
+      "生态环境状态公报",
+      "2023年",
+      "2024年",
+      "达标区",
+      "引用数据"
+    ],
+    "evidence_fields": [
+      "引用年份",
+      "数据来源名称",
+      "监测因子",
+      "评价结论",
+      "所在行政区"
+    ],
+    "normative_requirements": [
+      "现状数据来源应明确到年份和文件名称。",
+      "报告引用年份应与评价基准年逻辑一致。",
+      "不能将非顺德区或非项目评价范围数据直接作为本项目区域现状。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "抽取报告现状数据来源名称和年份。",
+      "检索对应年度公报。",
+      "比对报告中引用的监测因子、浓度或达标结论。",
+      "数据年份过旧、来源不明或行政区不一致时提示人工复核。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "环境状态公报",
+      "顺德",
+      "环境质量现状",
+      "数据引用"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

@@ -1,0 +1,534 @@
+[
+  {
+    "standard_id": "STD-DIFY-SRC-001",
+    "title": "大气污染物综合排放标准 GB16297",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_16297-1996.md"
+    ],
+    "source_basis": [
+      "大气污染物综合排放标准 GB16297"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 16297-1996",
+      "大气污染物综合排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_16297-1996",
+      "大气污染物综合排放标准 GB16297"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-002",
+    "title": "广东家具制造行业挥发性有机化合物排放标准 DB44/814",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_814-2010.md"
+    ],
+    "source_basis": [
+      "广东家具制造行业挥发性有机化合物排放标准 DB44/814"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "DB44 814-2010",
+      "广东家具制造行业挥发性有机化合物排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "DB44_814-2010",
+      "广东家具制造行业挥发性有机化合物排放标准 DB44/814"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-003",
+    "title": "广东印刷行业挥发性有机化合物排放标准 DB44/815",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_815-2010.md"
+    ],
+    "source_basis": [
+      "广东印刷行业挥发性有机化合物排放标准 DB44/815"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "DB44 815-2010",
+      "广东印刷行业挥发性有机化合物排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "DB44_815-2010",
+      "广东印刷行业挥发性有机化合物排放标准 DB44/815"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-004",
+    "title": "胶粘剂挥发性有机化合物限量 GB33372",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_33372-2020.md"
+    ],
+    "source_basis": [
+      "胶粘剂挥发性有机化合物限量 GB33372"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 33372-2020",
+      "胶粘剂挥发性有机化合物限量"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_33372-2020",
+      "胶粘剂挥发性有机化合物限量 GB33372"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-005",
+    "title": "清洗剂挥发性有机化合物含量限值 GB38508",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_38508-2020.md"
+    ],
+    "source_basis": [
+      "清洗剂挥发性有机化合物含量限值 GB38508"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 38508-2020",
+      "清洗剂挥发性有机化合物含量限值"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_38508-2020",
+      "清洗剂挥发性有机化合物含量限值 GB38508"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-006",
+    "title": "印刷工业大气污染物排放标准 GB41616",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_41616-2022.md"
+    ],
+    "source_basis": [
+      "印刷工业大气污染物排放标准 GB41616"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 41616-2022",
+      "印刷工业大气污染物排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_41616-2022",
+      "印刷工业大气污染物排放标准 GB41616"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-007",
+    "title": "排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "08_产污系数合理性",
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_1122-2020.md"
+    ],
+    "source_basis": [
+      "排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 1122-2020",
+      "排污许可证申请与核发技术规范"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_1122-2020",
+      "排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-008",
+    "title": "排污单位自行监测技术指南 橡胶和塑料制品 HJ1207",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_1207-2021.md"
+    ],
+    "source_basis": [
+      "排污单位自行监测技术指南 橡胶和塑料制品 HJ1207"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 1207-2021",
+      "排污单位自行监测技术指南"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_1207-2021",
+      "排污单位自行监测技术指南 橡胶和塑料制品 HJ1207"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-009",
+    "title": "排污单位自行监测技术指南 总则 HJ819",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_819-2017.md"
+    ],
+    "source_basis": [
+      "排污单位自行监测技术指南 总则 HJ819"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 819-2017",
+      "排污单位自行监测技术指南"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_819-2017",
+      "排污单位自行监测技术指南 总则 HJ819"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-010",
+    "title": "污染源源强核算技术指南 准则 HJ884",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "04_建设内容",
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_884-2018.md"
+    ],
+    "source_basis": [
+      "污染源源强核算技术指南 准则 HJ884"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 884-2018",
+      "污染源源强核算技术指南"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_884-2018",
+      "污染源源强核算技术指南 准则 HJ884"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

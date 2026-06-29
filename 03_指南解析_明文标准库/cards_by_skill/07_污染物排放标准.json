@@ -1,0 +1,867 @@
+[
+  {
+    "standard_id": "STD-DIFY-07-001",
+    "title": "塑料制品业 NMHC 有组织排放 GB31572 限值",
+    "domain": "排放标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_GB31572表4排放限值.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_31572-2015.md"
+    ],
+    "source_basis": [
+      "GB 31572-2015 表4；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于注塑、挤出、吹膜、压延、发泡等塑料加工废气有组织非甲烷总烃排放标准核对。",
+    "trigger_keywords": [
+      "GB31572",
+      "合成树脂工业污染物排放标准",
+      "非甲烷总烃",
+      "NMHC",
+      "有组织",
+      "100mg/m3"
+    ],
+    "evidence_fields": [
+      "工序",
+      "污染因子",
+      "排放形式",
+      "执行标准",
+      "限值"
+    ],
+    "normative_requirements": [
+      "塑料加工相关有组织废气中非甲烷总烃可执行 GB31572 表4，最高允许排放浓度 100 mg/m³。"
+    ],
+    "thresholds": [
+      {
+        "factor": "非甲烷总烃",
+        "limit": "100 mg/m³",
+        "scenario": "有组织"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB31572",
+      "非甲烷总烃",
+      "有组织排放",
+      "塑料制品业"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-002",
+    "title": "广东固定污染源 VOCs 综合排放 DB44/2367 限值",
+    "domain": "排放标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_2367-2022.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md"
+    ],
+    "source_basis": [
+      "DB44/2367-2022；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于厂区内无组织 VOCs 以及适用场景下有组织 NMHC 排放标准核对。",
+    "trigger_keywords": [
+      "DB44/2367",
+      "固定污染源挥发性有机物综合排放标准",
+      "厂区内无组织",
+      "NMHC",
+      "6mg/m3",
+      "20mg/m3",
+      "80mg/m3"
+    ],
+    "evidence_fields": [
+      "排放形式",
+      "监控点",
+      "平均时间",
+      "报告限值",
+      "执行标准"
+    ],
+    "normative_requirements": [
+      "厂区内无组织 NMHC 监测点处 1h 平均浓度值应核对 6 mg/m³。",
+      "厂区内无组织 NMHC 监测点处任意一次浓度值应核对 20 mg/m³。",
+      "Dify 典型污染源文件中还列出适用场景下有组织 NMHC 80 mg/m³。"
+    ],
+    "thresholds": [
+      {
+        "factor": "非甲烷总烃",
+        "scenario": "厂区内无组织",
+        "period": "1h平均",
+        "limit": "6 mg/m³"
+      },
+      {
+        "factor": "非甲烷总烃",
+        "scenario": "厂区内无组织",
+        "period": "任意一次",
+        "limit": "20 mg/m³"
+      },
+      {
+        "factor": "非甲烷总烃",
+        "scenario": "有组织",
+        "limit": "80 mg/m³",
+        "note": "按具体适用行业/地方标准关系复核"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "DB44/2367",
+      "VOCs",
+      "厂区内无组织",
+      "NMHC"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-003",
+    "title": "臭气浓度 GB14554 有组织与厂界无组织限值",
+    "domain": "排放标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_14554-93.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md"
+    ],
+    "source_basis": [
+      "GB 14554-93；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于塑料加工废气伴生异味/臭气浓度标准核对。",
+    "trigger_keywords": [
+      "GB14554",
+      "恶臭污染物排放标准",
+      "臭气浓度",
+      "2000",
+      "20"
+    ],
+    "evidence_fields": [
+      "工序",
+      "污染因子",
+      "排放形式",
+      "执行标准",
+      "限值"
+    ],
+    "normative_requirements": [
+      "有组织臭气浓度按 GB14554 表2核对。",
+      "厂界无组织臭气浓度按 GB14554 表1核对。"
+    ],
+    "thresholds": [
+      {
+        "factor": "臭气浓度",
+        "scenario": "有组织",
+        "limit": "2000（无量纲）"
+      },
+      {
+        "factor": "臭气浓度",
+        "scenario": "厂界无组织",
+        "limit": "20（无量纲）"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB14554",
+      "臭气浓度",
+      "恶臭污染物"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-004",
+    "title": "颗粒物 DB44/27 第二时段限值",
+    "domain": "排放标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_27-2001.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md"
+    ],
+    "source_basis": [
+      "DB44/27-2001 第二时段；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于投料、混料、切粒、破碎、机加工等颗粒物排放标准核对。",
+    "trigger_keywords": [
+      "DB44/27",
+      "颗粒物",
+      "投料",
+      "混料",
+      "破碎",
+      "机加工",
+      "120mg/m3",
+      "1.0mg/m3"
+    ],
+    "evidence_fields": [
+      "工序",
+      "污染因子",
+      "排放形式",
+      "执行标准",
+      "限值"
+    ],
+    "normative_requirements": [
+      "颗粒物有组织排放最高允许排放浓度 120 mg/m³。",
+      "颗粒物厂界无组织排放监控浓度限值 1.0 mg/m³。"
+    ],
+    "thresholds": [
+      {
+        "factor": "颗粒物",
+        "scenario": "有组织",
+        "limit": "120 mg/m³"
+      },
+      {
+        "factor": "颗粒物",
+        "scenario": "厂界无组织",
+        "limit": "1.0 mg/m³"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "DB44/27",
+      "颗粒物",
+      "有组织",
+      "厂界无组织"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-005",
+    "title": "工业企业厂界环境噪声排放 GB12348 限值",
+    "domain": "排放标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_GB12348噪声排放限值.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_12348-2008.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md"
+    ],
+    "source_basis": [
+      "GB 12348-2008；Dify 噪声排放限值文件"
+    ],
+    "applicable_scope": "用于审核厂界噪声执行类别及昼夜限值。",
+    "trigger_keywords": [
+      "GB12348",
+      "厂界噪声",
+      "昼间",
+      "夜间",
+      "工业企业厂界环境噪声排放标准"
+    ],
+    "evidence_fields": [
+      "厂界声环境功能类别",
+      "昼间限值",
+      "夜间限值",
+      "报告执行标准"
+    ],
+    "normative_requirements": [
+      "厂界噪声执行 GB12348，类别应与项目所在声环境功能区/规划用途相匹配。"
+    ],
+    "thresholds": [
+      {
+        "class": "1类",
+        "day": "55 dB(A)",
+        "night": "45 dB(A)"
+      },
+      {
+        "class": "2类",
+        "day": "60 dB(A)",
+        "night": "50 dB(A)"
+      },
+      {
+        "class": "3类",
+        "day": "65 dB(A)",
+        "night": "55 dB(A)"
+      },
+      {
+        "class": "4类",
+        "day": "70 dB(A)",
+        "night": "55 dB(A)"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB12348",
+      "厂界噪声",
+      "工业企业厂界"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-07-006",
+    "title": "生活污水预处理与尾水排放标准衔接",
+    "domain": "排放标准",
+    "card_type": "rule",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "8-污染物排放标准内容判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_26-2001.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_环境质量标准限值速查.md"
+    ],
+    "source_basis": [
+      "DB44/26-2001；GB18918-2002；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于生活污水经预处理排入市政污水处理厂项目的执行标准核对。",
+    "trigger_keywords": [
+      "生活污水",
+      "CODCr",
+      "氨氮",
+      "SS",
+      "BOD5",
+      "DB44/26",
+      "GB18918",
+      "一级A"
+    ],
+    "evidence_fields": [
+      "污水去向",
+      "污水处理厂",
+      "预处理标准",
+      "尾水标准",
+      "受纳水体"
+    ],
+    "normative_requirements": [
+      "生活污水预处理排放应核对 DB44/26-2001 等适用地方标准。",
+      "污水厂尾水应结合受纳水体核对 GB18918 一级A 与 DB44/26 第二时段一级较严值。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "识别生活污水是否排入市政污水处理厂。",
+      "若直接外排或生产废水外排，应切换到对应工业废水标准，不可套用生活污水预处理逻辑。",
+      "接入污水厂时，同时输出污水厂、受纳水体和尾水标准。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "生活污水",
+      "DB44/26",
+      "GB18918",
+      "尾水",
+      "污水处理厂"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-001",
+    "title": "大气污染物综合排放标准 GB16297",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_16297-1996.md"
+    ],
+    "source_basis": [
+      "大气污染物综合排放标准 GB16297"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 16297-1996",
+      "大气污染物综合排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_16297-1996",
+      "大气污染物综合排放标准 GB16297"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-002",
+    "title": "广东家具制造行业挥发性有机化合物排放标准 DB44/814",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_814-2010.md"
+    ],
+    "source_basis": [
+      "广东家具制造行业挥发性有机化合物排放标准 DB44/814"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "DB44 814-2010",
+      "广东家具制造行业挥发性有机化合物排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "DB44_814-2010",
+      "广东家具制造行业挥发性有机化合物排放标准 DB44/814"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-003",
+    "title": "广东印刷行业挥发性有机化合物排放标准 DB44/815",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_815-2010.md"
+    ],
+    "source_basis": [
+      "广东印刷行业挥发性有机化合物排放标准 DB44/815"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "DB44 815-2010",
+      "广东印刷行业挥发性有机化合物排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "DB44_815-2010",
+      "广东印刷行业挥发性有机化合物排放标准 DB44/815"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-004",
+    "title": "胶粘剂挥发性有机化合物限量 GB33372",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_33372-2020.md"
+    ],
+    "source_basis": [
+      "胶粘剂挥发性有机化合物限量 GB33372"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 33372-2020",
+      "胶粘剂挥发性有机化合物限量"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_33372-2020",
+      "胶粘剂挥发性有机化合物限量 GB33372"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-005",
+    "title": "清洗剂挥发性有机化合物含量限值 GB38508",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_38508-2020.md"
+    ],
+    "source_basis": [
+      "清洗剂挥发性有机化合物含量限值 GB38508"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 38508-2020",
+      "清洗剂挥发性有机化合物含量限值"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_38508-2020",
+      "清洗剂挥发性有机化合物含量限值 GB38508"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-006",
+    "title": "印刷工业大气污染物排放标准 GB41616",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_41616-2022.md"
+    ],
+    "source_basis": [
+      "印刷工业大气污染物排放标准 GB41616"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "GB 41616-2022",
+      "印刷工业大气污染物排放标准"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB_41616-2022",
+      "印刷工业大气污染物排放标准 GB41616"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-008",
+    "title": "排污单位自行监测技术指南 橡胶和塑料制品 HJ1207",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_1207-2021.md"
+    ],
+    "source_basis": [
+      "排污单位自行监测技术指南 橡胶和塑料制品 HJ1207"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 1207-2021",
+      "排污单位自行监测技术指南"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_1207-2021",
+      "排污单位自行监测技术指南 橡胶和塑料制品 HJ1207"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-009",
+    "title": "排污单位自行监测技术指南 总则 HJ819",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "07_污染物排放标准"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_819-2017.md"
+    ],
+    "source_basis": [
+      "排污单位自行监测技术指南 总则 HJ819"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 819-2017",
+      "排污单位自行监测技术指南"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_819-2017",
+      "排污单位自行监测技术指南 总则 HJ819"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

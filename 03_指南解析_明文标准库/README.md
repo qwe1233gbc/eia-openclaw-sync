@@ -1,32 +1,32 @@
-# 法规/标准依据库说明
+# Dify 知识库解析版标准库
 
-本目录用于存放佛山市塑胶行业环评审核所需的法规、标准、指南和结构化依据条目。
+生成日期：2026-06-29
 
-## 当前主文件
+这个包把仓库中的 `03_指南解析_明文标准库/Dify工作流知识库` 解析成技能库可调用的结构化标准卡。核心产物是：
 
-| 文件 | 作用 | 使用建议 |
-| --- | --- | --- |
-| `plastic_guide_standard_library_v3_deep.jsonl` / `.md` | 现有深度版标准库，71 条 | 当前稳定版本，可继续作为主标准库使用 |
-| `plastic_guide_standard_library_v4_skill_aligned_pilot.jsonl` / `.md` | 技能库对齐试点版，124 条 | 人工复核前不直接替代 v3；用于检查是否需要扩展条目 |
-| `dify_kb_standard_entries_pilot.jsonl` / `.md` | 从 `Dify工作流知识库` 自动解析出的候选标准库条目，292 条 | 用于人工筛选和扩充标准库；未复核前不作为正式依据 |
-| `dify_kb_standard_entries_parse_report.md` | Dify 知识库解析范围、统计和人工复核建议 | 用于追踪条目来源、分布和后续校准重点 |
-| `standard_reference_pilot_from_reports.csv` | 从样本链报告中抽取的标准引用候选 | 用于人工判断终审/受理/修改意见中哪些标准值得纳入标准库 |
-| `standard_source_download_manifest_v4.md` | V4 试点所核对的公开来源和本地下载说明 | 记录官方来源，不提交 PDF 原文 |
+- `standard_cards.jsonl`：主标准库，适合 RAG / 向量库 / 脚本读取。
+- `standard_cards.json`：同内容 JSON 数组，方便调试。
+- `skills_to_standard_mapping.yaml`：每个审核 skill 应调用哪些标准卡。
+- `cards_by_skill/`：按技能拆分后的标准卡。
+- `DIFY_KB_SOURCE_MANIFEST.csv`：Dify 知识库源文件到 skill 的使用关系。
+- `quality/QUALITY_CHECK.md`：解析时发现的风险和需要人工确认的点。
 
-## V4 试点扩展逻辑
+## 调用逻辑
 
-V4 不是简单增加条目数量，而是按 `09_环评审核技能库/` 的 15 个审核 skill 补齐依据颗粒度，例如：
+报告证据片段 → skill_id → `skills_to_standard_mapping.yaml` 找标准卡 → 用 `retrieval_tags/trigger_keywords` 召回 → 按 `normative_requirements + thresholds + formulas + check_logic` 输出审核结论。
 
-- 国民经济行业类别审核：补充 C292、C2921-C2929 及相邻行业边界；
-- 污染物排放标准审核：补充 GB 31572、GB 37822、DB44/2367、DB44/26、DB44/27 等适用关系；
-- 废气收集、风量、收集效率、活性炭参数审核：补充收集形式、设计风量、活性炭运行参数等检查依据；
-- 危险废物识别审核：补充危废识别、贮存、转移和一般固废区分；
-- VOCs 总量控制审核：补充总量指标、替代来源和源头替代关联检查。
+## 标准卡字段
 
-## 人工复核要求
+`standard_id` 是唯一编号；`skill_ids` 是可调用该卡的技能；`source_files` 是 Dify 知识库源文件；`evidence_fields` 是技能需要从报告中提取的证据；`thresholds/formulas` 是可计算规则；`manual_review` 是触发人工复核的边界条件。
 
-- V4 新增条目均标注为 `manual_check_needed`。
-- Dify 知识库解析条目也均标注为 `manual_check_needed`，属于候选扩展库。
-- 报告中抽取的标准引用只能说明“出现过”，不代表引用一定正确。
-- 涉及限值、表号、适用范围和标准版本时，应以正式标准文本和专家复核结果为准。
-- 人工确认后，可再将可靠条目并入正式版本。
+## 已覆盖技能
+
+01 国民经济行业类别、02 环保投资、03 三线一单、04 建设内容、05 环境质量现状数据、06 环境质量执行标准、07 污染物排放标准、08 产污系数合理性、09 产污系数定量核算、10 废气收集形式及排气量、11 废气收集风量与设计风量、12 废气收集效率、13 活性炭参数、14 危险废物识别、15 VOCs总量控制。
+
+## 上传建议
+
+把本目录放到：
+
+`03_法规库_明文依据/parsed_from_dify_kb_standard_cards/`
+
+然后在 `09_环评审核技能库` 的每个 `config.yaml` 中增加标准库引用。

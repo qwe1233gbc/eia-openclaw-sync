@@ -1,0 +1,131 @@
+[
+  {
+    "standard_id": "STD-DIFY-04-001",
+    "title": "建设内容工程组成完整性",
+    "domain": "建设内容",
+    "card_type": "rule",
+    "skill_ids": [
+      "04_建设内容"
+    ],
+    "workflow_ids": [
+      "5-建设内容编制完整性判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#5_建设内容编制完整性指南.md"
+    ],
+    "source_basis": [
+      "环办环评[2020]33号 附件2；HJ 884；Dify 建设内容完整性指南"
+    ],
+    "applicable_scope": "用于检查建设内容是否覆盖主体工程、辅助工程、公用工程、环保工程、依托工程。",
+    "trigger_keywords": [
+      "主体工程",
+      "辅助工程",
+      "公用工程",
+      "环保工程",
+      "依托工程",
+      "建设内容"
+    ],
+    "evidence_fields": [
+      "工程组成表",
+      "产品方案",
+      "生产线",
+      "车间",
+      "仓储",
+      "供水",
+      "供电",
+      "废气治理",
+      "废水治理",
+      "固废暂存"
+    ],
+    "normative_requirements": [
+      "主体工程应列明各车间/生产线产品名称和产能。",
+      "辅助工程应说明办公、仓储、公用设施。",
+      "公用工程应说明供水、供电、供气。",
+      "环保工程应说明废气、废水、噪声、固废治理设施。",
+      "改扩建项目应说明依托工程。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "抽取工程组成表。",
+      "逐项检查五类工程是否出现。",
+      "对改扩建项目强制检查依托工程和现有工程关系。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "建设内容",
+      "工程组成",
+      "主体工程",
+      "辅助工程",
+      "公用工程",
+      "环保工程",
+      "依托工程"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-SRC-010",
+    "title": "污染源源强核算技术指南 准则 HJ884",
+    "domain": "标准全文引用",
+    "card_type": "source_text",
+    "skill_ids": [
+      "04_建设内容",
+      "09_产污系数定量核算"
+    ],
+    "workflow_ids": [
+      "source_text_reference"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_884-2018.md"
+    ],
+    "source_basis": [
+      "污染源源强核算技术指南 准则 HJ884"
+    ],
+    "applicable_scope": "作为对应 skill 检索原文条款的补充来源；本卡不直接给出判定阈值。",
+    "trigger_keywords": [
+      "HJ 884-2018",
+      "污染源源强核算技术指南"
+    ],
+    "evidence_fields": [
+      "报告引用标准名称",
+      "报告引用条款",
+      "报告引用限值"
+    ],
+    "normative_requirements": [
+      "当速查卡无法覆盖具体条款时，优先检索本标准全文卡。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先用速查卡召回，再用标准全文卡校验条文号、适用范围和限值。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "HJ_884-2018",
+      "污染源源强核算技术指南 准则 HJ884"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

@@ -1,0 +1,355 @@
+[
+  {
+    "standard_id": "STD-DIFY-06-001",
+    "title": "环境空气质量标准 GB3095 一级/二级适用",
+    "domain": "环境质量标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "06_环境质量执行标准"
+    ],
+    "workflow_ids": [
+      "7-环境质量执行标准准确性判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_环境质量标准限值速查.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_3095-2012.md"
+    ],
+    "source_basis": [
+      "GB 3095-2012；2018年修改单；Dify 环境质量标准限值速查"
+    ],
+    "applicable_scope": "用于判断大气环境质量功能区与执行等级是否匹配。",
+    "trigger_keywords": [
+      "GB3095",
+      "环境空气",
+      "一级标准",
+      "二级标准",
+      "SO2",
+      "NO2",
+      "PM10",
+      "PM2.5",
+      "O3",
+      "CO"
+    ],
+    "evidence_fields": [
+      "环境空气功能区类别",
+      "执行等级",
+      "污染因子",
+      "报告限值"
+    ],
+    "normative_requirements": [
+      "一类区执行 GB3095 一级标准。",
+      "二类区执行 GB3095 二级标准。",
+      "常规因子应至少覆盖 SO2、NO2、PM10、PM2.5、O3、CO。"
+    ],
+    "thresholds": [
+      {
+        "factor": "SO2",
+        "period": "年平均",
+        "level1": "20 μg/m³",
+        "level2": "60 μg/m³"
+      },
+      {
+        "factor": "PM10",
+        "period": "年平均",
+        "level1": "40 μg/m³",
+        "level2": "70 μg/m³"
+      },
+      {
+        "factor": "PM2.5",
+        "period": "年平均",
+        "level1": "15 μg/m³",
+        "level2": "35 μg/m³"
+      },
+      {
+        "factor": "O3",
+        "period": "日最大8小时平均",
+        "level1": "100 μg/m³",
+        "level2": "160 μg/m³"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB3095",
+      "环境空气质量标准",
+      "大气环境",
+      "PM2.5",
+      "O3"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-06-002",
+    "title": "地表水环境质量标准 GB3838 类别限值",
+    "domain": "环境质量标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "06_环境质量执行标准"
+    ],
+    "workflow_ids": [
+      "7-环境质量执行标准准确性判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_环境质量标准限值速查.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_3838-2002.md"
+    ],
+    "source_basis": [
+      "GB 3838-2002；Dify 环境质量标准限值速查"
+    ],
+    "applicable_scope": "用于判断受纳水体水质类别、评价因子和限值是否匹配。",
+    "trigger_keywords": [
+      "GB3838",
+      "地表水",
+      "III类",
+      "IV类",
+      "COD",
+      "BOD5",
+      "氨氮",
+      "总磷",
+      "pH"
+    ],
+    "evidence_fields": [
+      "受纳水体",
+      "水质目标",
+      "评价类别",
+      "污染因子",
+      "报告限值"
+    ],
+    "normative_requirements": [
+      "地表水 pH 值 I–V 类均为 6–9。",
+      "III 类 COD≤20mg/L、氨氮≤1.0mg/L。",
+      "IV 类 COD≤30mg/L、氨氮≤1.5mg/L。"
+    ],
+    "thresholds": [
+      {
+        "factor": "pH",
+        "class_I_to_V": "6-9"
+      },
+      {
+        "factor": "COD",
+        "class_III": "≤20 mg/L",
+        "class_IV": "≤30 mg/L",
+        "class_V": "≤40 mg/L"
+      },
+      {
+        "factor": "NH3-N",
+        "class_III": "≤1.0 mg/L",
+        "class_IV": "≤1.5 mg/L",
+        "class_V": "≤2.0 mg/L"
+      },
+      {
+        "factor": "BOD5",
+        "class_III": "≤4 mg/L",
+        "class_IV": "≤6 mg/L",
+        "class_V": "≤10 mg/L"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB3838",
+      "地表水",
+      "COD",
+      "氨氮",
+      "水质类别"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-06-003",
+    "title": "顺德污水厂受纳水体与地表水类别速查",
+    "domain": "环境质量标准",
+    "card_type": "lookup",
+    "skill_ids": [
+      "06_环境质量执行标准"
+    ],
+    "workflow_ids": [
+      "7-环境质量执行标准准确性判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_收纳水体地表水执行标准.csv",
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_环境质量标准限值速查.md"
+    ],
+    "source_basis": [
+      "顺德区污水处理厂入河排污口受纳水体与水质目标整理表"
+    ],
+    "applicable_scope": "用于核对报告所接入污水厂、受纳水体、地表水目标类别是否一致。",
+    "trigger_keywords": [
+      "污水处理厂",
+      "受纳水体",
+      "桂洲水道",
+      "洪奇沥水道",
+      "李家沙水道",
+      "潭洲水道",
+      "III类",
+      "II类",
+      "IV类"
+    ],
+    "evidence_fields": [
+      "污水处理厂名称",
+      "排入水体",
+      "受纳水体",
+      "报告执行水质类别"
+    ],
+    "normative_requirements": [
+      "报告应按污水厂尾水实际受纳水体确定地表水类别。",
+      "不能只写项目附近河涌类别而忽略污水厂尾水受纳水体。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "抽取报告接入污水处理厂。",
+      "检索标准库中的对应排污口、排入水体、受纳水体和水质类别。",
+      "比对报告写法，输出一致/不一致/缺证据。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "顺德污水厂",
+      "受纳水体",
+      "地表水执行标准",
+      "GB3838"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-06-004",
+    "title": "声环境质量标准 GB3096 功能区限值",
+    "domain": "环境质量标准",
+    "card_type": "limit",
+    "skill_ids": [
+      "06_环境质量执行标准"
+    ],
+    "workflow_ids": [
+      "7-环境质量执行标准准确性判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#7_环境质量标准限值速查.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_3096-2008.md"
+    ],
+    "source_basis": [
+      "GB 3096-2008；Dify 环境质量标准限值速查；已加入一致性校验"
+    ],
+    "applicable_scope": "用于判断声环境功能区类别与昼夜限值是否匹配。",
+    "trigger_keywords": [
+      "GB3096",
+      "声环境",
+      "昼间",
+      "夜间",
+      "2类",
+      "3类",
+      "4a类",
+      "4b类"
+    ],
+    "evidence_fields": [
+      "声环境功能区类别",
+      "昼间限值",
+      "夜间限值",
+      "厂界/环境质量场景"
+    ],
+    "normative_requirements": [
+      "0类：昼间50、夜间40 dB(A)。",
+      "1类：昼间55、夜间45 dB(A)。",
+      "2类：昼间60、夜间50 dB(A)。",
+      "3类：昼间65、夜间55 dB(A)。",
+      "4a类：昼间70、夜间55 dB(A)。",
+      "4b类：昼间70、夜间60 dB(A)。"
+    ],
+    "thresholds": [
+      {
+        "class": "0",
+        "day": 50,
+        "night": 40,
+        "unit": "dB(A)"
+      },
+      {
+        "class": "1",
+        "day": 55,
+        "night": 45,
+        "unit": "dB(A)"
+      },
+      {
+        "class": "2",
+        "day": 60,
+        "night": 50,
+        "unit": "dB(A)"
+      },
+      {
+        "class": "3",
+        "day": 65,
+        "night": 55,
+        "unit": "dB(A)"
+      },
+      {
+        "class": "4a",
+        "day": 70,
+        "night": 55,
+        "unit": "dB(A)"
+      },
+      {
+        "class": "4b",
+        "day": 70,
+        "night": 60,
+        "unit": "dB(A)"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [
+      "Dify 原速查文件局部文字存在 3类/4a类夜间限值误写为40 dB(A) 的风险；本卡按 GB3096-2008 表1校正。"
+    ],
+    "retrieval_tags": [
+      "GB3096",
+      "声环境质量标准",
+      "噪声",
+      "昼间",
+      "夜间"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

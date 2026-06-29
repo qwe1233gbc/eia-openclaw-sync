@@ -1,0 +1,96 @@
+[
+  {
+    "standard_id": "STD-DIFY-15-001",
+    "title": "VOCs 产生量、收集量、削减量、排放量总量链条",
+    "domain": "总量控制",
+    "card_type": "formula_chain",
+    "skill_ids": [
+      "15_VOCs总量控制"
+    ],
+    "workflow_ids": [
+      "15-VOCs总量控制审核"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#10_产污系数定量核算指南.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#19_废气收集效率判定指南.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/DB44_2367-2022.md"
+    ],
+    "source_basis": [
+      "广东省工业源VOCs减排量核算方法(2023修订版)；Dify 产污系数与收集效率指南"
+    ],
+    "applicable_scope": "用于审核 VOCs 总量控制章节中产生量、收集效率、治理效率、排放量、削减量之间的计算链条。",
+    "trigger_keywords": [
+      "VOCs总量",
+      "产生量",
+      "收集效率",
+      "治理效率",
+      "削减量",
+      "排放量",
+      "替代削减"
+    ],
+    "evidence_fields": [
+      "VOCs产生量",
+      "收集效率",
+      "治理效率",
+      "无组织排放量",
+      "有组织排放量",
+      "削减量",
+      "总量指标"
+    ],
+    "normative_requirements": [
+      "VOCs 总量核算应与产污系数、收集效率、治理效率联动一致。",
+      "收集效率取值不得高于对应收集方式标准卡上限。",
+      "排放量应等于有组织排放量与无组织排放量之和。"
+    ],
+    "thresholds": [],
+    "formulas": [
+      {
+        "name": "收集量",
+        "expression": "收集量 = 产生量 × 收集效率"
+      },
+      {
+        "name": "未收集量",
+        "expression": "未收集量 = 产生量 × (1 - 收集效率)"
+      },
+      {
+        "name": "治理后有组织排放量",
+        "expression": "有组织排放量 = 收集量 × (1 - 治理效率)"
+      },
+      {
+        "name": "总排放量",
+        "expression": "总排放量 = 有组织排放量 + 未收集量"
+      },
+      {
+        "name": "削减量",
+        "expression": "削减量 = 收集量 × 治理效率"
+      }
+    ],
+    "check_logic": [
+      "调用产污系数标准卡核对产生量。",
+      "调用收集效率标准卡核对收集效率。",
+      "调用治理设施参数核对治理效率。",
+      "重算排放量和削减量。",
+      "与报告总量控制指标比对。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "VOCs总量",
+      "削减量",
+      "排放量",
+      "收集效率",
+      "治理效率"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

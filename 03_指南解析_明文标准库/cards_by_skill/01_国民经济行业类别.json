@@ -1,0 +1,142 @@
+[
+  {
+    "standard_id": "STD-DIFY-01-001",
+    "title": "国民经济行业分类代码字段规范化与匹配",
+    "domain": "行业分类",
+    "card_type": "lookup",
+    "skill_ids": [
+      "01_国民经济行业类别"
+    ],
+    "workflow_ids": [
+      "1-国民经济分类判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/national_economic_classification.json",
+      "03_指南解析_明文标准库/Dify工作流知识库/national_economic_classification.jsonl"
+    ],
+    "source_basis": [
+      "GB/T 4754 国民经济行业分类；Dify 知识库索引说明：1770条记录已规范化"
+    ],
+    "applicable_scope": "用于核对报告表中行业类别、行业代码、项目性质描述是否一致。",
+    "trigger_keywords": [
+      "国民经济行业类别",
+      "行业代码",
+      "C292",
+      "C291",
+      "塑料制品业",
+      "橡胶制品业"
+    ],
+    "evidence_fields": [
+      "报告行业名称",
+      "报告行业代码",
+      "产品名称",
+      "主要工艺",
+      "项目类别"
+    ],
+    "normative_requirements": [
+      "行业代码应能在 national_economic_classification.jsonl 中命中。",
+      "代码、行业名称、产品和工艺描述应相互一致。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "提取报告中的行业代码与行业名称。",
+      "检索标准库中同代码条目。",
+      "若代码存在但名称不一致，判为名称不一致；若代码不存在，判为未命中标准分类。",
+      "若产品/工艺明显落入塑料制品或橡胶制品边界，但代码填报为无关行业，判为行业分类疑似错误。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "GB/T4754",
+      "national_economic_classification",
+      "行业代码",
+      "C292",
+      "C291"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-01-002",
+    "title": "塑料制品业 C292 适用边界",
+    "domain": "行业分类",
+    "card_type": "boundary",
+    "skill_ids": [
+      "01_国民经济行业类别"
+    ],
+    "workflow_ids": [
+      "1-国民经济分类判断"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/plastic_rubber_industry_classification_checked.md"
+    ],
+    "source_basis": [
+      "塑料/橡胶行业分类边界校验文件"
+    ],
+    "applicable_scope": "用于塑料薄膜、塑料包装容器、日用塑料制品、泡沫塑料、塑料零件等项目分类边界审核。",
+    "trigger_keywords": [
+      "塑料制品业",
+      "C2921",
+      "C2922",
+      "C2924",
+      "C2926",
+      "C2927",
+      "注塑",
+      "挤出",
+      "吹膜",
+      "发泡"
+    ],
+    "evidence_fields": [
+      "产品名称",
+      "主要原料",
+      "生产工艺",
+      "行业类别",
+      "行业代码"
+    ],
+    "normative_requirements": [
+      "塑料薄膜制造通常对应 C2921。",
+      "塑料包装箱及容器制造通常对应 C2926。",
+      "日用塑料制品制造通常对应 C2927。",
+      "泡沫塑料制造通常对应 C2924。",
+      "塑料零件及其他塑料制品制造通常对应 C2929。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "以产品为主、工艺为辅进行行业分类核对。",
+      "报告只写“塑料制品业”但未细分到四位代码时，提示补充细分类别。",
+      "存在橡胶硫化、炼胶等工艺时，不应简单归入塑料制品业。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "塑料制品业",
+      "C292",
+      "C2921",
+      "C2926",
+      "C2927",
+      "C2929"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

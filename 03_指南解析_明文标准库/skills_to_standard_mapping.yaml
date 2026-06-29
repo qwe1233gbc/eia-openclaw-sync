@@ -1,0 +1,103 @@
+# 技能库调用标准库映射
+
+skills:
+  - skill_id: 01_国民经济行业类别
+    dify_workflow: 1-国民经济分类判断.yml
+    standard_card_ids:
+      - STD-DIFY-01-001
+      - STD-DIFY-01-002
+    retrieval_query_template: "{skill_id} {report_section} GB/T4754 national_economic_classification 行业代码 塑料制品业 C292 C2921"
+  - skill_id: 02_环保投资
+    dify_workflow: 2-环评投资核算.yml
+    standard_card_ids:
+      - STD-DIFY-02-001
+    retrieval_query_template: "{skill_id} {report_section} 环保投资 总投资 环办环评[2020]33号"
+  - skill_id: 03_三线一单
+    dify_workflow: 4-三线一单管控内容一致性判定.yml
+    standard_card_ids:
+      - STD-DIFY-03-001
+      - STD-DIFY-03-002
+    retrieval_query_template: "{skill_id} {report_section} 三线一单 顺德 管控单元 准入清单 空间布局约束 污染物排放管控"
+  - skill_id: 04_建设内容
+    dify_workflow: 5-建设内容编制完整性判断.yml
+    standard_card_ids:
+      - STD-DIFY-04-001
+      - STD-DIFY-SRC-010
+    retrieval_query_template: "{skill_id} {report_section} 建设内容 工程组成 主体工程 HJ_884-2018 污染源源强核算技术指南 准则 HJ884"
+  - skill_id: 05_环境质量现状数据
+    dify_workflow: 6-环境质量现状数据引用是否有误.yml
+    standard_card_ids:
+      - STD-DIFY-05-001
+    retrieval_query_template: "{skill_id} {report_section} 环境状态公报 顺德 环境质量现状"
+  - skill_id: 06_环境质量执行标准
+    dify_workflow: 7-环境质量执行标准准确性判断.yml
+    standard_card_ids:
+      - STD-DIFY-06-001
+      - STD-DIFY-06-002
+      - STD-DIFY-06-003
+      - STD-DIFY-06-004
+    retrieval_query_template: "{skill_id} {report_section} GB3095 环境空气质量标准 大气环境 GB3838 地表水 COD 顺德污水厂 受纳水体 地表水执行标准 GB3096"
+  - skill_id: 07_污染物排放标准
+    dify_workflow: 8-污染物排放标准内容判断.yml
+    standard_card_ids:
+      - STD-DIFY-07-001
+      - STD-DIFY-07-002
+      - STD-DIFY-07-003
+      - STD-DIFY-07-004
+      - STD-DIFY-07-005
+      - STD-DIFY-07-006
+      - STD-DIFY-SRC-001
+      - STD-DIFY-SRC-002
+      - STD-DIFY-SRC-003
+      - STD-DIFY-SRC-004
+      - STD-DIFY-SRC-005
+      - STD-DIFY-SRC-006
+      - STD-DIFY-SRC-008
+      - STD-DIFY-SRC-009
+    retrieval_query_template: "{skill_id} {report_section} GB31572 非甲烷总烃 有组织排放 DB44/2367 VOCs 厂区内无组织 GB14554 臭气浓度 恶臭污染物 DB44/27"
+  - skill_id: 08_产污系数合理性
+    dify_workflow: 9-运营期间产污系数使用合理性判断.yml
+    standard_card_ids:
+      - STD-DIFY-08-001
+      - STD-DIFY-SRC-007
+    retrieval_query_template: "{skill_id} {report_section} HJ1122 产污系数 塑料制品业 HJ_1122-2020 排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122"
+  - skill_id: 09_产污系数定量核算
+    dify_workflow: 10-运营期间产污系数与定量核算判定.yml
+    standard_card_ids:
+      - STD-DIFY-08-001
+      - STD-DIFY-09-001
+      - STD-DIFY-SRC-007
+      - STD-DIFY-SRC-010
+    retrieval_query_template: "{skill_id} {report_section} HJ1122 产污系数 塑料制品业 产污量 定量核算 E=sum HJ_1122-2020 排污许可证申请与核发技术规范 橡胶和塑料制品工业 HJ1122 HJ_884-2018 污染源源强核算技术指南 准则 HJ884"
+  - skill_id: 10_废气收集形式及排气量
+    dify_workflow: 17-废气收集形式及排气量计算.yml
+    standard_card_ids:
+      - STD-DIFY-10-001
+      - STD-DIFY-10-002
+    retrieval_query_template: "{skill_id} {report_section} 废气收集 集气罩 控制风速 Q=3600Fv 排气量 罩口面积"
+  - skill_id: 11_废气收集风量与设计风量
+    dify_workflow: 18-废气收集风量与设计风量核算.yml
+    standard_card_ids:
+      - STD-DIFY-11-001
+      - STD-DIFY-11-002
+    retrieval_query_template: "{skill_id} {report_section} 设计风量 漏风系数 风机 管道风速 支管 主管"
+  - skill_id: 12_废气收集效率
+    dify_workflow: 19-废气收集效率判定.yml
+    standard_card_ids:
+      - STD-DIFY-12-001
+    retrieval_query_template: "{skill_id} {report_section} 收集效率 VOCs 表23"
+  - skill_id: 13_活性炭参数
+    dify_workflow: 13-活性炭参数审核.yml
+    standard_card_ids:
+      - STD-DIFY-13-001
+    retrieval_query_template: "{skill_id} {report_section} 活性炭 VOCs治理 吸附"
+  - skill_id: 14_危险废物识别
+    dify_workflow: 14-危险废物识别审核.yml
+    standard_card_ids:
+      - STD-DIFY-14-001
+    retrieval_query_template: "{skill_id} {report_section} 危险废物 GB18597 GB18599"
+  - skill_id: 15_VOCs总量控制
+    dify_workflow: 15-VOCs总量控制审核.yml
+    standard_card_ids:
+      - STD-DIFY-15-001
+    retrieval_query_template: "{skill_id} {report_section} VOCs总量 削减量 排放量"

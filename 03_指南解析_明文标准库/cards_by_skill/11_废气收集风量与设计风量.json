@@ -1,0 +1,162 @@
+[
+  {
+    "standard_id": "STD-DIFY-11-001",
+    "title": "设计风量、漏风系数与风机匹配",
+    "domain": "废气收集",
+    "card_type": "formula",
+    "skill_ids": [
+      "11_废气收集风量与设计风量"
+    ],
+    "workflow_ids": [
+      "18-废气收集风量与设计风量核算"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#18_废气收集风量与设计风量核算指南.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/HJ_2026-2013.md"
+    ],
+    "source_basis": [
+      "HJ 2026-2013 6.2；广东省工业源VOCs减排量核算方法(2023修订版)；Dify 风量核算指南"
+    ],
+    "applicable_scope": "用于审核支管风量汇总、漏风系数、风机风量风压和排气筒高度。",
+    "trigger_keywords": [
+      "设计风量",
+      "漏风系数",
+      "10-20%",
+      "风机",
+      "排气筒",
+      "15m"
+    ],
+    "evidence_fields": [
+      "各支管风量",
+      "漏风系数",
+      "设计风量",
+      "风机风量",
+      "风机风压",
+      "排气筒高度"
+    ],
+    "normative_requirements": [
+      "设计风量 = 各支管风量之和 × (1 + 漏风系数)。",
+      "漏风系数一般取 10%–20%。",
+      "有组织排气筒高度应核对是否 ≥15m。"
+    ],
+    "thresholds": [
+      {
+        "name": "漏风系数",
+        "range": "10%-20%"
+      },
+      {
+        "name": "排气筒高度",
+        "operator": ">=",
+        "value": "15 m"
+      }
+    ],
+    "formulas": [
+      {
+        "name": "设计风量",
+        "expression": "Q_design = ΣQ_branch × (1 + leakage_ratio)"
+      }
+    ],
+    "check_logic": [
+      "逐项抽取支管风量并求和。",
+      "检查漏风系数是否在 10%–20%。",
+      "比对风机额定风量是否覆盖设计风量。",
+      "排气筒低于15m时输出高风险。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "设计风量",
+      "漏风系数",
+      "风机",
+      "排气筒"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-11-002",
+    "title": "废气管道与排气筒设计风速",
+    "domain": "废气收集",
+    "card_type": "threshold",
+    "skill_ids": [
+      "11_废气收集风量与设计风量"
+    ],
+    "workflow_ids": [
+      "18-废气收集风量与设计风量核算"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#18_废气收集风量与设计风量核算指南.md"
+    ],
+    "source_basis": [
+      "Dify 风量与设计风量核算指南"
+    ],
+    "applicable_scope": "用于审核支管、主管、排气筒出口风速是否落入设计区间。",
+    "trigger_keywords": [
+      "支管风速",
+      "主管风速",
+      "排气筒出口风速",
+      "8-12",
+      "10-15",
+      "15-20"
+    ],
+    "evidence_fields": [
+      "管径",
+      "风量",
+      "风速",
+      "支管/主管/排气筒类型"
+    ],
+    "normative_requirements": [
+      "支管风速 8–12 m/s。",
+      "主管风速 10–15 m/s。",
+      "排气筒出口风速 15–20 m/s。"
+    ],
+    "thresholds": [
+      {
+        "pipe_type": "支管",
+        "velocity": "8-12 m/s"
+      },
+      {
+        "pipe_type": "主管",
+        "velocity": "10-15 m/s"
+      },
+      {
+        "pipe_type": "排气筒出口",
+        "velocity": "15-20 m/s"
+      }
+    ],
+    "formulas": [],
+    "check_logic": [
+      "若报告给出管径与风量，计算风速。",
+      "若只给出风机风量，不给管径或风速，判为设计参数不足。",
+      "风速低于区间可能沉积或收集不足；高于区间可能阻力和噪声偏大。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "管道风速",
+      "支管",
+      "主管",
+      "排气筒出口"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

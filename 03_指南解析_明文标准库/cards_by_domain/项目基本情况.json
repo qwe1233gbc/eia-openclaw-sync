@@ -1,0 +1,82 @@
+[
+  {
+    "standard_id": "STD-DIFY-02-001",
+    "title": "总投资与项目规模匹配性审核",
+    "domain": "项目基本情况",
+    "card_type": "review_rule",
+    "skill_ids": [
+      "02_环保投资"
+    ],
+    "workflow_ids": [
+      "2-环评投资核算"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/#2_环评投资核算指南.md"
+    ],
+    "source_basis": [
+      "环办环评[2020]33号 附件2；Dify 知识库投资核算指南"
+    ],
+    "applicable_scope": "用于核对总投资、环保投资、产能、治理设施配置之间是否明显失衡。",
+    "trigger_keywords": [
+      "总投资",
+      "环保投资",
+      "投资占比",
+      "项目规模",
+      "产能"
+    ],
+    "evidence_fields": [
+      "总投资",
+      "环保投资",
+      "环保投资占比",
+      "产品产能",
+      "主要治理设施"
+    ],
+    "normative_requirements": [
+      "总投资额应与项目规模、产能匹配。",
+      "环保投资应覆盖废气、废水、噪声、固废治理设施。"
+    ],
+    "thresholds": [
+      {
+        "name": "环保投资占比经验阈值",
+        "operator": ">=",
+        "value": "5%",
+        "hard_law": false,
+        "note": "Dify 知识库使用的一般性审核经验，不宜直接写成强制法定限值。"
+      }
+    ],
+    "formulas": [
+      {
+        "name": "环保投资占比",
+        "expression": "环保投资 / 总投资 × 100%"
+      }
+    ],
+    "check_logic": [
+      "计算环保投资占比。",
+      "逐项核对环保投资是否覆盖废气、废水、噪声、固体废物/危废治理。",
+      "环保投资偏低但治理工程复杂时，输出人工复核。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [
+      "总投资或环保投资单位缺失。",
+      "环保投资占比低于5%。",
+      "治理设施复杂但未列设施费用明细。"
+    ],
+    "retrieval_tags": [
+      "环保投资",
+      "总投资",
+      "环办环评[2020]33号",
+      "投资占比"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]
