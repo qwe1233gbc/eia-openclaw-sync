@@ -1,16 +1,16 @@
 # Chen 2026 / TianGong 可借鉴模块整理
 
-本目录整理 Chen 等（2026）《Leveraging LLMs for Environmental Complexity: Structured Fine-Tuning Data Sets and Deployment Strategies》及其公开项目中可复用的研究思路，并给出适配本仓库“环评智能审核”课题的轻量实现模板。
+本目录整理 Chen 等（2026）《Leveraging LLMs for Environmental Complexity: Structured Fine-Tuning Data Sets and Deployment Strategies》及其公开项目中可复用的研究思路，并给出适配本仓库“环评审核技能库”课题的轻量实现模板。
 
 ## 论文核心启发
 
-Chen 等（2026）的主线不是“单纯把模型微调得更强”，而是把环境领域任务拆成三层：
+Chen 等（2026）对本课题最有价值的启发，不是训练模型本身，而是环境领域知识如何被结构化、检索化并嵌入工作流：
 
-1. 稳定、标准化、法规/验证类任务：适合用结构化数据集和监督微调提升稳定性。
+1. 稳定、标准化、法规/验证类任务：适合沉淀为结构化知识、规则和可复用审核 skill。
 2. 动态、跨学科、需要工具和计算的任务：适合用通用模型 + agentic workflow + 检索/计算工具。
-3. 数据集构建阶段：用教材/标准库等权威材料，经混合检索、去重、结构化问答生成、人工复核，形成可训练/可评测数据。
+3. 数据集构建阶段：用教材/标准库等权威材料，经混合检索、去重、结构化问答生成、人工复核，形成可评测、可复核的数据。
 
-对应到本课题，塑胶行业环评审核更适合先采用“知识库 + 检索 + 规则化审核 + 人工复核”的路线；只有当某类审核任务稳定且金标答案足够可靠后，再考虑微调。
+对应到本课题，塑胶行业环评审核采用“法规/标准依据库 + 审核技能库 + 检索增强 + 人工复核”的路线。Chen 论文中的结构化数据构建部分仅作为方法背景，本仓库以技能库和工作流复用为目标。
 
 ## 开源项目与数据
 
@@ -50,4 +50,3 @@ python 12_论文借鉴_Chen2026_TianGong/scripts/hybrid_retrieve.py ^
 ```
 
 默认使用 `hash` 向量模式，便于无 API key 时本地复现流程。若后续需要贴近论文，可切换到 OpenAI embedding 或 Pinecone/OpenSearch。
-

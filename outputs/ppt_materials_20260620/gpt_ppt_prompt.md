@@ -7,7 +7,7 @@
 GitHub仓库：`https://github.com/qwe1233gbc/eia-openclaw-sync`
 
 所有数据和文件都在这个仓库中，你可以直接读取：
-- `03_指南解析_明文标准库/plastic_guide_standard_library_v1_comprehensive.md` — 标准库
+- `03_指南解析_明文标准库/plastic_guide_standard_library_v3_deep.md` — 法规/标准依据库
 - `04_顺德类案经验库/experience_cards_active_v0_6a.jsonl` — 经验库
 - `06_Benchmark最小实验/v0_6a_experiment_design.md` — 实验设计
 - `outputs/openclaw_mvp_v0_6a/group_comparison_summary.md` — 实验结果
