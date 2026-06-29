@@ -1,2 +1,0 @@
-{"item_id": "B01", "version": "v0.6a", "question_type": "cross_check", "audit_module": "噪声×声功能区", "gold_label_source": "standard_card", "notes": "备选题"}
-{"item_id": "B02", "version": "v0.6a", "question_type": "guide_explicit", "audit_module": "附图一致性", "gold_label_source": "review_comment", "notes": "备选题"}

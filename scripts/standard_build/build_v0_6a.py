@@ -186,16 +186,6 @@ with open(main_path, 'w', encoding='utf-8') as f:
     for item in items_v06a:
         f.write(json.dumps(item, ensure_ascii=False) + '\n')
 
-# Backup 2
-backup = [
-    {"item_id":"B01","version":"v0.6a","question_type":"cross_check","audit_module":"噪声×声功能区","gold_label_source":"standard_card","notes":"备选题"},
-    {"item_id":"B02","version":"v0.6a","question_type":"guide_explicit","audit_module":"附图一致性","gold_label_source":"review_comment","notes":"备选题"},
-]
-backup_path = os.path.join(bench_dir, "benchmark_items_mvp_v0_6a_backup.jsonl")
-with open(backup_path, 'w', encoding='utf-8') as f:
-    for item in backup:
-        f.write(json.dumps(item, ensure_ascii=False) + '\n')
-
 # Change log
 change_path = os.path.join(bench_dir, "benchmark_item_change_log_v0_6a.md")
 with open(change_path, 'w', encoding='utf-8') as f:
@@ -378,7 +368,7 @@ print("\n=== 9. Syncing to GitHub ===")
 
 # Copy to sync repo
 sync_dirs = {
-    "06_Benchmark最小实验": ["v0_6a_experiment_design.md","benchmark_items_mvp_v0_6a.jsonl","benchmark_items_mvp_v0_6a_backup.jsonl","benchmark_item_change_log_v0_6a.md","scoring_rubric_v0_6a.md","scoring_template_v0_6a.csv"],
+    "06_Benchmark最小实验": ["v0_6a_experiment_design.md","benchmark_items_mvp_v0_6a.jsonl","benchmark_item_change_log_v0_6a.md","scoring_rubric_v0_6a.md","scoring_template_v0_6a.csv"],
     "04_顺德类案经验库": ["experience_cards_active_v0_6a.jsonl","experience_cards_candidate_v0_6a.jsonl","experience_card_change_log_v0_6a.md","experience_relevance_schema_v0_6a.md","experience_relevance_schema_v0_6a.json"],
     "05_样本链_受理公告_终稿_批复_修改意见": ["sample_selection_for_v0_6a.csv","sample_selection_for_v0_6a.md"],
     "07_OpenClaw交接材料": ["openclaw_v0_6a_task_prompt.md"],
