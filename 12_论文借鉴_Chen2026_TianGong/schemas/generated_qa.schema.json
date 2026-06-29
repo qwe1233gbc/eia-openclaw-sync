@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Generated EIA Audit QA",
+  "type": "object",
+  "required": ["question", "answer", "evidence", "review_status"],
+  "properties": {
+    "question": { "type": "string" },
+    "answer": { "type": "string" },
+    "audit_task_type": {
+      "type": "string",
+      "description": "例如：国民经济行业分类、三线一单、废气收集效率、活性炭参数、危险废物识别等。"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chunk_id", "source_path", "support_type"],
+        "properties": {
+          "chunk_id": { "type": "string" },
+          "source_path": { "type": "string" },
+          "support_type": {
+            "type": "string",
+            "enum": ["direct", "indirect", "conflict", "insufficient"]
+          },
+          "quote_or_summary": { "type": "string" }
+        }
+      }
+    },
+    "standard_basis": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "case_experience": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "suggested_review_comment": { "type": "string" },
+    "risk_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["evidence_missing", "standard_uncalibrated", "case_overgeneralized", "calculation_needed", "expert_review_needed"]
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["candidate", "manual_check_needed", "expert_verified", "rejected"]
+    }
+  }
+}
+

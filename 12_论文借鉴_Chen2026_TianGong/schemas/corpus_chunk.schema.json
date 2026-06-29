@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EIA Corpus Chunk",
+  "type": "object",
+  "required": ["chunk_id", "source_name", "source_path", "evidence_type", "chunk_index", "content"],
+  "properties": {
+    "chunk_id": { "type": "string" },
+    "source_name": { "type": "string" },
+    "source_path": { "type": "string" },
+    "evidence_type": {
+      "type": "string",
+      "enum": ["standard", "regulation", "sample_report", "review_comment", "case_experience", "benchmark_task", "audit_skill", "other"]
+    },
+    "chunk_index": { "type": "integer", "minimum": 0 },
+    "section_hint": { "type": "string" },
+    "content": { "type": "string" },
+    "char_start": { "type": "integer", "minimum": 0 },
+    "char_end": { "type": "integer", "minimum": 0 },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
+
