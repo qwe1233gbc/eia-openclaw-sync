@@ -40,6 +40,9 @@ __pycache__/
 *.pyc
 *.pyo
 
+# === Generated local indexes ===
+outputs/chen2026_hybrid_index/
+
 # === Node ===
 node_modules/
 

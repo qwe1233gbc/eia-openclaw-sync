@@ -1,0 +1,45 @@
+index_path: outputs/chen2026_hybrid_index/eia_plastic_hybrid.sqlite
+
+embedding:
+  mode: hash
+  dimensions: 384
+  openai_model: text-embedding-3-small
+
+chunking:
+  chunk_chars: 1200
+  overlap_chars: 180
+
+sources:
+  - name: standard_library
+    root: 03_指南解析_明文标准库
+    glob:
+      - "**/*.md"
+      - "**/*.txt"
+      - "**/*.csv"
+      - "**/*.json"
+      - "**/*.jsonl"
+    evidence_type: standard
+  - name: regulation_library
+    root: 03_法规库_明文依据
+    glob:
+      - "**/*.md"
+      - "**/*.txt"
+      - "**/*.csv"
+      - "**/*.json"
+      - "**/*.jsonl"
+    evidence_type: regulation
+  - name: qa_tasks
+    root: 06_Benchmark最小实验
+    glob:
+      - "**/*.md"
+      - "**/*.csv"
+      - "**/*.jsonl"
+    evidence_type: benchmark_task
+  - name: audit_skills
+    root: 09_环评审核技能库
+    glob:
+      - "**/*.md"
+      - "**/*.json"
+      - "**/*.yaml"
+    evidence_type: audit_skill
+
