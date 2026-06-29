@@ -8,6 +8,8 @@
 | --- | --- | --- |
 | `plastic_guide_standard_library_v3_deep.jsonl` / `.md` | 现有深度版标准库，71 条 | 当前稳定版本，可继续作为主标准库使用 |
 | `plastic_guide_standard_library_v4_skill_aligned_pilot.jsonl` / `.md` | 技能库对齐试点版，124 条 | 人工复核前不直接替代 v3；用于检查是否需要扩展条目 |
+| `dify_kb_standard_entries_pilot.jsonl` / `.md` | 从 `Dify工作流知识库` 自动解析出的候选标准库条目，292 条 | 用于人工筛选和扩充标准库；未复核前不作为正式依据 |
+| `dify_kb_standard_entries_parse_report.md` | Dify 知识库解析范围、统计和人工复核建议 | 用于追踪条目来源、分布和后续校准重点 |
 | `standard_reference_pilot_from_reports.csv` | 从样本链报告中抽取的标准引用候选 | 用于人工判断终审/受理/修改意见中哪些标准值得纳入标准库 |
 | `standard_source_download_manifest_v4.md` | V4 试点所核对的公开来源和本地下载说明 | 记录官方来源，不提交 PDF 原文 |
 
@@ -24,7 +26,7 @@ V4 不是简单增加条目数量，而是按 `09_环评审核技能库/` 的 15
 ## 人工复核要求
 
 - V4 新增条目均标注为 `manual_check_needed`。
+- Dify 知识库解析条目也均标注为 `manual_check_needed`，属于候选扩展库。
 - 报告中抽取的标准引用只能说明“出现过”，不代表引用一定正确。
 - 涉及限值、表号、适用范围和标准版本时，应以正式标准文本和专家复核结果为准。
 - 人工确认后，可再将可靠条目并入正式版本。
-
