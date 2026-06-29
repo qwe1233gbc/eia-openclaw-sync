@@ -1,0 +1,75 @@
+[
+  {
+    "standard_id": "STD-DIFY-14-001",
+    "title": "危险废物识别、贮存与一般固废区分",
+    "domain": "固体废物",
+    "card_type": "rule",
+    "skill_ids": [
+      "14_危险废物识别"
+    ],
+    "workflow_ids": [
+      "14-危险废物识别审核"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_18597-2023.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/GB_18599-2020.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/#8_塑料制品业典型污染源及执行标准.md"
+    ],
+    "source_basis": [
+      "GB18597-2023；GB18599-2020；国家危险废物名录；Dify 典型污染源执行标准"
+    ],
+    "applicable_scope": "用于审核废活性炭、废抹布、废包装桶、废油墨/胶水桶等是否正确识别为危废或一般固废。",
+    "trigger_keywords": [
+      "危险废物",
+      "一般固废",
+      "废活性炭",
+      "废包装桶",
+      "废抹布",
+      "GB18597",
+      "GB18599",
+      "国家危险废物名录"
+    ],
+    "evidence_fields": [
+      "固废名称",
+      "产生环节",
+      "主要成分",
+      "危废代码",
+      "产生量",
+      "暂存方式",
+      "处置去向"
+    ],
+    "normative_requirements": [
+      "危险废物贮存应执行 GB18597-2023。",
+      "一般工业固体废物贮存应执行 GB18599-2020。",
+      "涉及吸附有机废气的废活性炭应作为重点危废候选项审核。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "抽取固废清单。",
+      "按名称、成分、产生环节检索危废候选项。",
+      "危废代码缺失、属性前后不一致或暂存要求错误时输出问题。",
+      "一般固废与危废混写时标记高风险。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "危险废物",
+      "GB18597",
+      "GB18599",
+      "废活性炭",
+      "危废代码"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "skill_id": "13",
+  "skill_name": "活性炭参数审核",
+  "source_workflow": "未发现独立 Dify 工作流；继承 06_Dify 工作流的证据筛选模式，并与 09/10/11/12 skill 输出联动",
+  "conclusion": "无法判断",
+  "confidence": 0.0,
+  "manual_review_needed": true,
+  "evidence_units": [],
+  "law_basis_used": [],
+  "check_items": [
+    {
+      "review_point": "活性炭参数审核",
+      "status": "证据不足",
+      "finding": "当前输入未提供可追溯证据，不能形成审核结论。",
+      "evidence_id": "",
+      "law_basis_id": "",
+      "manual_review_reason": "缺少报告原文位置和法规依据。"
+    }
+  ],
+  "missing_evidence": [
+    "报告原文证据片段",
+    "法规库命中条款"
+  ],
+  "calculation_trace": [],
+  "risk_tags": [],
+  "review_comment": "未提供可追溯证据，建议先补充报告对应章节、表名或页码后再执行本 skill。"
+}

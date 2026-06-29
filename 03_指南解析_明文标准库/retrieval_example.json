@@ -1,0 +1,18 @@
+{
+  "example_query": {
+    "skill_id": "12_废气收集效率",
+    "report_evidence": {
+      "collection_type": "外部集气罩",
+      "control_velocity": "0.4 m/s",
+      "reported_efficiency": "80%"
+    }
+  },
+  "retrieved_standard_cards": [
+    "STD-DIFY-12-001"
+  ],
+  "expected_judgement": {
+    "result": "不合理",
+    "reason": "外部式风速0.3-0.5m/s对应收集效率20%-40%，报告取80%高于标准卡上限。",
+    "manual_review": false
+  }
+}

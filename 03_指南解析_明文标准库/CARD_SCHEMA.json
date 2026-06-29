@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EIA Review Standard Card",
+  "type": "object",
+  "required": [
+    "standard_id",
+    "title",
+    "domain",
+    "skill_ids",
+    "workflow_ids",
+    "source_files",
+    "source_basis",
+    "normative_requirements",
+    "retrieval_tags"
+  ],
+  "properties": {
+    "standard_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "card_type": {
+      "type": "string"
+    },
+    "skill_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "workflow_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_basis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "applicable_scope": {
+      "type": "string"
+    },
+    "trigger_keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "normative_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "thresholds": {
+      "type": "array"
+    },
+    "formulas": {
+      "type": "array"
+    },
+    "check_logic": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "manual_review": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "retrieval_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confidence": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    }
+  }
+}

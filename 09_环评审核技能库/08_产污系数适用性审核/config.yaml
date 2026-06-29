@@ -1,0 +1,47 @@
+skill_id: 08
+skill_name: 产污系数适用性审核
+source_workflow: 06_Dify工作流/9-运营期间产污系数使用合理性判断.yml；补充参考 06_Dify工作流/10-运营期间产污系数使用合理性判定.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 产污系数
+  weight: 35
+- term: 产排污系数
+  weight: 35
+- term: 系数手册
+  weight: 30
+- term: 源强核算
+  weight: 25
+- term: VOCs
+  weight: 25
+- term: 非甲烷总烃
+  weight: 20
+- term: 胶水
+  weight: 22
+- term: 涂布/复合/熟化
+  weight: 25
+- term: MSDS
+  weight: 25
+- term: 固含量
+  weight: 20
+- term: 挥发份
+  weight: 20
+extracted_fields:
+- process_pollutant_pair
+- selected_coefficient
+- coefficient_basis
+- applicability_evidence
+- missing_parameters

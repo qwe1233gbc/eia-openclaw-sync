@@ -1,0 +1,47 @@
+skill_id: '11'
+skill_name: 废气设计风量审核
+source_workflow: 06_Dify工作流/18-废气收集风量与设计风量核算.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 设计风量
+  weight: 35
+- term: 收集风量
+  weight: 35
+- term: 风量
+  weight: 30
+- term: 换气次数
+  weight: 25
+- term: 罩口风速
+  weight: 25
+- term: 控制风速
+  weight: 25
+- term: 集气罩面积
+  weight: 22
+- term: 开口面积
+  weight: 22
+- term: 管道风速
+  weight: 18
+- term: 排气筒风量
+  weight: 22
+extracted_fields:
+- designed_air_volume
+- calculated_air_volume
+- collection_area
+- control_velocity
+- air_change_rate
+- equipment_count
+- exhaust_port_volume

@@ -1,0 +1,56 @@
+skill_id: '13'
+skill_name: 活性炭参数审核
+source_workflow: 未发现独立 Dify 工作流；继承 06_Dify 工作流的证据筛选模式，并与 09/10/11/12 skill 输出联动
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 活性炭
+  weight: 40
+- term: 二级活性炭
+  weight: 35
+- term: 碘值
+  weight: 35
+- term: 比表面积
+  weight: 25
+- term: 蜂窝炭/颗粒炭
+  weight: 25
+- term: 装填量
+  weight: 35
+- term: 停留时间
+  weight: 35
+- term: 过滤风速
+  weight: 35
+- term: 更换周期
+  weight: 30
+- term: 压差计
+  weight: 22
+- term: 温度传感器
+  weight: 22
+- term: 干式过滤
+  weight: 25
+- term: 水喷淋
+  weight: 18
+extracted_fields:
+- carbon_type
+- iodine_value
+- specific_surface_area
+- carbon_box_size
+- filling_amount
+- filtration_velocity
+- residence_time
+- replacement_cycle
+- pretreatment
+- safety_devices

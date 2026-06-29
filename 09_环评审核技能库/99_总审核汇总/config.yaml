@@ -1,0 +1,9 @@
+skill_id: '99'
+skill_name: 总审核汇总
+source_workflow: 汇总 01-15 skill 输出
+version: 2026-06-29-detailed
+independent_execution: true
+input_required:
+- skill_results
+- project_metadata
+does_not_override_single_skill: true

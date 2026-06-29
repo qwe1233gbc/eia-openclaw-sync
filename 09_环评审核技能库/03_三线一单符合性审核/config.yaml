@@ -1,0 +1,44 @@
+skill_id: '03'
+skill_name: 三线一单符合性审核
+source_workflow: 06_Dify工作流/4-三线一单管控内容一致性判定.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 三线一单
+  weight: 35
+- term: 生态保护红线
+  weight: 30
+- term: 环境质量底线
+  weight: 25
+- term: 资源利用上线
+  weight: 25
+- term: 生态环境准入清单
+  weight: 32
+- term: 管控单元
+  weight: 35
+- term: ZH
+  weight: 20
+- term: 重点管控/一般管控/优先保护
+  weight: 22
+- term: 准入要求
+  weight: 20
+extracted_fields:
+- project_location
+- control_unit_name
+- control_unit_code
+- control_unit_type
+- report_control_requirements
+- project_response

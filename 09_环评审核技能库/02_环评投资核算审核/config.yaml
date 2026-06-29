@@ -1,0 +1,39 @@
+skill_id: '02'
+skill_name: 环评投资核算审核
+source_workflow: 06_Dify工作流/2-环评投资核算.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 总投资
+  weight: 30
+- term: 环保投资
+  weight: 35
+- term: 环保投资占比
+  weight: 35
+- term: 项目环保投资一览表
+  weight: 28
+- term: 工程投资
+  weight: 20
+- term: 占总投资比例
+  weight: 25
+- term: 废气治理/废水治理/噪声治理/固废治理
+  weight: 12
+extracted_fields:
+- total_investment_wan
+- environmental_investment_wan
+- reported_ratio_percent
+- subitem_sum_wan
+- ratio_source_location

@@ -1,0 +1,48 @@
+skill_id: '15'
+skill_name: VOCs总量控制审核
+source_workflow: 未发现独立 Dify 工作流；从源强核算、排放标准、总量控制章节汇总判断
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 总量控制
+  weight: 40
+- term: VOCs
+  weight: 35
+- term: 挥发性有机物
+  weight: 35
+- term: 非甲烷总烃
+  weight: 30
+- term: 排放总量
+  weight: 30
+- term: 新增排放量
+  weight: 25
+- term: 削减替代
+  weight: 25
+- term: 总量指标
+  weight: 30
+- term: 排污许可
+  weight: 22
+- term: 有组织排放量
+  weight: 20
+- term: 无组织排放量
+  weight: 20
+extracted_fields:
+- vocs_generation
+- vocs_emission_total
+- organized_unorganized_emission
+- total_control_index
+- replacement_measure
+- consistency_sources

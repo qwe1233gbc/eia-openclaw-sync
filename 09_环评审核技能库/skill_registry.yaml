@@ -1,84 +1,84 @@
-version: v1.0
-description: 佛山市塑胶行业环评报告表模块化审核技能库
-output_schema: common_output_schema.json
+library_name: 环评审核技能库_细化版
+version: 2026-06-29-detailed
+design_principle: 一个 skill 审核一个独立条目；总 skill 只汇总，不替代单项判断。
 skills:
-- skill_id: SKILL_01
-  skill_name: 国民经济行业类别审核
-  directory: 01_国民经济行业类别审核
-  source_workflow: 国民经济分类判断
+- id: '01'
+  name: 国民经济行业类别审核
+  path: 01_国民经济行业类别审核/SKILL.md
+  source_workflow: 06_Dify工作流/1-国民经济分类判断.yml
   independent: true
-- skill_id: SKILL_02
-  skill_name: 环评投资核算审核
-  directory: 02_环评投资核算审核
-  source_workflow: 环评投资核算
+- id: '02'
+  name: 环评投资核算审核
+  path: 02_环评投资核算审核/SKILL.md
+  source_workflow: 06_Dify工作流/2-环评投资核算.yml
   independent: true
-- skill_id: SKILL_03
-  skill_name: 三线一单符合性审核
-  directory: 03_三线一单符合性审核
-  source_workflow: 三线一单管控内容一致性判定
+- id: '03'
+  name: 三线一单符合性审核
+  path: 03_三线一单符合性审核/SKILL.md
+  source_workflow: 06_Dify工作流/4-三线一单管控内容一致性判定.yml
   independent: true
-- skill_id: SKILL_04
-  skill_name: 建设内容完整性审核
-  directory: 04_建设内容完整性审核
-  source_workflow: 建设内容编制完整性判断
+- id: '04'
+  name: 建设内容完整性审核
+  path: 04_建设内容完整性审核/SKILL.md
+  source_workflow: 06_Dify工作流/5-建设内容编制完整性判断.yml
   independent: true
-- skill_id: SKILL_05
-  skill_name: 环境质量现状数据审核
-  directory: 05_环境质量现状数据审核
-  source_workflow: 环境质量现状数据引用是否有误
+- id: '05'
+  name: 环境质量现状数据审核
+  path: 05_环境质量现状数据审核/SKILL.md
+  source_workflow: 06_Dify工作流/6-环境质量现状数据引用是否有误.yml
   independent: true
-- skill_id: SKILL_06
-  skill_name: 环境质量执行标准审核
-  directory: 06_环境质量执行标准审核
-  source_workflow: 环境质量执行标准准确性判断
+- id: '06'
+  name: 环境质量执行标准审核
+  path: 06_环境质量执行标准审核/SKILL.md
+  source_workflow: 06_Dify工作流/7-环境质量执行标准准确性判断.yml
   independent: true
-- skill_id: SKILL_07
-  skill_name: 污染物排放标准审核
-  directory: 07_污染物排放标准审核
-  source_workflow: 污染物排放标准内容判断
+- id: '07'
+  name: 污染物排放标准审核
+  path: 07_污染物排放标准审核/SKILL.md
+  source_workflow: 06_Dify工作流/8-污染物排放标准内容判断.yml
   independent: true
-- skill_id: SKILL_08
-  skill_name: 产污系数适用性审核
-  directory: 08_产污系数适用性审核
-  source_workflow: 运营期间产污系数使用合理性判断
+- id: 08
+  name: 产污系数适用性审核
+  path: 08_产污系数适用性审核/SKILL.md
+  source_workflow: 06_Dify工作流/9-运营期间产污系数使用合理性判断.yml；补充参考 06_Dify工作流/10-运营期间产污系数使用合理性判定.yml
   independent: true
-- skill_id: SKILL_09
-  skill_name: 源强定量核算审核
-  directory: 09_源强定量核算审核
-  source_workflow: 运营期间产污系数与定量核算判定
+- id: 09
+  name: 源强定量核算审核
+  path: 09_源强定量核算审核/SKILL.md
+  source_workflow: 06_Dify工作流/10-运营期间产污系数与定量核算判定.yml
   independent: true
-- skill_id: SKILL_10
-  skill_name: 废气收集形式审核
-  directory: 10_废气收集形式审核
-  source_workflow: 废气收集形式及排气量计算
+- id: '10'
+  name: 废气收集形式审核
+  path: 10_废气收集形式审核/SKILL.md
+  source_workflow: 06_Dify工作流/17-废气收集形式及排气量计算.yml
   independent: true
-- skill_id: SKILL_11
-  skill_name: 废气设计风量审核
-  directory: 11_废气设计风量审核
-  source_workflow: 废气收集风量与设计风量核算
+- id: '11'
+  name: 废气设计风量审核
+  path: 11_废气设计风量审核/SKILL.md
+  source_workflow: 06_Dify工作流/18-废气收集风量与设计风量核算.yml
   independent: true
-- skill_id: SKILL_12
-  skill_name: 废气收集效率审核
-  directory: 12_废气收集效率审核
-  source_workflow: 废气收集效率判定
+- id: '12'
+  name: 废气收集效率审核
+  path: 12_废气收集效率审核/SKILL.md
+  source_workflow: 06_Dify工作流/19-废气收集效率判定.yml
   independent: true
-- skill_id: SKILL_13
-  skill_name: 活性炭参数审核
-  directory: 13_活性炭参数审核
-  source_workflow: TODO：由塑胶指南/经验库补充
+- id: '13'
+  name: 活性炭参数审核
+  path: 13_活性炭参数审核/SKILL.md
+  source_workflow: 未发现独立 Dify 工作流；继承 06_Dify 工作流的证据筛选模式，并与 09/10/11/12 skill 输出联动
   independent: true
-- skill_id: SKILL_14
-  skill_name: 危险废物识别审核
-  directory: 14_危险废物识别审核
-  source_workflow: TODO：由报告危废清单/危废规范补充
+- id: '14'
+  name: 危险废物识别审核
+  path: 14_危险废物识别审核/SKILL.md
+  source_workflow: 未发现独立 Dify 工作流；从建设内容、源强核算、活性炭和固废章节抽取证据
   independent: true
-- skill_id: SKILL_15
-  skill_name: VOCs总量控制审核
-  directory: 15_VOCs总量控制审核
-  source_workflow: TODO：由总量控制政策补充
+- id: '15'
+  name: VOCs总量控制审核
+  path: 15_VOCs总量控制审核/SKILL.md
+  source_workflow: 未发现独立 Dify 工作流；从源强核算、排放标准、总量控制章节汇总判断
   independent: true
-- skill_id: SKILL_99
-  skill_name: 总审核汇总
-  directory: 99_总审核汇总
-  source_workflow: 汇总各单项 skill 输出
-  independent: false
+- id: '99'
+  name: 总审核汇总
+  path: 99_总审核汇总/SKILL.md
+  source_workflow: 汇总 01-15 skill 输出
+  independent: true

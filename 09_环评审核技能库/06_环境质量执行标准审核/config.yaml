@@ -1,0 +1,41 @@
+skill_id: '06'
+skill_name: 环境质量执行标准审核
+source_workflow: 06_Dify工作流/7-环境质量执行标准准确性判断.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 环境质量标准
+  weight: 35
+- term: 执行标准
+  weight: 25
+- term: 环境空气质量标准
+  weight: 30
+- term: 地表水环境质量标准
+  weight: 30
+- term: 声环境质量标准
+  weight: 30
+- term: 功能区
+  weight: 25
+- term: 二类区/三类区/IV类水
+  weight: 20
+- term: 标准限值
+  weight: 25
+extracted_fields:
+- ambient_air_standard
+- surface_water_standard
+- noise_standard
+- soil_groundwater_standard
+- location_basis

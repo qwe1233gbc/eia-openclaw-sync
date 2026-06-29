@@ -1,0 +1,41 @@
+skill_id: '01'
+skill_name: 国民经济行业类别审核
+source_workflow: 06_Dify工作流/1-国民经济分类判断.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 一、建设项目基本情况
+  weight: 10
+- term: 国民经济
+  weight: 8
+- term: 行业类别
+  weight: 8
+- term: 建设项目工程分析
+  weight: 12
+- term: 产品方案/产品规模
+  weight: 8
+- term: 主要原辅材料
+  weight: 10
+- term: 工艺流程/生产工艺流程说明
+  weight: 10
+- term: 产排污环节
+  weight: 6
+extracted_fields:
+- declared_industry_code
+- product_names
+- material_names
+- process_flow
+- pollution_links

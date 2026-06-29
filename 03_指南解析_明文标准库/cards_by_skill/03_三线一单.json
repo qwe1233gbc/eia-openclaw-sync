@@ -1,0 +1,137 @@
+[
+  {
+    "standard_id": "STD-DIFY-03-001",
+    "title": "顺德三线一单管控单元匹配",
+    "domain": "三线一单",
+    "card_type": "lookup",
+    "skill_ids": [
+      "03_三线一单"
+    ],
+    "workflow_ids": [
+      "4-三线一单管控内容一致性判定"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/三线一单_顺德管控单元_完整.json",
+      "03_指南解析_明文标准库/Dify工作流知识库/三线一单_顺德管控单元.json"
+    ],
+    "source_basis": [
+      "顺德区三线一单管控单元结构化文件"
+    ],
+    "applicable_scope": "用于根据项目镇街、园区、地址、经纬度或所在片区匹配管控单元。",
+    "trigger_keywords": [
+      "三线一单",
+      "管控单元",
+      "顺德",
+      "环境管控单元",
+      "准入清单"
+    ],
+    "evidence_fields": [
+      "项目地址",
+      "镇街",
+      "园区",
+      "经纬度",
+      "报告引用的管控单元名称",
+      "报告引用的管控单元编码"
+    ],
+    "normative_requirements": [
+      "报告引用的管控单元名称/编码应与标准库匹配。",
+      "不能只写区域政策结论而缺少具体管控单元。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "优先用管控单元编码精确匹配。",
+      "无编码时用镇街、园区、地址关键词进行候选匹配。",
+      "若报告管控单元与项目地址不一致，判为三线一单引用疑似错误。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [
+      "项目地址无法定位到唯一管控单元。",
+      "报告只写“符合三线一单”但未列管控单元。"
+    ],
+    "retrieval_tags": [
+      "三线一单",
+      "顺德",
+      "管控单元",
+      "环境管控单元"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  },
+  {
+    "standard_id": "STD-DIFY-03-002",
+    "title": "顺德管控单元准入清单一致性审核",
+    "domain": "三线一单",
+    "card_type": "rule",
+    "skill_ids": [
+      "03_三线一单"
+    ],
+    "workflow_ids": [
+      "4-三线一单管控内容一致性判定"
+    ],
+    "source_files": [
+      "03_指南解析_明文标准库/Dify工作流知识库/三线一单_顺德管控单元准入清单.md",
+      "03_指南解析_明文标准库/Dify工作流知识库/三线一单_顺德管控单元准入清单.json"
+    ],
+    "source_basis": [
+      "顺德管控单元准入清单结构化文件"
+    ],
+    "applicable_scope": "用于核对报告三线一单章节是否覆盖空间布局约束、污染物排放管控、环境风险防控、资源利用效率等要求。",
+    "trigger_keywords": [
+      "空间布局约束",
+      "污染物排放管控",
+      "环境风险防控",
+      "资源利用效率",
+      "准入清单"
+    ],
+    "evidence_fields": [
+      "管控单元",
+      "项目行业",
+      "工艺",
+      "原辅材料",
+      "污染物",
+      "风险物质",
+      "能耗/水耗"
+    ],
+    "normative_requirements": [
+      "报告应逐项回应准入清单中的适用管控要求。",
+      "不能将不相关单元的准入要求套用到本项目。"
+    ],
+    "thresholds": [],
+    "formulas": [],
+    "check_logic": [
+      "先匹配管控单元，再读取对应准入清单。",
+      "按四类管控要求拆分核对报告文本。",
+      "报告结论为符合但缺少逐项分析时，判为依据不足。"
+    ],
+    "output_fields": [
+      "standard_id",
+      "matched_evidence",
+      "judgement",
+      "risk_level",
+      "reason",
+      "suggested_revision"
+    ],
+    "manual_review": [],
+    "retrieval_tags": [
+      "准入清单",
+      "空间布局约束",
+      "污染物排放管控",
+      "环境风险防控",
+      "资源利用效率"
+    ],
+    "confidence": "parsed_from_dify_kb",
+    "notes": "",
+    "created_at": "2026-06-29",
+    "version": "v1.0"
+  }
+]

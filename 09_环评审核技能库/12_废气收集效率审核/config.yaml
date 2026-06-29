@@ -1,0 +1,46 @@
+skill_id: '12'
+skill_name: 废气收集效率审核
+source_workflow: 06_Dify工作流/19-废气收集效率判定.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 收集效率
+  weight: 35
+- term: 捕集效率
+  weight: 30
+- term: 集气效率
+  weight: 30
+- term: 密闭
+  weight: 25
+- term: 负压
+  weight: 25
+- term: 集气罩
+  weight: 22
+- term: 无组织
+  weight: 22
+- term: 有组织
+  weight: 22
+- term: 效率取值
+  weight: 25
+- term: 类比
+  weight: 15
+extracted_fields:
+- reported_collection_efficiency
+- collection_method
+- enclosure_negative_pressure
+- source_coverage
+- basis_for_efficiency
+- organized_unorganized_split

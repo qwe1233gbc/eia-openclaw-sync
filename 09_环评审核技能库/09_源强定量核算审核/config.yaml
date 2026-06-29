@@ -1,0 +1,51 @@
+skill_id: 09
+skill_name: 源强定量核算审核
+source_workflow: 06_Dify工作流/10-运营期间产污系数与定量核算判定.yml
+version: 2026-06-29-detailed
+independent_execution: true
+requires_law_cards: false
+requires_case_cards: false
+evidence_required:
+- evidence_id
+- source_section
+- source_location
+- quote
+conclusion_enum:
+- 匹配
+- 不匹配
+- 部分匹配
+- 无法判断
+- 不适用
+keywords:
+- term: 源强核算
+  weight: 35
+- term: 产生量
+  weight: 30
+- term: 收集量
+  weight: 28
+- term: 削减量
+  weight: 28
+- term: 排放量
+  weight: 30
+- term: 有组织
+  weight: 22
+- term: 无组织
+  weight: 22
+- term: 处理效率
+  weight: 25
+- term: 收集效率
+  weight: 25
+- term: 年运行时间
+  weight: 20
+- term: 排放速率
+  weight: 20
+- term: 排放浓度
+  weight: 20
+extracted_fields:
+- generation_amount
+- collection_efficiency
+- treatment_efficiency
+- organized_emission
+- unorganized_emission
+- air_volume_and_hours
+- formula_text

@@ -1,0 +1,27 @@
+{
+  "skill_id": "09",
+  "skill_name": "源强定量核算审核",
+  "source_workflow": "06_Dify工作流/10-运营期间产污系数与定量核算判定.yml",
+  "conclusion": "无法判断",
+  "confidence": 0.0,
+  "manual_review_needed": true,
+  "evidence_units": [],
+  "law_basis_used": [],
+  "check_items": [
+    {
+      "review_point": "源强定量核算审核",
+      "status": "证据不足",
+      "finding": "当前输入未提供可追溯证据，不能形成审核结论。",
+      "evidence_id": "",
+      "law_basis_id": "",
+      "manual_review_reason": "缺少报告原文位置和法规依据。"
+    }
+  ],
+  "missing_evidence": [
+    "报告原文证据片段",
+    "法规库命中条款"
+  ],
+  "calculation_trace": [],
+  "risk_tags": [],
+  "review_comment": "未提供可追溯证据，建议先补充报告对应章节、表名或页码后再执行本 skill。"
+}
