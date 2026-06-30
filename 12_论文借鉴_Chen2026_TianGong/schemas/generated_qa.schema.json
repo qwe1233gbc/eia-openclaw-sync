@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Generated EIA Audit QA",
+  "title": "Candidate EIA Audit Task",
+  "description": "用于记录由检索片段和种子问题生成的候选审核任务。该 schema 服务于人工复核和知识条件对照实验，不表示微调训练数据。",
   "type": "object",
   "required": ["question", "answer", "evidence", "review_status"],
   "properties": {
