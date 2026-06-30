@@ -63,6 +63,7 @@ SI 中最值得迁移的细节包括：
 - `paper_method_notes.md`：论文思路、可借鉴模块与本课题迁移方案。
 - `data_correspondence_no_finetune.md`：本项目数据与 Chen 2026 方法的对应关系，强调不微调路线。
 - `technical_route_comparison_chen2026_eia.md`：Chen 2026 技术路线与本课题现有数据、技术路线、缺口和后续任务的完整对照。
+- `data_to_add_checklist.md`：后续需要补充的数据清单，按优先级列出样本链、修改意见、评价题、标准校准和实验评分数据。
 - `open_source_project_map.md`：开源项目、许可证、可复用点和谨慎事项。
 - `SI_详细方法映射.md`：Supporting Information 的详细方法抽取。
 - `SI_评价验证框架_环评审核迁移.md`：面向本课题的评价与验证框架。
