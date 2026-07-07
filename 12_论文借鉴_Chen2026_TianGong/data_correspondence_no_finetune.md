@@ -21,7 +21,7 @@
 | --- | --- | --- | --- | --- |
 | 权威环境语料 | 环境教材、补充材料、结构化知识来源 | `01_塑胶指南原文与适用范围/`、`03_指南解析_明文标准库/`、`03_指南解析_明文标准库/Dify工作流知识库/` | 较高 | 作为标准依据库和 RAG 检索语料，不作为训练语料 |
 | 文档解析与切块 | OCR、chunk、metadata、向量库和全文库 | `standard_cards.jsonl`、`cards_by_skill/`、`DIFY_KB_SOURCE_MANIFEST.csv`、`configs/eia_plastic_hybrid_index.yaml` | 较高 | 用于混合检索，支持标准号、污染物、工艺和审核点召回 |
-| 种子问题驱动召回 | 用种子问题检索教材片段，再生成结构化 QA | `05_QA测试集/seed_qa_942题_151项目_phase1+phase2合并.xlsx`、`examples/seed_queries_eia_plastic.txt` | 中等 | 作为候选审核任务和检索入口，需人工筛选后进入评价集 |
+| 种子问题驱动召回 | 用种子问题检索教材片段，再生成结构化 QA | `05_QA测试集/seed_qa_942题_151项目_phase1+phase2合并_sample_chain_95_20260706.xlsx`、`examples/seed_queries_eia_plastic.txt` | 中等 | 当前主表 1037 行，另有 95 条样本链 QA，可作为候选审核任务和检索入口；需人工筛选后进入评价集 |
 | 结构化输出 schema | question、answer、reasoning、source chunk 等字段 | `schemas/generated_qa.schema.json`、`schemas/evaluation_record.schema.json`、`common_output_schema.json` | 较高 | 约束审核任务、候选答案和评价记录，不作为微调样本格式 |
 | Agentic workflow | LangGraph 检索、分发、分析和评价流程 | `09_环评审核技能库/`、`06_Dify工作流/`、`scripts/hybrid_retrieve.py` | 较高 | 将审核拆成 15 个单项 skill 和 1 个汇总 skill，作为工作流能力 |
 | 专家验证 | expert-in-the-loop，检查 factual alignment 和 contextual relevance | `manual_check` 字段、样本链、修改意见、专家复核计划 | 中等偏低 | 作为后续金标校准和剔除规则，当前仍需补充真实专家复核 |
@@ -66,7 +66,7 @@
 
 当前可对应 Chen 的“种子问题和测试题分类”部分，但还不能等同于正式测试集。
 
-- `05_QA测试集/seed_qa_942题_151项目_phase1+phase2合并.xlsx` 当前约 942 条种子问答；
+- `05_QA测试集/seed_qa_942题_151项目_phase1+phase2合并_sample_chain_95_20260706.xlsx` 当前主表 1037 行，并补充 95 条样本链 QA；
 - 字段包括项目、问题、答案、证据、来源依据、可验证性、人工复核等；
 - 其中部分人工审核列存在编码显示问题，后续应统一字段名并清理乱码列。
 
@@ -141,7 +141,7 @@ Chen 2026:
 
 优先顺序建议如下：
 
-1. 从 942 条种子问答中筛选 30-50 条证据链较完整的题目；
+1. 从 60 道正式评价候选题中优先复核 10-15 道样例，并逐步扩展到 40-60 道 verified gold；
 2. 对每题补齐标准依据、报告片段、修改意见或批复来源；
 3. 按 L1/L2/L3、审核领域、推理类型和功能能力进行标签化；
 4. 用 A/B/C/D 四组知识条件生成候选审核意见；
