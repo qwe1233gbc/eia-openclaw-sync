@@ -1,0 +1,10 @@
+version: v1
+five_score_bands:
+  - [0, 29]
+  - [30, 49]
+  - [50, 69]
+  - [70, 89]
+  - [90, 100]
+low_consistency_kappa_threshold: 0.4
+exclusion_is_automatic: false
+report_sensitivity_with_and_without_flagged_evaluators: true

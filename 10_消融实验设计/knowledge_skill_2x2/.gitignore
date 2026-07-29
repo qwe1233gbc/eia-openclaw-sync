@@ -1,0 +1,12 @@
+.cache/
+node_modules/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.inspect.ndjson
+private/blinding_key.json
+runs/raw_outputs/
+runs/validated_outputs/
+runs/traces/
+runs/blinded_packets/
+reports/*.preview.png

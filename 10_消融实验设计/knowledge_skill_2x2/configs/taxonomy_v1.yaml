@@ -1,0 +1,12 @@
+version: v1
+frozen_before_model_results: true
+source_workbook: ../../../05_QA测试集/四大类问答对_最终版.xlsx
+expected_question_count: 210
+template_defaults: ../taxonomy/template_default_mapping.csv
+override_requires_reason: true
+forbidden_inputs:
+  - experiment_group
+  - model_answer
+  - model_score
+  - rag_enabled
+  - workflow_enabled

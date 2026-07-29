@@ -1,0 +1,19 @@
+version: v1
+groups:
+  A: {knowledge: 0, workflow: 0}
+  B: {knowledge: 1, workflow: 0}
+  C: {knowledge: 0, workflow: 1}
+  D: {knowledge: 1, workflow: 1}
+bootstrap_repeats: 5000
+bootstrap_seed: 20260729
+lower_is_better_metrics:
+  - hallucination_rate
+  - miss_rate
+stratify_by:
+  - cognitive_level
+  - audit_domain
+  - reasoning_type
+  - primary_functional_capability
+  - knowledge_dependency
+  - workflow_dependency
+  - evidence_span

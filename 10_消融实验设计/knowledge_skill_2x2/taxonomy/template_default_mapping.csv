@@ -1,0 +1,8 @@
+﻿source_category,audit_domain,cognitive_level,reasoning_type,primary_functional_capability,knowledge_dependency,workflow_dependency,evidence_span,secondary_capabilities
+国民经济行业分类,industry_classification,L3_analysis,multi_evidence_synthesis,evidence_integration,high,high,cross_section,"[""report_grounding"", ""basis_grounding""]"
+环评投资概算,environmental_investment,L2_application,quantitative_verification,numerical_accuracy,low,medium,cross_section,"[""report_grounding"", ""procedural_reasoning""]"
+环境质量数据引用,environmental_quality_data,L3_analysis,consistency_comparison,evidence_integration,high,high,report_plus_external,"[""report_grounding"", ""basis_grounding""]"
+水污染物排放标准,water_emission_standard,L3_analysis,rule_applicability,basis_grounding,high,high,report_plus_external,"[""report_grounding"", ""procedural_reasoning""]"
+大气污染物排放标准,air_emission_standard,L3_analysis,multi_evidence_synthesis,basis_grounding,high,high,report_plus_external,"[""report_grounding"", ""evidence_integration""]"
+噪声排放标准,noise_emission_standard,L2_application,rule_applicability,basis_grounding,high,medium,report_plus_external,"[""report_grounding""]"
+固体废物控制标准,solid_waste_standard,L2_application,rule_applicability,basis_grounding,high,medium,report_plus_external,"[""report_grounding""]"
