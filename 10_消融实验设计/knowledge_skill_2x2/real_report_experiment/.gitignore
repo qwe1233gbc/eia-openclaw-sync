@@ -1,0 +1,13 @@
+.cache/
+**/__pycache__/
+.pytest_cache/
+
+# 由仓库外真实报告生成；可能包含完整或大段报告原文，不提交。
+data/report_documents/*.json
+snapshots/*.jsonl
+
+# 可从白名单和固定算法重建的大型知识快照。
+rag/corpus.jsonl
+
+# 单次运行产物可能包含报告片段；仅提交汇总报告，不提交原始运行包。
+runs/**

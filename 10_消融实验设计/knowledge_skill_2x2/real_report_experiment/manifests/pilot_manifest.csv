@@ -1,0 +1,5 @@
+﻿question_id,project_id,audit_category,gold_version,gold_review_status,experiment_inclusion,report_sha256,include,exclusion_reason,not_for_analysis
+PL003_V01_Q03,PL003,环评投资概算,,未复核,候选池,37ed2244ce694a02ef32940abbebc79f297e2565f23a544774081402f9d7fbe4,true,,true
+PL002_Emission_噪声,PL002,噪声排放标准,,未复核,候选池,720efa2925c5002f7f7ec8d04a0e313c3d72359f5b715de1cf88eb1f47023be7,true,,true
+PL002_Emission_水污,PL002,水污染物排放标准,,未复核,候选池,720efa2925c5002f7f7ec8d04a0e313c3d72359f5b715de1cf88eb1f47023be7,true,,true
+PL002_Emission_大气,PL002,大气污染物排放标准,,未复核,候选池,720efa2925c5002f7f7ec8d04a0e313c3d72359f5b715de1cf88eb1f47023be7,true,,true

@@ -1,0 +1,32 @@
+{
+  "skill_id": "procedure_ead887217f",
+  "task_name": "环境质量数据引用",
+  "required_report_fields": [
+    "项目事实",
+    "报告所列依据",
+    "数值及单位",
+    "证据位置"
+  ],
+  "procedure_steps": [
+    "evidence_extraction",
+    "task_planning",
+    "calculation_or_cross_check",
+    "basis_requirement_detection",
+    "evidence_sufficiency_check",
+    "final_synthesis",
+    "提取与问题有关的报告事实",
+    "逐项检查证据充分性"
+  ],
+  "calculation_rules": [
+    "如涉及比例或合计，使用报告原始数值复算并保留计算式"
+  ],
+  "cross_check_rules": [
+    "跨章节核对同一事实、数值、单位和适用边界是否一致"
+  ],
+  "insufficient_evidence_policy": "不得猜测；标记证据不足或需人工复核，并说明缺少的证据类型。",
+  "output_mapping": {
+    "result": "audit_output_v1"
+  },
+  "source_skill_path": "09_环评审核技能库（仅记录来源；实验文件已去知识化）",
+  "skill_sha256": "abc50643488cedd4117304a748d1361314e11d2c22ad64b06862ea47109450be"
+}
