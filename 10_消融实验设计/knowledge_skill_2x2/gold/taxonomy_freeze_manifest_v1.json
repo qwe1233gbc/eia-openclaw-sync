@@ -4,6 +4,8 @@
   "taxonomy_jsonl_sha256": "95dd54d7f8217e68fce89ec05b205d39c7b8ab4666534c8000b2521f56ef8ace",
   "classification_uses_model_results": false,
   "pilot_selection": {
+    "selection_frozen": false,
+    "selection_status": "candidate_not_frozen",
     "projects": [
       "PL001",
       "PL002",
