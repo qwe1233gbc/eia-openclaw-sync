@@ -52,7 +52,8 @@ def main() -> None:
                         "evidence_span",
                     )
                 },
-                "sample_selection_frozen": True,
+                "sample_selection_frozen": False,
+                "selection_status": "candidate_not_frozen",
             }
         )
     write_jsonl(ROOT / "gold" / "pilot_questions_18.jsonl", output)
@@ -74,7 +75,7 @@ def main() -> None:
         "",
         *[f"- `{key}`：{value}" for key, value in sorted(judgements.items())],
         "",
-        "选题ID已冻结；待人工确认仅影响金标终审，不得据模型结果反向改题或改分类。",
+        "当前18题仅为候选，选题与金标均未冻结；不得据模型结果反向改题或改分类。",
     ]
     (ROOT / "reports" / "pilot_sample_taxonomy_distribution.md").write_text(
         "\n".join(report) + "\n", encoding="utf-8"
