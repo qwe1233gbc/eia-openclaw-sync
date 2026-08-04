@@ -19,6 +19,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
@@ -49,4 +51,9 @@ jobs:
       - name: Run unit tests
         run: python -m unittest discover -s 12_论文借鉴_Chen2026_TianGong/scripts/tests -p "test_*.py" -v
       - name: Check whitespace errors
-        run: git diff --check HEAD^
+        run: |
+          if [ -n "${{ github.base_ref }}" ]; then
+            git diff --check "origin/${{ github.base_ref }}...HEAD"
+          else
+            git diff --check
+          fi
