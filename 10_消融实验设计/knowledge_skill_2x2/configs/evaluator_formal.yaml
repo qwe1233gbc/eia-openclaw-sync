@@ -1,0 +1,13 @@
+mode: formal
+provider: openai
+models:
+  - USER_MUST_FREEZE_PRIMARY_MODEL_VERSION
+  - USER_MUST_FREEZE_REVIEW_MODEL_VERSION
+temperature: 0
+max_tokens: 2000
+repeats: 1
+retry_count: 2
+minimum_multi_evaluator_fraction: 0.30
+prompt: ../prompts/gpt_blinded_evaluator_v1.md
+schema: ../schemas/gpt_evaluation_v1.schema.json
+scoring_date: null

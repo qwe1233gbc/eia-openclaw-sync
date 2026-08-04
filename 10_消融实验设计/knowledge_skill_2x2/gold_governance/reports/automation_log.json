@@ -1,0 +1,27 @@
+{
+  "run_date": "2026-07-29",
+  "pipeline": "candidate_only_gold_governance_v1",
+  "source": "05_QA测试集/四大类问答对_最终版.xlsx",
+  "records": 210,
+  "automatic_rules": [
+    "LONG_TEXT_CONTAINS_POSITIVE_CONCLUSION",
+    "MAP_112",
+    "MAP_BLANK",
+    "MAP_不正确",
+    "MAP_存在缺漏",
+    "MAP_存在错误",
+    "MAP_无法判断",
+    "MAP_无法判断+EVIDENCE_INSUFFICIENCY_SIGNAL",
+    "MAP_无误",
+    "MAP_正确",
+    "MAP_需修正",
+    "MAP_需复核",
+    "MAP_需复核+EVIDENCE_INSUFFICIENCY_SIGNAL"
+  ],
+  "gold_review_status_written": [
+    "未复核"
+  ],
+  "normalized_final_nonblank": 0,
+  "experiment_execution": false,
+  "model_scoring": false
+}

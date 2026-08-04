@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "audit_output_v1.schema.json",
+  "title": "Unified EIA audit output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "question_id",
+    "judgement",
+    "judgement_confidence",
+    "report_evidence",
+    "basis_status",
+    "cited_bases",
+    "identified_issues",
+    "suggested_revision",
+    "uncertainty_reason",
+    "abstain"
+  ],
+  "properties": {
+    "schema_version": {"const": "audit_output_v1"},
+    "question_id": {"type": "string", "minLength": 1},
+    "judgement": {
+      "enum": ["无误", "存在错误", "存在缺漏", "证据不足", "需人工复核"]
+    },
+    "judgement_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "report_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["evidence_id", "source_location", "evidence_text", "supports"],
+        "properties": {
+          "evidence_id": {"type": "string", "pattern": "^E[0-9]+$"},
+          "source_location": {"type": ["string", "null"]},
+          "evidence_text": {"type": "string"},
+          "supports": {"enum": ["项目事实", "问题判断", "不确定性"]}
+        }
+      }
+    },
+    "basis_status": {
+      "enum": ["supported", "unavailable", "insufficient", "conflict", "not_required"]
+    },
+    "cited_bases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "basis_id",
+          "standard_name",
+          "standard_no",
+          "clause_or_table",
+          "quoted_or_summarized_basis",
+          "applicability",
+          "applicability_reason"
+        ],
+        "properties": {
+          "basis_id": {"type": ["string", "null"]},
+          "standard_name": {"type": ["string", "null"]},
+          "standard_no": {"type": ["string", "null"]},
+          "clause_or_table": {"type": ["string", "null"]},
+          "quoted_or_summarized_basis": {"type": ["string", "null"]},
+          "applicability": {"enum": ["applicable", "not_applicable", "uncertain"]},
+          "applicability_reason": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "identified_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "issue_id",
+          "issue_type",
+          "issue_description",
+          "linked_evidence_ids",
+          "linked_basis_ids"
+        ],
+        "properties": {
+          "issue_id": {"type": "string", "pattern": "^I[0-9]+$"},
+          "issue_type": {
+            "enum": ["依据错误", "依据缺漏", "证据缺漏", "计算错误", "内容不一致", "无问题", "其他"]
+          },
+          "issue_description": {"type": "string"},
+          "linked_evidence_ids": {"type": "array", "items": {"type": "string"}},
+          "linked_basis_ids": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "suggested_revision": {"type": ["string", "null"]},
+    "uncertainty_reason": {"type": ["string", "null"]},
+    "abstain": {"type": "boolean"}
+  }
+}

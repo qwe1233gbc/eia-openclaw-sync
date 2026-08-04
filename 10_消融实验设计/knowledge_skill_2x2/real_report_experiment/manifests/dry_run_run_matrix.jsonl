@@ -1,0 +1,16 @@
+{"audit_category":"环评投资概算","experiment_id":"dry_run_v1","group":"A","not_for_analysis":"true","project_id":"PL003","question_id":"PL003_V01_Q03","repeat":1,"run_id":"dry_run_PL003_V01_Q03_A_r1"}
+{"audit_category":"环评投资概算","experiment_id":"dry_run_v1","group":"B","not_for_analysis":"true","project_id":"PL003","question_id":"PL003_V01_Q03","repeat":1,"run_id":"dry_run_PL003_V01_Q03_B_r1"}
+{"audit_category":"环评投资概算","experiment_id":"dry_run_v1","group":"C","not_for_analysis":"true","project_id":"PL003","question_id":"PL003_V01_Q03","repeat":1,"run_id":"dry_run_PL003_V01_Q03_C_r1"}
+{"audit_category":"环评投资概算","experiment_id":"dry_run_v1","group":"D","not_for_analysis":"true","project_id":"PL003","question_id":"PL003_V01_Q03","repeat":1,"run_id":"dry_run_PL003_V01_Q03_D_r1"}
+{"audit_category":"噪声排放标准","experiment_id":"dry_run_v1","group":"A","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_噪声","repeat":1,"run_id":"dry_run_PL002_Emission_噪声_A_r1"}
+{"audit_category":"噪声排放标准","experiment_id":"dry_run_v1","group":"B","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_噪声","repeat":1,"run_id":"dry_run_PL002_Emission_噪声_B_r1"}
+{"audit_category":"噪声排放标准","experiment_id":"dry_run_v1","group":"C","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_噪声","repeat":1,"run_id":"dry_run_PL002_Emission_噪声_C_r1"}
+{"audit_category":"噪声排放标准","experiment_id":"dry_run_v1","group":"D","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_噪声","repeat":1,"run_id":"dry_run_PL002_Emission_噪声_D_r1"}
+{"audit_category":"水污染物排放标准","experiment_id":"dry_run_v1","group":"A","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_水污","repeat":1,"run_id":"dry_run_PL002_Emission_水污_A_r1"}
+{"audit_category":"水污染物排放标准","experiment_id":"dry_run_v1","group":"B","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_水污","repeat":1,"run_id":"dry_run_PL002_Emission_水污_B_r1"}
+{"audit_category":"水污染物排放标准","experiment_id":"dry_run_v1","group":"C","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_水污","repeat":1,"run_id":"dry_run_PL002_Emission_水污_C_r1"}
+{"audit_category":"水污染物排放标准","experiment_id":"dry_run_v1","group":"D","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_水污","repeat":1,"run_id":"dry_run_PL002_Emission_水污_D_r1"}
+{"audit_category":"大气污染物排放标准","experiment_id":"dry_run_v1","group":"A","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_大气","repeat":1,"run_id":"dry_run_PL002_Emission_大气_A_r1"}
+{"audit_category":"大气污染物排放标准","experiment_id":"dry_run_v1","group":"B","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_大气","repeat":1,"run_id":"dry_run_PL002_Emission_大气_B_r1"}
+{"audit_category":"大气污染物排放标准","experiment_id":"dry_run_v1","group":"C","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_大气","repeat":1,"run_id":"dry_run_PL002_Emission_大气_C_r1"}
+{"audit_category":"大气污染物排放标准","experiment_id":"dry_run_v1","group":"D","not_for_analysis":"true","project_id":"PL002","question_id":"PL002_Emission_大气","repeat":1,"run_id":"dry_run_PL002_Emission_大气_D_r1"}

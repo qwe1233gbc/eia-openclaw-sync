@@ -1,0 +1,25 @@
+version: gpt_evaluation_v1
+universal_max:
+  judgement_correctness: 20
+  report_evidence_quality: 15
+  key_issue_completeness: 15
+  logical_consistency_and_uncertainty: 10
+functional_modules:
+  report_grounding:
+    key_report_evidence_recall: 20
+    evidence_conclusion_alignment: 20
+  basis_grounding:
+    basis_authenticity_and_version: 15
+    basis_applicability: 15
+    clause_conclusion_alignment: 10
+  numerical_accuracy:
+    formula_and_calculation: 20
+    values_units_and_result: 20
+  procedural_reasoning:
+    audit_step_coverage: 15
+    sequence_and_cross_check: 15
+    insufficient_evidence_escalation: 10
+  evidence_integration:
+    multi_source_evidence_coverage: 15
+    conflict_handling: 10
+    synthesis_completeness: 15

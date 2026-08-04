@@ -1,0 +1,5 @@
+group: D
+rag_enabled: true
+workflow_enabled: true
+rag_context_source: same_as_B
+workflow_type: same_as_C
