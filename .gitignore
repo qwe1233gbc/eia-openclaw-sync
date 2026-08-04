@@ -49,3 +49,14 @@ node_modules/
 # === IDE ===
 .vscode/
 .idea/
+
+# === Formal RAG privacy/runtime exclusions ===
+.env
+.env.*
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+.cache/
+rag_index/
+private_reports/
+raw_api_logs/

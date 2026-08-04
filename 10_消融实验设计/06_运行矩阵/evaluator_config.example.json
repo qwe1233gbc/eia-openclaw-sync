@@ -1,0 +1,8 @@
+{
+  "provider": "openai_compatible",
+  "base_url": "https://example.invalid/v1",
+  "model": "blind_evaluator_model",
+  "api_key_env": "EVALUATOR_API_KEY",
+  "blind_to_group": true,
+  "temperature": 0
+}

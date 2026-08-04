@@ -30,3 +30,11 @@
 `03_指南解析_明文标准库/`
 
 然后在 `09_环评审核技能库` 的每个 `config.yaml` 中增加标准库引用。
+
+
+## 正式RAG、标准卡与审核程序边界
+
+- 权威法规、标准、公报和区划原文是正式RAG证据。
+- 标准卡与`cards_by_skill`只用于路由、查询扩展和原文定位。
+- 审核步骤、`check_logic`、`required_evidence`和输出示例属于Skill，不进入B/D组RAG正文。
+- 正式治理材料见`formal_rag/`，正式父子块见`formal_rag_chunks/`，质量审计见`formal_rag_quality/`。

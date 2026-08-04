@@ -1,0 +1,67 @@
+registry_version: 2026-08-04-formal
+boundary: skill_procedure_only
+skills:
+  - skill_id: '01'
+    name: 国民经济行业类别审核
+    path: 09_环评审核技能库/01_国民经济行业类别审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '02'
+    name: 环评投资核算审核
+    path: 09_环评审核技能库/02_环评投资核算审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '03'
+    name: 三线一单符合性审核
+    path: 09_环评审核技能库/03_三线一单符合性审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '04'
+    name: 建设内容完整性审核
+    path: 09_环评审核技能库/04_建设内容完整性审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '05'
+    name: 环境质量现状数据审核
+    path: 09_环评审核技能库/05_环境质量现状数据审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '06'
+    name: 环境质量执行标准审核
+    path: 09_环评审核技能库/06_环境质量执行标准审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '07'
+    name: 污染物排放标准审核
+    path: 09_环评审核技能库/07_污染物排放标准审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '08'
+    name: 产污系数适用性审核
+    path: 09_环评审核技能库/08_产污系数适用性审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '09'
+    name: 源强定量核算审核
+    path: 09_环评审核技能库/09_源强定量核算审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '10'
+    name: 废气收集形式审核
+    path: 09_环评审核技能库/10_废气收集形式审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '11'
+    name: 废气设计风量审核
+    path: 09_环评审核技能库/11_废气设计风量审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '12'
+    name: 废气收集效率审核
+    path: 09_环评审核技能库/12_废气收集效率审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '13'
+    name: 活性炭参数审核
+    path: 09_环评审核技能库/13_活性炭参数审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '14'
+    name: 危险废物识别审核
+    path: 09_环评审核技能库/14_危险废物识别审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '15'
+    name: VOCs总量控制审核
+    path: 09_环评审核技能库/15_VOCs总量控制审核/SKILL.md
+    role: single_question_audit
+  - skill_id: '99'
+    name: 总审核汇总
+    path: 09_环评审核技能库/99_总审核汇总/SKILL.md
+    role: summary_only
