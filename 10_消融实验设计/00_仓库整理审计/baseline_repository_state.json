@@ -1,0 +1,10 @@
+{
+  "repository_full_name": "qwe1233gbc/eia-openclaw-sync",
+  "current_branch": "codex/organize-formal-rag-and-ablation-20260804-164130",
+  "baseline_commit_sha": "c1ce119c239eaa5bfe2bf139e2dc81055b293295",
+  "remote_main_commit_sha": "c1ce119c239eaa5bfe2bf139e2dc81055b293295",
+  "working_tree_status_at_start": "clean",
+  "baseline_tracked_file_count": 49,
+  "captured_at": "2026-08-04T16:41:30+08:00",
+  "note": "独立worktree；原候选仓库的未提交内容未被读取、覆盖或暂存。"
+}

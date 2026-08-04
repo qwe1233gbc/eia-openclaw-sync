@@ -120,3 +120,8 @@ python 12_论文借鉴_Chen2026_TianGong/scripts/hybrid_retrieve.py ^
 ```
 
 默认使用 `hash` 向量模式，便于无 API key 时本地复现流程。后续如需服务化，可替换为 OpenAI embedding、FAISS、Chroma、Pinecone 或 OpenSearch。
+
+
+## 正式RAG与旧原型边界（2026-08-04）
+
+`build_hybrid_index.py`、`hybrid_retrieve.py`和`eia_plastic_hybrid_index.yaml`标记为`legacy_local_hybrid_retrieval_prototype`：SQLite＋FTS5＋hash embedding＋RRF，仅用于方法原型，不作为正式B/D组RAG。正式设计见`formal_rag_design_vs_legacy.md`。

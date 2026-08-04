@@ -1,0 +1,12 @@
+version: v2
+scope: positive_control_21_questions
+groups:
+  A: {report: true, rag: false, skill: false}
+  B: {report: true, rag: true, skill: false}
+  C: {report: true, rag: false, skill: true}
+  D: {report: true, rag: true, skill: true}
+constraints:
+  report_hash_equal_across_abcd: true
+  rag_hash_equal_between_b_d: true
+  skill_hash_equal_between_c_d: true
+  d_has_no_extra_input: true

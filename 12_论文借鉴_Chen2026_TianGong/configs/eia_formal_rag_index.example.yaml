@@ -1,0 +1,15 @@
+name: eia_formal_rag
+status: example_not_currently_configured
+source_manifest: ../../03_指南解析_明文标准库/formal_rag/source_manifest.jsonl
+parent_chunks: ../../03_指南解析_明文标准库/formal_rag_chunks/parent_chunks.jsonl
+child_chunks: ../../03_指南解析_明文标准库/formal_rag_chunks/child_chunks.jsonl
+retrieval:
+  sparse: bm25
+  dense_embedding: REPLACE_WITH_MODEL_AND_REVISION
+  reranker: REPLACE_WITH_MODEL_AND_REVISION
+  parent_child: true
+forbidden_sources:
+  - 05_QA测试集
+  - 09_环评审核技能库
+  - 06_Dify工作流
+  - 10_消融实验设计
