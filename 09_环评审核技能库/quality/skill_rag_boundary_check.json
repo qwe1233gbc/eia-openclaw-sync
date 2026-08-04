@@ -1,6 +1,6 @@
 {
   "checked_at": "2026-08-04",
-  "snapshot_version": "v2_complementarity",
+  "snapshot_version": "v2.1_pr17_acceptance",
   "single_skills": 15,
   "runtime_rag_declared": 15,
   "safe_degradation_declared": 15,
