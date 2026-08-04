@@ -1,0 +1,32 @@
+{
+  "scope": "skills_to_standard_mapping -> formal source manifest + frozen RAG contexts + v2 run matrix",
+  "skills_checked": 15,
+  "manifest_sources": 26,
+  "candidate_references_checked": 44,
+  "metadata_only_references_checked": 1,
+  "frozen_rag_contexts_checked": 42,
+  "errors": [],
+  "warnings": [
+    {
+      "skill_id": "07",
+      "source_id": "SOLID_HW2021_HIST",
+      "type": "historical_source_requires_report_time_filter"
+    },
+    {
+      "skill_id": "07",
+      "source_id": "SOLID_GB34330_2017_HIST",
+      "type": "historical_source_requires_report_time_filter"
+    },
+    {
+      "skill_id": "14",
+      "source_id": "SOLID_HW2021_HIST",
+      "type": "historical_source_requires_report_time_filter"
+    },
+    {
+      "skill_id": "14",
+      "source_id": "SOLID_GB34330_2017_HIST",
+      "type": "historical_source_requires_report_time_filter"
+    }
+  ],
+  "pass": true
+}
