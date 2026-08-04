@@ -1,6 +1,7 @@
 {
   "frozen_at": "2026-08-04",
-  "snapshot_file_sha256": "1d065210273a1f0f7e2ea344d5e21895bfecd5ca3b13c042770f12316e5373ba",
+  "snapshot_file_sha256": "76b47b651cb2abed5f39f9af9fd2cbd1927c011e4deb5620667f22ae1cd3e1ec",
   "qa_excel_sha256": "b71519a9519fd491cf8ce21d6ea2ba4836faf28755f4e69f46970755fb6c275d",
-  "gold_fields_read_before_freeze": 0
+  "gold_fields_read_before_freeze": 0,
+  "snapshot_version": "v2.2_pr17_followup"
 }

@@ -1,0 +1,76 @@
+{
+  "file_path": "E:/浏览器下载内容/GBT+18920-2020.pdf",
+  "file_name": "GBT+18920-2020.pdf",
+  "file_sha256": "fcaac95aef0896c279385124cd0313a8e45eae6efd251f3747722b3037aea539",
+  "file_size": 487041,
+  "page_count": 8,
+  "candidate_files": [
+    {
+      "actual_file_path": "E:/浏览器下载内容/GBT+18920-2020.pdf",
+      "file_name": "GBT+18920-2020.pdf",
+      "file_size": 487041,
+      "modified_time": "2026-08-04T20:57:30.6856482+08:00",
+      "sha256": "fcaac95aef0896c279385124cd0313a8e45eae6efd251f3747722b3037aea539",
+      "file_type": "PDF",
+      "selected": true
+    },
+    {
+      "actual_file_path": "E:/浏览器下载内容/standards_downloads/GB_T18920-2020_城市污水再生利用_城市杂用水水质.pdf",
+      "file_name": "GB_T18920-2020_城市污水再生利用_城市杂用水水质.pdf",
+      "file_size": 4934328,
+      "modified_time": "2026-06-12T21:46:08.2845172+08:00",
+      "sha256": "4ddc72bb5b93ce933b08e0269cd196960d0dc291cbe5e186b0c651849c697af9",
+      "file_type": "PDF",
+      "selected": false,
+      "exclusion_reason": "误命名；实际为97页《宜城市中心城区给水工程专项规划（2021—2035）》"
+    },
+    {
+      "actual_file_path": "repository_external_metadata_page",
+      "file_name": "GBT18920-2020_官方元数据页.html",
+      "file_size": 24170,
+      "modified_time": "2026-08-04T17:41:08.2622121+08:00",
+      "sha256": "439576dd84532c27d98ba588c991e7d1a3abeac02f34c5d1b86ca11a1865b6ca",
+      "file_type": "HTML",
+      "selected": false,
+      "exclusion_reason": "官方元数据，不是全文"
+    }
+  ],
+  "document_number_verified": true,
+  "document_title_verified": true,
+  "issuer_verified": true,
+  "issue_date_verified": true,
+  "effective_date_verified": true,
+  "issuer": "国家市场监督管理总局、国家标准化管理委员会",
+  "issue_date": "2020-03-31",
+  "effective_date": "2021-02-01",
+  "page_sequence_complete": true,
+  "sections_verified": [
+    "范围",
+    "规范性引用文件",
+    "术语和定义",
+    "水质指标",
+    "采样与监测",
+    "安全利用"
+  ],
+  "table_1_complete": true,
+  "tables_verified": [
+    "表1",
+    "表2",
+    "表3",
+    "表4",
+    "表5",
+    "表6"
+  ],
+  "full_text_verified": true,
+  "source_provenance": "user_provided_verified_fulltext; formal standard publication layout; official metadata independently linked",
+  "extraction_method": "native PDF text extraction plus Poppler 150 dpi page rendering and manual visual cross-check",
+  "ocr_used": false,
+  "manual_table_review_completed": true,
+  "raw_pdf_committed": false,
+  "errors": [],
+  "warnings": [
+    "部分嵌入字体导致原生文本层首部字形映射异常；所有8页及表1跨页内容已按渲染图像人工交叉核验。",
+    "文件由用户提供，不将official_url表述为该PDF的下载来源。"
+  ],
+  "pass": true
+}
