@@ -61,6 +61,8 @@
     "pollution_medium": "",
     "waterbody_or_area": "",
     "standard_category": "",
+    "evaluation_factor": "",
+    "averaging_time": "",
     "valid_time": ""
   },
   "effective_date": "",
@@ -106,9 +108,10 @@
 - 功能区
 - 水体
 - 评价因子
+- 平均时间
 - 标准有效时点
 
-统一查询模板：`{audit_category} {region} {functional_zone} {pollution_medium} {waterbody_or_area} {standard_category} {valid_time}`。
+统一查询模板：`{audit_category} {region} {functional_zone} {pollution_medium} {waterbody_or_area} {standard_category} {evaluation_factor} {averaging_time} {valid_time}`。
 
 ## 7. 审核程序
 
@@ -129,7 +132,7 @@
 
 ## 9. 外部依据比较
 
-仅当`rag_evidence`存在且来源、版本、有效时点及本Skill的必要适用性维度足以判断时，才逐项比较报告值与RAG值。本Skill必须核对：`region`、`functional_zone`、`pollution_medium`、`waterbody_or_area`、`standard_category`、`valid_time`。不相关字段不得作为强制门槛；任一必要维度未知时，不得输出确定的外部依据结论。
+仅当`rag_evidence`存在且来源、版本、有效时点及本Skill的必要适用性维度足以判断时，才逐项比较报告值与RAG值。本Skill必须核对：`region`、`functional_zone`、`pollution_medium`、`waterbody_or_area`、`standard_category`、`evaluation_factor`、`averaging_time`、`valid_time`。评价因子与平均时间必须成对核对，不能把年均、日均、小时均值或瞬时值混用。不相关字段不得作为强制门槛；任一必要维度未知时，不得输出确定的外部依据结论。
 
 ## 10. 证据不足与降级规则
 

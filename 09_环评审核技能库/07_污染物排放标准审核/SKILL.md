@@ -73,6 +73,8 @@
 
 `case_hints`只允许`source_type=expert_heuristic`或`case_experience`，只能形成风险提示，不能单独支撑最终正确/错误结论。
 
+适用性字段允许使用`not_applicable`明确表示当前污染介质不需要该维度；`not_applicable`不等于缺失。只有当前介质真正必要的字段为`null`、空值或无法从报告证据确定时，才可据此判定`basis_status=insufficient`。
+
 ## 4. 报告证据字段
 
 | 字段 | 要求 |
@@ -119,6 +121,8 @@
 
 统一查询模板：`{audit_category} {region} {industry} {process} {pollutant} {pollution_medium} {emission_mode} {discharge_destination} {valid_time}`。
 
+按介质条件化构造查询：废气重点填充`pollutant`、`emission_mode`及排放口/厂界条件；废水重点填充`pollutant`、`discharge_destination`及纳管、外排或回用条件；噪声重点填充厂界、功能区、时段和边界条件，`discharge_destination=not_applicable`不构成缺失；固体废物重点填充废物类别、贮存方式、利用处置去向和有效版本，`emission_mode=not_applicable`不构成缺失。
+
 ## 7. 审核程序
 
 1. 建立工序—污染物—治理—排放形式清单
@@ -139,13 +143,14 @@
 
 ## 9. 外部依据比较
 
-仅当`rag_evidence`存在且来源、版本、有效时点及本Skill的必要适用性维度足以判断时，才逐项比较报告值与RAG值。本Skill必须核对：`region`、`industry`、`process`、`pollutant`、`pollution_medium`、`emission_mode`、`discharge_destination`、`valid_time`。不相关字段不得作为强制门槛；任一必要维度未知时，不得输出确定的外部依据结论。`metadata_only_source_ids`只能提示标准存在和正文缺口，不得放入`rag_evidence`或支撑匹配/不匹配；若结论依赖该正文，必须输出`basis_status=insufficient`、`conclusion=无法判断`、`manual_review_needed=true`。
+仅当`rag_evidence`存在且来源、版本、有效时点及本Skill的必要适用性维度足以判断时，才逐项比较报告值与RAG值。本Skill的通用维度为`region`、`industry`、`process`、`pollutant`、`pollution_medium`、`emission_mode`、`discharge_destination`、`valid_time`，但应按介质解释：废气核对污染物、排放形式和排放口/厂界；废水核对污染物、去向和纳管/外排/回用；噪声核对厂界、功能区、时段和边界；固废核对类别、贮存、利用处置去向和版本。明确的`not_applicable`应视为已判定不适用，不得作为缺失门槛；真正必要维度未知时才不得输出确定的外部依据结论。`metadata_only_source_ids`只能提示标准存在和正文缺口，不得放入`rag_evidence`或支撑匹配/不匹配；若结论依赖该正文，必须输出`basis_status=insufficient`、`conclusion=无法判断`、`manual_review_needed=true`。
 
 ## 10. 证据不足与降级规则
 
 - `rag_evidence`充分且可适用：`basis_status=available`。
 - 本任务不需要外部规范常量，只做报告内部算术或一致性：`basis_status=not_required`。
 - 需要外部依据但RAG为空、版本未知、条款不适用或来源不可追溯：`basis_status=insufficient`，结论降级为`无法判断`或仅报告内部问题。
+- 字段为`not_applicable`时先按污染介质核实其确实不适用；经核实后不得仅因该字段判定`insufficient`。废气、废水、噪声、固废分别按第6节的条件化必要字段判断。
 - C组没有RAG时仍完成证据抽取和可独立复算，但不得给出法规限值、固定标准适用结论，也不得把“缺少RAG”误判为“报告错误”。
 
 ## 11. 结论分级

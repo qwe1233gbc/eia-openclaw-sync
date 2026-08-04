@@ -1,4 +1,4 @@
-mapping_version: 2026-08-04-complementarity-v2.1-pr17
+mapping_version: 2026-08-04-complementarity-v2.2-pr17-followup
 purpose: runtime_rag_routing_only
 query_template_policy: defined_per_skill
 applicability_policy: skill_specific_required_dimensions
@@ -54,8 +54,8 @@ mappings:
       - 功能区划
     candidate_source_ids:
       - NOISE_FOSHAN_ZONING_2024
-    query_template: '{audit_category} {region} {functional_zone} {pollution_medium} {waterbody_or_area} {standard_category} {valid_time}'
-    required_applicability_dimensions: [region, functional_zone, pollution_medium, waterbody_or_area, standard_category, valid_time]
+    query_template: '{audit_category} {region} {functional_zone} {pollution_medium} {waterbody_or_area} {standard_category} {evaluation_factor} {averaging_time} {valid_time}'
+    required_applicability_dimensions: [region, functional_zone, pollution_medium, waterbody_or_area, standard_category, evaluation_factor, averaging_time, valid_time]
   - skill_id: '07'
     audit_category: 污染物排放标准
     candidate_domains:
@@ -68,6 +68,7 @@ mappings:
       - WATER_DB44_26_2001
       - WATER_GB18918_2002
       - WATER_GB18918_MOD2025
+      - WATER_GBT18920_2020
       - NOISE_GB12348_2008
       - NOISE_FOSHAN_ZONING_2024
       - SOLID_WASTE_LAW_2020
@@ -87,9 +88,8 @@ mappings:
       - AIR_GB33372_2020
       - AIR_GB38508_2020
       - AIR_GB37822_2019
-    metadata_only_source_ids:
-      - WATER_GBT18920_2020_METADATA
-    metadata_only_policy: discovery_only_not_formal_rag_evidence
+    metadata_only_source_ids: []
+    metadata_only_policy: superseded_metadata_discovery_record_not_active
     query_template: '{audit_category} {region} {industry} {process} {pollutant} {pollution_medium} {emission_mode} {discharge_destination} {valid_time}'
     required_applicability_dimensions: [region, industry, process, pollutant, pollution_medium, emission_mode, discharge_destination, valid_time]
   - skill_id: '08'

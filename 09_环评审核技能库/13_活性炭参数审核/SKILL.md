@@ -128,9 +128,14 @@
 
 ## 8. 计算与内部一致性复核
 
-1. period_load = inlet_mass × removal_fraction × operating_time
-2. replacement_cycle = effective_carbon_capacity / adsorbed_load
-3. spent_carbon应与装填量和更换次数闭合；参数必须标注来源
+1. 先统一浓度、风量、时间和质量单位，再按实际系统边界计算：`inlet_mass_rate = inlet_concentration × airflow`。
+2. `adsorbed_mass_rate = inlet_mass_rate × applicable_capture_or_removal_fraction`。收集效率（capture efficiency）与治理去除效率（removal efficiency）含义不同，不得混用或重复相乘。
+3. `period_adsorbed_mass = adsorbed_mass_rate × operating_time`。
+4. `available_adsorption_mass = carbon_mass × effective_adsorption_capacity`。
+5. `replacement_interval = available_adsorption_mass / adsorbed_mass_rate`；同时用周期吸附量校核装填量和更换次数。
+6. `effective_adsorption_capacity`若来自规范或技术资料，必须由RAG提供；报告内部参数可独立复算，外部经验阈值只能进入`risk_hints`。
+7. 多床层、并联和轮换运行须按实际系统边界分别核算有效炭量、运行时间和负荷，不得把备用床或非同时运行单元重复计入。
+8. `spent_carbon`应与装填量和更换次数闭合；所有参数必须标注来源。
 
 纯算术和报告内部一致性不依赖RAG；外部规范参数必须标注`source_id`和条款来源。
 
