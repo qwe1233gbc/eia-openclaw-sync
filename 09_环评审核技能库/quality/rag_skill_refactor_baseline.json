@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-08-04",
+  "repository": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-rag-skill-refactor-20260804",
+  "branch": "codex/refactor-rag-skill-complementarity-20260804",
+  "base_remote": "origin/main",
+  "base_commit": "0155d3690f93f3906bb83a73eed7464062fd2f1f",
+  "expected_clean_before_generation": true,
+  "scope": "15 single-question Skills plus 99 summary boundary scan"
+}
