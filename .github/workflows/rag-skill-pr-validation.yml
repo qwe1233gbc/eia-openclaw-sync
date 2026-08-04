@@ -1,0 +1,52 @@
+name: RAG and Skill PR validation
+
+on:
+  pull_request:
+    paths:
+      - "03_指南解析_明文标准库/**"
+      - "09_环评审核技能库/**"
+      - "10_消融实验设计/**"
+      - "12_论文借鉴_Chen2026_TianGong/scripts/**"
+      - ".github/workflows/rag-skill-pr-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install lightweight validation dependency
+        run: python -m pip install PyYAML
+      - name: Parse core YAML files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+          for path in (
+              "03_指南解析_明文标准库/skills_to_standard_mapping.yaml",
+              "09_环评审核技能库/formal_skill_registry.yaml",
+              "03_指南解析_明文标准库/formal_rag_quality/rag_field_allowlist.yaml",
+              "03_指南解析_明文标准库/formal_rag_quality/rag_field_blocklist.yaml",
+          ):
+              yaml.safe_load(Path(path).read_text(encoding="utf-8"))
+          PY
+      - name: Run deterministic validators
+        run: |
+          python 12_论文借鉴_Chen2026_TianGong/scripts/audit_rag_skill_overlap.py
+          python 12_论文借鉴_Chen2026_TianGong/scripts/validate_skill_runtime_dependency.py
+          python 12_论文借鉴_Chen2026_TianGong/scripts/validate_rag_skill_isolation.py
+          python 12_论文借鉴_Chen2026_TianGong/scripts/validate_snapshot_hashes.py
+          python 12_论文借鉴_Chen2026_TianGong/scripts/validate_formal_rag_sources.py
+          python 12_论文借鉴_Chen2026_TianGong/scripts/validate_rag_mapping_referential_integrity.py
+          python 12_论文借鉴_Chen2026_TianGong/scripts/validate_historical_source_runtime_filter.py
+      - name: Run unit tests
+        run: python -m unittest discover -s 12_论文借鉴_Chen2026_TianGong/scripts/tests -p "test_*.py" -v
+      - name: Check whitespace errors
+        run: git diff --check HEAD^

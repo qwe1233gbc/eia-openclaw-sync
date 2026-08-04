@@ -12,7 +12,7 @@ EXPECTED = {
     "03": ["region", "control_unit", "project_location", "industry", "process", "valid_time"],
     "04": ["report_type", "project_type", "industry", "process", "construction_stage", "valid_time"],
     "05": ["region", "data_year", "bulletin_type", "pollution_medium", "waterbody_or_station", "valid_time"],
-    "06": ["region", "functional_zone", "pollution_medium", "waterbody_or_area", "standard_category", "valid_time"],
+    "06": ["region", "functional_zone", "pollution_medium", "waterbody_or_area", "standard_category", "evaluation_factor", "averaging_time", "valid_time"],
     "07": ["region", "industry", "process", "pollutant", "pollution_medium", "emission_mode", "discharge_destination", "valid_time"],
     "08": ["industry", "product", "process", "raw_material", "pollutant", "activity_level", "valid_time"],
     "09": ["industry", "process", "pollutant", "calculation_method", "activity_level", "operating_condition", "valid_time"],
@@ -36,12 +36,21 @@ class TestSkillSpecificDimensions(unittest.TestCase):
         for sid, dimensions in EXPECTED.items():
             self.assertEqual(mapped[sid]["required_applicability_dimensions"], dimensions, sid)
             self.assertEqual(registered[sid]["required_applicability_dimensions"], dimensions, sid)
+            mapping_placeholders = re.findall(r"\{([^{}]+)\}", mapped[sid]["query_template"])
+            registry_placeholders = re.findall(r"\{([^{}]+)\}", registered[sid]["query_template"])
+            self.assertEqual(mapping_placeholders, ["audit_category", *dimensions], f"Skill {sid} mapping query")
+            self.assertEqual(registry_placeholders, ["audit_category", *dimensions], f"Skill {sid} registry query")
             skill_text = (ROOT / "09_环评审核技能库" / registered[sid]["path"]).read_text(encoding="utf-8")
-            for dimension in dimensions:
-                self.assertIn(f"`{dimension}`", skill_text, f"Skill {sid}: {dimension}")
             json_blocks = [json.loads(block) for block in re.findall(r"```json\n(.*?)\n```", skill_text, re.S)]
             rag_unit = next(block for block in json_blocks if "source_id" in block)
             self.assertEqual(list(rag_unit["applicability"]), dimensions, f"Skill {sid} rag_evidence contract")
+            section6 = re.search(r"## 6\. RAG查询构造(.*?)(?=\n## 7\.)", skill_text, re.S).group(1)
+            section6_template = re.search(r"统一查询模板：`([^`]+)`", section6).group(1)
+            self.assertEqual(re.findall(r"\{([^{}]+)\}", section6_template), ["audit_category", *dimensions], f"Skill {sid} section 6")
+            section9 = re.search(r"## 9\. 外部依据比较(.*?)(?=\n## 10\.)", skill_text, re.S).group(1)
+            all_dimensions = {dimension for values in EXPECTED.values() for dimension in values}
+            section9_dimensions = [token for token in re.findall(r"`([^`]+)`", section9) if token in all_dimensions]
+            self.assertEqual(section9_dimensions, dimensions, f"Skill {sid} section 9")
 
 
 if __name__ == "__main__":
