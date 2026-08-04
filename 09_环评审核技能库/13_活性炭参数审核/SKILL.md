@@ -1,149 +1,191 @@
 # 13_活性炭参数审核
 
-## 0. Skill 定位
+## 0. Skill定位
 
-`skill = 一个可独立执行的审核条目`。本 skill 只判断本条目，不代替其他 skill 给结论；法规库只提供依据，skill 负责证据抽取、适用性判断、计算复核和输出结构化审核意见。
+本Skill是环境专业审核程序，不是法规知识副本。它负责报告证据抽取、RAG查询构造、适用性比较、内部复算、异常处理和结构化输出。具体标准、条款、限值、版本和固定适用结论必须由运行时`rag_evidence`提供。
 
-运行链路固定为：`报告 Markdown / 分块 JSON → 目标章节筛选 → 证据字段抽取 → 法规库检索 → 单项规则判断 → JSON 输出`。
+来源工作流：`无独立Dify工作流；与源强、收集形式、风量和收集效率Skill联动`。旧Dify工作流仅作历史平台实现，不直接作为C/D组Skill输入。
 
 ## 1. 审核目标
 
-只核查活性炭治理设施选型、预处理、碘值/比表面积、装填量、过滤风速、停留时间、更换周期、安全设施；不替代源强核算。
+核验活性炭装置的风量、浓度、炭量、吸附负荷、床层、停留时间、更换周期和废炭去向是否形成可复算闭环。
 
-## 2. 对应工作流
+## 2. 触发条件
 
-- 来源工作流：`未发现独立 Dify 工作流；继承 06_Dify 工作流的证据筛选模式，并与 09/10/11/12 skill 输出联动`
-- 迁移方式：保留 Dify 的“代码节点筛选相关文本 → LLM 抽取字段 → 法规库/知识库检索 → LLM 判断输出”主链路，但把原本依赖上下文的提示词拆成可复用的证据字段、规则清单和 JSON 输出。
+1. 废气治理采用活性炭吸附
+2. 报告给出炭量、装填量或更换周期
+3. 设施参数与VOCs负荷可能不匹配
 
-## 3. 适用与不适用边界
+未触发时输出`不适用`，不得为完成任务而创造项目事实。
 
-适用：佛山市塑胶行业建设项目环境影响报告表，尤其涉及 VOCs 物料、胶水、涂胶、复合、熟化、印刷、注塑/挤出、活性炭吸附、危废识别等场景。
+## 3. 输入契约
 
-不适用：报告书级别文件、非建设项目环评文件、完全无本审核触发条件的项目。若项目属于纯注塑/挤塑且无胶水、油墨、清洗剂等 VOCs 物料，本 skill 只对被触发字段做参照判断，并在输出中写 `不适用` 或 `部分适用`。
+```json
+{
+  "question": "",
+  "audit_category": "",
+  "report_evidence": [],
+  "rag_evidence": [],
+  "project_metadata": {},
+  "case_hints": []
+}
+```
 
-## 4. 输入契约
+`report_evidence`单元：
 
-必须输入：
+```json
+{
+  "evidence_id": "",
+  "field": "",
+  "value": "",
+  "unit": "",
+  "source_section": "",
+  "source_location": "",
+  "quote": "",
+  "chunk_id": ""
+}
+```
 
-| 字段 | 类型 | 说明 |
-|---|---|---|
-| `report_markdown` | string | MinerU 或同类工具解析后的报告全文；允许包含 HTML 表格。 |
-| `report_chunks` | array | 可选，按页码/章节切分后的文本块；若存在，优先使用分块 ID 追踪证据。 |
-| `project_metadata` | object | 可选，项目名称、建设地点、行业类别、文件来源、页码映射。 |
-| `law_cards` | array | 可选，从法规库检索得到的候选条款；没有时本 skill 只能做证据完整性判断。 |
-| `case_cards` | array | 可选，同类项目修改意见或类案经验；只能作为风险提示，不能替代法规依据。 |
+`rag_evidence`单元：
 
-证据追踪最低要求：每个判断必须绑定 `evidence_id + source_section + source_location + quote`。找不到页码时，`source_location` 写明章节名、表名或分块 ID，禁止空置。
+```json
+{
+  "source_id": "",
+  "document_title": "",
+  "document_number": "",
+  "clause_number": "",
+  "content": "",
+  "applicability": {
+    "pollutant": "",
+    "inlet_concentration": "",
+    "airflow": "",
+    "operating_time": "",
+    "adsorbent_type": "",
+    "replacement_cycle": "",
+    "valid_time": ""
+  },
+  "effective_date": "",
+  "validity_status": "",
+  "source_sha256": ""
+}
+```
 
-## 5. 证据提取策略
+`case_hints`只允许`source_type=expert_heuristic`或`case_experience`，只能形成风险提示，不能单独支撑最终正确/错误结论。
 
-### 5.1 关键词评分
+## 4. 报告证据字段
 
-| 关键词组 | 建议权重 |
-|---|---:|
-| `活性炭` | 40 |
-| `二级活性炭` | 35 |
-| `碘值` | 35 |
-| `比表面积` | 25 |
-| `蜂窝炭/颗粒炭` | 25 |
-| `装填量` | 35 |
-| `停留时间` | 35 |
-| `过滤风速` | 35 |
-| `更换周期` | 30 |
-| `压差计` | 22 |
-| `温度传感器` | 22 |
-| `干式过滤` | 25 |
-| `水喷淋` | 18 |
-
-筛选规则：命中关键词后按“章节相关性 + 关键词权重 + 字段完整度”排序；优先保留同时包含数值、单位、表名、章节名的片段。若输入为分块 JSON，输出证据必须保留原 `chunk_id`。
-
-### 5.2 章节边界
-
-截取废气治理措施、活性炭箱参数表、设施设计方案、环保投资一览表、危废产生量表。
-
-### 5.3 反噪声规则
-
-排除目录、页眉页脚、附件清单、空表、重复表头和只有标准名称但无项目证据的片段。若同一字段在多个位置出现，应同时保留，不允许只取对结论有利的一处。
-
-## 6. 字段抽取清单
-
-| 字段名 | 抽取内容 |
+| 字段 | 要求 |
 |---|---|
-| `carbon_type` | 蜂窝炭/颗粒炭/柱状炭 |
-| `iodine_value` | 碘值 mg/g |
-| `specific_surface_area` | 比表面积 m2/g |
-| `carbon_box_size` | 炭箱尺寸、层数、截面积 |
-| `filling_amount` | 单次装填量 kg 或 t |
-| `filtration_velocity` | 过滤风速 m/s |
-| `residence_time` | 停留时间 s |
-| `replacement_cycle` | 更换周期 d 或 次/a |
-| `pretreatment` | 水喷淋/干式过滤/除湿/降温 |
-| `safety_devices` | 压差、温度、防火阀等 |
+| `gas_flow` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `inlet_concentration` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `vocs_mass_load` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `carbon_type` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `carbon_mass` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `bed_dimensions` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `residence_time` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `adsorption_capacity` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `replacement_cycle` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `spent_carbon_amount` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `disposal_route` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
 
-抽取失败处理：字段不存在时填 `null`，并写入 `missing_evidence`；不要根据常识补齐。
+每个使用的字段必须绑定`evidence_id + source_section + source_location + quote`；报告证据与外部依据必须分开保存。
 
-## 7. 法规库 / 类案库检索
+## 5. 报告证据抽取顺序
 
-检索顺序固定为：
+1. 治理对象和入口负荷
+2. 设计风量
+3. 活性炭类型和装填量
+4. 床层参数
+5. 吸附能力依据
+6. 更换周期
+7. 废活性炭产生量和去向
 
-1. 先检索法规库中的硬性条款、标准号、限值、公式、适用范围。
-2. 再检索同类项目修改意见或类案经验，用于提示常见遗漏。
-3. 当法规库和类案经验冲突时，以法规库为准，类案只写入 `risk_tags`。
+抽取时保留相互冲突的全部位置，不得只选择支持预设结论的片段。
 
-建议检索词：`活性炭参数审核`、`塑胶行业`、`VOCs`、`胶水`、`复合`、`熟化`、`活性炭`、`危险废物`，并叠加本 skill 的核心关键词。
+## 6. RAG查询构造
 
-## 8. 判断规则
+查询只使用报告事实和审核类别，不使用外部评判标签、题号、评分或Skill预设结论。组合以下维度：
 
-1. 活性炭吸附前应核查温度、湿度、颗粒物和预处理设施；高湿高温废气直接进炭箱为风险点。
-2. 颗粒炭碘值、蜂窝炭碘值、装填厚度、停留时间、过滤风速必须有明确数值或检测/采购依据。
-3. 装填量、更换周期和废活性炭产生量必须互相一致。
-4. 仅写“定期更换活性炭”而无吸附量、更换次数、装填量时，结论为“无法判断”。
+- 污染物
+- 入口负荷
+- 活性炭类型
+- 设备结构
+- 设计规范
+- 地方管理要求
+- 有效时点
 
-### 8.1 计算或一致性复核
+统一查询模板：`{audit_category} {pollutant} {inlet_concentration} {airflow} {operating_time} {adsorbent_type} {replacement_cycle} {valid_time}`。
 
-- 过滤风速 = 风量 / 3600 / 有效过风截面积。
-- 停留时间 = 活性炭有效厚度 / 过滤风速。
-- 废活性炭年产生量 = 单次装填量 × 年更换次数 + 年吸附 VOCs 量。
-- 年更换次数 = 365 / 更换周期(d)，或按报告运行天数折算。
+## 7. 审核程序
 
-### 8.2 结论判定
+1. 重建VOCs负荷—有效吸附量—更换周期链
+2. 核对风量与床层参数
+3. 区分理论吸附能力、设计取值和运行管理值
+4. 用RAG返回规范参数比较
+5. 经验阈值只能标记为风险提示
 
-- `匹配`：核心证据齐全、法规依据命中、计算或一致性复核无冲突。
-- `不匹配`：核心字段明确违反规则，或报告填报值与复算值/适用标准冲突。
-- `部分匹配`：主体判断可成立，但存在非核心参数缺失、表述不完整或局部前后不一致。
-- `无法判断`：缺少关键证据、缺少法规依据、单位不明、公式参数不全或原文位置不可追溯。
-- `不适用`：项目证据显示未触发本审核条目。
+不得根据模型记忆补充法规、限值、版本或适用结论。
 
-## 9. 输出契约
+## 8. 计算与内部一致性复核
 
-输出必须是合法 JSON，字段必须符合根目录 `common_output_schema.json`。最低结构如下：
+1. 先统一浓度、风量、时间和质量单位，再按实际系统边界计算：`inlet_mass_rate = inlet_concentration × airflow`。
+2. `adsorbed_mass_rate = inlet_mass_rate × applicable_capture_or_removal_fraction`。收集效率（capture efficiency）与治理去除效率（removal efficiency）含义不同，不得混用或重复相乘。
+3. `period_adsorbed_mass = adsorbed_mass_rate × operating_time`。
+4. `available_adsorption_mass = carbon_mass × effective_adsorption_capacity`。
+5. `replacement_interval = available_adsorption_mass / adsorbed_mass_rate`；同时用周期吸附量校核装填量和更换次数。
+6. `effective_adsorption_capacity`若来自规范或技术资料，必须由RAG提供；报告内部参数可独立复算，外部经验阈值只能进入`risk_hints`。
+7. 多床层、并联和轮换运行须按实际系统边界分别核算有效炭量、运行时间和负荷，不得把备用床或非同时运行单元重复计入。
+8. `spent_carbon`应与装填量和更换次数闭合；所有参数必须标注来源。
+
+纯算术和报告内部一致性不依赖RAG；外部规范参数必须标注`source_id`和条款来源。
+
+## 9. 外部依据比较
+
+仅当`rag_evidence`存在且来源、版本、有效时点及本Skill的必要适用性维度足以判断时，才逐项比较报告值与RAG值。本Skill必须核对：`pollutant`、`inlet_concentration`、`airflow`、`operating_time`、`adsorbent_type`、`replacement_cycle`、`valid_time`。不相关字段不得作为强制门槛；任一必要维度未知时，不得输出确定的外部依据结论。
+
+## 10. 证据不足与降级规则
+
+- `rag_evidence`充分且可适用：`basis_status=available`。
+- 本任务不需要外部规范常量，只做报告内部算术或一致性：`basis_status=not_required`。
+- 需要外部依据但RAG为空、版本未知、条款不适用或来源不可追溯：`basis_status=insufficient`，结论降级为`无法判断`或仅报告内部问题。
+- C组没有RAG时仍完成证据抽取和可独立复算，但不得给出法规限值、固定标准适用结论，也不得把“缺少RAG”误判为“报告错误”。
+
+## 11. 结论分级
+
+- `匹配`：报告证据充分，所需RAG依据可追溯且适用，比较或复算无冲突。
+- `不匹配`：报告证据明确，且内部复算或适用RAG依据显示实质冲突。
+- `部分匹配`：主体成立，但存在非核心缺漏或局部不一致。
+- `无法判断`：关键报告证据或外部依据不足。
+- `不适用`：项目事实未触发本审核条目。
+
+## 12. 输出契约
 
 ```json
 {
   "skill_id": "",
-  "skill_name": "",
-  "source_workflow": "",
-  "conclusion": "匹配 | 不匹配 | 部分匹配 | 无法判断 | 不适用",
-  "confidence": 0.0,
-  "manual_review_needed": true,
-  "evidence_units": [],
-  "law_basis_used": [],
-  "check_items": [],
-  "missing_evidence": [],
+  "conclusion": "",
+  "report_evidence_used": [],
+  "rag_basis_used": [],
+  "basis_status": "available | insufficient | not_required",
+  "applicability_check": [],
   "calculation_trace": [],
-  "risk_tags": [],
+  "missing_evidence": [],
+  "risk_hints": [],
+  "manual_review_needed": false,
   "review_comment": ""
 }
 ```
 
-结论折算规则：全部关键审核点为“通过”→ `匹配`；任一核心审核点“不通过”→ `不匹配`；存在非核心缺陷但主体可判断 → `部分匹配`；缺少关键证据或法规依据 → `无法判断`；项目不触发本 skill → `不适用`。
+输出必须为合法JSON。`review_comment`应明确“报告事实—外部依据—比较过程—建议修改”，不得输出未提供的项目事实。
 
-## 11. 审核意见写法
+## 13. 人工复核规则
 
-审核意见必须能让经办人直接修改报告。重点写：把活性炭问题拆成参数缺失、参数不达标、计算不闭合三类，不要只写“完善活性炭参数”。
+出现以下任一情况时`manual_review_needed=true`：关键证据位置缺失；报告前后冲突；RAG版本或适用性不明；结论为不匹配、部分匹配或无法判断；计算参数缺少来源；经验提示与正式依据冲突。
 
-推荐句式：`报告在【章节/表名】中填报……，但【证据/复算/法规依据】显示……，建议补充/更正……。`
+## 14. 非规范经验提示
 
-## 10. 人工复核规则
+常见错误和类案只能写入`risk_hints`，必须带`source_type`、适用场景和局限性。经验阈值、历史修改意见或同类项目惯例不得冒充法条，不能单独支撑最终判断。
 
-触发以下任一条件时，`manual_review_needed` 必须为 `true`：证据位置缺失；报告内同一字段前后不一致；法规库未命中可适用条款；计算过程缺少原始参数；结论为“不匹配 / 部分匹配 / 无法判断”；类案经验与法规条款冲突。
+## 15. 与其他Skill边界
+
+只审核吸附装置参数；废气源强、收集和危险废物属性由09—12及14 Skill处理。

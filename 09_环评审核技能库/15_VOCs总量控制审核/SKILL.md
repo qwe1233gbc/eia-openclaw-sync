@@ -1,142 +1,184 @@
 # 15_VOCs总量控制审核
 
-## 0. Skill 定位
+## 0. Skill定位
 
-`skill = 一个可独立执行的审核条目`。本 skill 只判断本条目，不代替其他 skill 给结论；法规库只提供依据，skill 负责证据抽取、适用性判断、计算复核和输出结构化审核意见。
+本Skill是环境专业审核程序，不是法规知识副本。它负责报告证据抽取、RAG查询构造、适用性比较、内部复算、异常处理和结构化输出。具体标准、条款、限值、版本和固定适用结论必须由运行时`rag_evidence`提供。
 
-运行链路固定为：`报告 Markdown / 分块 JSON → 目标章节筛选 → 证据字段抽取 → 法规库检索 → 单项规则判断 → JSON 输出`。
+来源工作流：`无独立Dify工作流；汇总源强核算、排放标准与总量控制章节证据`。旧Dify工作流仅作历史平台实现，不直接作为C/D组Skill输入。
 
 ## 1. 审核目标
 
-只核查 VOCs/非甲烷总烃总量指标、排放量、削减替代和排污许可衔接是否一致；不重新核发总量指标。
+核对VOCs产生、收集、处理、有组织/无组织排放、以新带老和总量申请之间的口径与算术闭合，并比较RAG返回的有效管理要求。
 
-## 2. 对应工作流
+## 2. 触发条件
 
-- 来源工作流：`未发现独立 Dify 工作流；从源强核算、排放标准、总量控制章节汇总判断`
-- 迁移方式：保留 Dify 的“代码节点筛选相关文本 → LLM 抽取字段 → 法规库/知识库检索 → LLM 判断输出”主链路，但把原本依赖上下文的提示词拆成可复用的证据字段、规则清单和 JSON 输出。
+1. 项目产生或排放VOCs
+2. 报告提出总量控制指标、替代或削减来源
+3. 总量章节与源强表存在口径差异
 
-## 3. 适用与不适用边界
+未触发时输出`不适用`，不得为完成任务而创造项目事实。
 
-适用：佛山市塑胶行业建设项目环境影响报告表，尤其涉及 VOCs 物料、胶水、涂胶、复合、熟化、印刷、注塑/挤出、活性炭吸附、危废识别等场景。
+## 3. 输入契约
 
-不适用：报告书级别文件、非建设项目环评文件、完全无本审核触发条件的项目。若项目属于纯注塑/挤塑且无胶水、油墨、清洗剂等 VOCs 物料，本 skill 只对被触发字段做参照判断，并在输出中写 `不适用` 或 `部分适用`。
+```json
+{
+  "question": "",
+  "audit_category": "",
+  "report_evidence": [],
+  "rag_evidence": [],
+  "project_metadata": {},
+  "case_hints": []
+}
+```
 
-## 4. 输入契约
+`report_evidence`单元：
 
-必须输入：
+```json
+{
+  "evidence_id": "",
+  "field": "",
+  "value": "",
+  "unit": "",
+  "source_section": "",
+  "source_location": "",
+  "quote": "",
+  "chunk_id": ""
+}
+```
 
-| 字段 | 类型 | 说明 |
-|---|---|---|
-| `report_markdown` | string | MinerU 或同类工具解析后的报告全文；允许包含 HTML 表格。 |
-| `report_chunks` | array | 可选，按页码/章节切分后的文本块；若存在，优先使用分块 ID 追踪证据。 |
-| `project_metadata` | object | 可选，项目名称、建设地点、行业类别、文件来源、页码映射。 |
-| `law_cards` | array | 可选，从法规库检索得到的候选条款；没有时本 skill 只能做证据完整性判断。 |
-| `case_cards` | array | 可选，同类项目修改意见或类案经验；只能作为风险提示，不能替代法规依据。 |
+`rag_evidence`单元：
 
-证据追踪最低要求：每个判断必须绑定 `evidence_id + source_section + source_location + quote`。找不到页码时，`source_location` 写明章节名、表名或分块 ID，禁止空置。
+```json
+{
+  "source_id": "",
+  "document_title": "",
+  "document_number": "",
+  "clause_number": "",
+  "content": "",
+  "applicability": {
+    "region": "",
+    "industry": "",
+    "process": "",
+    "VOCs_scope": "",
+    "calculation_period": "",
+    "policy_valid_time": ""
+  },
+  "effective_date": "",
+  "validity_status": "",
+  "source_sha256": ""
+}
+```
 
-## 5. 证据提取策略
+`case_hints`只允许`source_type=expert_heuristic`或`case_experience`，只能形成风险提示，不能单独支撑最终正确/错误结论。
 
-### 5.1 关键词评分
+## 4. 报告证据字段
 
-| 关键词组 | 建议权重 |
-|---|---:|
-| `总量控制` | 40 |
-| `VOCs` | 35 |
-| `挥发性有机物` | 35 |
-| `非甲烷总烃` | 30 |
-| `排放总量` | 30 |
-| `新增排放量` | 25 |
-| `削减替代` | 25 |
-| `总量指标` | 30 |
-| `排污许可` | 22 |
-| `有组织排放量` | 20 |
-| `无组织排放量` | 20 |
-
-筛选规则：命中关键词后按“章节相关性 + 关键词权重 + 字段完整度”排序；优先保留同时包含数值、单位、表名、章节名的片段。若输入为分块 JSON，输出证据必须保留原 `chunk_id`。
-
-### 5.2 章节边界
-
-截取总量控制章节、废气源强核算表、排放口基本情况、审批/排污许可衔接说明。
-
-### 5.3 反噪声规则
-
-排除目录、页眉页脚、附件清单、空表、重复表头和只有标准名称但无项目证据的片段。若同一字段在多个位置出现，应同时保留，不允许只取对结论有利的一处。
-
-## 6. 字段抽取清单
-
-| 字段名 | 抽取内容 |
+| 字段 | 要求 |
 |---|---|
-| `vocs_generation` | VOCs 产生量 |
-| `vocs_emission_total` | VOCs 排放总量 |
-| `organized_unorganized_emission` | 有组织+无组织拆分 |
-| `total_control_index` | 申请或分配总量指标 |
-| `replacement_measure` | 削减替代来源和比例 |
-| `consistency_sources` | 源强表/总量章节/结论表中的同一数值 |
+| `vocs_generation` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `organized_emission` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `unorganized_emission` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `treatment_reduction` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `existing_project_emission` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `replacement_reduction` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `reported_total` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `requested_total` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `management_basis` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `report_date` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
 
-抽取失败处理：字段不存在时填 `null`，并写入 `missing_evidence`；不要根据常识补齐。
+每个使用的字段必须绑定`evidence_id + source_section + source_location + quote`；报告证据与外部依据必须分开保存。
 
-## 7. 法规库 / 类案库检索
+## 5. 报告证据抽取顺序
 
-检索顺序固定为：
+1. VOCs物料和工艺
+2. 源强核算
+3. 有组织和无组织排放
+4. 治理削减
+5. 现有工程与以新带老
+6. 总量章节
+7. 申请和替代依据
 
-1. 先检索法规库中的硬性条款、标准号、限值、公式、适用范围。
-2. 再检索同类项目修改意见或类案经验，用于提示常见遗漏。
-3. 当法规库和类案经验冲突时，以法规库为准，类案只写入 `risk_tags`。
+抽取时保留相互冲突的全部位置，不得只选择支持预设结论的片段。
 
-建议检索词：`VOCs总量控制审核`、`塑胶行业`、`VOCs`、`胶水`、`复合`、`熟化`、`活性炭`、`危险废物`，并叠加本 skill 的核心关键词。
+## 6. RAG查询构造
 
-## 8. 判断规则
+查询只使用报告事实和审核类别，不使用外部评判标签、题号、评分或Skill预设结论。组合以下维度：
 
-1. 总量控制值必须与源强核算最终排放量一致，不能使用产生量或削减前收集量。
-2. VOCs、非甲烷总烃、TVOC 等口径必须说明；不同口径不能直接混用。
-3. 新增 VOCs 排放项目应说明总量来源或削减替代路径；缺失时为“无法判断”。
-4. 总量章节、源强章节、排污许可衔接说明数值不一致时，结论为“不匹配”。
+- 地区
+- 行业
+- 项目性质
+- 污染物口径
+- 总量管理文件
+- 报告日期
 
-### 8.1 计算或一致性复核
+统一查询模板：`{audit_category} {region} {industry} {process} {VOCs_scope} {calculation_period} {policy_valid_time}`。
 
-- VOCs 总排放量 = 有组织排放量 + 无组织排放量。
-- 削减量 = 产生量 - 排放量。
-- 若有替代比例要求：替代量 ≥ 新增排放量 × 替代比例。
+## 7. 审核程序
 
-### 8.2 结论判定
+1. 统一VOCs统计口径和单位
+2. 汇总有组织与无组织排放
+3. 核对削减量是否重复
+4. 比较源强、总量表和申请值
+5. 根据RAG返回的管理要求判断适用性
+6. 没有RAG时只评价内部算术和口径一致
 
-- `匹配`：核心证据齐全、法规依据命中、计算或一致性复核无冲突。
-- `不匹配`：核心字段明确违反规则，或报告填报值与复算值/适用标准冲突。
-- `部分匹配`：主体判断可成立，但存在非核心参数缺失、表述不完整或局部前后不一致。
-- `无法判断`：缺少关键证据、缺少法规依据、单位不明、公式参数不全或原文位置不可追溯。
-- `不适用`：项目证据显示未触发本审核条目。
+不得根据模型记忆补充法规、限值、版本或适用结论。
 
-## 9. 输出契约
+## 8. 计算与内部一致性复核
 
-输出必须是合法 JSON，字段必须符合根目录 `common_output_schema.json`。最低结构如下：
+1. total_emission = organized_emission + unorganized_emission
+2. net_increment = proposed_emission - verified_existing_reduction
+3. 所有削减和替代参数必须绑定证据
+
+纯算术和报告内部一致性不依赖RAG；外部规范参数必须标注`source_id`和条款来源。
+
+## 9. 外部依据比较
+
+仅当`rag_evidence`存在且来源、版本、有效时点及本Skill的必要适用性维度足以判断时，才逐项比较报告值与RAG值。本Skill必须核对：`region`、`industry`、`process`、`VOCs_scope`、`calculation_period`、`policy_valid_time`。不相关字段不得作为强制门槛；任一必要维度未知时，不得输出确定的外部依据结论。
+
+## 10. 证据不足与降级规则
+
+- `rag_evidence`充分且可适用：`basis_status=available`。
+- 本任务不需要外部规范常量，只做报告内部算术或一致性：`basis_status=not_required`。
+- 需要外部依据但RAG为空、版本未知、条款不适用或来源不可追溯：`basis_status=insufficient`，结论降级为`无法判断`或仅报告内部问题。
+- C组没有RAG时仍完成证据抽取和可独立复算，但不得给出法规限值、固定标准适用结论，也不得把“缺少RAG”误判为“报告错误”。
+
+## 11. 结论分级
+
+- `匹配`：报告证据充分，所需RAG依据可追溯且适用，比较或复算无冲突。
+- `不匹配`：报告证据明确，且内部复算或适用RAG依据显示实质冲突。
+- `部分匹配`：主体成立，但存在非核心缺漏或局部不一致。
+- `无法判断`：关键报告证据或外部依据不足。
+- `不适用`：项目事实未触发本审核条目。
+
+## 12. 输出契约
 
 ```json
 {
   "skill_id": "",
-  "skill_name": "",
-  "source_workflow": "",
-  "conclusion": "匹配 | 不匹配 | 部分匹配 | 无法判断 | 不适用",
-  "confidence": 0.0,
-  "manual_review_needed": true,
-  "evidence_units": [],
-  "law_basis_used": [],
-  "check_items": [],
-  "missing_evidence": [],
+  "conclusion": "",
+  "report_evidence_used": [],
+  "rag_basis_used": [],
+  "basis_status": "available | insufficient | not_required",
+  "applicability_check": [],
   "calculation_trace": [],
-  "risk_tags": [],
+  "missing_evidence": [],
+  "risk_hints": [],
+  "manual_review_needed": false,
   "review_comment": ""
 }
 ```
 
-结论折算规则：全部关键审核点为“通过”→ `匹配`；任一核心审核点“不通过”→ `不匹配`；存在非核心缺陷但主体可判断 → `部分匹配`；缺少关键证据或法规依据 → `无法判断`；项目不触发本 skill → `不适用`。
+输出必须为合法JSON。`review_comment`应明确“报告事实—外部依据—比较过程—建议修改”，不得输出未提供的项目事实。
 
-## 11. 审核意见写法
+## 13. 人工复核规则
 
-审核意见必须能让经办人直接修改报告。重点写：写清总量口径和数值来源，指出总量章节与源强表是否一致。
+出现以下任一情况时`manual_review_needed=true`：关键证据位置缺失；报告前后冲突；RAG版本或适用性不明；结论为不匹配、部分匹配或无法判断；计算参数缺少来源；经验提示与正式依据冲突。
 
-推荐句式：`报告在【章节/表名】中填报……，但【证据/复算/法规依据】显示……，建议补充/更正……。`
+## 14. 非规范经验提示
 
-## 10. 人工复核规则
+常见错误和类案只能写入`risk_hints`，必须带`source_type`、适用场景和局限性。经验阈值、历史修改意见或同类项目惯例不得冒充法条，不能单独支撑最终判断。
 
-触发以下任一条件时，`manual_review_needed` 必须为 `true`：证据位置缺失；报告内同一字段前后不一致；法规库未命中可适用条款；计算过程缺少原始参数；结论为“不匹配 / 部分匹配 / 无法判断”；类案经验与法规条款冲突。
+## 15. 与其他Skill边界
+
+只审核VOCs总量口径；源强、收集、治理参数和排放标准由09—13及07 Skill提供。

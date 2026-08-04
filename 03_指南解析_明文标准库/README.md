@@ -38,3 +38,22 @@
 - 标准卡与`cards_by_skill`只用于路由、查询扩展和原文定位。
 - 审核步骤、`check_logic`、`required_evidence`和输出示例属于Skill，不进入B/D组RAG正文。
 - 正式治理材料见`formal_rag/`，正式父子块见`formal_rag_chunks/`，质量审计见`formal_rag_quality/`。
+
+
+## 知识—程序互补链路
+
+```text
+统一报告JSON
+  ↓
+报告证据抽取
+  ↓
+Skill构造查询条件
+  ↓
+RAG返回权威条款
+  ↓
+Skill进行适用性匹配和复核
+  ↓
+双证据链审核结论
+```
+
+RAG提供知识常量；Skill提供审核函数；经验库只提供风险提示；报告JSON提供项目事实。标准卡仅按字段白名单用于路由，不整条注入B组。

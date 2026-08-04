@@ -13,8 +13,10 @@ sha_counts = Counter(r.get("source_sha256", "") for r in rows if r.get("source_s
 for r in rows:
     label = f"{r.get('source_id')}: {r.get('title')}"
     if r.get("eligible_for_formal_rag") and not any(x in str(r.get("document_type", "")) for x in ALLOWED): errors.append(label + " document_type不在白名单")
-    blob = json.dumps(r, ensure_ascii=False)
-    if any(x in blob for x in FORBIDDEN): errors.append(label + " 指向禁止目录")
+    # Governance reports may live under 09_环评审核技能库/quality; only source
+    # acquisition/origin fields are checked for prohibited evidence paths.
+    origin_blob = " ".join(str(r.get(key, "")) for key in ("official_url", "repository_locator", "path_policy", "source_provenance", "acquisition_method"))
+    if any(x in origin_blob for x in FORBIDDEN): errors.append(label + " 指向禁止目录")
     if r.get("eligible_for_formal_rag") and not r.get("source_sha256"): errors.append(label + " 缺少SHA256")
     if not r.get("validity_status"): warnings.append(label + " 版本状态未知")
     if r.get("is_primary_source") is False and r.get("eligible_for_formal_rag"): warnings.append(label + " 派生来源仅可作元数据")
