@@ -1,0 +1,110 @@
+{
+  "head_before": "01ad8e8639a6d25851554456d41f7b420535def2",
+  "head_after": "aa351d6cea169e3359ce7618a127573452449823",
+  "standard_file_sha256": "fcaac95aef0896c279385124cd0313a8e45eae6efd251f3747722b3037aea539",
+  "standard_fulltext_verified": true,
+  "formal_source_activated": true,
+  "gbt18920_parent_chunks": 8,
+  "gbt18920_child_chunks": 10,
+  "pl004_pl005_block_removed": true,
+  "skills_verified": 15,
+  "rag_contexts_verified": 21,
+  "B_D_rag_hash_equal": 21,
+  "C_D_skill_hash_equal": 21,
+  "fixed_limits_found": 0,
+  "project_answers_found": 0,
+  "manual_gold_found": 0,
+  "rag_procedure_content_found": 0,
+  "invalid_source_ids": 0,
+  "metadata_only_injected": 0,
+  "yaml_files_checked": 4,
+  "test_files": 21,
+  "test_methods": 25,
+  "api_key_hits": 0,
+  "pii_hits": 0,
+  "failed_tests": [],
+  "commands": [
+    {
+      "command": "C:\\Users\\ylx\\miniconda3\\python.exe 12_论文借鉴_Chen2026_TianGong/scripts/audit_rag_skill_overlap.py",
+      "start_time": "2026-08-04T23:25:15.494334+08:00",
+      "end_time": "2026-08-04T23:25:15.719958+08:00",
+      "exit_code": 0,
+      "stdout_summary": "{\n  \"scope\": \"01-15 skill bodies and formal RAG content only\",\n  \"skill_hits\": [],\n  \"rag_hits\": [],\n  \"pass\": true,\n  \"note\": \"standard numbers used only as query labels are allowed; related_skill_ids metadata is excluded\"\n}\n",
+      "stderr_summary": ""
+    },
+    {
+      "command": "C:\\Users\\ylx\\miniconda3\\python.exe 12_论文借鉴_Chen2026_TianGong/scripts/validate_skill_runtime_dependency.py",
+      "start_time": "2026-08-04T23:25:15.719958+08:00",
+      "end_time": "2026-08-04T23:25:15.804479+08:00",
+      "exit_code": 0,
+      "stdout_summary": "{\n  \"skills_checked\": 15,\n  \"errors\": [],\n  \"pass\": true\n}\n",
+      "stderr_summary": ""
+    },
+    {
+      "command": "C:\\Users\\ylx\\miniconda3\\python.exe 12_论文借鉴_Chen2026_TianGong/scripts/validate_rag_skill_isolation.py",
+      "start_time": "2026-08-04T23:25:15.804479+08:00",
+      "end_time": "2026-08-04T23:25:16.098018+08:00",
+      "exit_code": 0,
+      "stdout_summary": "{\n  \"scope\": \"formal RAG content + v2 skill snapshots + prompts + v2 run matrix\",\n  \"errors\": [],\n  \"pass\": true,\n  \"metadata_exclusions\": [\n    \"related_skill_ids\",\n    \"question_id routing metadata\"\n  ]\n}\n",
+      "stderr_summary": ""
+    },
+    {
+      "command": "C:\\Users\\ylx\\miniconda3\\python.exe 12_论文借鉴_Chen2026_TianGong/scripts/validate_snapshot_hashes.py",
+      "start_time": "2026-08-04T23:25:16.098018+08:00",
+      "end_time": "2026-08-04T23:25:16.235875+08:00",
+      "exit_code": 0,
+      "stdout_summary": "{\n  \"scope\": \"positive_control_21_questions_v2\",\n  \"question_count\": 21,\n  \"skill_files_verified\": 15,\n  \"snapshot_records_verified\": 15,\n  \"B_D_hash_equal\": 21,\n  \"C_D_hash_equal\": 21,\n  \"errors\": [],\n  \"pass\": true\n}\n",
+      "stderr_summary": ""
+    },
+    {
+      "command": "C:\\Users\\ylx\\miniconda3\\python.exe 12_论文借鉴_Chen2026_TianGong/scripts/validate_formal_rag_sources.py",
+      "start_time": "2026-08-04T23:25:16.235875+08:00",
+      "end_time": "2026-08-04T23:25:16.341257+08:00",
+      "exit_code": 0,
+      "stdout_summary": "{\n  \"scope\": \"formal source manifest only\",\n  \"source_count\": 27,\n  \"errors\": [],\n  \"warnings\": [],\n  \"pass\": true\n}\n",
+      "stderr_summary": ""
+    },
+    {
+      "command": "C:\\Users\\ylx\\miniconda3\\python.exe 12_论文借鉴_Chen2026_TianGong/scripts/validate_rag_mapping_referential_integrity.py",
+      "start_time": "2026-08-04T23:25:16.341257+08:00",
+      "end_time": "2026-08-04T23:25:16.564764+08:00",
+      "exit_code": 0,
+      "stdout_summary": "{\n  \"scope\": \"skills_to_standard_mapping -> formal source manifest + frozen RAG contexts + v2 run matrix\",\n  \"skills_checked\": 15,\n  \"manifest_sources\": 27,\n  \"candidate_references_checked\": 45,\n  \"metadata_only_references_checked\": 0,\n  \"frozen_rag_contexts_checked\": 42,\n  \"gbt18920_formal_source_activated\": true,\n  \"gbt18920_table1_parent_chunks\": 1,\n  \"errors\": [],\n  \"warnings\": [\n    {\n      \"skill_id\": \"07\",\n      \"source_id\": \"SOLID_HW2021_HIST\",\n      \"type\": \"historical_source_requires_report_time_filter\"\n    },\n    {\n      \"skill_id\": \"07\",\n      \"source_id\": \"SOLID_GB34330_2017_HIST\",\n      \"type\": \"historical_source_requires_report_time_filter\"\n    },\n    {\n      \"skill_id\": \"14\",\n      \"source_id\": \"SOLID_HW2021_HIST\",\n      \"type\": \"historical_source_requires_report_time_filter\"\n    },\n    {\n      \"skill_id\": \"14\",\n      \"source_id\": \"SOLID_GB34330_2017_HIST\",\n      \"type\": \"historical_source_requires_report_time_filter\"\n    }\n  ],\n  \"pass\": true\n}\n",
+      "stderr_summary": ""
+    },
+    {
+      "command": "C:\\Users\\ylx\\miniconda3\\python.exe 12_论文借鉴_Chen2026_TianGong/scripts/validate_historical_source_runtime_filter.py",
+      "start_time": "2026-08-04T23:25:16.565767+08:00",
+      "end_time": "2026-08-04T23:25:16.649642+08:00",
+      "exit_code": 0,
+      "stdout_summary": "{\n  \"sources_checked\": 4,\n  \"scenarios_checked\": 5,\n  \"results\": [\n    {\n      \"report_date\": \"2024-06-30\",\n      \"effective_date\": \"2025-01-01\",\n      \"expiry_or_repeal_date\": \"\",\n      \"historical_applicability\": \"不得用于2025-01-01之前的报告\",\n      \"selected_source_id\": \"SOLID_HW2025_CURRENT\",\n      \"applicability_result\": \"not_yet_effective\",\n      \"manual_review_needed\": false\n    },\n    {\n      \"report_date\": \"2025-06-30\",\n      \"effective_date\": \"2021-01-01\",\n      \"expiry_or_repeal_date\": \"2024-12-31\",\n      \"historical_applicability\": \"报告编制时若在2021-01-01至2024-12-31可适用\",\n      \"selected_source_id\": \"SOLID_HW2021_HIST\",\n      \"applicability_result\": \"expired_or_repealed\",\n      \"manual_review_needed\": false\n    },\n    {\n      \"report_date\": \"2026-02-28\",\n      \"effective_date\": \"2026-03-01\",\n      \"expiry_or_repeal_date\": \"\",\n      \"historical_applicability\": \"不得用于2026-03-01之前的报告\",\n      \"selected_source_id\": \"SOLID_GB34330_2025\",\n      \"applicability_result\": \"not_yet_effective\",\n      \"manual_review_needed\": false\n    },\n    {\n      \"report_date\": \"2026-03-01\",\n      \"effective_date\": \"2017-10-01\",\n      \"expiry_or_repeal_date\": \"2026-02-28\",\n      \"historical_applicability\": \"2026-03-01前报告历史核验\",\n      \"selected_source_id\": \"SOLID_GB34330_2017_HIST\",\n      \"applicability_result\": \"expired_or_repealed\",\n      \"manual_review_needed\": false\n    },\n    {\n      \"report_date\": null,\n      \"effective_date\": \"2021-01-01\",\n      \"expiry_or_repeal_date\": \"2024-12-31\",\n      \"historical_applicability\": \"报告编制时若在2021-01-01至2024-12-31可适用\",\n      \"selected_source_id\": \"SOLID_HW2021_HIST\",\n      \"applicability_result\": \"manual_review_required_missing_report_date\",\n      \"manual_review_needed\": true\n    }\n  ],\n  \"errors\": [],\n  \"pass\": true\n}\n",
+      "stderr_summary": ""
+    },
+    {
+      "command": "C:\\Users\\ylx\\miniconda3\\python.exe -m unittest discover -s 12_论文借鉴_Chen2026_TianGong/scripts/tests -p test_*.py -v",
+      "start_time": "2026-08-04T23:25:16.649642+08:00",
+      "end_time": "2026-08-04T23:25:17.277191+08:00",
+      "exit_code": 0,
+      "stdout_summary": "",
+      "stderr_summary": "test_d_is_union (test_D_equals_B_plus_C_inputs_only.TestDComposition.test_d_is_union) ... ok\ntest_all_candidate_source_ids_exist (test_all_candidate_source_ids_exist.TestCandidateIdsExist.test_all_candidate_source_ids_exist) ... ok\ntest_candidate_sources_are_eligible (test_candidate_sources_are_formal_rag_eligible.TestCandidateEligibility.test_candidate_sources_are_eligible) ... ok\ntest_verified_fulltext_source_is_registered (test_gbt18920_fulltext_source_registered.TestGbt18920FormalSource.test_verified_fulltext_source_is_registered) ... ok\ntest_metadata_record_remains_ineligible_and_outside_candidates (test_gbt18920_metadata_record_remains_ineligible.TestGbt18920MetadataSeparation.test_metadata_record_remains_ineligible_and_outside_candidates) ... ok\ntest_formal_source_is_not_mechanically_injected (test_gbt18920_not_injected_into_unrelated_questions.TestGbt18920RetrievalScope.test_formal_source_is_not_mechanically_injected) ... ok\ntest_both_snapshot_sets_use_same_verified_context (test_gbt18920_pl004_pl005_snapshots.TestGbt18920Snapshots.test_both_snapshot_sets_use_same_verified_context) ... ok\ntest_gate_rejects_each_missing_component (test_gbt18920_run_matrix_unblocked_only_after_verification.TestGbt18920RunMatrixGate.test_gate_rejects_each_missing_component) ... ok\ntest_unblocked_rows_are_neutral_inputs (test_gbt18920_run_matrix_unblocked_only_after_verification.TestGbt18920RunMatrixGate.test_unblocked_rows_are_neutral_inputs) ... ok\ntest_table1_parent_and_children_are_traceable (test_gbt18920_table_chunks_traceable.TestGbt18920TableChunks.test_table1_parent_and_children_are_traceable) ... ok\ntest_all_skills_constrain_hints (test_heuristic_cannot_support_final_judgement_alone.TestHeuristicBoundary.test_all_skills_constrain_hints) ... ok\ntest_missing_report_date_requires_manual_review (test_historical_source_runtime_filter.TestHistoricalSourceRuntimeFilter.test_missing_report_date_requires_manual_review) ... ok\ntest_wrong_versions_fail_by_report_date (test_historical_source_runtime_filter.TestHistoricalSourceRuntimeFilter.test_wrong_versions_fail_by_report_date) ... ok\ntest_metadata_only_source_not_injected (test_metadata_only_source_not_injected.TestMetadataOnlyIsolation.test_metadata_only_source_not_injected) ... ok\ntest_verified_formal_replacement_allows_neutral_input_freeze (test_metadata_only_source_not_injected.TestMetadataOnlyIsolation.test_verified_formal_replacement_allows_neutral_input_freeze) ... ok\ntest_rag_content_only (test_rag_contains_no_procedure_steps.TestRagPurity.test_rag_content_only) ... ok\ntest_b_d_equal (test_same_rag_B_D_after_refactor.TestRagHashes.test_b_d_equal) ... ok\ntest_c_d_equal (test_same_skill_C_D_after_refactor.TestSkillHashes.test_c_d_equal) ... ok\ntest_not_applicable_is_not_missing_for_noise_and_solid_waste (test_skill07_conditional_applicability.TestSkill07ConditionalApplicability.test_not_applicable_is_not_missing_for_noise_and_solid_waste) ... ok\ntest_no_regulatory_limits (test_skill_contains_no_fixed_limits.TestNoFixedLimits.test_no_regulatory_limits) ... ok\ntest_no_project_or_gold (test_skill_contains_no_project_gold.TestNoGold.test_no_project_or_gold) ... ok\ntest_mapping_and_registry_use_exact_skill_specific_dimensions (test_skill_specific_applicability_dimensions.TestSkillSpecificDimensions.test_mapping_and_registry_use_exact_skill_specific_dimensions) ... ok\ntest_all_skills_declare_safe_degrade (test_skill_without_rag_abstains_on_external_basis.TestNoRagDegrade.test_all_skills_declare_safe_degrade) ... ok\ntest_noise_example_cannot_emit_limit_without_rag (test_skill_without_rag_abstains_on_external_basis.TestNoRagDegrade.test_noise_example_cannot_emit_limit_without_rag) ... ok\ntest_allow_and_block_lists (test_standard_cards_not_injected_wholesale.TestCardBoundary.test_allow_and_block_lists) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 0.377s\n\nOK\n"
+    },
+    {
+      "command": "git diff --check",
+      "start_time": "2026-08-04T23:25:17.277191+08:00",
+      "end_time": "2026-08-04T23:25:17.370694+08:00",
+      "exit_code": 0,
+      "stdout_summary": "",
+      "stderr_summary": ""
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "部分嵌入字体导致原生文本层首部字形映射异常；所有8页及表1跨页内容已按渲染图像人工交叉核验。",
+    "文件由用户提供，不将official_url表述为该PDF的下载来源。",
+    "{\"skill_id\": \"07\", \"source_id\": \"SOLID_HW2021_HIST\", \"type\": \"historical_source_requires_report_time_filter\"}",
+    "{\"skill_id\": \"07\", \"source_id\": \"SOLID_GB34330_2017_HIST\", \"type\": \"historical_source_requires_report_time_filter\"}",
+    "{\"skill_id\": \"14\", \"source_id\": \"SOLID_HW2021_HIST\", \"type\": \"historical_source_requires_report_time_filter\"}",
+    "{\"skill_id\": \"14\", \"source_id\": \"SOLID_GB34330_2017_HIST\", \"type\": \"historical_source_requires_report_time_filter\"}"
+  ],
+  "pass": true
+}

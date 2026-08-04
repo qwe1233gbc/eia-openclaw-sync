@@ -11,15 +11,17 @@
 - 15/15 Skill声明统一`rag_evidence`输入、`basis_status`输出、无RAG安全降级和人工复核条件。
 - Skill正文中的固定法规限值、项目题号和人工金标命中均为0。
 - RAG字段白名单只允许路由元数据参与查询；程序字段和整张标准卡不得注入B组正文。
-- 旧版快照未覆盖；PR #17合并前修复使用`v2.1_pr17_acceptance`更新v2快照、哈希、路由和运行矩阵。
+- 旧版快照未覆盖；PR #17后续修复使用`v2.2_pr17_followup`更新v2工作快照、哈希、路由和运行矩阵。
 
 ## PR #17合并前修复
 
 - 15个Skill均改为任务特异性`required_applicability_dimensions`，映射、注册表、查询模板、`rag_evidence.applicability`输入契约和Skill第9节保持一致。
 - 环保投资及源强内部算术复核可使用`basis_status=not_required`，不会因缺少无关的污染介质或排放形式而错误降级。
 - GB 18918-2002修改单的错误来源别名已清除，统一使用清单中的`WATER_GB18918_MOD2025`。
-- `WATER_GBT18920_2020_METADATA`已从正式候选来源移入`metadata_only_source_ids`，只允许提示正文缺口，不得进入`rag_evidence`或支撑匹配/不匹配。
-- `PL004_Emission_水污`和`PL005_Emission_水污`的8个A/B/C/D运行均显式记录`basis_status=insufficient`、`conclusion=无法判断`、`manual_review_needed=true`。
+- `WATER_GBT18920_2020_METADATA`继续保持`full_text_available=false`、`eligible_for_formal_rag=false`，并由独立正式来源`WATER_GBT18920_2020`接续；旧元数据记录未被直接激活。
+- 用户提供的GB/T 18920-2020正式出版文本经8页逐页核验，SHA256为`fcaac95aef0896c279385124cd0313a8e45eae6efd251f3747722b3037aea539`；原PDF按`.gitignore`不入库。
+- 新增8个正式父块和10个子块；表1作为跨正文第2—3页完整父块保留，表头、13项指标和a/b/c注释均可追溯。
+- `PL004_Emission_水污`和`PL005_Emission_水污`两套冻结快照改用正式来源，8个A/B/C/D运行恢复`ready_input_freeze`，且`basis_status`、`conclusion`、`manual_review_needed`均为空，未预填模型结论。
 
 ## 自动验证
 
@@ -28,11 +30,13 @@
 - RAG/Skill隔离检查：通过，错误0。
 - v2快照与运行矩阵：通过，15个Skill文件哈希一致；21/21题B/D RAG哈希相同；21/21题C/D Skill哈希相同。
 - A/B/C/D输入组合：通过，D只包含B的RAG输入与C的Skill输入。
-- 单元测试：13个测试文件、15个测试方法全部通过。
+- 单元测试：21个测试文件、25个测试方法全部通过。
 - YAML：映射、注册表、RAG字段白名单和黑名单共4个文件全部可解析。
-- 正式RAG来源清单：26项，错误0、警告0。
-- mapping—manifest引用完整性：15个Skill、44个正式候选引用、1个metadata-only引用；错误0，4条历史来源时点过滤提醒。
-- metadata-only来源隔离：两套冻结快照共42个RAG上下文正文注入0；不合格正式候选0；PL004/PL005安全降级8/8。
+- 正式RAG来源清单：27项，错误0、警告0。
+- mapping—manifest引用完整性：15个Skill、45个正式候选引用；错误0，4条历史来源时点过滤提醒。
+- metadata-only来源隔离：两套冻结快照共42个RAG上下文正文注入0；正式GB/T 18920来源只进入PL004/PL005，PL003及其他19题未机械注入。
+- 历史来源运行时点过滤：4个来源、5个负向场景全部通过；报告日期缺失且历史/现行版本并存时强制人工复核。
+- GitHub Actions：新增不依赖Secrets、不调用外部模型API的最小验证工作流；远端结果以PR检查为准。
 
 ## 逐Skill适用性与人工专业复核
 
@@ -42,7 +46,7 @@
 
 ## 当前实验结论
 
-本轮“RAG知识层—Skill程序层互补性重构”已通过，可继续用于补齐材料和执行未阻断的最小趋势管线。完整正式混合标签ABCD实验仍不可启动：`PL004_Emission_水污`与`PL005_Emission_水污`缺少可离线核验的GB/T 18920-2020正式全文，Dense Embedding与神经重排序器尚未配置，混合标签正式实验集也尚未冻结。
+本轮“RAG知识层—Skill程序层互补性重构”和GB/T 18920-2020正式全文接入已通过，PL004/PL005的该项来源缺口已关闭。完整正式混合标签ABCD实验仍不可启动：Dense Embedding与神经重排序器尚未配置，混合标签正式实验集尚未冻结，其他环境质量、产污系数、风量规范或地方政策来源仍须按实际题目继续补齐。本轮未执行任何Qwen、DeepSeek、Kimi、OpenAI或其他正式模型调用。
 
 ## 人工复核
 

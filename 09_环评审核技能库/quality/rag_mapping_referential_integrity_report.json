@@ -1,10 +1,12 @@
 {
   "scope": "skills_to_standard_mapping -> formal source manifest + frozen RAG contexts + v2 run matrix",
   "skills_checked": 15,
-  "manifest_sources": 26,
-  "candidate_references_checked": 44,
-  "metadata_only_references_checked": 1,
+  "manifest_sources": 27,
+  "candidate_references_checked": 45,
+  "metadata_only_references_checked": 0,
   "frozen_rag_contexts_checked": 42,
+  "gbt18920_formal_source_activated": true,
+  "gbt18920_table1_parent_chunks": 1,
   "errors": [],
   "warnings": [
     {
