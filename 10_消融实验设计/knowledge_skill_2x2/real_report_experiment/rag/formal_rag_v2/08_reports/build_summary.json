@@ -1,0 +1,23 @@
+{
+  "counts": {
+    "complete": 4,
+    "complete_with_warning": 14,
+    "not_required": 1,
+    "incomplete": 2
+  },
+  "source_count": 26,
+  "eligible_source_count": 25,
+  "parent_chunks": 2674,
+  "child_chunks": 2932,
+  "index_sha256": "5bafe9f46ffc28d2bd7a1650df58971331614c6830bf7689cad20c61387768a9",
+  "missing_sources": [
+    "WATER_GBT18920_2020_METADATA"
+  ],
+  "isolation_pass": true,
+  "can_start_formal_abcd": false,
+  "blocking_issues": [
+    "incomplete题目仍存在",
+    "Dense Embedding未配置",
+    "神经Reranker未配置"
+  ]
+}

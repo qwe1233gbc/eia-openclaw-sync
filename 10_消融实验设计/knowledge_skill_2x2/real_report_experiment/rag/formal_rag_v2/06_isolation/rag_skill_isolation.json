@@ -1,0 +1,11 @@
+{
+  "formal_parent_chunks": 2674,
+  "qa_leakage_count": 0,
+  "skill_procedure_count": 0,
+  "experiment_output_count": 0,
+  "gold_answer_generation_reads": 0,
+  "gold_answer_post_freeze_evaluation_reads": 116,
+  "B_D_hash_equal_count": 21,
+  "B_D_hash_total": 21,
+  "isolation_pass": true
+}
