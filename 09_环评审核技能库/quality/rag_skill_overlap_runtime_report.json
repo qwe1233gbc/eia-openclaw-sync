@@ -1,0 +1,7 @@
+{
+  "scope": "01-15 skill bodies and formal RAG content only",
+  "skill_hits": [],
+  "rag_hits": [],
+  "pass": true,
+  "note": "standard numbers used only as query labels are allowed; related_skill_ids metadata is excluded"
+}
