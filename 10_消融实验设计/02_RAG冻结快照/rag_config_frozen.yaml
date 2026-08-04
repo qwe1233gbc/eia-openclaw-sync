@@ -1,0 +1,9 @@
+scope: positive_control_21_questions
+retrieval_mode: provisional_bm25_plus_fixed_source_rerank
+formal_hybrid_rag: false
+embedding_model: not_configured
+reranker_model: fixed_source_priority_not_neural
+candidate_k_sparse: 40
+candidate_k_dense: 0
+final_parent_k: 8
+privacy: no_report_body_no_gold_no_skill
