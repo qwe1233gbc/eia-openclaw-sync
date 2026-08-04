@@ -56,11 +56,11 @@
   "clause_number": "",
   "content": "",
   "applicability": {
-    "region": "",
-    "industry": "",
-    "process": "",
-    "pollution_medium": "",
-    "emission_mode": "",
+    "hood_type": "",
+    "source_geometry": "",
+    "control_velocity_basis": "",
+    "air_change_basis": "",
+    "operating_condition": "",
     "valid_time": ""
   },
   "effective_date": "",
@@ -112,7 +112,7 @@
 - 设计规范
 - 工况
 
-统一查询模板：`{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}`。
+统一查询模板：`{audit_category} {hood_type} {source_geometry} {control_velocity_basis} {air_change_basis} {operating_condition} {valid_time}`。
 
 ## 7. 审核程序
 
@@ -126,15 +126,17 @@
 
 ## 8. 计算与内部一致性复核
 
-1. 局部收集按报告采用的面积—速度或罩型公式复算
-2. 整体换风按空间体积和换气次数复算
-3. 单位统一后比较理论风量、设计风量和风机额定值
+1. 先按罩型、污染源几何关系和开口位置选择报告采用的计算公式，不得跨罩型套用。
+2. 局部收集逐项复核罩口有效面积、控制风速依据、同时运行数量和单位换算。
+3. 整体换风按有效空间体积、换气次数依据和同时运行工况复算。
+4. 漏风率、管网损失和设计余量分别记录，防止重复叠加；比较理论风量、设计风量和风机额定值。
+5. 控制风速、换气次数、漏风或余量等规范参数不得写死在Skill中，必须来自报告或RAG。
 
 纯算术和报告内部一致性不依赖RAG；外部规范参数必须标注`source_id`和条款来源。
 
 ## 9. 外部依据比较
 
-仅当`rag_evidence`存在且来源、版本、有效时点及适用性维度足以判断时，才逐项比较报告值与RAG值。比较至少记录地区、行业、工艺、污染介质、排放形式和有效时点；任一关键维度未知时不得输出确定的外部依据结论。
+仅当`rag_evidence`存在且来源、版本、有效时点及本Skill的必要适用性维度足以判断时，才逐项比较报告值与RAG值。本Skill必须核对：`hood_type`、`source_geometry`、`control_velocity_basis`、`air_change_basis`、`operating_condition`、`valid_time`。不相关字段不得作为强制门槛；任一必要维度未知时，不得输出确定的外部依据结论。
 
 ## 10. 证据不足与降级规则
 

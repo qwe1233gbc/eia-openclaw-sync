@@ -56,11 +56,11 @@
   "clause_number": "",
   "content": "",
   "applicability": {
-    "region": "",
-    "industry": "",
-    "process": "",
-    "pollution_medium": "",
-    "emission_mode": "",
+    "generation_process": "",
+    "composition": "",
+    "physical_state": "",
+    "hazardous_characteristics": "",
+    "waste_code_basis": "",
     "valid_time": ""
   },
   "effective_date": "",
@@ -112,7 +112,7 @@
 - 地区
 - 报告日期
 
-统一查询模板：`{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}`。
+统一查询模板：`{audit_category} {generation_process} {composition} {physical_state} {hazardous_characteristics} {waste_code_basis} {valid_time}`。
 
 ## 7. 审核程序
 
@@ -120,8 +120,9 @@
 2. 区分产品、副产品和废物
 3. 用RAG查询名录、鉴别和贮存适用条款
 4. 核对代码与危害特性证据
-5. 检查遗漏类别、混存和版本问题
-6. RAG不足时不得凭名称直接认定危险属性
+5. 按报告编制时点选择当时有效的名录、鉴别和贮存版本，不得把现行版本倒用于历史报告
+6. 检查遗漏类别、混存和版本问题
+7. RAG不足时不得凭废物名称、行业惯例或相似项目直接认定危险属性、代码和贮存要求
 
 不得根据模型记忆补充法规、限值、版本或适用结论。
 
@@ -134,7 +135,7 @@
 
 ## 9. 外部依据比较
 
-仅当`rag_evidence`存在且来源、版本、有效时点及适用性维度足以判断时，才逐项比较报告值与RAG值。比较至少记录地区、行业、工艺、污染介质、排放形式和有效时点；任一关键维度未知时不得输出确定的外部依据结论。
+仅当`rag_evidence`存在且来源、版本、有效时点及本Skill的必要适用性维度足以判断时，才逐项比较报告值与RAG值。本Skill必须核对：`generation_process`、`composition`、`physical_state`、`hazardous_characteristics`、`waste_code_basis`、`valid_time`。不相关字段不得作为强制门槛；任一必要维度未知时，不得输出确定的外部依据结论。
 
 ## 10. 证据不足与降级规则
 

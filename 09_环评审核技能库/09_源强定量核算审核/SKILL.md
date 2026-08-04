@@ -56,11 +56,12 @@
   "clause_number": "",
   "content": "",
   "applicability": {
-    "region": "",
     "industry": "",
     "process": "",
-    "pollution_medium": "",
-    "emission_mode": "",
+    "pollutant": "",
+    "calculation_method": "",
+    "activity_level": "",
+    "operating_condition": "",
     "valid_time": ""
   },
   "effective_date": "",
@@ -108,7 +109,7 @@
 - 只有系数、规范参数或法定基准条件需要外部RAG
 - 项目内部算术优先使用报告原始参数
 
-统一查询模板：`{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}`。
+统一查询模板：`{audit_category} {industry} {process} {pollutant} {calculation_method} {activity_level} {operating_condition} {valid_time}`。
 
 ## 7. 审核程序
 
@@ -122,16 +123,18 @@
 
 ## 8. 计算与内部一致性复核
 
-1. collected = generated × collection_efficiency
-2. emitted = collected × (1 - removal_efficiency) + uncollected
-3. concentration = emitted_mass / gas_or_water_volume
-4. 所有参数必须记录来源，禁止用模型记忆补值
+1. 单一收集—治理边界可用`collected = generated × collection_efficiency`。
+2. 单一治理且未发生回流时可用`emitted = collected × (1 - removal_efficiency) + uncollected`。
+3. 多级治理应逐级计算入口、出口和旁路，禁止把总效率在每一级重复扣减。
+4. 存在回流或循环时应按系统边界区分循环量与最终外排量，禁止把回流量重复计为新产生量。
+5. 有组织与无组织分别核算后再汇总；浓度换算使用与排放质量同一运行时段的实际或标态体积。
+6. 质量、体积和时间口径必须先统一，所有参数必须记录来源，禁止用模型记忆补值。
 
 纯算术和报告内部一致性不依赖RAG；外部规范参数必须标注`source_id`和条款来源。
 
 ## 9. 外部依据比较
 
-仅当`rag_evidence`存在且来源、版本、有效时点及适用性维度足以判断时，才逐项比较报告值与RAG值。比较至少记录地区、行业、工艺、污染介质、排放形式和有效时点；任一关键维度未知时不得输出确定的外部依据结论。
+仅当`rag_evidence`存在且来源、版本、有效时点及本Skill的必要适用性维度足以判断时，才逐项比较报告值与RAG值。本Skill必须核对：`industry`、`process`、`pollutant`、`calculation_method`、`activity_level`、`operating_condition`、`valid_time`。不相关字段不得作为强制门槛；任一必要维度未知时，不得输出确定的外部依据结论。仅复核报告已有算式和质量守恒时可使用`basis_status=not_required`；外部系数、效率或基准工况仍必须来自RAG。
 
 ## 10. 证据不足与降级规则
 

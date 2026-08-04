@@ -56,12 +56,9 @@
   "clause_number": "",
   "content": "",
   "applicability": {
-    "region": "",
-    "industry": "",
-    "process": "",
-    "pollution_medium": "",
-    "emission_mode": "",
-    "valid_time": ""
+    "report_date": "",
+    "investment_scope": "",
+    "calculation_basis": ""
   },
   "effective_date": "",
   "validity_status": "",
@@ -101,7 +98,7 @@
 - 通常不需要外部法规常量
 - 若题目要求投资口径定义，再查询相应编制指南
 
-统一查询模板：`{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}`。
+统一查询模板：`{audit_category} {report_date} {investment_scope} {calculation_basis}`。
 
 ## 7. 审核程序
 
@@ -123,7 +120,7 @@
 
 ## 9. 外部依据比较
 
-仅当`rag_evidence`存在且来源、版本、有效时点及适用性维度足以判断时，才逐项比较报告值与RAG值。比较至少记录地区、行业、工艺、污染介质、排放形式和有效时点；任一关键维度未知时不得输出确定的外部依据结论。
+仅当`rag_evidence`存在且来源、版本、有效时点及本Skill的必要适用性维度足以判断时，才逐项比较报告值与RAG值。本Skill必须核对：`report_date`、`investment_scope`、`calculation_basis`。不相关字段不得作为强制门槛；任一必要维度未知时，不得输出确定的外部依据结论。仅进行报告内部投资加总、比例复算且不调用外部口径时，使用`basis_status=not_required`。
 
 ## 10. 证据不足与降级规则
 

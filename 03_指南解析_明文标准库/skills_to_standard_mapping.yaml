@@ -1,13 +1,7 @@
-mapping_version: 2026-08-04-complementarity-v2
+mapping_version: 2026-08-04-complementarity-v2.1-pr17
 purpose: runtime_rag_routing_only
-query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-required_applicability_dimensions:
-  - region
-  - industry
-  - process
-  - pollution_medium
-  - emission_mode
-  - valid_time
+query_template_policy: defined_per_skill
+applicability_policy: skill_specific_required_dimensions
 mappings:
   - skill_id: '01'
     audit_category: 国民经济行业分类
@@ -15,32 +9,32 @@ mappings:
       - 国民经济行业分类
     candidate_source_ids:
       - IND_GBT4754_2017
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {product} {usage} {material} {process} {main_business_activity} {valid_time}'
+    required_applicability_dimensions: [product, usage, material, process, main_business_activity, valid_time]
   - skill_id: '02'
     audit_category: 环评投资概算
     candidate_domains:
       - 环评编制指南
       - 投资口径
     candidate_source_ids: []
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {report_date} {investment_scope} {calculation_basis}'
+    required_applicability_dimensions: [report_date, investment_scope, calculation_basis]
   - skill_id: '03'
     audit_category: 三线一单符合性
     candidate_domains:
       - 三线一单
       - 生态环境分区管控
     candidate_source_ids: []
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {region} {control_unit} {project_location} {industry} {process} {valid_time}'
+    required_applicability_dimensions: [region, control_unit, project_location, industry, process, valid_time]
   - skill_id: '04'
     audit_category: 建设内容完整性
     candidate_domains:
       - 建设项目报告表编制指南
       - 工程分析
     candidate_source_ids: []
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {report_type} {project_type} {industry} {process} {construction_stage} {valid_time}'
+    required_applicability_dimensions: [report_type, project_type, industry, process, construction_stage, valid_time]
   - skill_id: '05'
     audit_category: 环境质量数据引用
     candidate_domains:
@@ -49,8 +43,8 @@ mappings:
     candidate_source_ids:
       - ENV_SHUNDE_2022
       - ENV_SHUNDE_2024
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {region} {data_year} {bulletin_type} {pollution_medium} {waterbody_or_station} {valid_time}'
+    required_applicability_dimensions: [region, data_year, bulletin_type, pollution_medium, waterbody_or_station, valid_time]
   - skill_id: '06'
     audit_category: 环境质量执行标准
     candidate_domains:
@@ -60,8 +54,8 @@ mappings:
       - 功能区划
     candidate_source_ids:
       - NOISE_FOSHAN_ZONING_2024
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {region} {functional_zone} {pollution_medium} {waterbody_or_area} {standard_category} {valid_time}'
+    required_applicability_dimensions: [region, functional_zone, pollution_medium, waterbody_or_area, standard_category, valid_time]
   - skill_id: '07'
     audit_category: 污染物排放标准
     candidate_domains:
@@ -73,8 +67,7 @@ mappings:
     candidate_source_ids:
       - WATER_DB44_26_2001
       - WATER_GB18918_2002
-      - WATER_GB18918_2025_MOD
-      - WATER_GBT18920_2020_METADATA
+      - WATER_GB18918_MOD2025
       - NOISE_GB12348_2008
       - NOISE_FOSHAN_ZONING_2024
       - SOLID_WASTE_LAW_2020
@@ -94,15 +87,18 @@ mappings:
       - AIR_GB33372_2020
       - AIR_GB38508_2020
       - AIR_GB37822_2019
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    metadata_only_source_ids:
+      - WATER_GBT18920_2020_METADATA
+    metadata_only_policy: discovery_only_not_formal_rag_evidence
+    query_template: '{audit_category} {region} {industry} {process} {pollutant} {pollution_medium} {emission_mode} {discharge_destination} {valid_time}'
+    required_applicability_dimensions: [region, industry, process, pollutant, pollution_medium, emission_mode, discharge_destination, valid_time]
   - skill_id: '08'
     audit_category: 产污系数适用性
     candidate_domains:
       - 排放源统计调查产排污核算方法和系数手册
     candidate_source_ids: []
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {industry} {product} {process} {raw_material} {pollutant} {activity_level} {valid_time}'
+    required_applicability_dimensions: [industry, product, process, raw_material, pollutant, activity_level, valid_time]
   - skill_id: '09'
     audit_category: 源强定量核算
     candidate_domains:
@@ -110,8 +106,8 @@ mappings:
       - 产排污系数
       - 基准工况
     candidate_source_ids: []
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {industry} {process} {pollutant} {calculation_method} {activity_level} {operating_condition} {valid_time}'
+    required_applicability_dimensions: [industry, process, pollutant, calculation_method, activity_level, operating_condition, valid_time]
   - skill_id: '10'
     audit_category: 废气收集形式
     candidate_domains:
@@ -120,8 +116,8 @@ mappings:
     candidate_source_ids:
       - AIR_DB44_2367_2022
       - AIR_GB37822_2019
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {process} {pollutant} {source_type} {collection_mode} {enclosure_condition} {valid_time}'
+    required_applicability_dimensions: [process, pollutant, source_type, collection_mode, enclosure_condition, valid_time]
   - skill_id: '11'
     audit_category: 废气设计风量
     candidate_domains:
@@ -129,8 +125,8 @@ mappings:
       - 控制风速
       - 换气次数
     candidate_source_ids: []
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {hood_type} {source_geometry} {control_velocity_basis} {air_change_basis} {operating_condition} {valid_time}'
+    required_applicability_dimensions: [hood_type, source_geometry, control_velocity_basis, air_change_basis, operating_condition, valid_time]
   - skill_id: '12'
     audit_category: 废气收集效率
     candidate_domains:
@@ -139,8 +135,8 @@ mappings:
     candidate_source_ids:
       - AIR_DB44_2367_2022
       - AIR_GB37822_2019
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {process} {pollutant} {collection_mode} {enclosure_condition} {efficiency_basis} {valid_time}'
+    required_applicability_dimensions: [process, pollutant, collection_mode, enclosure_condition, efficiency_basis, valid_time]
   - skill_id: '13'
     audit_category: 活性炭参数
     candidate_domains:
@@ -150,8 +146,8 @@ mappings:
     candidate_source_ids:
       - AIR_DB44_2367_2022
       - AIR_GB37822_2019
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {pollutant} {inlet_concentration} {airflow} {operating_time} {adsorbent_type} {replacement_cycle} {valid_time}'
+    required_applicability_dimensions: [pollutant, inlet_concentration, airflow, operating_time, adsorbent_type, replacement_cycle, valid_time]
   - skill_id: '14'
     audit_category: 危险废物识别
     candidate_domains:
@@ -168,8 +164,8 @@ mappings:
       - SOLID_HW2025_CURRENT
       - SOLID_GB34330_2017_HIST
       - SOLID_GB34330_2025
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {generation_process} {composition} {physical_state} {hazardous_characteristics} {waste_code_basis} {valid_time}'
+    required_applicability_dimensions: [generation_process, composition, physical_state, hazardous_characteristics, waste_code_basis, valid_time]
   - skill_id: '15'
     audit_category: VOCs总量控制
     candidate_domains:
@@ -181,5 +177,5 @@ mappings:
       - AIR_DB44_27_2001
       - AIR_GB16297_1996
       - AIR_GB37822_2019
-    query_template: '{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}'
-    required_applicability_dimensions: [region, industry, process, pollution_medium, emission_mode, valid_time]
+    query_template: '{audit_category} {region} {industry} {process} {VOCs_scope} {calculation_period} {policy_valid_time}'
+    required_applicability_dimensions: [region, industry, process, VOCs_scope, calculation_period, policy_valid_time]
