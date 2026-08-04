@@ -1,0 +1,12 @@
+purpose: prevent_procedural_content_from_B_D_rag_body
+blocked_fields:
+  - check_logic
+  - evidence_fields
+  - normative_requirements
+  - required_evidence
+  - manual_check_needed
+  - output_example
+  - output_fields
+  - formulas_when_used_as_audit_steps
+  - case_hints
+policy: traceback_to_primary_source_before_prompt_injection

@@ -1,136 +1,173 @@
 # 02_环评投资核算审核
 
-## 0. Skill 定位
+## 0. Skill定位
 
-`skill = 一个可独立执行的审核条目`。本 skill 只判断本条目，不代替其他 skill 给结论；法规库只提供依据，skill 负责证据抽取、适用性判断、计算复核和输出结构化审核意见。
+本Skill是环境专业审核程序，不是法规知识副本。它负责报告证据抽取、RAG查询构造、适用性比较、内部复算、异常处理和结构化输出。具体标准、条款、限值、版本和固定适用结论必须由运行时`rag_evidence`提供。
 
-运行链路固定为：`报告 Markdown / 分块 JSON → 目标章节筛选 → 证据字段抽取 → 法规库检索 → 单项规则判断 → JSON 输出`。
+来源工作流：`06_Dify工作流/2-环评投资核算.yml`。旧Dify工作流仅作历史平台实现，不直接作为C/D组Skill输入。
 
 ## 1. 审核目标
 
-只核查总投资、环保投资、环保投资占比及环保投资分项合计的一致性；不评价投资是否经济合理。
+抽取总投资、环保投资和分项金额，独立复算环保投资占比与分项合计，识别金额口径、单位和算术不一致。
 
-## 2. 对应工作流
+## 2. 触发条件
 
-- 来源工作流：`06_Dify工作流/2-环评投资核算.yml`
-- 迁移方式：保留 Dify 的“代码节点筛选相关文本 → LLM 抽取字段 → 法规库/知识库检索 → LLM 判断输出”主链路，但把原本依赖上下文的提示词拆成可复用的证据字段、规则清单和 JSON 输出。
+1. 报告列示总投资或环保投资
+2. 基本情况表与环保措施投资表并存
+3. 投资占比或分项合计需要复算
 
-## 3. 适用与不适用边界
+未触发时输出`不适用`，不得为完成任务而创造项目事实。
 
-适用：佛山市塑胶行业建设项目环境影响报告表，尤其涉及 VOCs 物料、胶水、涂胶、复合、熟化、印刷、注塑/挤出、活性炭吸附、危废识别等场景。
+## 3. 输入契约
 
-不适用：报告书级别文件、非建设项目环评文件、完全无本审核触发条件的项目。若项目属于纯注塑/挤塑且无胶水、油墨、清洗剂等 VOCs 物料，本 skill 只对被触发字段做参照判断，并在输出中写 `不适用` 或 `部分适用`。
+```json
+{
+  "question": "",
+  "audit_category": "",
+  "report_evidence": [],
+  "rag_evidence": [],
+  "project_metadata": {},
+  "case_hints": []
+}
+```
 
-## 4. 输入契约
+`report_evidence`单元：
 
-必须输入：
+```json
+{
+  "evidence_id": "",
+  "field": "",
+  "value": "",
+  "unit": "",
+  "source_section": "",
+  "source_location": "",
+  "quote": "",
+  "chunk_id": ""
+}
+```
 
-| 字段 | 类型 | 说明 |
-|---|---|---|
-| `report_markdown` | string | MinerU 或同类工具解析后的报告全文；允许包含 HTML 表格。 |
-| `report_chunks` | array | 可选，按页码/章节切分后的文本块；若存在，优先使用分块 ID 追踪证据。 |
-| `project_metadata` | object | 可选，项目名称、建设地点、行业类别、文件来源、页码映射。 |
-| `law_cards` | array | 可选，从法规库检索得到的候选条款；没有时本 skill 只能做证据完整性判断。 |
-| `case_cards` | array | 可选，同类项目修改意见或类案经验；只能作为风险提示，不能替代法规依据。 |
+`rag_evidence`单元：
 
-证据追踪最低要求：每个判断必须绑定 `evidence_id + source_section + source_location + quote`。找不到页码时，`source_location` 写明章节名、表名或分块 ID，禁止空置。
+```json
+{
+  "source_id": "",
+  "document_title": "",
+  "document_number": "",
+  "clause_number": "",
+  "content": "",
+  "applicability": {
+    "region": "",
+    "industry": "",
+    "process": "",
+    "pollution_medium": "",
+    "emission_mode": "",
+    "valid_time": ""
+  },
+  "effective_date": "",
+  "validity_status": "",
+  "source_sha256": ""
+}
+```
 
-## 5. 证据提取策略
+`case_hints`只允许`source_type=expert_heuristic`或`case_experience`，只能形成风险提示，不能单独支撑最终正确/错误结论。
 
-### 5.1 关键词评分
+## 4. 报告证据字段
 
-| 关键词组 | 建议权重 |
-|---|---:|
-| `总投资` | 30 |
-| `环保投资` | 35 |
-| `环保投资占比` | 35 |
-| `项目环保投资一览表` | 28 |
-| `工程投资` | 20 |
-| `占总投资比例` | 25 |
-| `废气治理/废水治理/噪声治理/固废治理` | 12 |
-
-筛选规则：命中关键词后按“章节相关性 + 关键词权重 + 字段完整度”排序；优先保留同时包含数值、单位、表名、章节名的片段。若输入为分块 JSON，输出证据必须保留原 `chunk_id`。
-
-### 5.2 章节边界
-
-优先截取“建设项目基本情况”投资栏、“环保投资一览表”和污染防治措施章节；每个关键词左右保留约 800 字窗口。
-
-### 5.3 反噪声规则
-
-排除目录、页眉页脚、附件清单、空表、重复表头和只有标准名称但无项目证据的片段。若同一字段在多个位置出现，应同时保留，不允许只取对结论有利的一处。
-
-## 6. 字段抽取清单
-
-| 字段名 | 抽取内容 |
+| 字段 | 要求 |
 |---|---|
-| `total_investment_wan` | 总投资，单位万元 |
-| `environmental_investment_wan` | 环保投资，单位万元 |
-| `reported_ratio_percent` | 报告填报环保投资占比 |
-| `subitem_sum_wan` | 废气、废水、噪声、固废、风险等分项投资合计 |
-| `ratio_source_location` | 填报比例所在章节/表名 |
+| `total_investment` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `environmental_investment` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `reported_ratio` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `itemized_environmental_investment` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `currency_unit` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
+| `investment_scope` | 从报告原文抽取；缺失填`null`并进入`missing_evidence` |
 
-抽取失败处理：字段不存在时填 `null`，并写入 `missing_evidence`；不要根据常识补齐。
+每个使用的字段必须绑定`evidence_id + source_section + source_location + quote`；报告证据与外部依据必须分开保存。
 
-## 7. 法规库 / 类案库检索
+## 5. 报告证据抽取顺序
 
-检索顺序固定为：
+1. 基本情况表总投资与环保投资
+2. 环保措施及验收表分项投资
+3. 其他章节重复金额
+4. 统一币种和金额单位
+5. 记录口径差异
 
-1. 先检索法规库中的硬性条款、标准号、限值、公式、适用范围。
-2. 再检索同类项目修改意见或类案经验，用于提示常见遗漏。
-3. 当法规库和类案经验冲突时，以法规库为准，类案只写入 `risk_tags`。
+抽取时保留相互冲突的全部位置，不得只选择支持预设结论的片段。
 
-建议检索词：`环评投资核算审核`、`塑胶行业`、`VOCs`、`胶水`、`复合`、`熟化`、`活性炭`、`危险废物`，并叠加本 skill 的核心关键词。
+## 6. RAG查询构造
 
-## 8. 判断规则
+查询只使用报告事实和审核类别，不使用外部评判标签、题号、评分或Skill预设结论。组合以下维度：
 
-1. 按“环保投资占比 = 环保投资 / 总投资 × 100%”重新计算。
-2. 允许四舍五入误差：绝对误差 ≤0.1 个百分点视为数值一致；超过 0.1 个百分点标记不一致。
-3. 若环保投资一览表分项合计与基本情况表环保投资不一致，结论至少为“部分匹配”。
-4. 若只给比例、不给总投资或环保投资，结论为“无法判断”。
+- 通常不需要外部法规常量
+- 若题目要求投资口径定义，再查询相应编制指南
 
-### 8.1 计算或一致性复核
+统一查询模板：`{audit_category} {region} {industry} {process} {pollution_medium} {emission_mode} {report_cited_standard} {report_date}`。
 
-- 环保投资占比 = environmental_investment_wan / total_investment_wan × 100%。
-- 分项一致性 = abs(subitem_sum_wan - environmental_investment_wan) ≤ 0.01 万元。
+## 7. 审核程序
 
-### 8.2 结论判定
+1. 核对金额单位和统计口径
+2. 复算分项合计
+3. 复算环保投资占总投资比例
+4. 比较报告各处填报值
+5. 对舍入差异与实质错误分级
 
-- `匹配`：核心证据齐全、法规依据命中、计算或一致性复核无冲突。
-- `不匹配`：核心字段明确违反规则，或报告填报值与复算值/适用标准冲突。
-- `部分匹配`：主体判断可成立，但存在非核心参数缺失、表述不完整或局部前后不一致。
-- `无法判断`：缺少关键证据、缺少法规依据、单位不明、公式参数不全或原文位置不可追溯。
-- `不适用`：项目证据显示未触发本审核条目。
+不得根据模型记忆补充法规、限值、版本或适用结论。
 
-## 9. 输出契约
+## 8. 计算与内部一致性复核
 
-输出必须是合法 JSON，字段必须符合根目录 `common_output_schema.json`。最低结构如下：
+1. environmental_ratio = environmental_investment / total_investment × 100%
+2. itemized_sum = Σ itemized_environmental_investment
+3. 保留原始值、单位换算和舍入过程
+
+纯算术和报告内部一致性不依赖RAG；外部规范参数必须标注`source_id`和条款来源。
+
+## 9. 外部依据比较
+
+仅当`rag_evidence`存在且来源、版本、有效时点及适用性维度足以判断时，才逐项比较报告值与RAG值。比较至少记录地区、行业、工艺、污染介质、排放形式和有效时点；任一关键维度未知时不得输出确定的外部依据结论。
+
+## 10. 证据不足与降级规则
+
+- `rag_evidence`充分且可适用：`basis_status=available`。
+- 本任务不需要外部规范常量，只做报告内部算术或一致性：`basis_status=not_required`。
+- 需要外部依据但RAG为空、版本未知、条款不适用或来源不可追溯：`basis_status=insufficient`，结论降级为`无法判断`或仅报告内部问题。
+- C组没有RAG时仍完成证据抽取和可独立复算，但不得给出法规限值、固定标准适用结论，也不得把“缺少RAG”误判为“报告错误”。
+
+## 11. 结论分级
+
+- `匹配`：报告证据充分，所需RAG依据可追溯且适用，比较或复算无冲突。
+- `不匹配`：报告证据明确，且内部复算或适用RAG依据显示实质冲突。
+- `部分匹配`：主体成立，但存在非核心缺漏或局部不一致。
+- `无法判断`：关键报告证据或外部依据不足。
+- `不适用`：项目事实未触发本审核条目。
+
+## 12. 输出契约
 
 ```json
 {
   "skill_id": "",
-  "skill_name": "",
-  "source_workflow": "",
-  "conclusion": "匹配 | 不匹配 | 部分匹配 | 无法判断 | 不适用",
-  "confidence": 0.0,
-  "manual_review_needed": true,
-  "evidence_units": [],
-  "law_basis_used": [],
-  "check_items": [],
-  "missing_evidence": [],
+  "conclusion": "",
+  "report_evidence_used": [],
+  "rag_basis_used": [],
+  "basis_status": "available | insufficient | not_required",
+  "applicability_check": [],
   "calculation_trace": [],
-  "risk_tags": [],
+  "missing_evidence": [],
+  "risk_hints": [],
+  "manual_review_needed": false,
   "review_comment": ""
 }
 ```
 
-结论折算规则：全部关键审核点为“通过”→ `匹配`；任一核心审核点“不通过”→ `不匹配`；存在非核心缺陷但主体可判断 → `部分匹配`；缺少关键证据或法规依据 → `无法判断`；项目不触发本 skill → `不适用`。
+输出必须为合法JSON。`review_comment`应明确“报告事实—外部依据—比较过程—建议修改”，不得输出未提供的项目事实。
 
-## 11. 审核意见写法
+## 13. 人工复核规则
 
-审核意见必须能让经办人直接修改报告。重点写：直接写明填报值、复算值、误差和需修改的表格位置。
+出现以下任一情况时`manual_review_needed=true`：关键证据位置缺失；报告前后冲突；RAG版本或适用性不明；结论为不匹配、部分匹配或无法判断；计算参数缺少来源；经验提示与正式依据冲突。
 
-推荐句式：`报告在【章节/表名】中填报……，但【证据/复算/法规依据】显示……，建议补充/更正……。`
+## 14. 非规范经验提示
 
-## 10. 人工复核规则
+常见错误和类案只能写入`risk_hints`，必须带`source_type`、适用场景和局限性。经验阈值、历史修改意见或同类项目惯例不得冒充法条，不能单独支撑最终判断。
 
-触发以下任一条件时，`manual_review_needed` 必须为 `true`：证据位置缺失；报告内同一字段前后不一致；法规库未命中可适用条款；计算过程缺少原始参数；结论为“不匹配 / 部分匹配 / 无法判断”；类案经验与法规条款冲突。
+## 15. 与其他Skill边界
+
+只做投资金额与比例复核，不判断治理技术是否充分。

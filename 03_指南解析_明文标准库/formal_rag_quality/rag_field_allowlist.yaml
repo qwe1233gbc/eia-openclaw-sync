@@ -1,0 +1,10 @@
+purpose: standard_card_routing_metadata_only
+allowed_fields:
+  - standard_id
+  - source_files
+  - retrieval_tags
+  - trigger_keywords
+  - document_number
+  - domain
+  - related_skill_ids
+injection_policy: fields_can_build_queries_or_filters_but_whole_card_cannot_enter_B_group_body
