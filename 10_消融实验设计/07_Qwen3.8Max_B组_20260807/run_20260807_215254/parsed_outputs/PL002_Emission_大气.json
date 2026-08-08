@@ -1,0 +1,88 @@
+{
+  "question_id": "PL002_Emission_大气",
+  "group": "B",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "",
+  "audit_category": "大气污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告已列出混料/破碎颗粒物、挤出/抽检非甲烷总烃及臭气浓度、厂区内NMHC无组织等大气污染源，并对应GB31572-2015、GB14554-93、DB44/2367-2022，污染源覆盖基本完整；但存在限值与指标表述不一致。",
+    "evidence": [
+      {
+        "fact": "标准表列出混料/破碎颗粒物、挤出/抽检NMHC、臭气浓度及对应标准限值。",
+        "source_location": "root[8].content#2200",
+        "source_excerpt": "混料、破碎颗粒物///1.0GB31572-2015挤出、抽检非甲烷总烃（NMHC）G1（30m）60----GB31572-2015臭气浓度6000（无量纲）--20（无量纲）GB14554-93"
+      },
+      {
+        "fact": "监测计划中G1非甲烷总烃限值写为100，与前文60不一致。",
+        "source_location": "root[9].content#6600",
+        "source_excerpt": "3G1非甲烷总烃1次/年《合成树脂工业污染物排放标准》（GB31572-2015）100/臭气浓度1次/年《恶臭污染物排放标准》（GB14554-93）6000（无量纲）/"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "污染源与标准映射完整性",
+        "result": "pass",
+        "explanation": "混料/破碎颗粒物、挤出/抽检NMHC、臭气浓度、厂区内NMHC无组织均有对应标准。"
+      },
+      {
+        "check_name": "NMHC执行限值一致性",
+        "result": "fail",
+        "explanation": "标准表及达标分析给出G1 NMHC限值60mg/m3，监测计划给出100mg/m3。"
+      },
+      {
+        "check_name": "臭气排气筒高度与标准引用一致性",
+        "result": "uncertain",
+        "explanation": "报告为30m排气筒，但达标说明中出现25m高排气筒标准值表述，需核实对应高度限值。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "G1非甲烷总烃排放限值在标准表/达标分析为60mg/m3，监测计划为100mg/m3，内部不一致。",
+      "报告部分位置使用总VOCs表述，标准表仅列非甲烷总烃，需说明指标对应关系。",
+      "臭气浓度30m排气筒达标说明中引用25m高排气筒标准值，需核实高度对应限值。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "insufficient_reference",
+    "conclusion": "冻结RAG可支持恶臭污染物执行GB14554-93、VOCs无组织在行业标准未规定时执行DB44/2367-2022，以及GB31572适用于合成树脂工业的框架；但缺GB31572表5/表9具体限值及C2929与GB31572适用关系，无法完整判定限值选取合理性。",
+    "references_used": [
+      {
+        "reference_id": "AIR_GB31572_2015_MOD",
+        "title": "合成树脂工业污染物排放标准（含2024修改内容）",
+        "clause_or_table": "前言/适用范围",
+        "supporting_text": "本标准规定了合成树脂（聚氯乙烯树脂除外）工业企业及其生产设施的水污染物和大气污染物排放限值、监测和监督管理要求。"
+      },
+      {
+        "reference_id": "AIR_GB14554_93",
+        "title": "恶臭污染物排放标准",
+        "clause_or_table": "5.2",
+        "supporting_text": "排污单位经烟、气排气筒(高度在 15 m 以上)排放的恶臭污染物的排放量和臭气浓度都必须低于或等于恶臭污染物排放标准。"
+      },
+      {
+        "reference_id": "AIR_DB44_2367_2022",
+        "title": "固定污染源挥发性有机物综合排放标准",
+        "clause_or_table": "1 范围",
+        "supporting_text": "凡是无行业性大气污染物排放标准或者挥发性有机物排放标准控制的污染源，应当执行本文件。国家或我省发布的行业污染物排放标准中对VOCs无组织排放控制未做规定的，应执行本文件中无组织排放控制要求。"
+      }
+    ],
+    "missing_references": [
+      "GB31572-2015表5、表9具体排放限值。",
+      "GB14554-93按排气筒高度的具体限值表。",
+      "C2929其他塑料制品制造与GB31572适用关系的明确依据。"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "内部可见大气污染源包括混料/破碎颗粒物（无组织）、挤出/抽检NMHC（有组织G1及无组织）、臭气浓度（有组织/无组织）及厂区内NMHC无组织，分别对应GB31572-2015、GB14554-93、DB44/2367-2022，覆盖基本完整。问题：标准表与达标分析均给出G1 NMHC限值60mg/m3，但监测计划写100mg/m3；部分文字称总VOCs而标准表仅列NMHC；臭气30m排气筒处引用25m标准值表述需澄清。外部RAG仅能支持恶臭、VOC无组织及合成树脂行业标准的适用框架，缺GB31572表5/表9具体限值及C2929细分适用依据，故不能完全判定。",
+    "scope_note": "仅依据报告JSON与冻结RAG；未采用RAG外法规知识。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

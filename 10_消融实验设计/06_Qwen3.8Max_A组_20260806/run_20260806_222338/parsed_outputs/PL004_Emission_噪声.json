@@ -1,0 +1,70 @@
+{
+  "question_id": "PL004_Emission_噪声",
+  "group": "A",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "PL004",
+  "audit_category": "噪声排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "声功能区划为3类（杏坛东部工业区片区），执行GB12348-2008 3类标准（昼间≤65dB(A)、夜间≤55dB(A)），标准选取正确且各章节限值一致。但噪声影响分析段落误将排放标准写为《声环境质量标准》（GB3096-2008），属标准引用错误。",
+    "evidence": [
+      {
+        "fact": "项目属3321杏坛东部工业区片区，执行GB12348-2008 3类标准，昼间≤65dB(A)、夜间≤55dB(A)",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "项目位置属于3321杏坛东部工业区片区，厂界外1m执行《工业企业厂界环境噪声排放标准》（GB12348-2008）中的3类标准：昼间≤65dB(A)、夜间≤55dB(A)。"
+      },
+      {
+        "fact": "噪声影响分析段落错误引用GB3096-2008作为厂界排放达标依据",
+        "source_location": "root[7].content#4400",
+        "source_excerpt": "能使项目厂界噪声达到《声环境质量标准》（GB3096-2008）3类标准，即昼间≤65dB(A)，，预计达标排放的噪声对周围环境影响不大。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "声功能区类别与标准类别匹配",
+        "result": "pass",
+        "explanation": "项目位于工业区片区（3类声环境功能区），对应执行GB12348-2008 3类标准，匹配正确。"
+      },
+      {
+        "check_name": "各章节限值一致性",
+        "result": "pass",
+        "explanation": "标准章节、预测表（65/55）、监测计划表（65/55）、监督检查清单均为3类65/55，数值一致。"
+      },
+      {
+        "check_name": "标准名称引用准确性",
+        "result": "fail",
+        "explanation": "噪声影响及达标分析段落将厂界排放标准误写为《声环境质量标准》（GB3096-2008），应为《工业企业厂界环境噪声排放标准》（GB12348-2008）。GB3096为环境质量标准，不用于厂界排放达标判定。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "噪声影响分析段落将GB3096-2008（声环境质量标准）误作厂界噪声排放标准引用，应更正为GB12348-2008。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB12348-2008中3类标准限值为昼间≤65dB(A)、夜间≤55dB(A)，报告所列限值正确。工业区对应3类声环境功能区，标准类别选取合理。",
+    "references_used": [
+      {
+        "reference_id": "GB12348-2008",
+        "title": "工业企业厂界环境噪声排放标准",
+        "clause_or_table": "表1 厂界环境噪声排放限值",
+        "supporting_text": "3类：昼间65dB(A)，夜间55dB(A)"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "项目位于佛山市顺德区杏坛东部工业区片区（3321），属3类声环境功能区，执行GB12348-2008 3类标准（昼间≤65dB(A)、夜间≤55dB(A)），标准类别和限值选取正确，各章节数值一致。但报告第四章噪声影响及达标分析段落将厂界排放达标依据误写为《声环境质量标准》（GB3096-2008），该标准为环境质量标准而非排放标准，属标准引用错误，应更正为GB12348-2008。",
+    "scope_note": "审核范围限于噪声排放标准选取及内部一致性，未涉及噪声预测模型合理性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

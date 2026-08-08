@@ -1,0 +1,96 @@
+{
+  "question_id": "PL002_V01_Q01",
+  "group": "B",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告产品、原料和工艺具有塑胶行业典型特征，适合作为塑胶行业种子问答样本；行业类别列为C2929基本可接受，但与改性塑料粒产品细分存在轻微不匹配；另发现VOCs总量章节数值不一致。",
+    "evidence": [
+      {
+        "fact": "报告明确项目行业类别为C2929塑料零件及其他塑料制品制造。",
+        "source_location": "root[1].content#2200",
+        "source_excerpt": "本项目属于C2929 塑料零件及其他塑料制品制造，无燃煤燃油火电机组和企业自备电站、供热锅炉。"
+      },
+      {
+        "fact": "搬迁后项目以塑料新粒料为原料，经混料、拉粒、挤出成型等塑胶加工工艺。",
+        "source_location": "root[5].content#6600",
+        "source_excerpt": "PP、PC、PA、PPT、PET新粒料、玻璃纤维、色母（粒料）经人工配料后按比例加入混料机进行混料，混好料后加入拉料机进行拉粒加工，原料塑料粒在双螺杆机挤出机组内于约200℃的温度下挤出成型"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "塑胶行业样本适配性",
+        "result": "pass",
+        "explanation": "产品为改性塑料粒，原料为PP、PC、PA、PPT、PET新粒料，工艺包括混料、挤出、拉粒、注塑检测，属于塑胶行业典型内容。"
+      },
+      {
+        "check_name": "行业类别与产品匹配性",
+        "result": "uncertain",
+        "explanation": "报告列C2929塑料零件及其他塑料制品制造，但产品为改性塑料粒，非典型塑料零件，作为其他塑料制品基本可接受，细分需复核。"
+      },
+      {
+        "check_name": "VOCs总量数值一致性",
+        "result": "fail",
+        "explanation": "一处称有机废气有组织总排放量5.1520t/a；另一处有组织1.6100t/a、无组织2.7600t/a、合计4.3700t/a，前后不一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "VOCs合计=有组织排放量+无组织排放量",
+        "inputs": {
+          "有组织排放量": 1.61,
+          "无组织排放量": 2.76
+        },
+        "result": "4.3700",
+        "unit": "t/a"
+      },
+      {
+        "formula": "差异=5.1520-1.6100",
+        "inputs": {
+          "有机废气有组织总排放量": 5.152,
+          "VOCs有组织排放量": 1.61
+        },
+        "result": "3.5420",
+        "unit": "t/a"
+      }
+    ],
+    "issues": [
+      "VOCs总量指标5.1520t/a与工程核算有组织1.6100t/a、合计4.3700t/a不一致。",
+      "C2929与改性塑料粒产品形态的细分匹配需人工复核。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "依据冻结RAG，C292塑料制品业涵盖以合成树脂为主要原料、经挤塑注塑等工艺生产塑料制品的活动；C2929涵盖其他未列明非日用塑料制品。项目以塑料新粒料经挤出、注塑等加工，归入塑料制品业基本合理，C2929作为细分基本可接受。",
+    "references_used": [
+      {
+        "reference_id": "IND_GBT4754_2017",
+        "title": "GB/T 4754-2017国民经济行业分类",
+        "clause_or_table": "292塑料制品业",
+        "supporting_text": "指以合成树脂（高分子化合物）为主要原料，经采用挤塑、注塑、吹塑、压延、层压等工艺加工成型的各种制品的生产，以及利用回收的废旧塑料加工再生产塑料制品的活动；不包括塑料鞋制造"
+      },
+      {
+        "reference_id": "IND_GBT4754_2017",
+        "title": "GB/T 4754-2017国民经济行业分类",
+        "clause_or_table": "2929塑料零件及其他塑料制品制造",
+        "supporting_text": "指塑料制绝缘零件、密封制品、紧固件，以及汽车、家具等专用零配件的制造，以及上述未列明的其他各类非日用塑料制品的生产活动"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "报告产品为改性PP/PC/PA/PPT/PET塑料粒，原料为塑料新粒料、色母和玻纤，工艺为混料、挤出、拉粒、注塑检测，具备塑胶行业典型特征，适合作为塑胶行业种子问答样本。行业类别报告列C2929，结合GB/T 4754中292塑料制品业及2929其他塑料制品制造，基本合理，但产品为粒料而非零件，细分需复核。内部发现VOCs总量5.1520t/a与1.6100t/a有组织、4.3700t/a合计不一致。",
+    "scope_note": "仅依据给定报告上下文和冻结RAG完成审核，未使用RAG之外法规知识。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

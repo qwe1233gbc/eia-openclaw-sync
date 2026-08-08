@@ -1,0 +1,84 @@
+{
+  "question_id": "PL003_V01_Q03",
+  "group": "D",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "review-eia-environmental-investment",
+  "audit_category": "环评投资概算",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "环保工程分项合计15.0万元与环保投资总额15.0万元一致，占比15.0%计算正确。但报告正文经济可行性分析处称'废气处理设施的投资约为10万元'，与表2-9中废气控制工程11.50万元存在矛盾。",
+    "evidence": [
+      {
+        "fact": "基本情况表：总投资100万元，环保投资15万元，环保投资占比15.00%",
+        "source_location": "root[2].content#0",
+        "source_excerpt": "总投资（万元） 100. 00 环保投资（万元） 15. 00 环保投资占比（%） 15. 00"
+      },
+      {
+        "fact": "表2-9环保工程分项：污水处理1.0+废气控制11.50+噪声防治1.0+固废1.5=小计15.0万元，占总投资15.0%",
+        "source_location": "root[5].content#4400",
+        "source_excerpt": "1污水处理工程三级化粪池1.0 1.0 2废气控制工程集气罩+二级活性炭吸附装置+废气排放管道11.50 11.5 3噪声防治工程设备减振、墙体隔声等1.0 1.0 4固废危废暂存间1.5 1.5 小计15.0占总投资的15.0%"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "分项合计与环保投资一致性",
+        "result": "pass",
+        "explanation": "1.0+11.50+1.0+1.5=15.0万元，与环保投资15万元一致"
+      },
+      {
+        "check_name": "环保投资占比复算",
+        "result": "pass",
+        "explanation": "15.0÷100×100%=15.0%，与报告填报15.00%一致"
+      },
+      {
+        "check_name": "章节间废气投资金额一致性",
+        "result": "fail",
+        "explanation": "经济可行性分析处称废气处理设施投资'约为10万元'，而表2-9明确为11.50万元，差额1.5万元，超出合理舍入范围"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "Σ各分项金额",
+        "inputs": {
+          "污水处理": 1.0,
+          "废气控制": 11.5,
+          "噪声防治": 1.0,
+          "固废": 1.5
+        },
+        "result": "15.0",
+        "unit": "万元"
+      },
+      {
+        "formula": "环保投资÷总投资×100%",
+        "inputs": {
+          "环保投资": 15.0,
+          "总投资": 100.0
+        },
+        "result": "15.0",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "经济可行性分析段落称废气处理设施投资'约为10万元，占总投资的10%'，与表2-9中废气控制工程11.50万元（11.5%）不一致，差额1.5万元"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_required",
+    "conclusion": "本Skill仅依赖报告事实进行内部一致性审核，不需要外部法规知识库。冻结RAG为空。",
+    "references_used": [],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "环保工程分项合计（1.0+11.50+1.0+1.5=15.0万元）与环保投资总额15万元一致，占比15.0%计算正确，基本情况表与表2-9数据吻合。但报告第4章经济可行性分析处称'废气处理设施的投资约为10万元，占总投资的10%'，与表2-9中废气控制工程投资11.50万元（占11.5%）存在1.5万元差额，属于章节间数据不一致。",
+    "scope_note": "仅完成报告内部一致性审核，无需外部规范核验。"
+  },
+  "answer_mode": "determinate_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

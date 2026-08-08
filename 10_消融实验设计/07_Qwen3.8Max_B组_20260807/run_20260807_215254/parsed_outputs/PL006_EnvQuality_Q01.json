@@ -1,0 +1,95 @@
+{
+  "question_id": "PL006_EnvQuality_Q01",
+  "group": "B",
+  "project_id": "PL006",
+  "source_json": "PL006_佛山市顺德区乐鲸科技有限公司年产五金拉手300万个新建项目.json",
+  "skill_id": "",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "大气现状引用与表3-1及正文数据一致，O3超标并判定不达标区；地表水引用2022公报国省考断面达标结论，但顺德支流达标缺少具体监测数据支撑。",
+    "evidence": [
+      {
+        "fact": "报告引用2022年度顺德区公报，列出大气基本污染物浓度及O3第90百分位数190微克/立方米。",
+        "source_location": "root[3].content#0",
+        "source_excerpt": "2022年全区二氧化硫（SO2）、二氧化氮（NO2）、可吸入颗粒物（PM10）、细颗粒物（PM2.5）平均浓度分别为5、29、32、19微克/立方米，臭氧日最大8小时滑动平均（O3-8h）浓度的第90百分位数为190微克/立方米"
+      },
+      {
+        "fact": "报告引用佛顺环函〔2023〕26号，称2022年顺德区国控、省控断面均达到水质目标，并据此表述顺德支流满足Ⅲ类。",
+        "source_location": "root[3].content#0",
+        "source_excerpt": "参照《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知》（佛顺环函〔2023〕26号），2022年顺德区2个国控断面（乌洲、顺德港）、3个省控断面（杨滘、海凌、飞鹅山）均达到相应的水质目标"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "大气现状数据内部一致性",
+        "result": "pass",
+        "explanation": "表3-1与正文浓度值一致，O3超标，判定为不达标区。"
+      },
+      {
+        "check_name": "地表水现状支撑充分性",
+        "result": "uncertain",
+        "explanation": "仅以顺德区国省考断面水质优良率推断顺德支流满足Ⅲ类，未附顺德支流具体监测数据。"
+      },
+      {
+        "check_name": "占标率计算一致性",
+        "result": "pass",
+        "explanation": "O3占标率按190/160计算为118.75%，表列118.7，修约一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "O3占标率=190/160×100%",
+        "inputs": {
+          "O3现状浓度": 190,
+          "标准值": 160
+        },
+        "result": "118.75≈118.7",
+        "unit": "%"
+      },
+      {
+        "formula": "NO2占标率=29/40×100%",
+        "inputs": {
+          "NO2现状浓度": 29,
+          "标准值": 40
+        },
+        "result": "72.5",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "地表水部分未提供顺德支流具体监测数据，表3-2仅有标题，支撑不足。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "RAG中2022年度顺德区公报可支持大气五项污染物达标、O3超标及国省考断面水质达标的实质结论；但报告引用名称和文号与RAG文本不一致，应规范。",
+    "references_used": [
+      {
+        "reference_id": "ENV_SHUNDE_2022",
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "clause_or_table": "大气环境质量、地表水主河道",
+        "supporting_text": "2022年顺德区二氧化硫（SO2）、二氧化氮（NO2）、可吸入颗粒物（PM10）、细颗粒物（PM2.5）、一氧化碳（CO）五项污染物年评价浓度均达到二级标准，臭氧（O3）超标。"
+      },
+      {
+        "reference_id": "ENV_SHUNDE_2022",
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "clause_or_table": "地表水环境",
+        "supporting_text": "2022年顺德区2个国控断面（乌洲、顺德港）、3个省控断面（杨滘、海凌、飞鹅山）均达到相应的水质目标，水质优良率（Ⅰ～Ⅲ类）为100%。"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告大气现状引用2022顺德区公报，表3-1与正文一致，O3第90百分位190μg/m³超标，判定不达标区；地表水引用国省考断面达标结论。外部RAG显示实质结论相符，但报告称“环境质量状况公报”且文号“佛顺环函”，与RAG“生态环境状况公报”“佛环顺函”不一致；顺德支流达标亦缺具体监测数据。",
+    "scope_note": "外部核验仅依据冻结RAG；未依据RAG之外法规判断引用时效。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "question_id": "PL005_Emission_水污",
+  "group": "C",
+  "project_id": "PL005",
+  "source_json": "PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+  "skill_id": "07_review-eia-pollutant-discharge-standards",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告各章节对废水路径（生活污水→三级化粪池→杏坛污水处理厂→顺德支流）、企业排口标准（DB44/26-2001第二时段三级）、尾水标准（GB18918-2002一级A与DB44/26-2001第二时段一级较严值）描述一致。但表4-11产生量数值存在计算错误，与表4-14矛盾。",
+    "evidence": [
+      {
+        "fact": "表4-11中CODCr产生量记为0.0180t/a，但产生浓度200mg/L×180t/a应为0.036t/a，与表4-14的0.0360t/a矛盾",
+        "source_location": "root[8].content#4400 表4-11",
+        "source_excerpt": "产生浓度（mg/L） 6-9（无量纲） 200 100 150 30 产生量（t/a） / 0.0180 0.0090 0.0135 0.0027"
+      },
+      {
+        "fact": "表4-14中CODCr产生量为0.0360t/a，与浓度和水量匹配正确",
+        "source_location": "root[8].content#6600 表4-14",
+        "source_excerpt": "CODCr 200 0.0360 160 0.0288 40 0.0072"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "排放路径各章节一致性",
+        "result": "pass",
+        "explanation": "规划相符性、工程分析、影响分析、监督检查清单均一致表述为：生活污水→三级化粪池→杏坛污水处理厂→尾水排入顺德支流"
+      },
+      {
+        "check_name": "企业排口标准与尾水标准未混用",
+        "result": "pass",
+        "explanation": "企业排口执行DB44/26-2001第二时段三级，尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级较严值，各章节未混淆"
+      },
+      {
+        "check_name": "表4-11与表4-14数值一致性",
+        "result": "fail",
+        "explanation": "表4-11所有产生量均为表4-14对应值的一半（如CODCr 0.0180 vs 0.0360），存在明显计算错误"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "产生量 = 产生浓度 × 废水量",
+        "inputs": {
+          "CODCr浓度": "200 mg/L",
+          "废水量": "180 t/a"
+        },
+        "result": "0.036",
+        "unit": "t/a"
+      },
+      {
+        "formula": "尾水排放量 = 尾水浓度 × 废水量",
+        "inputs": {
+          "CODCr尾水浓度": "40 mg/L",
+          "废水量": "180 t/a"
+        },
+        "result": "0.0072",
+        "unit": "t/a"
+      }
+    ],
+    "issues": [
+      "表4-11产生量列数值全部为正确值的一半，与表4-14及浓度×水量计算结果矛盾"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "C组无冻结RAG，无法核验DB44/26-2001第二时段三级限值、GB18918-2002一级A限值及杏坛污水处理厂实际执行标准的正确性。",
+    "references_used": [],
+    "missing_references": [
+      "DB44/26-2001第二时段三级标准限值表",
+      "GB18918-2002一级A标准限值表",
+      "杏坛污水处理厂环评批复或排污许可证"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告内部废水路径清晰且各章节一致：生活污水经三级化粪池预处理达DB44/26-2001第二时段三级标准后排入杏坛污水处理厂，尾水排入顺德支流，执行GB18918-2002一级A与DB44/26-2001第二时段一级较严值。但表4-11中所有污染物产生量均为正确值的一半（如CODCr记为0.0180t/a，实际应为0.036t/a），与同章表4-14矛盾，属数值错误。外部标准适用性因无RAG未核验。",
+    "scope_note": "外部规范核验未执行（C组无冻结RAG），仅完成报告内部一致性审核。"
+  },
+  "answer_mode": "determinate_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

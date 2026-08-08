@@ -1,0 +1,380 @@
+{
+  "record": {
+    "project_id": "PL019",
+    "project_name": "佛山市智龙科技有限公司迁扩建项目",
+    "report_name": "PL019_佛山市智龙科技有限公司迁扩建项目_01_受理公告或公示版.pdf",
+    "report_version": "受理公告或公示版"
+  },
+  "report_evidence": {
+    "report_date": {
+      "evidence_id": "R0-PL019",
+      "quote": "文件名标注为“受理公告或公示版”；报告引用佛环顺函〔2024〕44号（2024-03-26发布），可推断报告编制/公示时点不早于2024-03-26；报告正文未给出明确编制或公示日期。",
+      "source_section": "文件元数据/封面",
+      "source_location": "PL019_佛山市智龙科技有限公司迁扩建项目_01_受理公告或公示版.pdf"
+    },
+    "air": {
+      "functional_zone": "二类环境空气质量功能区",
+      "bulletin_title": "2023年度佛山市顺德区生态环境状况公报",
+      "bulletin_year": 2023,
+      "full_analysis": {
+        "evidence_id": "R1-PL019",
+        "quote": "根据佛山市生态环境局顺德分局关于发布《2023年度佛山市顺德区生态环境状况公报》的通知中的大气环境数据，2023年全区 SO2、NO2、PM10、PM2.5 平均浓度分别为6、28、35、20 ug/m3，CO（一氧化碳）浓度的第95百分位数为1.0ug/m3，O3（臭氧）最大8小时平均值的第90百分位数为164ug/m3，SO2、NO2、PM10、PM2.5、CO五项污染物指标浓度均达到《环境空气质量标准》（GB3095-2012）及2018年修改单中的二级标准，臭氧（O3）超标，项目所在的顺德区判断为不达标区。",
+        "source_section": "三、区域环境质量现状 2、空气环境质量现状",
+        "source_location": "Page 41"
+      },
+      "claims": [
+        {
+          "evidence_id": "R1-PL019",
+          "item": "SO2年平均浓度",
+          "value": 6,
+          "unit": "μg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL019",
+          "item": "NO2年平均浓度",
+          "value": 28,
+          "unit": "μg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL019",
+          "item": "PM10年平均浓度",
+          "value": 35,
+          "unit": "μg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL019",
+          "item": "PM2.5年平均浓度",
+          "value": 20,
+          "unit": "μg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL019",
+          "item": "CO第95百分位数",
+          "value": 1.0,
+          "unit": "μg/m³(正文标注，实为mg/m³)",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL019",
+          "item": "O3第90百分位数最大8h",
+          "value": 164,
+          "unit": "μg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL019",
+          "item": "达标区判定",
+          "value": "不达标区(O3超标，五项达标)",
+          "unit": null,
+          "scope": "顺德区全区"
+        }
+      ]
+    },
+    "surface_water": {
+      "wastewater_treatment_plant": "勒流污水处理厂",
+      "receiving_water": "顺德支流",
+      "bulletin_title": "2023年度佛山市顺德区生态环境状况公报",
+      "bulletin_year": 2023,
+      "full_analysis": {
+        "evidence_id": "R2-PL019",
+        "quote": "项目生活污水经预处理后由市政管网进入勒流污水处理厂，纳污水体为顺德支流。……根据佛山市生态环境局顺德分局关于发布《2023年度佛山市顺德区生态环境状况公报》的通知（佛环顺函〔2024〕44号），项目纳污水体顺德支流新涌断面2023年河流定类均为Ⅲ类，符合《地表水环境质量标准》（GB3838-2002）Ⅲ类标准，水质良好。",
+        "source_section": "三、区域环境质量现状 1、地表水环境质量现状",
+        "source_location": "Page 41"
+      },
+      "claims": [
+        {
+          "evidence_id": "R2-PL019",
+          "item": "顺德支流 新涌断面 2023年河流定类",
+          "value": "Ⅲ",
+          "unit": null,
+          "scope": "顺德支流/新涌断面"
+        },
+        {
+          "evidence_id": "R2-PL019",
+          "item": "水质结论",
+          "value": "符合Ⅲ类标准，水质良好",
+          "unit": null,
+          "scope": "顺德支流/新涌断面"
+        }
+      ]
+    }
+  },
+  "time_basis": {
+    "as_of_date": null,
+    "basis_status": "inferred",
+    "available_years": [
+      2022,
+      2023
+    ],
+    "valid_three_year_window": [
+      2022,
+      2023
+    ],
+    "coverage_gap": [
+      2021
+    ]
+  },
+  "knowledge_matches": [
+    {
+      "knowledge_id": "K-2023-AIR",
+      "source_id": "shunde-bulletin-2023",
+      "element": "air",
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "record": {
+        "knowledge_id": "K-2023-AIR",
+        "source_id": "shunde-bulletin-2023",
+        "pdf_pages": [
+          2,
+          3
+        ],
+        "quality_index": 3.14,
+        "city_rank": 2,
+        "aqi_compliance_rate_percent": 87.4,
+        "overall_status": "O3超二级浓度限值；SO2、NO2、PM10、PM2.5、CO五项污染物年评价浓度符合二级浓度限值",
+        "pollutant_metrics": {
+          "SO2": {
+            "value": 6,
+            "unit": "μg/m³",
+            "trend": "较2022年上升20.0%"
+          },
+          "NO2": {
+            "value": 28,
+            "unit": "μg/m³",
+            "trend": "较2022年下降3.4%"
+          },
+          "PM10": {
+            "value": 35,
+            "unit": "μg/m³",
+            "trend": "较2022年上升9.4%"
+          },
+          "PM2.5": {
+            "value": 20,
+            "unit": "μg/m³",
+            "trend": "较2022年上升5.3%"
+          },
+          "O3": {
+            "value": 164,
+            "unit": "μg/m³",
+            "trend": "较2022年下降13.7%"
+          },
+          "CO": {
+            "value": 1.0,
+            "unit": "mg/m³",
+            "trend": "较2022年下降9.1%"
+          }
+        }
+      }
+    },
+    {
+      "knowledge_id": "K-2023-WATER",
+      "source_id": "shunde-bulletin-2023",
+      "element": "surface_water",
+      "pdf_pages": [
+        5,
+        6,
+        7
+      ],
+      "record": {
+        "knowledge_id": "K-2023-WATER",
+        "source_id": "shunde-bulletin-2023",
+        "pdf_pages": [
+          5,
+          6,
+          7
+        ],
+        "controlled_section_compliance": "2个国控断面和3个省控断面均符合相应水质目标，水质优良率100%",
+        "river_count": 16,
+        "section_count": 24,
+        "class_distribution": {
+          "Ⅱ": {
+            "count": 19,
+            "percent": 79
+          },
+          "Ⅲ": {
+            "count": 5,
+            "percent": 21
+          }
+        },
+        "stations": [
+          {
+            "river": "顺德支流",
+            "station": "新涌",
+            "class": "Ⅲ"
+          },
+          {
+            "river": "顺德支流",
+            "station": "飞鹅山",
+            "class": "Ⅲ"
+          },
+          {
+            "river": "顺德水道",
+            "station": "杨滘",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "鸡鸦水道",
+            "station": "细滘大桥",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "桂州水道",
+            "station": "南头大桥",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "古镇水道",
+            "station": "鹅洋沙",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "洪奇沥",
+            "station": "高黎",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "容桂水道",
+            "station": "顺德港",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "东海水道",
+            "station": "海凌",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "东海水道",
+            "station": "星槎",
+            "class": "Ⅱ"
+          }
+        ]
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL019",
+      "knowledge_id": "K-2023-AIR",
+      "item": "SO2年平均浓度",
+      "status": "exact",
+      "report_value": 6,
+      "knowledge_value": 6,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL019",
+      "knowledge_id": "K-2023-AIR",
+      "item": "NO2年平均浓度",
+      "status": "exact",
+      "report_value": 28,
+      "knowledge_value": 28,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL019",
+      "knowledge_id": "K-2023-AIR",
+      "item": "PM10年平均浓度",
+      "status": "exact",
+      "report_value": 35,
+      "knowledge_value": 35,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL019",
+      "knowledge_id": "K-2023-AIR",
+      "item": "PM2.5年平均浓度",
+      "status": "exact",
+      "report_value": 20,
+      "knowledge_value": 20,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL019",
+      "knowledge_id": "K-2023-AIR",
+      "item": "O3第90百分位数",
+      "status": "exact",
+      "report_value": 164,
+      "knowledge_value": 164,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL019",
+      "knowledge_id": "K-2023-AIR",
+      "item": "CO第95百分位数",
+      "status": "unit_mismatch",
+      "report_value": "1.0(正文标注μg/m³)",
+      "knowledge_value": "1.0 mg/m³",
+      "note": "报告正文将CO单位标注为μg/m³，与公报mg/m³不符；但同页表格CO=1000(μg/m³语境)=1.0mg/m³与公报一致，达标结论未失真，属单位表述笔误。"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL019",
+      "knowledge_id": "K-2023-AIR",
+      "item": "达标区判定",
+      "status": "exact",
+      "report_value": "不达标区(O3超标，五项达标)",
+      "knowledge_value": "O3超二级浓度限值；五项达标",
+      "note": "一致"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-PL019",
+      "knowledge_id": "K-2023-WATER",
+      "item": "顺德支流 新涌断面 2023年定类",
+      "status": "exact",
+      "report_value": "Ⅲ",
+      "knowledge_value": "Ⅲ",
+      "note": "一致（公报P5-7：顺德支流/新涌=Ⅲ）"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-PL019",
+      "knowledge_id": "K-2023-WATER",
+      "item": "水质结论",
+      "status": "exact",
+      "report_value": "符合Ⅲ类标准，水质良好",
+      "knowledge_value": "Ⅲ类",
+      "note": "一致"
+    }
+  ],
+  "audit_result": {
+    "conclusion": "正确",
+    "air_result": "正确",
+    "surface_water_result": "正确",
+    "summary_sentence": "1、【大气及地表水环境质量引用数据正确】；",
+    "air_statement": "2、项目大气环境质量引用《2023年度佛山市顺德区生态环境状况公报》。环评对大气环境质量分析内容与《2023年度佛山市顺德区生态环境状况公报》中大气环境状况描述一致（SO2=6、NO2=28、PM10=35、PM2.5=20μg/m³，O3=164μg/m³，CO=1.0mg/m³，五项达标、O3超标、不达标区）；其中报告正文将CO单位标注为μg/m³属单位表述笔误，同页表格数值（1000μg/m³=1.0mg/m³）与公报一致，不影响达标结论。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》（佛环顺函〔2025〕12号，2025-04-03发布），可供参考。",
+    "surface_water_statement": "项目地表水环境质量引用《2023年度佛山市顺德区生态环境状况公报》。环评对地表水环境质量分析内容与《2023年度佛山市顺德区生态环境状况公报》中地表水环境状况描述一致（纳污水体顺德支流新涌断面2023年河流定类Ⅲ类，符合Ⅲ类标准，水质良好；公报P5-7：顺德支流/新涌=Ⅲ）。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》（佛环顺函〔2025〕12号，2025-04-03发布），可供参考。",
+    "update_notice": [
+      "经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》（佛环顺函〔2025〕12号，2025-04-03发布），可供参考。"
+    ],
+    "readable_answer": "1、【大气及地表水环境质量引用数据正确】；2、项目大气环境质量引用《2023年度佛山市顺德区生态环境状况公报》。环评对大气环境质量分析内容与《2023年度佛山市顺德区生态环境状况公报》中大气环境状况描述一致（SO2=6、NO2=28、PM10=35、PM2.5=20μg/m³，O3=164μg/m³，CO=1.0mg/m³，五项达标、O3超标、不达标区）；其中报告正文将CO单位标注为μg/m³属单位表述笔误，同页表格数值（1000μg/m³=1.0mg/m³）与公报一致，不影响达标结论。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》（佛环顺函〔2025〕12号，2025-04-03发布），可供参考。项目地表水环境质量引用《2023年度佛山市顺德区生态环境状况公报》。环评对地表水环境质量分析内容与《2023年度佛山市顺德区生态环境状况公报》中地表水环境状况描述一致（纳污水体顺德支流新涌断面2023年河流定类Ⅲ类，符合Ⅲ类标准，水质良好；公报P5-7：顺德支流/新涌=Ⅲ）。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》（佛环顺函〔2025〕12号，2025-04-03发布），可供参考。"
+  },
+  "human_review": {
+    "status": "待人工确认",
+    "focus": [
+      "报告未给出明确编制/公示日期，时间基准依据引用公报发布日期推断（as_of_date≥2024-03-26），需人工确认。",
+      "报告正文CO单位标注为μg/m³（应为mg/m³），属单位表述笔误，需人工确认是否影响判定。"
+    ],
+    "reviewer": null,
+    "review_date": null
+  },
+  "quality_control": {
+    "report_evidence_traceable": true,
+    "knowledge_evidence_traceable": true,
+    "air_water_separately_checked": true,
+    "no_future_bulletin_used": true,
+    "no_scope_inference": true
+  }
+}

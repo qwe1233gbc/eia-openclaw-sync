@@ -1,0 +1,2112 @@
+[
+  {
+    "schema_version": "1.0",
+    "record": {
+      "source_file": "001_佛山市亮正新材料有限公司新建项目_01_核查材料.docx",
+      "relative_path": "环评报告文件_按问答顺序\\001_佛山市亮正新材料有限公司新建项目_01_核查材料.docx",
+      "project_name": "佛山市亮正新材料有限公司新建项目",
+      "version_round": "01_核查材料"
+    },
+    "question": {
+      "question_text": "请根据项目最终产品、主要原辅材料、核心生产工艺、产品用途及主要活动证据，判断报告填报的国民经济行业类别是否正确，并说明依据。"
+    },
+    "source_extraction": {
+      "reported_industry_classifications": [
+        {
+          "raw_text": "C2223 加工纸制造；C2921塑料薄膜制造",
+          "display_code": "C2223",
+          "numeric_code": "2223",
+          "name": "加工纸制造",
+          "source_location": {
+            "section": "一、建设项目基本情况",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "基本情况表",
+            "field_name": "国民经济行业类别",
+            "page": null
+          },
+          "evidence_id": "E1-1"
+        },
+        {
+          "raw_text": "C2223 加工纸制造；C2921塑料薄膜制造",
+          "display_code": "C2921",
+          "numeric_code": "2921",
+          "name": "塑料薄膜制造",
+          "source_location": {
+            "section": "一、建设项目基本情况",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "基本情况表",
+            "field_name": "国民经济行业类别",
+            "page": null
+          },
+          "evidence_id": "E1-2"
+        }
+      ],
+      "products": [
+        {
+          "product_name": "保护纸",
+          "product_remark": null,
+          "capacity": 400,
+          "unit": "万米/年",
+          "external_sale": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要产品及产能/项目概况",
+            "field_name": "产品及产能",
+            "page": null
+          },
+          "evidence_id": "E2-1"
+        },
+        {
+          "product_name": "保护膜",
+          "product_remark": null,
+          "capacity": 200,
+          "unit": "万米/年",
+          "external_sale": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要产品及产能/项目概况",
+            "field_name": "产品及产能",
+            "page": null
+          },
+          "evidence_id": "E2-2"
+        }
+      ],
+      "materials": [
+        {
+          "material_name": "牛皮纸",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-1"
+        },
+        {
+          "material_name": "水性丙烯酸酯压敏胶",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-2"
+        },
+        {
+          "material_name": "合成硅油309",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-3"
+        },
+        {
+          "material_name": "保护膜原膜（PE）",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-4"
+        },
+        {
+          "material_name": "浓缩高氨天然乳胶",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-5"
+        },
+        {
+          "material_name": "液体萜烯树脂",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-6"
+        }
+      ],
+      "production_processes": [
+        {
+          "process_name": "保护纸：调胶、上胶、复合熟化、印刷、收卷打包",
+          "raw_basis": "水性丙烯酸酯压敏胶和合成硅油309调胶；牛皮纸上胶；复合熟化100℃；水墨印刷；收卷打包形成成品。",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "工艺流程和产排污环节",
+            "field_name": "工艺流程简述",
+            "page": null
+          },
+          "evidence_ids": [
+            "E4-1"
+          ]
+        },
+        {
+          "process_name": "保护膜：调胶、上胶、复合熟化、收卷打包",
+          "raw_basis": "浓缩高氨天然乳胶和液体萜烯树脂调胶；保护膜原膜（PE）上胶；复合熟化80℃；收卷打包形成成品。",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "工艺流程和产排污环节",
+            "field_name": "工艺流程简述",
+            "page": null
+          },
+          "evidence_ids": [
+            "E4-2"
+          ]
+        }
+      ],
+      "product_uses": [
+        {
+          "product_name": "保护纸",
+          "use_text": "表面保护",
+          "is_explicit": true,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "项目概况/产品备注/工艺说明",
+            "field_name": "产品用途",
+            "page": null
+          },
+          "evidence_id": "E5-1"
+        },
+        {
+          "product_name": "保护膜",
+          "use_text": "表面保护",
+          "is_explicit": true,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "项目概况/产品备注/工艺说明",
+            "field_name": "产品用途",
+            "page": null
+          },
+          "evidence_id": "E5-2"
+        }
+      ],
+      "main_activity_evidence": [
+        {
+          "metric": "未提供",
+          "activity_name": null,
+          "value": null,
+          "unit": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": null,
+            "field_name": "增加值/销售收入/营业收入/从业人员",
+            "page": null
+          },
+          "evidence_id": "E6"
+        }
+      ]
+    },
+    "evidence_chain": [
+      {
+        "evidence_id": "E1-1",
+        "evidence_type": "填报行业",
+        "status": "found",
+        "source_file": "001_佛山市亮正新材料有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "一、建设项目基本情况",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "基本情况表",
+          "field_name": "国民经济行业类别",
+          "page": null
+        },
+        "quote": "国民经济行业类别：C2223 加工纸制造；C2921塑料薄膜制造"
+      },
+      {
+        "evidence_id": "E2-1",
+        "evidence_type": "最终产品",
+        "status": "found",
+        "source_file": "001_佛山市亮正新材料有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": "表2-2",
+          "table_name": "变更前后项目基本情况一览表",
+          "field_name": "产品及产能",
+          "page": null
+        },
+        "quote": "主要从事纸制品制造，年产保护纸400万米、保护膜200万米。"
+      },
+      {
+        "evidence_id": "E3-1",
+        "evidence_type": "主要原料",
+        "status": "found",
+        "source_file": "001_佛山市亮正新材料有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": "表2-4",
+          "table_name": "项目主要原辅材料及年用量情况",
+          "field_name": "物料名称",
+          "page": null
+        },
+        "quote": "保护纸使用水性丙烯酸酯压敏胶和硅油；保护膜使用天然乳胶和液体萜烯树脂；工艺说明列明牛皮纸、保护膜原膜（PE）。"
+      },
+      {
+        "evidence_id": "E4-1",
+        "evidence_type": "核心工艺",
+        "status": "found",
+        "source_file": "001_佛山市亮正新材料有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "工艺流程和产排污环节",
+          "field_name": "工艺流程简述",
+          "page": null
+        },
+        "quote": "保护纸经调胶、牛皮纸上胶、复合熟化、水墨印刷、收卷打包；保护膜经调胶、PE原膜上胶、复合熟化、收卷打包。"
+      },
+      {
+        "evidence_id": "E5-1",
+        "evidence_type": "产品用途",
+        "status": "found",
+        "source_file": "001_佛山市亮正新材料有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "工艺说明/产品名称",
+          "field_name": "产品用途",
+          "page": null
+        },
+        "quote": "产品名称为保护纸、保护膜，工艺说明显示按客户定制图标并形成成品，初步理解为表面保护用途。"
+      },
+      {
+        "evidence_id": "E6",
+        "evidence_type": "主要活动",
+        "status": "missing",
+        "source_file": "001_佛山市亮正新材料有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": null,
+          "field_name": "增加值/销售收入/营业收入/从业人员",
+          "page": null
+        },
+        "quote": null
+      },
+      {
+        "evidence_id": "E7-1",
+        "evidence_type": "官方分类依据",
+        "status": "found",
+        "source_file": "2017国民经济行业分类注释_按第1号修改单修订.xlsx",
+        "source_location": {
+          "section": "国家统计局国民经济行业分类注释",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "小类注释",
+          "field_name": "C2223",
+          "page": null
+        },
+        "quote": "C2223加工纸制造：指对原纸及纸板进一步加工的生产活动；包括涂布浸渍覆盖纸、塑料涂布、浸渍或覆盖纸及纸板、其他加工纸。 来源：国家统计局《2017国民经济行业分类注释》（按第1号修改单修订），https://www.stats.gov.cn/sj/tjbz/gmjjhyfl/"
+      },
+      {
+        "evidence_id": "E7-2",
+        "evidence_type": "官方分类依据",
+        "status": "found",
+        "source_file": "2017国民经济行业分类注释_按第1号修改单修订.xlsx",
+        "source_location": {
+          "section": "国家统计局国民经济行业分类注释",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "小类注释",
+          "field_name": "C2921",
+          "page": null
+        },
+        "quote": "C2921塑料薄膜制造：指用于农业覆盖，工业、商业及日用包装薄膜的制造；包括复合薄膜、涂布薄膜、其他塑料薄膜等。 来源：国家统计局《2017国民经济行业分类注释》（按第1号修改单修订），https://www.stats.gov.cn/sj/tjbz/gmjjhyfl/"
+      }
+    ],
+    "economic_activities": [
+      {
+        "activity_id": "A1",
+        "activity_summary": "使用牛皮纸、水性丙烯酸酯压敏胶和合成硅油309，通过调胶、涂布、复合熟化、印刷和收卷，生产用于表面保护的保护纸。",
+        "products": [
+          "保护纸"
+        ],
+        "materials": [
+          "牛皮纸",
+          "水性丙烯酸酯压敏胶",
+          "合成硅油309"
+        ],
+        "processes": [
+          "调胶",
+          "涂布",
+          "复合熟化",
+          "印刷",
+          "收卷"
+        ],
+        "uses": [
+          "表面保护"
+        ],
+        "external_activity": null,
+        "evidence_ids": [
+          "E2-1",
+          "E3-1",
+          "E4-1",
+          "E5-1"
+        ]
+      },
+      {
+        "activity_id": "A2",
+        "activity_summary": "使用保护膜原膜（PE）、浓缩高氨天然乳胶和液体萜烯树脂，通过调胶、涂布、复合熟化和收卷，生产用于表面保护的保护膜。",
+        "products": [
+          "保护膜"
+        ],
+        "materials": [
+          "保护膜原膜（PE）",
+          "浓缩高氨天然乳胶",
+          "液体萜烯树脂"
+        ],
+        "processes": [
+          "调胶",
+          "涂布",
+          "复合熟化",
+          "收卷"
+        ],
+        "uses": [
+          "表面保护"
+        ],
+        "external_activity": null,
+        "evidence_ids": [
+          "E2-2",
+          "E3-4",
+          "E4-2",
+          "E5-2"
+        ]
+      }
+    ],
+    "classification_assessment": {
+      "identified_classifications": [
+        {
+          "display_code": "C2223",
+          "numeric_code": "2223",
+          "name": "加工纸制造",
+          "activity_ids": [
+            "A1"
+          ],
+          "official_basis_evidence_ids": [
+            "E7-1"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "display_code": "C2921",
+          "numeric_code": "2921",
+          "name": "塑料薄膜制造",
+          "activity_ids": [
+            "A2"
+          ],
+          "official_basis_evidence_ids": [
+            "E7-2"
+          ],
+          "confidence": "medium"
+        }
+      ],
+      "neighbor_class_exclusions": [
+        {
+          "display_code": "C2319",
+          "name": "包装装潢及其他印刷",
+          "excluded": true,
+          "reason": "水墨印刷仅服务保护纸产品，未见独立承接印刷业务。",
+          "evidence_ids": [
+            "E4-1"
+          ]
+        },
+        {
+          "display_code": "C2929",
+          "name": "塑料零件及其他塑料制品制造",
+          "excluded": false,
+          "reason": "保护膜为涂胶/复合薄膜，方向上匹配C2921；但保护膜具体用途和主要活动指标仍建议人工复核。",
+          "evidence_ids": [
+            "E2-2",
+            "E7-2"
+          ]
+        }
+      ],
+      "main_activity_determination": {
+        "status": "insufficient_evidence",
+        "basis_metric": "未提供",
+        "main_activity_ids": [],
+        "reason": "保护纸和保护膜可能为两项独立活动，报告未提供增加值、销售/营业收入或从业人员份额，不能确定唯一主要活动。"
+      }
+    },
+    "audit_result": {
+      "conclusion": "需复核",
+      "reason_codes": [
+        "MATCH",
+        "MAIN_ACTIVITY_EVIDENCE_MISSING",
+        "NEIGHBOR_CLASS_NOT_EXCLUDED"
+      ],
+      "production_activity_summary": "使用牛皮纸、水性丙烯酸酯压敏胶和合成硅油309，通过调胶、涂布、复合熟化、印刷和收卷，生产用于表面保护的保护纸；使用保护膜原膜（PE）、浓缩高氨天然乳胶和液体萜烯树脂，通过调胶、涂布、复合熟化和收卷，生产用于表面保护的保护膜。",
+      "specific_analysis": "识别结果与报告填报的C2223加工纸制造、C2921塑料薄膜制造方向基本一致；但两类产品产能单位均为长度，不能代替增加值、销售/营业收入或从业人员份额，仍需人工确认主要活动及保护膜近邻边界。",
+      "formatted_answer": "1、国民经济行业类型判定结论：需复核；\n2、具体分析：根据项目概况，本项目主要通过调胶、涂布、复合熟化、印刷和收卷等生产工艺，生产用于表面保护的保护纸和保护膜。经识别，国民经济行业类别为C2223加工纸制造、C2921塑料薄膜制造，与项目填报的国民经济行业类别C2223加工纸制造、C2921塑料薄膜制造方向一致；但报告未提供两类活动的增加值、销售/营业收入或从业人员份额，需复核确认。"
+    },
+    "human_review": {
+      "status": "待人工确认",
+      "final_conclusion": null,
+      "revision_comments": null,
+      "reviewer": null,
+      "review_date": null
+    },
+    "quality_control": {
+      "all_required_locations_checked": true,
+      "all_facts_traceable": false,
+      "code_name_pairs_checked": true,
+      "different_capacity_units_not_compared": true,
+      "auxiliary_activities_not_misclassified": true,
+      "schema_valid": true,
+      "warnings": [
+        "已按skill规则保留为需复核，需人工确认事实一致性和适用相关性。",
+        "报告未提供增加值、销售/营业收入或从业人员等主要活动指标。"
+      ]
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "record": {
+      "source_file": "002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目_01_核查材料.docx",
+      "relative_path": "环评报告文件_按问答顺序\\002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目_01_核查材料.docx",
+      "project_name": "佛山市顺德区启卓工程塑料实业有限公司搬迁项目",
+      "version_round": "01_核查材料"
+    },
+    "question": {
+      "question_text": "请根据项目最终产品、主要原辅材料、核心生产工艺、产品用途及主要活动证据，判断报告填报的国民经济行业类别是否正确，并说明依据。"
+    },
+    "source_extraction": {
+      "reported_industry_classifications": [
+        {
+          "raw_text": "C2929 塑料零件及其他塑料制品制造",
+          "display_code": "C2929",
+          "numeric_code": "2929",
+          "name": "塑料零件及其他塑料制品制造",
+          "source_location": {
+            "section": "一、建设项目基本情况",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "基本情况表",
+            "field_name": "国民经济行业类别",
+            "page": null
+          },
+          "evidence_id": "E1"
+        }
+      ],
+      "products": [
+        {
+          "product_name": "改性塑料粒",
+          "product_remark": null,
+          "capacity": 2000,
+          "unit": "吨/年",
+          "external_sale": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要产品及产能/项目概况",
+            "field_name": "产品及产能",
+            "page": null
+          },
+          "evidence_id": "E2"
+        }
+      ],
+      "materials": [
+        {
+          "material_name": "PP新粒料",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-1"
+        },
+        {
+          "material_name": "PC新粒料",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-2"
+        },
+        {
+          "material_name": "PA新粒料",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-3"
+        },
+        {
+          "material_name": "PPT新粒料",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-4"
+        },
+        {
+          "material_name": "PET新粒料",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-5"
+        },
+        {
+          "material_name": "玻璃纤维",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-6"
+        },
+        {
+          "material_name": "色母（粒料）",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-7"
+        }
+      ],
+      "production_processes": [
+        {
+          "process_name": "人工配料、混料、双螺杆挤出、冷却成条、切粒、抽检、包装",
+          "raw_basis": "PP、PC、PA、PPT、PET新粒料、玻璃纤维、色母经配料混料后，在约200℃双螺杆挤出机组内挤出成型，冷却成条后切粒，检测合格后包装为成品。",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "工艺流程和产排污环节",
+            "field_name": "工艺流程简述",
+            "page": null
+          },
+          "evidence_ids": [
+            "E4"
+          ]
+        }
+      ],
+      "product_uses": [
+        {
+          "product_name": "改性塑料粒",
+          "use_text": "改性塑料粒/塑料粒料",
+          "is_explicit": true,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "项目概况/产品备注/工艺说明",
+            "field_name": "产品用途",
+            "page": null
+          },
+          "evidence_id": "E5"
+        }
+      ],
+      "main_activity_evidence": [
+        {
+          "metric": "未提供",
+          "activity_name": null,
+          "value": null,
+          "unit": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": null,
+            "field_name": "增加值/销售收入/营业收入/从业人员",
+            "page": null
+          },
+          "evidence_id": "E6"
+        }
+      ]
+    },
+    "evidence_chain": [
+      {
+        "evidence_id": "E1",
+        "evidence_type": "填报行业",
+        "status": "found",
+        "source_file": "002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目_01_核查材料.docx",
+        "source_location": {
+          "section": "一、建设项目基本情况",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "基本情况表",
+          "field_name": "国民经济行业类别",
+          "page": null
+        },
+        "quote": "国民经济行业类别：C2929 塑料零件及其他塑料制品制造"
+      },
+      {
+        "evidence_id": "E2",
+        "evidence_type": "最终产品",
+        "status": "found",
+        "source_file": "002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "项目概况/主要产品及产能",
+          "field_name": "产品及产能",
+          "page": null
+        },
+        "quote": "主要从事改性塑料粒的生产，年产改性塑料粒2000吨/年。"
+      },
+      {
+        "evidence_id": "E3-1",
+        "evidence_type": "主要原料",
+        "status": "found",
+        "source_file": "002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "主要原辅材料及年用量",
+          "field_name": "物料名称",
+          "page": null
+        },
+        "quote": "主要原辅材料包括：PP新粒料、PC新粒料、PA新粒料、PPT新粒料、PET新粒料、玻璃纤维、色母（粒料）。"
+      },
+      {
+        "evidence_id": "E4",
+        "evidence_type": "核心工艺",
+        "status": "found",
+        "source_file": "002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "工艺流程和产排污环节",
+          "field_name": "工艺流程简述",
+          "page": null
+        },
+        "quote": "PP、PC、PA、PPT、PET新粒料、玻璃纤维、色母经配料混料后，在约200℃双螺杆挤出机组内挤出成型，冷却成条后切粒，检测合格后包装为成品。"
+      },
+      {
+        "evidence_id": "E5",
+        "evidence_type": "产品用途",
+        "status": "found",
+        "source_file": "002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "项目概况/工艺说明",
+          "field_name": "产品用途",
+          "page": null
+        },
+        "quote": "改性塑料粒/塑料粒料"
+      },
+      {
+        "evidence_id": "E6",
+        "evidence_type": "主要活动",
+        "status": "missing",
+        "source_file": "002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": null,
+          "field_name": "增加值/销售收入/营业收入/从业人员",
+          "page": null
+        },
+        "quote": null
+      },
+      {
+        "evidence_id": "E7",
+        "evidence_type": "官方分类依据",
+        "status": "found",
+        "source_file": "2017国民经济行业分类注释_按第1号修改单修订.xlsx",
+        "source_location": {
+          "section": "国家统计局国民经济行业分类注释",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "小类注释",
+          "field_name": "C2929",
+          "page": null
+        },
+        "quote": "C2929塑料零件及其他塑料制品制造：包括其他未列明塑料制品、塑料粒料、填充/共混/增强/功能改性塑料颗粒、塑料热塑性弹性体颗粒等。 来源：国家统计局《2017国民经济行业分类注释》（按第1号修改单修订），https://www.stats.gov.cn/sj/tjbz/gmjjhyfl/"
+      }
+    ],
+    "economic_activities": [
+      {
+        "activity_id": "A1",
+        "activity_summary": "使用PP新粒料、PC新粒料、PA新粒料、PPT新粒料等主要原辅材料，通过人工配料、混料、双螺杆挤出、冷却成条、切粒、抽检、包装，生产用于改性塑料粒/塑料粒料的改性塑料粒。",
+        "products": [
+          "改性塑料粒"
+        ],
+        "materials": [
+          "PP新粒料",
+          "PC新粒料",
+          "PA新粒料",
+          "PPT新粒料",
+          "PET新粒料",
+          "玻璃纤维",
+          "色母（粒料）"
+        ],
+        "processes": [
+          "人工配料",
+          "混料",
+          "双螺杆挤出",
+          "冷却成条",
+          "切粒",
+          "抽检",
+          "包装"
+        ],
+        "uses": [
+          "改性塑料粒/塑料粒料"
+        ],
+        "external_activity": null,
+        "evidence_ids": [
+          "E2",
+          "E3-1",
+          "E4",
+          "E5"
+        ]
+      }
+    ],
+    "classification_assessment": {
+      "identified_classifications": [
+        {
+          "display_code": "C2929",
+          "numeric_code": "2929",
+          "name": "塑料零件及其他塑料制品制造",
+          "activity_ids": [
+            "A1"
+          ],
+          "official_basis_evidence_ids": [
+            "E7"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "neighbor_class_exclusions": [
+        {
+          "display_code": "C2921",
+          "name": "近邻塑料制品小类",
+          "excluded": true,
+          "reason": "以最终产品、核心工艺和官方注释比对，当前识别小类更贴合报告产品。",
+          "evidence_ids": [
+            "E2",
+            "E4",
+            "E7"
+          ]
+        }
+      ],
+      "main_activity_determination": {
+        "status": "single_activity",
+        "basis_metric": "不适用",
+        "main_activity_ids": [
+          "A1"
+        ],
+        "reason": "报告未显示多项独立对外经济活动，按单一活动判断。"
+      }
+    },
+    "audit_result": {
+      "conclusion": "正确",
+      "reason_codes": [
+        "MATCH"
+      ],
+      "production_activity_summary": "使用PP新粒料、PC新粒料、PA新粒料、PPT新粒料等主要原辅材料，通过人工配料、混料、双螺杆挤出、冷却成条、切粒、抽检、包装，生产用于改性塑料粒/塑料粒料的改性塑料粒。",
+      "specific_analysis": "报告填报C2929 塑料零件及其他塑料制品制造；根据最终产品、主要原料和人工配料、混料、双螺杆挤出、冷却成条、切粒、抽检、包装等核心工艺，识别结果与官方注释中C2929塑料零件及其他塑料制品制造：包括其他未列明塑料制品、塑料粒料、填充/共混/增强/功能改性塑料颗粒、塑料热塑性弹性体颗粒等。方向一致。",
+      "formatted_answer": "1、国民经济行业类型判定结论：正确；\n2、具体分析：根据项目概况，本项目主要通过人工配料、混料、双螺杆挤出、冷却成条、切粒、抽检、包装等生产工艺，生产用于改性塑料粒/塑料粒料的改性塑料粒。经识别，国民经济行业类别为C2929塑料零件及其他塑料制品制造，与项目填报的国民经济行业类别C2929 塑料零件及其他塑料制品制造一致。"
+    },
+    "human_review": {
+      "status": "待人工确认",
+      "final_conclusion": null,
+      "revision_comments": null,
+      "reviewer": null,
+      "review_date": null
+    },
+    "quality_control": {
+      "all_required_locations_checked": true,
+      "all_facts_traceable": true,
+      "code_name_pairs_checked": true,
+      "different_capacity_units_not_compared": true,
+      "auxiliary_activities_not_misclassified": true,
+      "schema_valid": true,
+      "warnings": [
+        "报告未提供增加值、销售/营业收入或从业人员等主要活动指标。"
+      ]
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "record": {
+      "source_file": "003_佛山市顺德区康明新材料厂新建项目_01_核查材料.docx",
+      "relative_path": "环评报告文件_按问答顺序\\003_佛山市顺德区康明新材料厂新建项目_01_核查材料.docx",
+      "project_name": "佛山市顺德区康明新材料厂新建项目",
+      "version_round": "01_核查材料"
+    },
+    "question": {
+      "question_text": "请根据项目最终产品、主要原辅材料、核心生产工艺、产品用途及主要活动证据，判断报告填报的国民经济行业类别是否正确，并说明依据。"
+    },
+    "source_extraction": {
+      "reported_industry_classifications": [
+        {
+          "raw_text": "C2921塑料薄膜制造",
+          "display_code": "C2921",
+          "numeric_code": "2921",
+          "name": "塑料薄膜制造",
+          "source_location": {
+            "section": "一、建设项目基本情况",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "基本情况表",
+            "field_name": "国民经济行业类别",
+            "page": null
+          },
+          "evidence_id": "E1"
+        }
+      ],
+      "products": [
+        {
+          "product_name": "塑料薄膜",
+          "product_remark": null,
+          "capacity": 242.368,
+          "unit": "吨/年",
+          "external_sale": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要产品及产能/项目概况",
+            "field_name": "产品及产能",
+            "page": null
+          },
+          "evidence_id": "E2"
+        }
+      ],
+      "materials": [
+        {
+          "material_name": "PE塑料粒",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-1"
+        },
+        {
+          "material_name": "保护胶涂布胶",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-2"
+        }
+      ],
+      "production_processes": [
+        {
+          "process_name": "混料、吹膜、涂布、烘干、分切、复卷、检验",
+          "raw_basis": "人工将PE塑料粒投料，混料后吹膜成型，再进行涂布、烘干、分切、复卷和检验。",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "工艺流程和产排污环节",
+            "field_name": "工艺流程简述",
+            "page": null
+          },
+          "evidence_ids": [
+            "E4"
+          ]
+        }
+      ],
+      "product_uses": [
+        {
+          "product_name": "塑料薄膜",
+          "use_text": "保护膜用途",
+          "is_explicit": true,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "项目概况/产品备注/工艺说明",
+            "field_name": "产品用途",
+            "page": null
+          },
+          "evidence_id": "E5"
+        }
+      ],
+      "main_activity_evidence": [
+        {
+          "metric": "未提供",
+          "activity_name": null,
+          "value": null,
+          "unit": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": null,
+            "field_name": "增加值/销售收入/营业收入/从业人员",
+            "page": null
+          },
+          "evidence_id": "E6"
+        }
+      ]
+    },
+    "evidence_chain": [
+      {
+        "evidence_id": "E1",
+        "evidence_type": "填报行业",
+        "status": "found",
+        "source_file": "003_佛山市顺德区康明新材料厂新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "一、建设项目基本情况",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "基本情况表",
+          "field_name": "国民经济行业类别",
+          "page": null
+        },
+        "quote": "国民经济行业类别：C2921塑料薄膜制造"
+      },
+      {
+        "evidence_id": "E2",
+        "evidence_type": "最终产品",
+        "status": "found",
+        "source_file": "003_佛山市顺德区康明新材料厂新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "项目概况/主要产品及产能",
+          "field_name": "产品及产能",
+          "page": null
+        },
+        "quote": "主要从事塑料薄膜的生产，年产塑料薄膜242.368吨/年。"
+      },
+      {
+        "evidence_id": "E3-1",
+        "evidence_type": "主要原料",
+        "status": "found",
+        "source_file": "003_佛山市顺德区康明新材料厂新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "主要原辅材料及年用量",
+          "field_name": "物料名称",
+          "page": null
+        },
+        "quote": "主要原辅材料包括：PE塑料粒、保护胶涂布胶。"
+      },
+      {
+        "evidence_id": "E4",
+        "evidence_type": "核心工艺",
+        "status": "found",
+        "source_file": "003_佛山市顺德区康明新材料厂新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "工艺流程和产排污环节",
+          "field_name": "工艺流程简述",
+          "page": null
+        },
+        "quote": "人工将PE塑料粒投料，混料后吹膜成型，再进行涂布、烘干、分切、复卷和检验。"
+      },
+      {
+        "evidence_id": "E5",
+        "evidence_type": "产品用途",
+        "status": "found",
+        "source_file": "003_佛山市顺德区康明新材料厂新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "项目概况/工艺说明",
+          "field_name": "产品用途",
+          "page": null
+        },
+        "quote": "保护膜用途"
+      },
+      {
+        "evidence_id": "E6",
+        "evidence_type": "主要活动",
+        "status": "missing",
+        "source_file": "003_佛山市顺德区康明新材料厂新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": null,
+          "field_name": "增加值/销售收入/营业收入/从业人员",
+          "page": null
+        },
+        "quote": null
+      },
+      {
+        "evidence_id": "E7",
+        "evidence_type": "官方分类依据",
+        "status": "found",
+        "source_file": "2017国民经济行业分类注释_按第1号修改单修订.xlsx",
+        "source_location": {
+          "section": "国家统计局国民经济行业分类注释",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "小类注释",
+          "field_name": "C2921",
+          "page": null
+        },
+        "quote": "C2921塑料薄膜制造：指用于农业覆盖，工业、商业及日用包装薄膜的制造；包括复合薄膜、涂布薄膜、其他塑料薄膜等。 来源：国家统计局《2017国民经济行业分类注释》（按第1号修改单修订），https://www.stats.gov.cn/sj/tjbz/gmjjhyfl/"
+      }
+    ],
+    "economic_activities": [
+      {
+        "activity_id": "A1",
+        "activity_summary": "使用PE塑料粒、保护胶涂布胶等主要原辅材料，通过混料、吹膜、涂布、烘干、分切、复卷、检验，生产用于保护膜用途的塑料薄膜。",
+        "products": [
+          "塑料薄膜"
+        ],
+        "materials": [
+          "PE塑料粒",
+          "保护胶涂布胶"
+        ],
+        "processes": [
+          "混料",
+          "吹膜",
+          "涂布",
+          "烘干",
+          "分切",
+          "复卷",
+          "检验"
+        ],
+        "uses": [
+          "保护膜用途"
+        ],
+        "external_activity": null,
+        "evidence_ids": [
+          "E2",
+          "E3-1",
+          "E4",
+          "E5"
+        ]
+      }
+    ],
+    "classification_assessment": {
+      "identified_classifications": [
+        {
+          "display_code": "C2921",
+          "numeric_code": "2921",
+          "name": "塑料薄膜制造",
+          "activity_ids": [
+            "A1"
+          ],
+          "official_basis_evidence_ids": [
+            "E7"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "neighbor_class_exclusions": [
+        {
+          "display_code": "C2929",
+          "name": "近邻塑料制品小类",
+          "excluded": true,
+          "reason": "以最终产品、核心工艺和官方注释比对，当前识别小类更贴合报告产品。",
+          "evidence_ids": [
+            "E2",
+            "E4",
+            "E7"
+          ]
+        }
+      ],
+      "main_activity_determination": {
+        "status": "single_activity",
+        "basis_metric": "不适用",
+        "main_activity_ids": [
+          "A1"
+        ],
+        "reason": "报告未显示多项独立对外经济活动，按单一活动判断。"
+      }
+    },
+    "audit_result": {
+      "conclusion": "正确",
+      "reason_codes": [
+        "MATCH"
+      ],
+      "production_activity_summary": "使用PE塑料粒、保护胶涂布胶等主要原辅材料，通过混料、吹膜、涂布、烘干、分切、复卷、检验，生产用于保护膜用途的塑料薄膜。",
+      "specific_analysis": "报告填报C2921塑料薄膜制造；根据最终产品、主要原料和混料、吹膜、涂布、烘干、分切、复卷、检验等核心工艺，识别结果与官方注释中C2921塑料薄膜制造：指用于农业覆盖，工业、商业及日用包装薄膜的制造；包括复合薄膜、涂布薄膜、其他塑料薄膜等。方向一致。",
+      "formatted_answer": "1、国民经济行业类型判定结论：正确；\n2、具体分析：根据项目概况，本项目主要通过混料、吹膜、涂布、烘干、分切、复卷、检验等生产工艺，生产用于保护膜用途的塑料薄膜。经识别，国民经济行业类别为C2921塑料薄膜制造，与项目填报的国民经济行业类别C2921塑料薄膜制造一致。"
+    },
+    "human_review": {
+      "status": "待人工确认",
+      "final_conclusion": null,
+      "revision_comments": null,
+      "reviewer": null,
+      "review_date": null
+    },
+    "quality_control": {
+      "all_required_locations_checked": true,
+      "all_facts_traceable": true,
+      "code_name_pairs_checked": true,
+      "different_capacity_units_not_compared": true,
+      "auxiliary_activities_not_misclassified": true,
+      "schema_valid": true,
+      "warnings": [
+        "报告未提供增加值、销售/营业收入或从业人员等主要活动指标。"
+      ]
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "record": {
+      "source_file": "004_恒励新材料科技(佛山)有限公司新建项目_01_核查材料.docx",
+      "relative_path": "环评报告文件_按问答顺序\\004_恒励新材料科技(佛山)有限公司新建项目_01_核查材料.docx",
+      "project_name": "恒励新材料科技(佛山)有限公司新建项目",
+      "version_round": "01_核查材料"
+    },
+    "question": {
+      "question_text": "请根据项目最终产品、主要原辅材料、核心生产工艺、产品用途及主要活动证据，判断报告填报的国民经济行业类别是否正确，并说明依据。"
+    },
+    "source_extraction": {
+      "reported_industry_classifications": [
+        {
+          "raw_text": "C2929 塑料零件及其他塑料制品制造",
+          "display_code": "C2929",
+          "numeric_code": "2929",
+          "name": "塑料零件及其他塑料制品制造",
+          "source_location": {
+            "section": "一、建设项目基本情况",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "基本情况表",
+            "field_name": "国民经济行业类别",
+            "page": null
+          },
+          "evidence_id": "E1"
+        }
+      ],
+      "products": [
+        {
+          "product_name": "改性SEBS塑料",
+          "product_remark": null,
+          "capacity": 720,
+          "unit": "吨/年",
+          "external_sale": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要产品及产能/项目概况",
+            "field_name": "产品及产能",
+            "page": null
+          },
+          "evidence_id": "E2"
+        }
+      ],
+      "materials": [
+        {
+          "material_name": "SEBS",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-1"
+        },
+        {
+          "material_name": "增粘树脂",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-2"
+        }
+      ],
+      "production_processes": [
+        {
+          "process_name": "自动配料、吸料、双螺杆挤出、水下切粒、振动筛选",
+          "raw_basis": "外购SEBS、增粘树脂经自动配料后吸入双螺杆挤出机，约200℃挤出成型，经水下切粒和振动筛选后成为成品。",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "工艺流程和产排污环节",
+            "field_name": "工艺流程简述",
+            "page": null
+          },
+          "evidence_ids": [
+            "E4"
+          ]
+        }
+      ],
+      "product_uses": [
+        {
+          "product_name": "改性SEBS塑料",
+          "use_text": "改性SEBS塑料/热塑性弹性体颗粒",
+          "is_explicit": true,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "项目概况/产品备注/工艺说明",
+            "field_name": "产品用途",
+            "page": null
+          },
+          "evidence_id": "E5"
+        }
+      ],
+      "main_activity_evidence": [
+        {
+          "metric": "未提供",
+          "activity_name": null,
+          "value": null,
+          "unit": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": null,
+            "field_name": "增加值/销售收入/营业收入/从业人员",
+            "page": null
+          },
+          "evidence_id": "E6"
+        }
+      ]
+    },
+    "evidence_chain": [
+      {
+        "evidence_id": "E1",
+        "evidence_type": "填报行业",
+        "status": "found",
+        "source_file": "004_恒励新材料科技(佛山)有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "一、建设项目基本情况",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "基本情况表",
+          "field_name": "国民经济行业类别",
+          "page": null
+        },
+        "quote": "国民经济行业类别：C2929 塑料零件及其他塑料制品制造"
+      },
+      {
+        "evidence_id": "E2",
+        "evidence_type": "最终产品",
+        "status": "found",
+        "source_file": "004_恒励新材料科技(佛山)有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "项目概况/主要产品及产能",
+          "field_name": "产品及产能",
+          "page": null
+        },
+        "quote": "主要从事改性SEBS塑料的生产，年产改性SEBS塑料720吨/年。"
+      },
+      {
+        "evidence_id": "E3-1",
+        "evidence_type": "主要原料",
+        "status": "found",
+        "source_file": "004_恒励新材料科技(佛山)有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "主要原辅材料及年用量",
+          "field_name": "物料名称",
+          "page": null
+        },
+        "quote": "主要原辅材料包括：SEBS、增粘树脂。"
+      },
+      {
+        "evidence_id": "E4",
+        "evidence_type": "核心工艺",
+        "status": "found",
+        "source_file": "004_恒励新材料科技(佛山)有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "工艺流程和产排污环节",
+          "field_name": "工艺流程简述",
+          "page": null
+        },
+        "quote": "外购SEBS、增粘树脂经自动配料后吸入双螺杆挤出机，约200℃挤出成型，经水下切粒和振动筛选后成为成品。"
+      },
+      {
+        "evidence_id": "E5",
+        "evidence_type": "产品用途",
+        "status": "found",
+        "source_file": "004_恒励新材料科技(佛山)有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "项目概况/工艺说明",
+          "field_name": "产品用途",
+          "page": null
+        },
+        "quote": "改性SEBS塑料/热塑性弹性体颗粒"
+      },
+      {
+        "evidence_id": "E6",
+        "evidence_type": "主要活动",
+        "status": "missing",
+        "source_file": "004_恒励新材料科技(佛山)有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": null,
+          "field_name": "增加值/销售收入/营业收入/从业人员",
+          "page": null
+        },
+        "quote": null
+      },
+      {
+        "evidence_id": "E7",
+        "evidence_type": "官方分类依据",
+        "status": "found",
+        "source_file": "2017国民经济行业分类注释_按第1号修改单修订.xlsx",
+        "source_location": {
+          "section": "国家统计局国民经济行业分类注释",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "小类注释",
+          "field_name": "C2929",
+          "page": null
+        },
+        "quote": "C2929塑料零件及其他塑料制品制造：包括其他未列明塑料制品、塑料粒料、填充/共混/增强/功能改性塑料颗粒、塑料热塑性弹性体颗粒等。 来源：国家统计局《2017国民经济行业分类注释》（按第1号修改单修订），https://www.stats.gov.cn/sj/tjbz/gmjjhyfl/"
+      }
+    ],
+    "economic_activities": [
+      {
+        "activity_id": "A1",
+        "activity_summary": "使用SEBS、增粘树脂等主要原辅材料，通过自动配料、吸料、双螺杆挤出、水下切粒、振动筛选，生产用于改性SEBS塑料/热塑性弹性体颗粒的改性SEBS塑料。",
+        "products": [
+          "改性SEBS塑料"
+        ],
+        "materials": [
+          "SEBS",
+          "增粘树脂"
+        ],
+        "processes": [
+          "自动配料",
+          "吸料",
+          "双螺杆挤出",
+          "水下切粒",
+          "振动筛选"
+        ],
+        "uses": [
+          "改性SEBS塑料/热塑性弹性体颗粒"
+        ],
+        "external_activity": null,
+        "evidence_ids": [
+          "E2",
+          "E3-1",
+          "E4",
+          "E5"
+        ]
+      }
+    ],
+    "classification_assessment": {
+      "identified_classifications": [
+        {
+          "display_code": "C2929",
+          "numeric_code": "2929",
+          "name": "塑料零件及其他塑料制品制造",
+          "activity_ids": [
+            "A1"
+          ],
+          "official_basis_evidence_ids": [
+            "E7"
+          ],
+          "confidence": "high"
+        }
+      ],
+      "neighbor_class_exclusions": [
+        {
+          "display_code": "C2921",
+          "name": "近邻塑料制品小类",
+          "excluded": true,
+          "reason": "以最终产品、核心工艺和官方注释比对，当前识别小类更贴合报告产品。",
+          "evidence_ids": [
+            "E2",
+            "E4",
+            "E7"
+          ]
+        }
+      ],
+      "main_activity_determination": {
+        "status": "single_activity",
+        "basis_metric": "不适用",
+        "main_activity_ids": [
+          "A1"
+        ],
+        "reason": "报告未显示多项独立对外经济活动，按单一活动判断。"
+      }
+    },
+    "audit_result": {
+      "conclusion": "正确",
+      "reason_codes": [
+        "MATCH"
+      ],
+      "production_activity_summary": "使用SEBS、增粘树脂等主要原辅材料，通过自动配料、吸料、双螺杆挤出、水下切粒、振动筛选，生产用于改性SEBS塑料/热塑性弹性体颗粒的改性SEBS塑料。",
+      "specific_analysis": "报告填报C2929 塑料零件及其他塑料制品制造；根据最终产品、主要原料和自动配料、吸料、双螺杆挤出、水下切粒、振动筛选等核心工艺，识别结果与官方注释中C2929塑料零件及其他塑料制品制造：包括其他未列明塑料制品、塑料粒料、填充/共混/增强/功能改性塑料颗粒、塑料热塑性弹性体颗粒等。方向一致。",
+      "formatted_answer": "1、国民经济行业类型判定结论：正确；\n2、具体分析：根据项目概况，本项目主要通过自动配料、吸料、双螺杆挤出、水下切粒、振动筛选等生产工艺，生产用于改性SEBS塑料/热塑性弹性体颗粒的改性SEBS塑料。经识别，国民经济行业类别为C2929塑料零件及其他塑料制品制造，与项目填报的国民经济行业类别C2929 塑料零件及其他塑料制品制造一致。"
+    },
+    "human_review": {
+      "status": "待人工确认",
+      "final_conclusion": null,
+      "revision_comments": null,
+      "reviewer": null,
+      "review_date": null
+    },
+    "quality_control": {
+      "all_required_locations_checked": true,
+      "all_facts_traceable": true,
+      "code_name_pairs_checked": true,
+      "different_capacity_units_not_compared": true,
+      "auxiliary_activities_not_misclassified": true,
+      "schema_valid": true,
+      "warnings": [
+        "报告未提供增加值、销售/营业收入或从业人员等主要活动指标。"
+      ]
+    }
+  },
+  {
+    "schema_version": "1.0",
+    "record": {
+      "source_file": "005_佛山市润特龙清洁用品有限公司新建项目_01_核查材料.docx",
+      "relative_path": "环评报告文件_按问答顺序\\005_佛山市润特龙清洁用品有限公司新建项目_01_核查材料.docx",
+      "project_name": "佛山市润特龙清洁用品有限公司新建项目",
+      "version_round": "01_核查材料"
+    },
+    "question": {
+      "question_text": "请根据项目最终产品、主要原辅材料、核心生产工艺、产品用途及主要活动证据，判断报告填报的国民经济行业类别是否正确，并说明依据。"
+    },
+    "source_extraction": {
+      "reported_industry_classifications": [
+        {
+          "raw_text": "C2927日用塑料制品制造",
+          "display_code": "C2927",
+          "numeric_code": "2927",
+          "name": "日用塑料制品制造",
+          "source_location": {
+            "section": "一、建设项目基本情况",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "基本情况表",
+            "field_name": "国民经济行业类别",
+            "page": null
+          },
+          "evidence_id": "E1"
+        }
+      ],
+      "products": [
+        {
+          "product_name": "扫把丝",
+          "product_remark": null,
+          "capacity": 1380,
+          "unit": "吨/年",
+          "external_sale": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要产品及产能/项目概况",
+            "field_name": "产品及产能",
+            "page": null
+          },
+          "evidence_id": "E2-1"
+        },
+        {
+          "product_name": "刷丝",
+          "product_remark": null,
+          "capacity": 20,
+          "unit": "吨/年",
+          "external_sale": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要产品及产能/项目概况",
+            "field_name": "产品及产能",
+            "page": null
+          },
+          "evidence_id": "E2-2"
+        },
+        {
+          "product_name": "清洁扫把",
+          "product_remark": null,
+          "capacity": 20,
+          "unit": "万把/年",
+          "external_sale": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要产品及产能/项目概况",
+            "field_name": "产品及产能",
+            "page": null
+          },
+          "evidence_id": "E2-3"
+        },
+        {
+          "product_name": "清洁刷",
+          "product_remark": null,
+          "capacity": 2,
+          "unit": "万把/年",
+          "external_sale": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要产品及产能/项目概况",
+            "field_name": "产品及产能",
+            "page": null
+          },
+          "evidence_id": "E2-4"
+        }
+      ],
+      "materials": [
+        {
+          "material_name": "PET塑料粒",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-1"
+        },
+        {
+          "material_name": "PP塑料粒",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-2"
+        },
+        {
+          "material_name": "改性PET",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-3"
+        },
+        {
+          "material_name": "尼龙",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-4"
+        },
+        {
+          "material_name": "PS",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-5"
+        },
+        {
+          "material_name": "EVA",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-6"
+        },
+        {
+          "material_name": "PBT塑料粒",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-7"
+        },
+        {
+          "material_name": "色母",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-8"
+        },
+        {
+          "material_name": "外购扫把头",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-9"
+        },
+        {
+          "material_name": "外购刷头",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "主要原辅材料及年用量",
+            "field_name": "物料名称",
+            "page": null
+          },
+          "evidence_id": "E3-10"
+        }
+      ],
+      "production_processes": [
+        {
+          "process_name": "扫把丝/刷丝：混料、挤出、冷却、检测、收卷、烘干定型、切丝、破碎回用",
+          "raw_basis": "塑料粒和色母混料后经挤出机200-220℃熔融挤出，经冷却、检测、收卷、烘干定型、切丝形成扫把丝和刷丝。",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "工艺流程和产排污环节",
+            "field_name": "工艺流程简述",
+            "page": null
+          },
+          "evidence_ids": [
+            "E4-1"
+          ]
+        },
+        {
+          "process_name": "清洁扫把/清洁刷：植丝、人工修毛、人工包装",
+          "raw_basis": "将外购扫把头、刷头和项目生产的扫把丝、刷丝通过植丝物理组装，人工修毛并包装成品。",
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "工艺流程和产排污环节",
+            "field_name": "工艺流程简述",
+            "page": null
+          },
+          "evidence_ids": [
+            "E4-2"
+          ]
+        }
+      ],
+      "product_uses": [
+        {
+          "product_name": "扫把丝",
+          "use_text": "用于组装清洁扫把",
+          "is_explicit": true,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "项目概况/产品备注/工艺说明",
+            "field_name": "产品用途",
+            "page": null
+          },
+          "evidence_id": "E5-1"
+        },
+        {
+          "product_name": "刷丝",
+          "use_text": "用于组装清洁刷",
+          "is_explicit": true,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "项目概况/产品备注/工艺说明",
+            "field_name": "产品用途",
+            "page": null
+          },
+          "evidence_id": "E5-2"
+        },
+        {
+          "product_name": "清洁扫把",
+          "use_text": "清洁用品",
+          "is_explicit": true,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "项目概况/产品备注/工艺说明",
+            "field_name": "产品用途",
+            "page": null
+          },
+          "evidence_id": "E5-3"
+        },
+        {
+          "product_name": "清洁刷",
+          "use_text": "清洁用品",
+          "is_explicit": true,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": "项目概况/产品备注/工艺说明",
+            "field_name": "产品用途",
+            "page": null
+          },
+          "evidence_id": "E5-4"
+        }
+      ],
+      "main_activity_evidence": [
+        {
+          "metric": "未提供",
+          "activity_name": null,
+          "value": null,
+          "unit": null,
+          "source_location": {
+            "section": "二、建设项目工程分析",
+            "subsection": null,
+            "table_number": null,
+            "table_name": null,
+            "field_name": "增加值/销售收入/营业收入/从业人员",
+            "page": null
+          },
+          "evidence_id": "E6"
+        }
+      ]
+    },
+    "evidence_chain": [
+      {
+        "evidence_id": "E1",
+        "evidence_type": "填报行业",
+        "status": "found",
+        "source_file": "005_佛山市润特龙清洁用品有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "一、建设项目基本情况",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "基本情况表",
+          "field_name": "国民经济行业类别",
+          "page": null
+        },
+        "quote": "国民经济行业类别：C2927日用塑料制品制造"
+      },
+      {
+        "evidence_id": "E2-1",
+        "evidence_type": "最终产品",
+        "status": "found",
+        "source_file": "005_佛山市润特龙清洁用品有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": "表2-2",
+          "table_name": "项目产品方案",
+          "field_name": "产品及产能",
+          "page": null
+        },
+        "quote": "主要从事日用塑料制品的生产，计划年产扫把丝1380吨、刷丝20吨、清洁扫把20万把、清洁刷2万把。"
+      },
+      {
+        "evidence_id": "E3-1",
+        "evidence_type": "主要原料",
+        "status": "found",
+        "source_file": "005_佛山市润特龙清洁用品有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": "表2-5",
+          "table_name": "项目主要原辅材料及年用量情况",
+          "field_name": "物料名称",
+          "page": null
+        },
+        "quote": "外购PET、PP、改性PET、尼龙、PS、EVA、PBT塑料粒、色母；外购扫把头、刷头。"
+      },
+      {
+        "evidence_id": "E4-1",
+        "evidence_type": "核心工艺",
+        "status": "found",
+        "source_file": "005_佛山市润特龙清洁用品有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "工艺流程和产排污环节",
+          "field_name": "工艺流程说明",
+          "page": null
+        },
+        "quote": "扫把丝、刷丝经混料、挤出、冷却、检测、收卷、烘干定型、切丝；清洁扫把、清洁刷经植丝、人工修毛、人工包装。"
+      },
+      {
+        "evidence_id": "E5-1",
+        "evidence_type": "产品用途",
+        "status": "found",
+        "source_file": "005_佛山市润特龙清洁用品有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "工艺流程和产排污环节",
+          "field_name": "产品用途",
+          "page": null
+        },
+        "quote": "扫把丝、刷丝用于植丝组装清洁扫把、清洁刷；成品为清洁用品。"
+      },
+      {
+        "evidence_id": "E6",
+        "evidence_type": "主要活动",
+        "status": "missing",
+        "source_file": "005_佛山市润特龙清洁用品有限公司新建项目_01_核查材料.docx",
+        "source_location": {
+          "section": "二、建设项目工程分析",
+          "subsection": null,
+          "table_number": null,
+          "table_name": null,
+          "field_name": "增加值/销售收入/营业收入/从业人员",
+          "page": null
+        },
+        "quote": null
+      },
+      {
+        "evidence_id": "E7",
+        "evidence_type": "官方分类依据",
+        "status": "found",
+        "source_file": "2017国民经济行业分类注释_按第1号修改单修订.xlsx",
+        "source_location": {
+          "section": "国家统计局国民经济行业分类注释",
+          "subsection": null,
+          "table_number": null,
+          "table_name": "小类注释",
+          "field_name": "C2927",
+          "page": null
+        },
+        "quote": "C2927日用塑料制品制造：指塑料制餐厨用具、卫生设备、洁具及配件、塑料服装、日用塑料装饰品以及其他日用塑料制品的生产活动。 来源：国家统计局《2017国民经济行业分类注释》（按第1号修改单修订），https://www.stats.gov.cn/sj/tjbz/gmjjhyfl/"
+      }
+    ],
+    "economic_activities": [
+      {
+        "activity_id": "A1",
+        "activity_summary": "使用PET、PP、改性PET、尼龙、PS、EVA、PBT塑料粒和色母，通过混料、挤出、冷却、收卷、烘干定型和切丝，生产用于组装清洁扫把、清洁刷的扫把丝和刷丝。",
+        "products": [
+          "扫把丝",
+          "刷丝"
+        ],
+        "materials": [
+          "PET塑料粒",
+          "PP塑料粒",
+          "改性PET",
+          "尼龙",
+          "PS",
+          "EVA",
+          "PBT塑料粒",
+          "色母"
+        ],
+        "processes": [
+          "混料",
+          "挤出",
+          "冷却",
+          "收卷",
+          "烘干定型",
+          "切丝"
+        ],
+        "uses": [
+          "组装清洁扫把/清洁刷"
+        ],
+        "external_activity": null,
+        "evidence_ids": [
+          "E2-1",
+          "E3-1",
+          "E4-1",
+          "E5-1"
+        ]
+      },
+      {
+        "activity_id": "A2",
+        "activity_summary": "使用扫把丝、刷丝以及外购扫把头、刷头，通过植丝、人工修毛和包装，生产清洁扫把和清洁刷。",
+        "products": [
+          "清洁扫把",
+          "清洁刷"
+        ],
+        "materials": [
+          "扫把丝",
+          "刷丝",
+          "外购扫把头",
+          "外购刷头"
+        ],
+        "processes": [
+          "植丝",
+          "人工修毛",
+          "包装"
+        ],
+        "uses": [
+          "清洁用品"
+        ],
+        "external_activity": null,
+        "evidence_ids": [
+          "E2-3",
+          "E4-2",
+          "E5-3"
+        ]
+      }
+    ],
+    "classification_assessment": {
+      "identified_classifications": [
+        {
+          "display_code": "C2927",
+          "numeric_code": "2927",
+          "name": "日用塑料制品制造",
+          "activity_ids": [
+            "A1",
+            "A2"
+          ],
+          "official_basis_evidence_ids": [
+            "E7"
+          ],
+          "confidence": "low"
+        }
+      ],
+      "neighbor_class_exclusions": [
+        {
+          "display_code": "C2929",
+          "name": "塑料零件及其他塑料制品制造",
+          "excluded": false,
+          "reason": "扫把丝、刷丝可能属于中间塑料半成品或日用塑料制品组成部分；需人工确认其是否作为独立对外产品销售。",
+          "evidence_ids": [
+            "E2-1",
+            "E4-1"
+          ]
+        }
+      ],
+      "main_activity_determination": {
+        "status": "insufficient_evidence",
+        "basis_metric": "未提供",
+        "main_activity_ids": [],
+        "reason": "报告同时列示扫把丝/刷丝和清洁扫把/清洁刷，不同单位产能不能直接比较，缺少增加值、销售/营业收入或从业人员份额。"
+      }
+    },
+    "audit_result": {
+      "conclusion": "需复核",
+      "reason_codes": [
+        "NEIGHBOR_CLASS_NOT_EXCLUDED",
+        "MAIN_ACTIVITY_EVIDENCE_MISSING"
+      ],
+      "production_activity_summary": "使用PET、PP、改性PET、尼龙、PS、EVA、PBT塑料粒和色母，通过混料、挤出、冷却、收卷、烘干定型和切丝，生产用于组装清洁扫把、清洁刷的扫把丝和刷丝；使用扫把丝、刷丝以及外购扫把头、刷头，通过植丝、人工修毛和包装，生产清洁扫把和清洁刷。",
+      "specific_analysis": "报告填报C2927日用塑料制品制造，与清洁扫把、清洁刷等日用塑料制品方向基本一致；但报告同时列示扫把丝、刷丝及组装成品，缺少各活动增加值、销售/营业收入或从业人员份额，且扫把丝/刷丝是否作为独立对外产品需人工确认。",
+      "formatted_answer": "1、国民经济行业类型判定结论：需复核；\n2、具体分析：根据项目概况，本项目主要通过混料、挤出、烘干定型、切丝、植丝、人工修毛和包装等生产工艺，生产用于清洁用品的扫把丝、刷丝、清洁扫把和清洁刷。经识别，国民经济行业类别可初步对应C2927日用塑料制品制造，与项目填报的国民经济行业类别C2927日用塑料制品制造方向一致；但报告同时列示多类产品且缺少主要活动指标，扫把丝、刷丝是否为独立对外产品也需复核确认。"
+    },
+    "human_review": {
+      "status": "待人工确认",
+      "final_conclusion": null,
+      "revision_comments": null,
+      "reviewer": null,
+      "review_date": null
+    },
+    "quality_control": {
+      "all_required_locations_checked": true,
+      "all_facts_traceable": false,
+      "code_name_pairs_checked": true,
+      "different_capacity_units_not_compared": true,
+      "auxiliary_activities_not_misclassified": true,
+      "schema_valid": true,
+      "warnings": [
+        "已按skill规则保留为需复核，需人工确认事实一致性和适用相关性。",
+        "报告未提供增加值、销售/营业收入或从业人员等主要活动指标。",
+        "产品包含扫把丝/刷丝和组装成品，不同单位产能不能直接比较。"
+      ]
+    }
+  }
+]

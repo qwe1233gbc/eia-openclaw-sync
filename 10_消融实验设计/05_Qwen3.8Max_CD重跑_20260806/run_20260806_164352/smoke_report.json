@@ -1,0 +1,9 @@
+{
+  "calls": 12,
+  "successful": 12,
+  "valid_json": 12,
+  "report_evidence_backcheck": 9,
+  "rag_evidence_backcheck_D": 6,
+  "passed": true,
+  "failed_tasks": []
+}

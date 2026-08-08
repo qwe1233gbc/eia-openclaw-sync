@@ -1,0 +1,85 @@
+{
+  "question_id": "PL004_V01_Q01",
+  "group": "B",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告将改性SEBS塑料生产归入橡胶和塑料制品业/塑料制品业292；产品、SEBS和增粘树脂原料、挤出切粒工艺与该类别方向一致，行业类别基本合理。",
+    "evidence": [
+      {
+        "fact": "项目产品及行业类别表述",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "主要从事改性SEBS塑料的生产，预计投产后年产改性SEBS塑料720吨。根据《建设项目环境影响评价分类管理名录（2021年版）》，本次项目属于“二十六、橡胶和塑料制品业29、53塑料制品业-292"
+      },
+      {
+        "fact": "原辅材料与生产工艺",
+        "source_location": "root[5].content#8800",
+        "source_excerpt": "项目外购SEBS、增粘树脂均为新料粒料，人工入料到储料罐通过自动系统按比例进行配料，经吸料机在空压机的动力辅助下吸入双螺杆挤出机料桶在双螺杆机挤出机组内于约200℃的温度下挤出成型"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "行业类别与产品一致性",
+        "result": "pass",
+        "explanation": "产品为改性SEBS塑料，报告归入塑料制品业292，未见归入橡胶制品业或其他行业的矛盾表述。"
+      },
+      {
+        "check_name": "原辅材料与工艺匹配性",
+        "result": "pass",
+        "explanation": "原料为SEBS、增粘树脂，工艺为配料、挤出、冷却切粒，符合塑料制品业挤塑/成型加工特征。"
+      },
+      {
+        "check_name": "设备产能与设计产量一致性",
+        "result": "pass",
+        "explanation": "2台挤出机、单台100kg/h、年运行3600h，核算产能720t/a，与报告产品规模一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "挤出机数量×单台生产速率×年生产时间÷1000",
+        "inputs": {
+          "挤出机数量": 2,
+          "单台生产速率_kg_per_h": 100,
+          "年生产时间_h": 3600
+        },
+        "result": "720",
+        "unit": "t/a"
+      }
+    ],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "依据GB/T 4754-2017，塑料制品业292涵盖以合成树脂（高分子化合物）为主要原料、经挤塑等工艺成型的生产活动；项目挤出改性塑料粒料与该定义相符，且不以天然或合成橡胶制品为主要对象。",
+    "references_used": [
+      {
+        "reference_id": "IND_GBT4754_2017",
+        "title": "国民经济行业分类结构化全文｜GB/T 4754-2017及2019修改内容｜292",
+        "clause_or_table": "292 塑料制品业",
+        "supporting_text": "指以合成树脂（高分子化合物）为主要原料，经采用挤塑、注塑、吹塑、压延、层压等工艺加工成型的各种制品的生产"
+      },
+      {
+        "reference_id": "IND_GBT4754_2017",
+        "title": "国民经济行业分类结构化全文｜GB/T 4754-2017及2019修改内容｜291",
+        "clause_or_table": "291 橡胶制品业",
+        "supporting_text": "指以天然及合成橡胶为原料生产各种橡胶制品的活动，还包括利用废橡胶再生产橡胶制品的活动；不包括橡胶鞋制造"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告内部显示项目产品为改性SEBS塑料粒料，原料为SEBS和增粘树脂，工艺为投料混料、挤出成型、水下切粒和筛选，设备产能核算720t/a与产品规模一致。报告将其归入橡胶和塑料制品业/塑料制品业292。外部RAG中塑料制品业292涵盖以合成树脂（高分子化合物）为主要原料并经挤塑等工艺成型的生产活动，与项目特征相符；项目亦非以天然或合成橡胶制品为主要产品。故行业类别基本合理。",
+    "scope_note": "外部核验仅使用冻结RAG中的GB/T 4754-2017条目；未进一步核验塑料制品业小类代码。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

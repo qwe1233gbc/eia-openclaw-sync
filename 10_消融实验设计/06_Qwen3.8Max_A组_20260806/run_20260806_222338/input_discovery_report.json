@@ -1,0 +1,8 @@
+{
+  "group": "A",
+  "selected_question_workbook": "E:\\浏览器下载内容\\21题问答对相关Skill_GPT完整性审查包_20260806\\21题问答对相关Skill审查包\\21题问答对_Skill对应与完善审查清单.xlsx",
+  "question_count": 21,
+  "selection_reason": "A组基线实验：纯LLM，无Skill、无RAG。使用与C/D组完全相同的21题和报告JSON。",
+  "skill_used": false,
+  "rag_used": false
+}

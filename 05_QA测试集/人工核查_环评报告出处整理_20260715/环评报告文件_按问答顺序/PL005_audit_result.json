@@ -1,0 +1,352 @@
+{
+  "record": {
+    "project_id": "PL005",
+    "project_name": "佛山市润特龙清洁用品有限公司新建项目",
+    "report_name": "佛山市润特龙清洁用品有限公司新建项目环境影响报告表",
+    "report_version": "01"
+  },
+  "report_evidence": {
+    "report_date": {
+      "evidence_id": "R0",
+      "quote": null,
+      "source_section": "封面/正文",
+      "source_location": "报告全文无明确编制/送审/公示日期；文件元数据创建日期2024-03-06，修改日期2026-07-23；报告引用佛环〔2024〕1号（佛山市声环境功能区划，2024年发布）及2022年度公报（发布日期2023-03-29），推定编制时间约2024-03-06前后"
+    },
+    "air": {
+      "functional_zone": "二类区",
+      "bulletin_title": "佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知（佛环顺函〔2023〕26号）——报告公报名称缺'生态'二字",
+      "bulletin_year": 2022,
+      "full_analysis": {
+        "evidence_id": "R1",
+        "quote": "本报告采用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知》（佛环顺函〔2023〕26号）作为判断依据。根据公报，2022年顺德区（国控测点）环境空气污染物浓度及达标评价情况数据和结论如下。按照《环境空气质量标准》评价，2022年顺德区二氧化硫（SO2）、二氧化氮（NO2）、可吸入颗粒物（PM10）、细颗粒物（PM2.5）、一氧化碳（CO）五项污染物指标浓度均达到《环境空气质量标准》（GB3095-2012）及其修改单二级标准限值，臭氧（O3）超标。",
+        "source_section": "三、区域环境质量现状、环境保护目标及评价标准",
+        "source_location": "表3第0行第1列（空气环境质量现状段落）"
+      },
+      "claims": [
+        {
+          "evidence_id": "R1-01",
+          "item": "引用公报年度",
+          "value": 2022,
+          "unit": null,
+          "scope": "公报数据年度"
+        },
+        {
+          "evidence_id": "R1-02",
+          "item": "公报名称（报告引用）",
+          "value": "2022年度佛山市顺德区环境质量状况公报",
+          "unit": null,
+          "scope": "报告引用的公报名称"
+        },
+        {
+          "evidence_id": "R1-03",
+          "item": "文号（报告引用）",
+          "value": "佛环顺函〔2023〕26号",
+          "unit": null,
+          "scope": "报告引用的文号"
+        },
+        {
+          "evidence_id": "R1-04",
+          "item": "达标情况",
+          "value": "SO2、NO2、PM10、PM2.5、CO五项达标，O3超标，不达标区",
+          "unit": null,
+          "scope": "顺德区2022年"
+        }
+      ]
+    },
+    "surface_water": {
+      "wastewater_treatment_plant": "杏坛污水处理厂",
+      "receiving_water": "杏坛污水处理厂尾水→顺德支流",
+      "bulletin_title": "佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知（佛环顺函〔2023〕26号）——报告公报名称缺'生态'二字",
+      "bulletin_year": 2022,
+      "full_analysis": {
+        "evidence_id": "R2",
+        "quote": "项目生活污水经三级化粪池处理达到《水污染物排放限值》（DB44/26-2001）中的第二时段三级标准后，通过市政管网排入杏坛污水处理厂，尾水排入顺德支流。根据《佛山市顺德区生态环境保护'十四五'规划（2021-2025）》可知，顺德支流水质执行《地表水环境质量标准》（GB3838-2002）之Ⅲ类标准。为评价顺德支流水质，引用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知》（佛环顺函〔2023〕26号）……根据《2022年度佛山市顺德区环境质量状况公报》可知，顺德支流（新涌断面、飞鹅山断面）2022年监测的水质断面定类为Ⅲ类水质，符合《地表水环境质量标准》(GB3838-2002)之Ⅲ类标准的要求，故水质较好。",
+        "source_section": "三、区域环境质量现状、环境保护目标及评价标准",
+        "source_location": "表3第0行第1列（地表水环境质量现状段落）"
+      },
+      "claims": [
+        {
+          "evidence_id": "R2-01",
+          "item": "顺德支流新涌断面水质类别",
+          "value": "Ⅲ",
+          "unit": null,
+          "scope": "顺德支流新涌断面2022年"
+        },
+        {
+          "evidence_id": "R2-02",
+          "item": "顺德支流飞鹅山断面水质类别",
+          "value": "Ⅲ",
+          "unit": null,
+          "scope": "顺德支流飞鹅山断面2022年"
+        },
+        {
+          "evidence_id": "R2-03",
+          "item": "地表水达标判定",
+          "value": "符合Ⅲ类标准要求，水质较好",
+          "unit": null,
+          "scope": "项目受纳水体"
+        }
+      ]
+    }
+  },
+  "time_basis": {
+    "as_of_date": "2024-03-06",
+    "basis_status": "inferred",
+    "available_years": [
+      2022
+    ],
+    "valid_three_year_window": [
+      2020,
+      2021,
+      2022
+    ],
+    "coverage_gap": [
+      2020,
+      2021
+    ]
+  },
+  "knowledge_matches": [
+    {
+      "knowledge_id": "K-2022-AIR",
+      "source_id": "shunde-bulletin-2022",
+      "element": "air",
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "record": {
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "data_year": 2022,
+        "publication_date": "2023-03-29",
+        "doc_number": "佛环顺函〔2023〕26号",
+        "quality_index": 3.27,
+        "city_rank": 2,
+        "aqi_compliance_rate_percent": 78.8,
+        "overall_status": "O3超标；SO2、NO2、PM10、PM2.5、CO五项污染物年评价浓度达到二级标准",
+        "pollutant_metrics": [
+          {
+            "pollutant": "SO2",
+            "value": 5,
+            "unit": "μg/m³",
+            "trend": "较2021年下降16.7%"
+          },
+          {
+            "pollutant": "NO2",
+            "value": 29,
+            "unit": "μg/m³",
+            "trend": "较2021年下降12.1%"
+          },
+          {
+            "pollutant": "PM10",
+            "value": 32,
+            "unit": "μg/m³",
+            "trend": "较2021年下降23.8%"
+          },
+          {
+            "pollutant": "PM2.5",
+            "value": 19,
+            "unit": "μg/m³",
+            "trend": "较2021年下降13.6%"
+          },
+          {
+            "pollutant": "O3",
+            "value": 190,
+            "unit": "μg/m³",
+            "trend": "较2021年上升9.8%"
+          },
+          {
+            "pollutant": "CO",
+            "value": 1.1,
+            "unit": "mg/m³",
+            "trend": "较2021年上升10.0%"
+          }
+        ],
+        "pdf_page2_text_excerpt": "2022年顺德区空气质量综合指数为3.27，比2021年下降6.0%，在全市五区中排名第二。"
+      }
+    },
+    {
+      "knowledge_id": "K-2022-WATER",
+      "source_id": "shunde-bulletin-2022",
+      "element": "surface_water",
+      "pdf_pages": [
+        5,
+        6,
+        7
+      ],
+      "record": {
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "data_year": 2022,
+        "publication_date": "2023-03-29",
+        "doc_number": "佛环顺函〔2023〕26号",
+        "main_rivers_stations": [
+          {
+            "river": "顺德支流",
+            "station": "新涌",
+            "class": "Ⅲ"
+          },
+          {
+            "river": "顺德支流",
+            "station": "飞鹅山",
+            "class": "Ⅲ"
+          },
+          {
+            "river": "桂洲水道",
+            "station": "细滘大桥",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "容桂水道",
+            "station": "顺德港",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "容桂水道",
+            "station": "穗香围",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "顺德水道",
+            "station": "杨滘",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "顺德水道",
+            "station": "乌洲",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "东海水道",
+            "station": "海凌",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "东海水道",
+            "station": "星槎",
+            "class": "Ⅱ"
+          }
+        ],
+        "total_rivers": 16,
+        "total_stations": 23,
+        "excellent_rate_percent": 100,
+        "main_rivers_stations_matched": [
+          {
+            "river": "顺德支流",
+            "station": "新涌",
+            "class": "Ⅲ"
+          },
+          {
+            "river": "顺德支流",
+            "station": "飞鹅山",
+            "class": "Ⅲ"
+          }
+        ]
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "element": "air",
+      "report_evidence_id": "R1-01",
+      "knowledge_id": "K-2022-AIR",
+      "item": "引用公报年度",
+      "status": "exact",
+      "report_value": 2022,
+      "knowledge_value": 2022,
+      "note": "报告引用2022年度公报，年度与知识库一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-02",
+      "knowledge_id": "K-2022-AIR",
+      "item": "公报名称",
+      "status": "partial",
+      "report_value": "2022年度佛山市顺德区环境质量状况公报",
+      "knowledge_value": "2022年度佛山市顺德区生态环境状况公报",
+      "note": "报告公报名称缺'生态'二字，正确为'生态环境状况公报'，属笔误"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-03",
+      "knowledge_id": "K-2022-AIR",
+      "item": "文号",
+      "status": "exact",
+      "report_value": "佛环顺函〔2023〕26号",
+      "knowledge_value": "佛环顺函〔2023〕26号",
+      "note": "报告文号与公报一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-04",
+      "knowledge_id": "K-2022-AIR",
+      "item": "达标情况",
+      "status": "exact",
+      "report_value": "SO2、NO2、PM10、PM2.5、CO五项达标，O3超标，不达标区",
+      "knowledge_value": "O3超标；SO2、NO2、PM10、PM2.5、CO五项污染物年评价浓度达到二级标准",
+      "note": "报告定性结论与公报一致"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-01",
+      "knowledge_id": "K-2022-WATER",
+      "item": "顺德支流新涌断面水质类别",
+      "status": "exact",
+      "report_value": "Ⅲ",
+      "knowledge_value": "Ⅲ",
+      "note": "报告引用2022年度公报，新涌断面Ⅲ类与知识库一致"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-02",
+      "knowledge_id": "K-2022-WATER",
+      "item": "顺德支流飞鹅山断面水质类别",
+      "status": "exact",
+      "report_value": "Ⅲ",
+      "knowledge_value": "Ⅲ",
+      "note": "报告引用2022年度公报，飞鹅山断面Ⅲ类与知识库一致"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-03",
+      "knowledge_id": "K-2022-WATER",
+      "item": "地表水达标判定",
+      "status": "exact",
+      "report_value": "符合Ⅲ类标准要求，水质较好",
+      "knowledge_value": "新涌、飞鹅山断面均Ⅲ类，满足Ⅲ类水功能要求",
+      "note": "报告基于新涌、飞鹅山断面Ⅲ类水质判定达标，与公报数据一致"
+    }
+  ],
+  "audit_result": {
+    "conclusion": "正确",
+    "air_result": "正确",
+    "surface_water_result": "正确",
+    "summary_sentence": "1、大气及地表水环境质量引用数据正确（报告公报名称存在笔误）；",
+    "air_statement": "2、项目大气环境质量引用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区生态环境状况公报的通知》（佛环顺函〔2023〕26号）。环评对大气环境质量分析内容与《2022年度佛山市顺德区生态环境状况公报》中大气环境状况描述一致。但报告中公报名称误写为'环境质量状况公报'（正确为'生态环境状况公报'，缺'生态'二字），需人工核实更正。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。",
+    "surface_water_statement": "项目地表水环境质量引用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区生态环境状况公报的通知》（佛环顺函〔2023〕26号）。环评对地表水环境质量分析内容与《2022年度佛山市顺德区生态环境状况公报》中地表水环境状况描述一致。但报告中公报名称存在笔误（详见大气部分说明），需人工核实更正。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。",
+    "update_notice": [
+      "截至审核日（2026-07-27），知识库中已发布2023年度佛山市顺德区生态环境状况公报（发布日期2024-03-26，数据年度2023），报告编制时（推定2024-03-06前后）该公报尚未发布（早20天），现可供参考更新。",
+      "截至审核日（2026-07-27），知识库中已发布2024年度佛山市顺德区生态环境状况公报（发布日期2025-04-03，数据年度2024），为知识库中最新公报，可供参考更新。",
+      "审核日（2026-07-27）晚于2024年度公报发布日（2025-04-03），实际审批中应先核验是否已有2025年度或更新公报。"
+    ],
+    "readable_answer": "1、大气及地表水环境质量引用数据正确（报告公报名称存在笔误）；\n2、项目大气环境质量引用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区生态环境状况公报的通知》（佛环顺函〔2023〕26号）。环评对大气环境质量分析内容与《2022年度佛山市顺德区生态环境状况公报》中大气环境状况描述一致。但报告中公报名称误写为'环境质量状况公报'（正确为'生态环境状况公报'，缺'生态'二字），需人工核实更正。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。\n项目地表水环境质量引用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区生态环境状况公报的通知》（佛环顺函〔2023〕26号）。环评对地表水环境质量分析内容与《2022年度佛山市顺德区生态环境状况公报》中地表水环境状况描述一致。但报告中公报名称存在笔误（详见大气部分说明），需人工核实更正。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。"
+  },
+  "human_review": {
+    "status": "待人工确认",
+    "focus": [
+      "报告无明确编制/送审/公示日期，as_of_date=2024-03-06为推定值（基于文件元数据创建日期），实际编制时间需人工核实。",
+      "报告公报名称误写为'2022年度佛山市顺德区环境质量状况公报'，缺'生态'二字，正确为'2022年度佛山市顺德区生态环境状况公报'，属笔误，需人工核实更正。",
+      "报告表3-2引用了2022年顺德区（国控测点）环境空气污染物浓度及达标评价情况，但聚焦提取未含表格数值，无法逐项比对SO2/NO2/PM10/PM2.5/O3/CO浓度值，需人工核实表3-2数值。",
+      "项目生活污水经杏坛污水处理厂处理后尾水排入顺德支流；报告引用2022年度公报中顺德支流新涌、飞鹅山断面数据，断面与受纳河道的对应关系需人工确认。",
+      "报告编制时间（推定2024-03-06）早于2023年度公报发布日（2024-03-26）20天，若实际编制时间稍晚则2023年度公报已可引用，需人工核实确切编制日期。",
+      "截至审核日（2026-07-27）已晚于2024年度公报发布日（2025-04-03），实际审批中应先确认是否已发布2025年度公报。"
+    ],
+    "reviewer": null,
+    "review_date": null
+  },
+  "quality_control": {
+    "report_evidence_traceable": true,
+    "knowledge_evidence_traceable": true,
+    "air_water_separately_checked": true,
+    "no_future_bulletin_used": true,
+    "no_scope_inference": true
+  }
+}

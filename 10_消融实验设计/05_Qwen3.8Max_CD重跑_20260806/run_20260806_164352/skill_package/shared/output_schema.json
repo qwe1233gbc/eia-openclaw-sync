@@ -1,0 +1,26 @@
+{
+  "question_id": "",
+  "skill_id": "",
+  "audit_category": "",
+  "execution_mode": "c_group_skill",
+  "report_internal_result": {
+    "status": "pass | issue_found | partially_verified | insufficient_report_evidence",
+    "conclusion": "",
+    "evidence": [],
+    "checks": [],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified | not_required | not_performed | insufficient_reference",
+    "conclusion": "",
+    "references_used": [],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确 | 存在问题 | 部分完成 | 待人工复核",
+    "analysis": "",
+    "scope_note": ""
+  },
+  "manual_review_needed": false
+}

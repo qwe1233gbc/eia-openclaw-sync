@@ -1,0 +1,100 @@
+{
+  "question_id": "PL002_EnvQuality_Q01",
+  "group": "B",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告第三章引用2022年度顺德区公报判断大气除O3超标外达标、地表水顺德支流新涌和飞鹅山断面Ⅲ类，结论叙述基本一致；但表3-1年份表头与2022年度比较表述不一致，且PM10、PM2.5变化率符号与计算不符。",
+    "evidence": [
+      {
+        "fact": "报告引用2022年度大气环境质量状况公报，判断除臭氧外其余污染物达标。",
+        "source_location": "root[8].content#0",
+        "source_excerpt": "由2022年全区的大气环境质量状况公报可知，除臭氧浓度不达标外，其余污染物指标浓度均达到《环境空气质量标准》（GB3095-2012）二级标准限值。"
+      },
+      {
+        "fact": "报告引用2022年度公报判断顺德支流新涌、飞鹅山断面满足Ⅲ类水功能要求。",
+        "source_location": "root[8].content#0",
+        "source_excerpt": "2022年顺德支流新涌断面、飞鹅山断面水质均满足《地表水环境质量标准》（GB3838-2002）之Ⅲ类水功能要求，则本项目地表水环境属于达标区。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "大气现状结论内部一致性",
+        "result": "pass",
+        "explanation": "报告多处均表述区域大气除臭氧不达标外其余达标，第三章与符合性分析结论一致。"
+      },
+      {
+        "check_name": "地表水现状结论内部一致性",
+        "result": "pass",
+        "explanation": "第三章引用2022年度公报判定顺德支流达标；前文虽引用2021年度公报，但水质结论同为Ⅲ类。"
+      },
+      {
+        "check_name": "表3-1数据自洽性",
+        "result": "fail",
+        "explanation": "标题为2022年年度比较，表头年份显示2020/2021；按表中数值计算，PM10、PM2.5变化率应为负值，表内未体现。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "(32-42)/42×100%",
+        "inputs": {
+          "PM10前期值": 42,
+          "PM10当期值": 32
+        },
+        "result": "-23.8",
+        "unit": "%"
+      },
+      {
+        "formula": "(19-22)/22×100%",
+        "inputs": {
+          "PM2.5前期值": 22,
+          "PM2.5当期值": 19
+        },
+        "result": "-13.6",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "表3-1年份表头与“2022年…年度比较”不一致。",
+      "PM10、PM2.5变化率未体现下降方向。",
+      "前文引用2021年度公报，第三章引用2022年度公报，引用年度不统一。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "insufficient_reference",
+    "conclusion": "冻结RAG可核验2022年度顺德大气公报主要结论，即综合指数3.27、五项达标、臭氧超标；也可核验2022年主河道水质优良率100%及飞鹅山等断面达标。但RAG未提供顺德支流新涌断面具体类别及表3-1六项浓度数值，无法完整核验。",
+    "references_used": [
+      {
+        "reference_id": "ENV_SHUNDE_2022_P0005",
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "clause_or_table": "大气环境质量",
+        "supporting_text": "2022 年顺德区空气质量综合指数为 3.27，比 2021 年下降6.0%，在全市五区中排名第二。"
+      },
+      {
+        "reference_id": "ENV_SHUNDE_2022_P0059",
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "clause_or_table": "地表水环境-主河道",
+        "supporting_text": "2022 年顺德区 2 个国控断面 （乌洲、 顺德港）、3 个省控断面（杨滘、海凌、飞鹅山）均达到相应的水质目标，水质优良率（Ⅰ～Ⅲ类）为 100%。"
+      }
+    ],
+    "missing_references": [
+      "2022年度佛山市顺德区生态环境状况公报中顺德支流新涌断面水质类别表值",
+      "2022年度佛山市顺德区生态环境状况公报中环境空气六项污染物浓度明细表"
+    ]
+  },
+  "final_answer": {
+    "judgement": "待人工复核",
+    "analysis": "内部审核：报告第三章引用2022年度顺德公报，大气除O3超标外达标、地表水顺德支流新涌和飞鹅山Ⅲ类的结论前后基本一致；但表3-1标题为2022年度比较，表头年份显示2020/2021，且PM10、PM2.5变化率按数值计算应为负值。外部核验：RAG可证实2022大气公报主要结论及飞鹅山等断面达标，但新涌断面具体类别及表3-1浓度数值缺失，无法完整判定引用准确。",
+    "scope_note": "外部审核仅依据冻结RAG，未使用RAG之外的法规或公报知识。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

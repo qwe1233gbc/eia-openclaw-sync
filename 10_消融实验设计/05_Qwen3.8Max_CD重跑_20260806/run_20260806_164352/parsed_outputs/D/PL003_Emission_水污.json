@@ -1,0 +1,79 @@
+{
+  "question_id": "PL003_Emission_水污",
+  "group": "D",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "07_review-eia-pollutant-discharge-standards",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告内部废水路径、标准引用和数值总体一致，但污水处理厂名称在不同章节存在表述不一致：三线一单章节称'吉祐村分散式农村污水处理站'，技术章节称'杏坛镇吉祐村红砖厂农村生活污水处理站'。",
+    "evidence": [
+      {
+        "fact": "三线一单章节中污水处理站名称为'吉祐村分散式农村污水处理站'",
+        "source_location": "root[2].content#4400",
+        "source_excerpt": "本项目生活污水经三级化粪池预处理后排入吉祐村分散式农村污水处理站处理，尾水排至内河涌（砖厂涌）后排入其他内河涌，然后汇入顺德支流"
+      },
+      {
+        "fact": "技术章节中污水处理站名称为'杏坛镇吉祐村红砖厂农村生活污水处理站'，尾水执行GB18918-2002一级B标准",
+        "source_location": "root[6].content#4400",
+        "source_excerpt": "杏坛镇吉祐村红砖厂农村生活污水处理站尾水执行《城镇污水处理厂污染物排放标准》（GB18918-2002）一级B标准"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "排放路径一致性",
+        "result": "pass",
+        "explanation": "各章节均描述：三级化粪池→杏坛镇吉祐村红砖厂农村生活污水处理站→砖厂涌→其他内河涌→顺德支流，路径一致。"
+      },
+      {
+        "check_name": "企业排口标准一致性",
+        "result": "pass",
+        "explanation": "各章节均引用DB44/26-2001第二时段三级标准，限值CODCr≤500、BOD5≤300、SS≤400一致。"
+      },
+      {
+        "check_name": "污水处理站名称一致性",
+        "result": "fail",
+        "explanation": "三线一单章节用'吉祐村分散式农村污水处理站'，其余章节用'杏坛镇吉祐村红砖厂农村生活污水处理站'，名称不统一。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "污水处理站名称在不同章节表述不一致，可能引起审批歧义"
+    ]
+  },
+  "external_validation_result": {
+    "status": "insufficient_reference",
+    "conclusion": "冻结RAG确认DB44/26-2001适用于广东省水污染物排放管理，GB18918-2002适用于城镇污水处理厂。但RAG未提供一级B标准具体限值数值，无法核验报告所列CODCr≤60等数值是否正确；2025修改单已生效但RAG未提供修改后具体限值表。",
+    "references_used": [
+      {
+        "reference_id": "WATER_DB44_26_2001_P0023",
+        "title": "水污染物排放限值 DB44/26-2001",
+        "clause_or_table": "1 范围",
+        "supporting_text": "本标准适用于广东省境内除船舶、船舶工业、海洋石油开发工业、航天推进剂使用、兵器工业、污水海洋处置工程等行业外的现有单位水污染物的排放管理"
+      },
+      {
+        "reference_id": "WATER_GB18918_2002_P0011",
+        "title": "城镇污水处理厂污染物排放标准 GB 18918-2002",
+        "clause_or_table": "4.1.2 标准分级",
+        "supporting_text": "根据城镇污水处理厂排入地表水域环境功能和保护目标，以及污水处理厂的处理工艺，将基本控制项目的常规污染物标准值分为一级标准、二级标准、三级标准。一级标准分为A标准和B标准。"
+      }
+    ],
+    "missing_references": [
+      "GB18918-2002一级B标准具体限值表（RAG未收录）",
+      "GB18918-2002修改单（2025）中关于农村分散式处理设施适用性的明确条款"
+    ]
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "报告内部废水路径清晰，企业排口执行DB44/26-2001第二时段三级标准、尾水执行GB18918-2002一级B标准，各章节数值一致。存在一处名称不一致：三线一单章节称'吉祐村分散式农村污水处理站'，技术章节称'杏坛镇吉祐村红砖厂农村生活污水处理站'。外部核验方面，RAG确认两项标准的适用范围和分级体系，但未提供一级B具体限值，无法核验数值正确性；2025修改单对农村分散式设施的适用性亦无法从RAG中确认。",
+    "scope_note": "外部限值数值核验因RAG未收录具体限值表而标记为insufficient_reference，报告内部结论保留。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "question_id": "PL002_EnvQuality_Q01",
+  "group": "D",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "review-eia-environmental-quality-data",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "表3-1列年份标注为2020/2021，与2022年度公报对比逻辑不符（应为2021/2022）；PM10和PM2.5变化率符号错误（数值下降却标为正值）。地表水部分内部一致。",
+    "evidence": [
+      {
+        "fact": "表3-1标题为2022年度比较，但浓度均值列标注为2020和2021",
+        "source_location": "root[8].content#0",
+        "source_excerpt": "表3-1 2022年顺德区（国控测点）环境空气污染物浓度水平年度比较…浓度均值…2020…2021"
+      },
+      {
+        "fact": "PM10从42降至32，变化率应为-23.8%，报告标注为23.8（缺负号）",
+        "source_location": "root[8].content#0",
+        "source_excerpt": "PM10年平均质量浓度42327023.8达标"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "表格列年份与公报年份一致性",
+        "result": "fail",
+        "explanation": "2022年度公报应比较2021与2022年数据，表3-1列标注为2020/2021，年份标注错误"
+      },
+      {
+        "check_name": "变化率正负号与数值升降方向一致性",
+        "result": "fail",
+        "explanation": "PM10(42→32)和PM2.5(22→19)均为下降，变化率应为负值，报告标为正值"
+      },
+      {
+        "check_name": "地表水断面结论与表格一致性",
+        "result": "pass",
+        "explanation": "表3-2顺德支流新涌、飞鹅山断面均为Ⅲ类，结论称达标区，内部一致"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "(32-42)/42×100%",
+        "inputs": {
+          "2020_col": 42,
+          "2021_col": 32
+        },
+        "result": "-23.8",
+        "unit": "%"
+      },
+      {
+        "formula": "(19-22)/22×100%",
+        "inputs": {
+          "2020_col": 22,
+          "2021_col": 19
+        },
+        "result": "-13.6",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "表3-1列年份标注为2020/2021，应为2021/2022",
+      "PM10变化率缺负号（应为-23.8%）",
+      "PM2.5变化率缺负号（应为-13.6%）"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "冻结RAG确认2022年度公报（佛环顺函〔2023〕26号）存在，综合指数3.27、下降6.0%、五项达标O3超标等结论与报告一致；飞鹅山断面达标与公报吻合。",
+    "references_used": [
+      {
+        "reference_id": "ENV_SHUNDE_2022_P0059",
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "clause_or_table": "大气环境质量概述",
+        "supporting_text": "2022 年顺德区空气质量综合指数为 3.27，比 2021 年下降6.0%，在全市五区中排名第二。"
+      },
+      {
+        "reference_id": "ENV_SHUNDE_2022_P0028",
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "clause_or_table": "主河道水质",
+        "supporting_text": "2022 年顺德区 2 个国控断面 （乌洲、 顺德港）、3 个省控断面（杨滘、海凌、飞鹅山）均达到相应的水质目标，水质优良率（Ⅰ～Ⅲ类）为 100%，与 2021 年持平。"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告引用2022年度顺德区生态环境状况公报（佛环顺函〔2023〕26号），公报名称、文号及总体结论（综合指数3.27、五项达标O3超标）经冻结RAG核验正确。但表3-1存在两处内部错误：①列年份标注为2020/2021，与2022年度公报应对比2021/2022的逻辑不符；②PM10和PM2.5数值下降但变化率标为正值（缺负号）。地表水部分引用顺德支流新涌、飞鹅山断面Ⅲ类达标结论与公报一致，内部无矛盾。",
+    "scope_note": "冻结RAG未包含2022年公报中各污染物具体浓度数值表，无法逐项核验表3-1中具体浓度数字的准确性，仅能核验总体结论和变化率计算逻辑。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

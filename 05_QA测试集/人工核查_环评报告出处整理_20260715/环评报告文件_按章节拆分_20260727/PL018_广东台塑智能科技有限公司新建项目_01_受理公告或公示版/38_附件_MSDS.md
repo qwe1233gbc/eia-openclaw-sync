@@ -1,0 +1,24 @@
+<!-- source_file: E:\华南理工项目\环评文件汇总\01_GitHub项目与研究文档\eia-openclaw-sync-chen2026\05_QA测试集\人工核查_环评报告出处整理_20260715\环评报告文件_按问答顺序\PL018_广东台塑智能科技有限公司新建项目_01_受理公告或公示版.pdf -->
+<!-- source_relative_path: PL018_广东台塑智能科技有限公司新建项目_01_受理公告或公示版.pdf -->
+<!-- parser: pdf_pypdf -->
+<!-- chapter_index: 38 -->
+<!-- chapter_title: 附件 MSDS -->
+
+# 附件 MSDS
+
+附件 6 MSDS
+（1）油性油墨
+<!-- PDF_PAGE: 89 -->
+81
+<!-- PDF_PAGE: 90 -->
+82
+<!-- PDF_PAGE: 91 -->
+83
+<!-- PDF_PAGE: 92 -->
+84
+<!-- PDF_PAGE: 93 -->
+85
+（2）稀释剂
+<!-- PDF_PAGE: 94 -->
+86
+<!-- PDF_PAGE: 95 -->

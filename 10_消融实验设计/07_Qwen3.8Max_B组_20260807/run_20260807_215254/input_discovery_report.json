@@ -1,0 +1,9 @@
+{
+  "group": "B",
+  "source": "D组prompt文件（去除Skill部分）",
+  "d_group_run_dir": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\10_消融实验设计\\05_Qwen3.8Max_CD重跑_20260806\\run_20260806_164352",
+  "question_count": 21,
+  "selection_reason": "B组实验：LLM+法规库，使用与D组相同的报告上下文和冻结RAG，去除Skill指令。唯一变量为'是否包含Skill'。",
+  "skill_used": false,
+  "rag_used": true
+}

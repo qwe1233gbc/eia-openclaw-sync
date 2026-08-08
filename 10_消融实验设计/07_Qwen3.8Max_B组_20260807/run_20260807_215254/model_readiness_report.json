@@ -1,0 +1,10 @@
+{
+  "group": "B",
+  "model": "qwen3.8-max",
+  "base_url": "https://one-hub.hycx-gd.cn/v1",
+  "max_output_tokens": 10000,
+  "reasoning_effort": "low",
+  "reasoning_budget": 4096,
+  "effective_output_budget": 5904,
+  "api_key_saved": false
+}

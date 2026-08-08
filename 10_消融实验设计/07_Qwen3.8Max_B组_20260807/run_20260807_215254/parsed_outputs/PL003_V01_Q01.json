@@ -1,0 +1,70 @@
+{
+  "question_id": "PL003_V01_Q01",
+  "group": "B",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "industry_classification",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告将项目行业类别定为C2921塑料薄膜制造，与塑料薄膜产品、吹膜/涂布等工艺及PE塑料粒原料基本一致。",
+    "evidence": [
+      {
+        "fact": "报告载明国民经济行业类别为C2921塑料薄膜制造，建设项目行业类别归入塑料制品业292。",
+        "source_location": "root[2].content#0",
+        "source_excerpt": "国民经济行业类别 C2921塑料薄膜制造 建设项目行业类别 二十六、橡胶和塑料制品业29-53塑料制品业292"
+      },
+      {
+        "fact": "项目从事塑料薄膜加工生产，工艺包括混料、吹膜、涂布、烘干、分切、复卷、检验。",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "本项目主要从事塑料薄膜的加工生产，主要工艺为混料、吹膜、涂布、烘干、分切、复卷、检验等工艺"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "产品与行业名称一致性",
+        "result": "pass",
+        "explanation": "产品为塑料薄膜，行业类别表述为C2921塑料薄膜制造，二者对应。"
+      },
+      {
+        "check_name": "工艺与行业类别匹配性",
+        "result": "pass",
+        "explanation": "混料、吹膜、涂布、烘干、分切等属于塑料薄膜加工生产流程，与塑料薄膜制造行业相符。"
+      },
+      {
+        "check_name": "原辅材料与产品工艺匹配性",
+        "result": "pass",
+        "explanation": "PE塑料粒用于吹膜成膜，保护胶涂布胶用于涂布工序，符合塑料薄膜生产逻辑，未显示应归入橡胶或人造革等其他行业。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "insufficient_reference",
+    "conclusion": "冻结RAG仅提供GB/T 4754-2017中292塑料制品业定义，可支持项目以合成树脂为主要原料并经吹塑/成型工艺生产塑料制品；但未提供2921塑料薄膜制造小类定义，无法完整核验小类。",
+    "references_used": [
+      {
+        "reference_id": "IND_GBT4754_2017_292",
+        "title": "国民经济行业分类结构化全文｜GB/T 4754-2017及2019修改内容｜292",
+        "clause_or_table": "292 塑料制品业",
+        "supporting_text": "指以合成树脂（高分子化合物）为主要原料，经采用挤塑、注塑、吹塑、压延、层压等工艺加工成型的各种制品的生产"
+      }
+    ],
+    "missing_references": [
+      "GB/T 4754-2017中2921塑料薄膜制造小类定义未提供"
+    ]
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告载明产品为塑料薄膜，工艺为混料、吹膜、涂布、烘干、分切、复卷，原料以PE塑料粒为主，并登记行业为C2921塑料薄膜制造；产品、工艺、原料与塑料薄膜制造逻辑一致。冻结RAG仅能支持其属于292塑料制品业，2921小类定义缺失。",
+    "scope_note": "外部核验仅基于冻结RAG中292塑料制品业条目；2921塑料薄膜制造小类条目未提供。"
+  },
+  "answer_mode": "determinate_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

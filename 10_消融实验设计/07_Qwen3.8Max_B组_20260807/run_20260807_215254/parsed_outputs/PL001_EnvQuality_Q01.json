@@ -1,0 +1,100 @@
+{
+  "question_id": "PL001_EnvQuality_Q01",
+  "group": "B",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告大气现状引用2022顺德区公报结论，但表3-1年份与变化率疑似对应2020-2021而非2022；地表水存在新涌大河与东海大河名称不一致。",
+    "evidence": [
+      {
+        "fact": "报告引用2022年度顺德区生态环境状况公报判定大气环境质量，五项达标、臭氧超标。",
+        "source_location": "root[3].content#11000",
+        "source_excerpt": "2022年顺德区二氧化硫（SO2）、二氧化氮（NO2）、可吸入颗粒物（PM10）、细颗粒物（PM2.5）、一氧化碳（CO）五项污染物年评价浓度均达到二级标准，臭氧（O3）超标。"
+      },
+      {
+        "fact": "地表水文本表述为新涌大河，但表3-2考核断面名称为东海大河。",
+        "source_location": "root[3].content#11000",
+        "source_excerpt": "表3-2 2021年1-12月市控考核断面水质情况（东海大河）河涌断面2021年水质目标水质类别超标率(%)达标判定东海大河ⅤⅤ0达标"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "大气现状表年份与变化率一致性",
+        "result": "fail",
+        "explanation": "表3-1标题为2022年度比较，但列值及变化率经核算对应2020-2021年，未体现2022年数据。"
+      },
+      {
+        "check_name": "地表水受纳河涌与考核断面名称一致性",
+        "result": "uncertain",
+        "explanation": "文本称新涌大河，表3-2为东海大河，报告未说明两者对应关系。"
+      },
+      {
+        "check_name": "顺德支流断面类别内部一致性",
+        "result": "pass",
+        "explanation": "表3-3新涌、飞鹅山断面2021和2022均为Ⅲ类，与文本结论一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "(5-6)/6×100%",
+        "inputs": {
+          "SO2_2020": 6,
+          "SO2_2021": 5
+        },
+        "result": "-16.7",
+        "unit": "%"
+      },
+      {
+        "formula": "(190-173)/173×100%",
+        "inputs": {
+          "O3_2020": 173,
+          "O3_2021": 190
+        },
+        "result": "9.8",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "表3-1标题为2022年年度比较，但数据列和变化率对应2020-2021年。",
+      "新涌大河与东海大河未建立明确对应关系。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "insufficient_reference",
+    "conclusion": "冻结RAG可核验2022顺德区公报大气总体结论，但缺少报告表3-1具体浓度变化及地表水断面类别数据，无法完成全部外部核验。",
+    "references_used": [
+      {
+        "reference_id": "ENV_SHUNDE_2022",
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "clause_or_table": "大气环境质量",
+        "supporting_text": "2022 年顺德区空气质量综合指数为 3.27，比 2021 年下降6.0%。五项污染物年评价浓度均达到二级标准，臭氧（O3）超标。"
+      },
+      {
+        "reference_id": "ENV_SHUNDE_2022",
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "clause_or_table": "水环境质量",
+        "supporting_text": "2022 年顺德区 2 个国控断面（乌洲、顺德港）、3 个省控断面（杨滘、海凌、飞鹅山）均达到相应的水质目标。"
+      }
+    ],
+    "missing_references": [
+      "2022年度顺德区公报中环境空气污染物浓度水平年度比较表",
+      "2022年度顺德区公报中顺德支流新涌、飞鹅山断面水质类别表",
+      "2021年1-12月市控考核断面水质情况中东海大河/新涌大河对应关系及水质数据"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告引用2022顺德区公报判断大气不达标区，文本结论与公报总体一致；但表3-1标题为2022年度比较，列值及变化率经核算对应2020-2021年，未体现2022年数据，引用准确性不足。地表水方面，文本称新涌大河，表3-2为东海大河且未说明对应关系；顺德支流新涌、飞鹅山Ⅲ类及东海大河Ⅴ类数据未能在冻结RAG中完整核验。需补充原始公报表格及断面对应关系。",
+    "scope_note": "内部审核基于报告JSON；外部审核仅依据冻结RAG，未使用冻结RAG之外的法规知识。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

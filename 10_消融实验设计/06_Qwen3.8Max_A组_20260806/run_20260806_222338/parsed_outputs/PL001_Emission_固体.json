@@ -1,0 +1,74 @@
+{
+  "question_id": "PL001_Emission_固体",
+  "group": "A",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告列出了固废鉴别、分类、贮存及危废名录等标准，与项目产生的固废类型（一般工业固废废包装材料、5类危险废物）基本对应，内部一致性良好。",
+    "evidence": [
+      {
+        "fact": "报告标准章节列明固废执行标准包括GB34330-2017、GB/T39198-2020、国家危险废物名录(2021版)、GB18597-2023",
+        "source_location": "root[3].content#17600",
+        "source_excerpt": "一般工业固体废物参照《一般固体废物分类及代码》（GB/T39198-2020）进行鉴别，危险废物执行《国家危险废物名录》（2021版）以及《危险废物贮存污染控制标准》（GB18597-2023）。"
+      },
+      {
+        "fact": "环保措施章节补充引用了一般工业固废贮存标准GB18599-2020",
+        "source_location": "root[6].content#0",
+        "source_excerpt": "一般固废暂存间的建设应满足《广东省固体废物污染环境防治条例》、《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）相关要求"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "一般工业固废贮存标准是否引用",
+        "result": "pass",
+        "explanation": "GB18599-2020在环保措施章节（root[6].content#0）中明确引用，与废包装材料暂存需求匹配。"
+      },
+      {
+        "check_name": "危险废物贮存标准版本是否正确",
+        "result": "pass",
+        "explanation": "报告引用GB18597-2023并注明执行日期2023年7月1日，为现行有效版本。"
+      },
+      {
+        "check_name": "危废类别与废物代码对应性",
+        "result": "pass",
+        "explanation": "废化学包装桶900-041-49、废机油900-214-08、废含油桶罐900-249-08、含油废抹布900-041-49、废活性炭900-039-49均与2021版名录一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "报告引用的固废标准名称及编号均正确且现行有效。GB18599-2020、GB18597-2023、GB34330-2017、GB/T39198-2020及国家危险废物名录(2021版)均为适用标准。未缺少关键标准条目。",
+    "references_used": [
+      {
+        "reference_id": "GB18599-2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "适用于一般工业固体废物贮存设施的建设和运行管理"
+      },
+      {
+        "reference_id": "GB18597-2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "全文，2023年7月1日实施",
+        "supporting_text": "替代GB18597-2001，适用于危险废物贮存设施"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告固废标准选取合理完整：一般工业固废鉴别引用GB34330-2017，分类引用GB/T39198-2020，贮存引用GB18599-2020；危险废物鉴别引用《国家危险废物名录》(2021版)，贮存引用GB18597-2023。各标准编号正确、版本现行有效，与项目产生的废包装材料（一般固废）及5类危险废物（废化学包装桶、废机油、废含油桶罐、含油废抹布、废活性炭）的管理需求相匹配，未发现缺少必要标准条目。",
+    "scope_note": "报告标准章节与环保措施章节分别引用了不同层级的固废标准，整体覆盖完整。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

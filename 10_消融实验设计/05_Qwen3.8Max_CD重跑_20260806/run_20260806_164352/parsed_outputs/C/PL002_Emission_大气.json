@@ -1,0 +1,88 @@
+{
+  "question_id": "PL002_Emission_大气",
+  "group": "C",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "07_review-eia-pollutant-discharge-standards",
+  "audit_category": "大气污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告大气污染源识别完整（混料/破碎→颗粒物，挤出/抽检→非甲烷总烃+臭气浓度），标准选取逻辑正确（GB31572-2015表5/表9、GB14554-93、DB44/2367-2022表3）。但表4-7监测计划中非甲烷总烃浓度限值写为100mg/m³，与表3-3及达标分析中的60mg/m³（表5特别排放限值）不一致；臭气浓度描述中提及'25m高排气筒'与实际30m排气筒不符。",
+    "evidence": [
+      {
+        "fact": "表3-3及表4-5中非甲烷总烃有组织排放浓度限值为60mg/m³（GB31572-2015表5特别排放限值）",
+        "source_location": "root[8].content#2200",
+        "source_excerpt": "挤出、抽检非甲烷总烃（NMHC）G1（30m）60----GB31572-2015"
+      },
+      {
+        "fact": "表4-7监测计划中G1非甲烷总烃浓度限值写为100mg/m³，与表3-3的60mg/m³矛盾",
+        "source_location": "root[9].content#6600",
+        "source_excerpt": "G1非甲烷总烃1次/年《合成树脂工业污染物排放标准》（GB31572-2015）100/"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "污染源-标准覆盖完整性",
+        "result": "pass",
+        "explanation": "混料/破碎颗粒物→GB31572-2015表9；挤出/抽检非甲烷总烃→GB31572-2015表5+表9；臭气浓度→GB14554-93；厂区内VOCs→DB44/2367-2022表3。所有已识别污染源均有对应标准覆盖，无遗漏。"
+      },
+      {
+        "check_name": "标准限值章节间一致性",
+        "result": "fail",
+        "explanation": "表3-3和表4-5均引用GB31572-2015表5特别排放限值60mg/m³，但表4-7监测计划错误写为100mg/m³（疑似误引表4一般排放限值）。"
+      },
+      {
+        "check_name": "排气筒高度描述一致性",
+        "result": "fail",
+        "explanation": "臭气浓度达标分析中提及'表2中25m高排气筒排放标准值'，但G1排气筒实际高度为30m，描述不一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "有组织排放量 = 收集量 × (1-处理效率) = 产生量 × 收集效率 × (1-处理效率)",
+        "inputs": {
+          "产生量": 9.2,
+          "收集效率": 0.7,
+          "处理效率": 0.75
+        },
+        "result": "9.2×0.70×(1-0.75)=1.61",
+        "unit": "t/a"
+      },
+      {
+        "formula": "排放浓度 = 排放速率/风量×10⁶",
+        "inputs": {
+          "排放速率_kg_h": 0.2236,
+          "风量_m3_h": 8800
+        },
+        "result": "0.2236/8800×10⁶=25.41",
+        "unit": "mg/m³"
+      }
+    ],
+    "issues": [
+      "表4-7监测计划中非甲烷总烃限值100mg/m³与表3-3/表4-5中60mg/m³不一致，应统一为表5特别排放限值60mg/m³",
+      "臭气浓度达标分析中'25m高排气筒'表述与实际30m排气筒高度不符"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "C组未提供冻结RAG，无法对GB31572-2015表5限值60mg/m³、GB14554-93表2各高度对应限值、DB44/2367-2022表3限值进行外部核验。",
+    "references_used": [],
+    "missing_references": [
+      "GB31572-2015《合成树脂工业污染物排放标准》表4、表5、表9原文",
+      "GB14554-93《恶臭污染物排放标准》表1、表2原文",
+      "DB44/2367-2022《固定污染源挥发性有机物综合排放标准》表3原文"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "项目为C2929其他塑料制品制造（改性塑料粒），大气污染源为混料/破碎工序颗粒物和挤出/抽检工序非甲烷总烃及臭气浓度。标准选取逻辑正确：有组织非甲烷总烃执行GB31572-2015表5特别排放限值，无组织执行表9，臭气执行GB14554-93，厂区内VOCs执行DB44/2367-2022表3，污染源覆盖完整无遗漏。但存在两处内部不一致：①表4-7监测计划将非甲烷总烃限值误写为100mg/m³（疑为表4一般限值），与表3-3和达标分析中的60mg/m³（表5特别限值）矛盾；②臭气浓度达标分析提及'25m高排气筒'，实际排气筒为30m。产排量核算（收集效率70%、处理效率75%）内部自洽。",
+    "scope_note": "外部标准限值适用性因无冻结RAG未核验，仅完成报告内部一致性审核。"
+  },
+  "answer_mode": "determinate_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

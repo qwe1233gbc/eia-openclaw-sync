@@ -1,0 +1,85 @@
+{
+  "question_id": "PL002_V01_Q01",
+  "group": "C",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "01_manual-audit-national-economic-industry-classification",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告填报行业C2929塑料零件及其他塑料制品制造，与项目产品（改性塑料粒）、原料（PP/PC/PA/PPT/PET新粒料+玻纤+色母）和工艺（混料→挤出拉粒→切粒）基本匹配，属于塑胶行业范畴，适合作为塑胶行业种子问答样本。但报告内部存在VOCs有组织排放量前后不一致问题（5.1520t/a vs 1.6100t/a）。",
+    "evidence": [
+      {
+        "fact": "报告填报行业为C2929塑料零件及其他塑料制品制造",
+        "source_location": "root[1].content#2200",
+        "source_excerpt": "本项目属于C2929 塑料零件及其他塑料制品制造，无燃煤燃油火电机组和企业自备电站、供热锅炉。"
+      },
+      {
+        "fact": "搬迁后产品为改性塑料粒2000吨/年，原料为塑料新粒料（PP、PC、PA、PPT、PET）1600t/a、玻璃纤维300t/a、色母40t/a，核心工艺为混料→挤出拉粒→冷却→切粒",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "主要从事改性塑料的生产，预计投产后年产改性塑料粒2000吨。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "行业代码与产品名称一致性",
+        "result": "pass",
+        "explanation": "C2929塑料零件及其他塑料制品制造与改性塑料粒生产活动方向一致，改性造粒属于塑料制品加工范畴。"
+      },
+      {
+        "check_name": "产品-原料-工艺链条完整性",
+        "result": "pass",
+        "explanation": "原料（新粒料+玻纤+色母）→混料→挤出拉粒→切粒→改性塑料粒，链条完整且各章节表述一致。"
+      },
+      {
+        "check_name": "VOCs排放量前后一致性",
+        "result": "fail",
+        "explanation": "三线一单相符性分析处称有组织总排放量5.1520t/a，工程分析处计算结果为1.6100t/a，两处数值矛盾。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "有组织排放量 = 产生量 × 收集效率 × (1-处理效率)",
+        "inputs": {
+          "产生量": "9.2t/a",
+          "收集效率": "70%",
+          "处理效率": "75%"
+        },
+        "result": "9.2×0.7×(1-0.75)=1.61",
+        "unit": "t/a"
+      },
+      {
+        "formula": "无组织排放量 = 产生量 × (1-收集效率)",
+        "inputs": {
+          "产生量": "9.2t/a",
+          "收集效率": "70%"
+        },
+        "result": "9.2×0.3=2.76",
+        "unit": "t/a"
+      }
+    ],
+    "issues": [
+      "VOCs有组织排放量前后矛盾：三线一单章节写5.1520t/a，工程分析章节计算为1.6100t/a，差异显著。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "C组未提供冻结RAG，无法对C2929分类注释原文进行逐字核验。基于报告内部证据，C2929方向基本合理，但分类注释原文核验未执行。",
+    "references_used": [],
+    "missing_references": [
+      "《国民经济行业分类》(GB/T 4754-2017)及第1号修改单中C2929小类注释原文"
+    ]
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "该项目以PP、PC、PA、PPT、PET新粒料及玻纤、色母为原料，通过混料→挤出拉粒→切粒工艺生产改性塑料粒2000t/a，属于典型塑胶行业改性造粒项目，适合作为塑胶行业种子问答样本。报告填报C2929塑料零件及其他塑料制品制造，与产品、原料、工艺方向基本一致。但存在内部数据矛盾：三线一单章节VOCs有组织排放量写5.1520t/a，工程分析计算结果为1.6100t/a，需修正。外部规范核验因无冻结RAG未执行。",
+    "scope_note": "行业分类注释原文核验因C组无冻结RAG标记为not_performed，仅完成报告内部一致性审核。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

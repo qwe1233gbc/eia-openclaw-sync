@@ -1,0 +1,87 @@
+{
+  "question_id": "PL005_Emission_噪声",
+  "group": "B",
+  "project_id": "PL005",
+  "source_json": "PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "噪声排放标准",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告内部声环境功能区类别、厂界噪声执行标准、昼夜限值、预测结果与监测计划之间一致。",
+    "evidence": [
+      {
+        "fact": "项目位于3类声环境功能区，声环境执行GB3096-2008 3类标准，昼间65dB(A)、夜间55dB(A)。",
+        "source_location": "root[6].content#0",
+        "source_excerpt": "项目位于杏坛南部工业片区（编号：3322），为3类声环境功能区，（声环境执行《声环境质量标准》（GB3096-2008）3类标准，即昼间≤65dB（A），夜间≤55dB（A）。"
+      },
+      {
+        "fact": "厂界噪声执行GB12348-2008 3类标准，昼间65dB(A)、夜间55dB(A)。",
+        "source_location": "root[6].content#6600",
+        "source_excerpt": "3、噪声排放标准:项目厂界执行《工业企业厂界环境噪声排放标准》（GB12348-2008）中的3类标准，即昼间≤65dB（A），夜间≤55dB（A）。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "声功能区类别与厂界噪声标准类别对应性",
+        "result": "pass",
+        "explanation": "报告将3类声环境功能区对应执行GB12348-2008 3类厂界噪声排放标准，类别一致。"
+      },
+      {
+        "check_name": "昼夜限值内部一致性",
+        "result": "pass",
+        "explanation": "声环境质量与厂界排放标准均采用昼间65dB(A)、夜间55dB(A)，限值一致。"
+      },
+      {
+        "check_name": "预测与监测计划一致性",
+        "result": "pass",
+        "explanation": "厂界昼间预测贡献值60.96dB(A)低于65dB(A)；监测计划执行3类昼间65dB(A)，且报告说明夜间不生产。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "厂界昼间达标判定：预测贡献值≤标准限值",
+        "inputs": {
+          "预测贡献值": 60.96,
+          "标准限值": 65
+        },
+        "result": "达标",
+        "unit": "dB(A)"
+      }
+    ],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "insufficient_reference",
+    "conclusion": "冻结RAG可支持项目所在区域属于3类声环境功能区及GB12348-2008适用于工业企业厂界噪声，但未提供3类区对应具体限值，无法完整外部核验昼65、夜55限值。",
+    "references_used": [
+      {
+        "reference_id": "NOISE_FOSHAN_ZONING_2024",
+        "title": "佛山市声环境功能区划（佛环〔2024〕1号）",
+        "clause_or_table": "二、功能区类别及执行标准/（四）3类声环境功能区",
+        "supporting_text": "以工业生产、仓储物流为主要功能，需要防止工业噪声对周围环境产生严重影响的区域。"
+      },
+      {
+        "reference_id": "NOISE_GB12348_2008",
+        "title": "工业企业厂界环境噪声排放标准（GB 12348-2008）",
+        "clause_or_table": "1 适用范围",
+        "supporting_text": "本标准规定了工业企业和固定设备厂界环境噪声排放限值及其测量方法。"
+      }
+    ],
+    "missing_references": [
+      "GB 12348-2008中3类厂界环境噪声排放限值（昼间/夜间具体数值）",
+      "佛山市声环境功能区划表1中3类声环境功能区环境噪声标准具体限值"
+    ]
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "内部审核显示：报告将项目划为3类声环境功能区，厂界执行GB12348-2008 3类标准，昼间65dB(A)、夜间55dB(A)；声环境质量、排放标准、预测达标及监测计划一致，且夜间不生产。外部核验方面，冻结RAG仅能支持3类区为工业功能及GB12348适用于厂界噪声，但未提供3类排放限值具体数值，故限值合理性外部验证不充分。",
+    "scope_note": "外部规范审核仅依据冻结RAG；因缺失GB12348-2008及佛环〔2024〕1号具体限值表，未对65/55限值作外部确认。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

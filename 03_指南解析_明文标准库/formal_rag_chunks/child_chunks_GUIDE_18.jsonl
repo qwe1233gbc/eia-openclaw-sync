@@ -1,0 +1,4 @@
+{"child_id": "GUIDE_18_C001", "parent_id": "GUIDE_18_P001", "source_id": "GUIDE_18", "content": "# 废气收集风量与设计风量核算审核指南\n\n> 来源: HJ 2026-2013 6.2; 广东省工业源VOCs减排量核算方法(2023修订版)"}
+{"child_id": "GUIDE_18_C002", "parent_id": "GUIDE_18_P002", "source_id": "GUIDE_18", "content": "## 风量核算\n1. 设计风量 = 各支管风量之和 x (1+漏风系数)\n2. 漏风系数一般取10-20%\n3. 风量应与风机选型匹配"}
+{"child_id": "GUIDE_18_C003", "parent_id": "GUIDE_18_P003", "source_id": "GUIDE_18", "content": "## 设计风速要求\n| 管道 | 风速(m/s) |\n|---|---|\n| 支管 | 8-12 |\n| 主管 | 10-15 |\n| 排气筒出口 | 15-20 |"}
+{"child_id": "GUIDE_18_C004", "parent_id": "GUIDE_18_P004", "source_id": "GUIDE_18", "content": "## 审核要点\n1. 设计风量是否覆盖所有收集点\n2. 风机风量风压是否匹配系统阻力\n3. 有组织排气筒高度是否≥15m"}

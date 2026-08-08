@@ -1,0 +1,76 @@
+{
+  "question_id": "PL002_Emission_大气",
+  "group": "A",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "PL002_Emission_大气",
+  "audit_category": "大气污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "标准选取总体合理，但报告内部存在限值不一致问题：表3-3中NMHC有组织排放限值为60mg/m³（GB31572-2015表5特别排放限值），而表4-7监测计划中同一排气筒G1的NMHC限值却写为100mg/m³（对应表4一般排放限值），两处矛盾。",
+    "evidence": [
+      {
+        "fact": "表3-3规定挤出、抽检NMHC有组织排放执行GB31572-2015，浓度限值60mg/m³",
+        "source_location": "root[8].content#2200",
+        "source_excerpt": "挤出、抽检非甲烷总烃（NMHC）G1（30m）60----GB31572-2015"
+      },
+      {
+        "fact": "表4-7监测计划中G1排气筒NMHC浓度限值写为100mg/m³",
+        "source_location": "root[9].content#6600",
+        "source_excerpt": "G1非甲烷总烃1次/年《合成树脂工业污染物排放标准》（GB31572-2015）100/"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "污染源覆盖完整性",
+        "result": "pass",
+        "explanation": "报告识别了混料/破碎（颗粒物）、挤出/抽检（NMHC、臭气浓度）三类大气污染源，并分别对应了GB31572-2015和GB14554-93，覆盖完整。"
+      },
+      {
+        "check_name": "有组织与无组织标准配套",
+        "result": "pass",
+        "explanation": "有组织执行GB31572-2015表5，无组织执行表9及DB44/2367-2022表3，层次完整。"
+      },
+      {
+        "check_name": "表3-3与表4-7限值一致性",
+        "result": "fail",
+        "explanation": "表3-3取60mg/m³（表5特别排放限值），表4-7取100mg/m³（表4一般排放限值），同一排气筒同一污染物限值不一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "表4-7监测计划中G1排气筒NMHC限值100mg/m³与表3-3中60mg/m³矛盾，应统一为60mg/m³（表5特别排放限值）。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB31572-2015适用于合成树脂加工（含挤出、注塑等），本项目为改性塑料粒生产（C2929），属合成树脂加工范畴，标准选取正确。GB31572-2015表5 NMHC特别排放限值确为60mg/m³，表9颗粒物企业边界限值确为1.0mg/m³。GB14554-93表2中25m排气筒臭气浓度限值为6000（无量纲），报告对30m排气筒采用25m限值属保守取值，可接受。DB44/2367-2022为广东省现行有效的VOCs无组织排放地方标准。",
+    "references_used": [
+      {
+        "reference_id": "GB31572-2015",
+        "title": "合成树脂工业污染物排放标准",
+        "clause_or_table": "表5、表9",
+        "supporting_text": "表5规定NMHC特别排放限值60mg/m³；表9规定企业边界颗粒物1.0mg/m³、NMHC 4.0mg/m³"
+      },
+      {
+        "reference_id": "GB14554-93",
+        "title": "恶臭污染物排放标准",
+        "clause_or_table": "表2",
+        "supporting_text": "25m排气筒臭气浓度排放标准值6000（无量纲），厂界二级新扩改建标准20（无量纲）"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "项目为C2929改性塑料粒生产，主要大气污染源为混料/破碎（颗粒物）和挤出/抽检（NMHC、臭气浓度）。标准选取GB31572-2015（表5特别排放限值+表9边界限值）、GB14554-93、DB44/2367-2022总体正确，污染源覆盖完整。但报告内部存在明显矛盾：表3-3明确NMHC有组织限值60mg/m³（表5），而表4-7监测计划中同一排气筒写为100mg/m³（表4一般限值），应统一修正为60mg/m³。此外，臭气浓度对30m排气筒采用25m对应限值6000属保守做法，可接受但建议注明。",
+    "scope_note": "审核范围限于大气污染物排放标准选取的合理性和内部一致性，未涉及排放量核算准确性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

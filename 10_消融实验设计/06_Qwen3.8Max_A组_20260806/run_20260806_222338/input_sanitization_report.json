@@ -1,0 +1,149 @@
+[
+  {
+    "question_id": "PL001_Emission_固体",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL001_佛山市亮正新材料有限公司新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL001_EnvQuality_Q01",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL001_佛山市亮正新材料有限公司新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL001_V01_Q01",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL001_佛山市亮正新材料有限公司新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL002_Emission_大气",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+    "redacted_personal_info": 1,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL002_Emission_固体",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+    "redacted_personal_info": 1,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL002_Emission_噪声",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+    "redacted_personal_info": 1,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL002_EnvQuality_Q01",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+    "redacted_personal_info": 1,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL002_V01_Q01",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+    "redacted_personal_info": 1,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL003_Emission_固体",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL003_佛山市顺德区康明新材料厂新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL003_Emission_水污",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL003_佛山市顺德区康明新材料厂新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL003_Emission_噪声",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL003_佛山市顺德区康明新材料厂新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL003_V01_Q01",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL003_佛山市顺德区康明新材料厂新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL003_V01_Q03",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL003_佛山市顺德区康明新材料厂新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL004_Emission_固体",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+    "redacted_personal_info": 1,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL004_Emission_水污",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+    "redacted_personal_info": 1,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL004_Emission_噪声",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+    "redacted_personal_info": 1,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL004_V01_Q01",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+    "redacted_personal_info": 1,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL005_Emission_固体",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL005_Emission_水污",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL005_Emission_噪声",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  },
+  {
+    "question_id": "PL006_EnvQuality_Q01",
+    "json_path": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\PL006_佛山市顺德区乐鲸科技有限公司年产五金拉手300万个新建项目.json",
+    "redacted_personal_info": 2,
+    "residual_forbidden_tokens": [],
+    "blocked": false
+  }
+]

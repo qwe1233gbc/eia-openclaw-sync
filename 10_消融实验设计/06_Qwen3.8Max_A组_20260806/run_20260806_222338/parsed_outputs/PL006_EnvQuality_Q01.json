@@ -1,0 +1,95 @@
+{
+  "question_id": "PL006_EnvQuality_Q01",
+  "group": "A",
+  "project_id": "PL006",
+  "source_json": "PL006_佛山市顺德区乐鲸科技有限公司年产五金拉手300万个新建项目.json",
+  "skill_id": "EnvQuality",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "大气和地表水环境质量现状数据引用在报告内部各章节之间保持一致，占标率计算正确，达标判定逻辑自洽。",
+    "evidence": [
+      {
+        "fact": "大气数据引用《2022年度佛山市顺德区环境质量状况公报》，O3超标判定为不达标区",
+        "source_location": "root[3].content#0",
+        "source_excerpt": "引用佛山市生态环境局顺德分局发布的《2022年度佛山市顺德区环境质量状况公报》中的数据…O3（ug/m3）90百分位数最大8小时平均质量浓度190160118.7不达标"
+      },
+      {
+        "fact": "地表水引用同一公报，顺德支流水质满足Ⅲ类标准",
+        "source_location": "root[3].content#0",
+        "source_excerpt": "参照《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知》（佛顺环函〔2023〕26号），2022年顺德区…水质优良率（Ⅰ～Ⅲ类）为100%"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "大气占标率计算一致性",
+        "result": "pass",
+        "explanation": "SO2:5/60=8.3%、NO2:29/40=72.5%、PM10:32/70=45.7%、PM2.5:19/35=54.3%、CO:1.1/4=27.5%、O3:190/160=118.7%，均与表中数值一致。"
+      },
+      {
+        "check_name": "章节间引用一致性",
+        "result": "pass",
+        "explanation": "三线一单分析章节（root[1]）同样引用该公报判定不达标区及顺德支流Ⅲ类达标，与第三章结论一致。"
+      },
+      {
+        "check_name": "纳污水体与功能区划对应",
+        "result": "pass",
+        "explanation": "报告明确顺德支流执行GB3838-2002Ⅲ类标准，与杏坛污水处理厂尾水排入顺德支流的描述一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "O3占标率 = 现状浓度/标准值×100%",
+        "inputs": {
+          "现状浓度": 190,
+          "标准值": 160
+        },
+        "result": "118.75≈118.7",
+        "unit": "%"
+      },
+      {
+        "formula": "PM2.5占标率 = 19/35×100%",
+        "inputs": {
+          "现状浓度": 19,
+          "标准值": 35
+        },
+        "result": "54.3",
+        "unit": "%"
+      }
+    ],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "报告引用的GB3095-2012二级标准限值（SO2≤60、NO2≤40、PM10≤70、PM2.5≤35、CO≤4mg/m³、O3≤160μg/m³）均正确；GB3838-2002Ⅲ类标准用于顺德支流功能区划合理。",
+    "references_used": [
+      {
+        "reference_id": "GB3095-2012",
+        "title": "环境空气质量标准",
+        "clause_or_table": "表1 二级标准",
+        "supporting_text": "O3日最大8小时平均第90百分位数二级标准限值为160μg/m³"
+      },
+      {
+        "reference_id": "GB3838-2002",
+        "title": "地表水环境质量标准",
+        "clause_or_table": "表1 Ⅲ类",
+        "supporting_text": "Ⅲ类适用于集中式生活饮用水地表水源地二级保护区等"
+      }
+    ],
+    "missing_references": [
+      "无法获取《2022年度佛山市顺德区环境质量状况公报》原文，无法核实具体监测数值是否与公报完全一致"
+    ]
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告大气环境质量数据引用《2022年度佛山市顺德区环境质量状况公报》，6项基本污染物浓度、标准值及占标率计算均正确，O3超标判定为不达标区逻辑成立。地表水引用同一公报（佛顺环函〔2023〕26号），顺德支流满足Ⅲ类标准的结论与报告各章节（三线一单分析、水环境影响分析）保持一致。标准引用（GB3095-2012二级、GB3838-2002Ⅲ类）均正确。唯一不足是无法逐字核实公报原始数值，但报告内部逻辑完全自洽。",
+    "scope_note": "未能获取公报原文进行逐字比对，仅完成内部一致性验证及标准限值外部核验。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "question_id": "PL002_Emission_大气",
+  "group": "D",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "07_review-eia-pollutant-discharge-standards",
+  "audit_category": "大气污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告大气污染源覆盖基本完整（混料/破碎颗粒物、挤出/抽检非甲烷总烃及臭气浓度），标准选取框架合理，但监测计划表（表4-7）中非甲烷总烃有组织限值写为100mg/m³，与排放标准表（表3-3）及达标分析表（表4-5）中的60mg/m³不一致，存在内部矛盾。",
+    "evidence": [
+      {
+        "fact": "表3-3规定挤出抽检非甲烷总烃有组织执行GB31572-2015，限值60mg/m³",
+        "source_location": "root[8].content#2200",
+        "source_excerpt": "挤出、抽检 非甲烷总烃（NMHC） G1（30m） 60 ---- GB31572-2015"
+      },
+      {
+        "fact": "表4-7监测计划中G1非甲烷总烃限值写为100mg/m³，与表3-3的60mg/m³矛盾",
+        "source_location": "root[9].content#6600",
+        "source_excerpt": "G1非甲烷总烃1次/年《合成树脂工业污染物排放标准》（GB31572-2015）100/"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "污染源覆盖完整性",
+        "result": "pass",
+        "explanation": "报告识别了混料/破碎（颗粒物）、挤出/抽检（非甲烷总烃、臭气浓度）三类大气污染源，均进入标准表和达标分析，覆盖完整。"
+      },
+      {
+        "check_name": "标准表与达标分析一致性",
+        "result": "pass",
+        "explanation": "表3-3限值60mg/m³与表4-5达标分析中执行标准浓度限值60mg/m³一致。"
+      },
+      {
+        "check_name": "监测计划与标准表一致性",
+        "result": "fail",
+        "explanation": "表4-7中G1非甲烷总烃浓度限值写为100mg/m³，而表3-3和表4-5均为60mg/m³（表5特别排放限值），存在内部矛盾。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "表4-7监测计划中非甲烷总烃有组织限值100mg/m³与表3-3的60mg/m³不一致，疑似误引表4一般排放限值"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "根据冻结RAG，GB31572-2015适用于合成树脂工业企业（含废合成树脂回收再加工），本项目为改性塑料粒生产属合成树脂加工，标准选取正确。GB14554-93用于臭气浓度、DB44/2367-2022用于厂区内VOCs无组织均符合各标准适用范围。GB31572-2015前言明确不再执行GB16297-1996，报告未错误引用综合标准。",
+    "references_used": [
+      {
+        "reference_id": "AIR_GB31572_2015_MOD",
+        "title": "合成树脂工业污染物排放标准（含2024修改内容）",
+        "clause_or_table": "前言及适用范围",
+        "supporting_text": "本标准规定了合成树脂（聚氯乙烯树脂除外）工业企业及其生产设施的水污染物和大气污染物排放限值、监测和监督管理要求。"
+      },
+      {
+        "reference_id": "AIR_DB44_2367_2022",
+        "title": "固定污染源挥发性有机物综合排放标准",
+        "clause_or_table": "1 范围",
+        "supporting_text": "国家或我省发布的行业污染物排放标准中对VOCs无组织排放控制未做规定的，应执行本文件中无组织排放控制要求。"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告大气污染源识别完整，涵盖混料/破碎颗粒物（无组织）、挤出/抽检非甲烷总烃（有组织+无组织）和臭气浓度（有组织+无组织）。标准选取框架正确：有组织NMHC执行GB31572-2015表5特别排放限值（60mg/m³），厂界无组织执行表9，臭气浓度执行GB14554-93，厂区内VOCs执行DB44/2367-2022表3。但表4-7监测计划中G1非甲烷总烃限值误写为100mg/m³（疑为表4一般限值），与表3-3及表4-5的60mg/m³矛盾，需修正。",
+    "scope_note": "外部核验基于冻结RAG中GB31572-2015、GB14554-93、DB44/2367-2022、DB44/27-2001、GB16297-1996、GB37822-2019的适用范围条款完成。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

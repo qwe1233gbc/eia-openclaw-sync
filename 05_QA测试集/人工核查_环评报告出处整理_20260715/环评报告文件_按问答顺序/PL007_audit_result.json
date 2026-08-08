@@ -1,0 +1,280 @@
+{
+  "record": {
+    "project_id": "PL007",
+    "project_name": "广东云晟新材料有限公司年产水性涂料2400吨新建项目",
+    "report_name": "广东云晟新材料有限公司年产水性涂料2400吨新建项目环境影响报告表",
+    "report_version": "01"
+  },
+  "report_evidence": {
+    "report_date": {
+      "evidence_id": "R0",
+      "quote": null,
+      "source_section": "报告全文/文件元数据",
+      "source_location": "报告全文无明确编制/送审/公示日期；文件元数据创建日期2023-01-17，修改日期2023-03-14；报告引用2021年度公报（佛顺环函〔2021〕19号），2022年度公报发布日期2023-03-29晚于文件修改日期，推定编制时间约为2023-01至2023-03"
+    },
+    "air": {
+      "functional_zone": "二类区",
+      "bulletin_title": "佛山市生态环境局顺德分局关于发布2021年度佛山市顺德区环境质量状况公报的通知（佛顺环函〔2021〕19号）",
+      "bulletin_year": 2021,
+      "full_analysis": {
+        "evidence_id": "R1",
+        "quote": "根据《佛山市生态环境局顺德分局关于发布2021年度佛山市顺德区环境质量状况公报的通知》，该地区空气质量执行《环境空气质量标准》（GB3095-2012）及2018年修改单中的二级标准，基本污染物环境质量现状评价如下：表3-1 2021年顺德区（国控测点）环境空气质量现状评价表。2021年全区二氧化硫（SO2）、二氧化氮（NO2）、可吸入颗粒物（PM10）、细颗粒物（PM2.5）年平均浓度分别为6、33、42、22微克/立方米，臭氧日最大8小时滑动平均（O3-8h）浓度的第90百分位数为173微克/立方米，一氧化碳（CO）日浓度的第95百分位数为1.0毫克/立方米，其中O3未达到《环境空气质量标准》(GB3095-2012)及2018年修改单的二级标准，其他指标都达标。",
+        "source_section": "三、区域环境质量现状、环境保护目标及评价标准",
+        "source_location": "表2第0行第1列（大气环境段落）"
+      },
+      "claims": [
+        {
+          "evidence_id": "R1-01",
+          "item": "SO2年平均浓度",
+          "value": 6,
+          "unit": "μg/m³",
+          "scope": "国控测点2021年"
+        },
+        {
+          "evidence_id": "R1-02",
+          "item": "NO2年平均浓度",
+          "value": 33,
+          "unit": "μg/m³",
+          "scope": "国控测点2021年"
+        },
+        {
+          "evidence_id": "R1-03",
+          "item": "PM10年平均浓度",
+          "value": 42,
+          "unit": "μg/m³",
+          "scope": "国控测点2021年"
+        },
+        {
+          "evidence_id": "R1-04",
+          "item": "PM2.5年平均浓度",
+          "value": 22,
+          "unit": "μg/m³",
+          "scope": "国控测点2021年"
+        },
+        {
+          "evidence_id": "R1-05",
+          "item": "O3-8h第90百分位数浓度",
+          "value": 173,
+          "unit": "μg/m³",
+          "scope": "国控测点2021年"
+        },
+        {
+          "evidence_id": "R1-06",
+          "item": "CO日浓度第95百分位数",
+          "value": 1.0,
+          "unit": "mg/m³",
+          "scope": "国控测点2021年"
+        },
+        {
+          "evidence_id": "R1-07",
+          "item": "达标情况",
+          "value": "O3未达标，其他指标达标",
+          "unit": null,
+          "scope": "全区2021年"
+        }
+      ]
+    },
+    "surface_water": {
+      "wastewater_treatment_plant": "杏坛镇污水处理厂",
+      "receiving_water": "顺德支流",
+      "bulletin_title": "佛山市生态环境局顺德分局关于发布2021年度佛山市顺德区环境质量状况公报的通知（佛顺环函〔2021〕19号）",
+      "bulletin_year": 2021,
+      "full_analysis": {
+        "evidence_id": "R2",
+        "quote": "为评价顺德支流水质，参照《佛山市生态环境局顺德分局关于发布2021年度佛山市顺德区环境质量状况公报的通知》（佛顺环函〔2021〕19号），2021年全区地表水环境质量保持稳定，4个饮用水源监控断面每月均达标，水质年均值均达到Ⅱ类；3个国控断面（科研断面羊额、考核断面乌洲、顺德港）、3个省控断面（杨滘、海凌、飞鹅山）均达到相应的水质目标，项目纳污水体顺德支流的水质满足《地表水环境质量标准》（GB3838-2002）之Ⅲ类水功能要求，水质良好。",
+        "source_section": "三、区域环境质量现状、环境保护目标及评价标准",
+        "source_location": "表2第0行第1列（水环境段落）"
+      },
+      "claims": [
+        {
+          "evidence_id": "R2-01",
+          "item": "饮用水源监控断面达标情况",
+          "value": "4个断面每月均达标，水质年均值均达到Ⅱ类",
+          "unit": null,
+          "scope": "全区2021年"
+        },
+        {
+          "evidence_id": "R2-02",
+          "item": "国控断面达标情况",
+          "value": "3个国控断面均达到相应水质目标",
+          "unit": null,
+          "scope": "全区2021年"
+        },
+        {
+          "evidence_id": "R2-03",
+          "item": "省控断面达标情况",
+          "value": "3个省控断面（杨滘、海凌、飞鹅山）均达到相应水质目标",
+          "unit": null,
+          "scope": "全区2021年"
+        },
+        {
+          "evidence_id": "R2-04",
+          "item": "顺德支流水质类别",
+          "value": "Ⅲ",
+          "unit": null,
+          "scope": "顺德支流2021年"
+        }
+      ]
+    }
+  },
+  "time_basis": {
+    "as_of_date": "2023-03-14",
+    "basis_status": "inferred",
+    "available_years": [],
+    "valid_three_year_window": [
+      2019,
+      2020,
+      2021
+    ],
+    "coverage_gap": [
+      2019,
+      2020,
+      2021
+    ]
+  },
+  "knowledge_matches": [],
+  "comparison": [
+    {
+      "element": "air",
+      "report_evidence_id": "R1-01",
+      "knowledge_id": null,
+      "item": "SO2年平均浓度",
+      "status": "missing_in_kb",
+      "report_value": 6,
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-02",
+      "knowledge_id": null,
+      "item": "NO2年平均浓度",
+      "status": "missing_in_kb",
+      "report_value": 33,
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-03",
+      "knowledge_id": null,
+      "item": "PM10年平均浓度",
+      "status": "missing_in_kb",
+      "report_value": 42,
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-04",
+      "knowledge_id": null,
+      "item": "PM2.5年平均浓度",
+      "status": "missing_in_kb",
+      "report_value": 22,
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-05",
+      "knowledge_id": null,
+      "item": "O3-8h第90百分位数浓度",
+      "status": "missing_in_kb",
+      "report_value": 173,
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-06",
+      "knowledge_id": null,
+      "item": "CO日浓度第95百分位数",
+      "status": "missing_in_kb",
+      "report_value": 1.0,
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-07",
+      "knowledge_id": null,
+      "item": "达标情况",
+      "status": "missing_in_kb",
+      "report_value": "O3未达标，其他指标达标",
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-01",
+      "knowledge_id": null,
+      "item": "饮用水源监控断面达标情况",
+      "status": "missing_in_kb",
+      "report_value": "4个断面每月均达标，水质年均值均达到Ⅱ类",
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-02",
+      "knowledge_id": null,
+      "item": "国控断面达标情况",
+      "status": "missing_in_kb",
+      "report_value": "3个国控断面均达到相应水质目标",
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-03",
+      "knowledge_id": null,
+      "item": "省控断面达标情况",
+      "status": "missing_in_kb",
+      "report_value": "3个省控断面（杨滘、海凌、飞鹅山）均达到相应水质目标",
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-04",
+      "knowledge_id": null,
+      "item": "顺德支流水质类别",
+      "status": "missing_in_kb",
+      "report_value": "Ⅲ",
+      "knowledge_value": null,
+      "note": "报告引用2021年度公报，知识库未覆盖2021年度公报，无法核验"
+    }
+  ],
+  "audit_result": {
+    "conclusion": "无法判断",
+    "air_result": "无法判断",
+    "surface_water_result": "无法判断",
+    "summary_sentence": "1、大气及地表水环境质量引用数据无法判断，需补充2021年度佛山市顺德区环境质量状况公报原文；",
+    "air_statement": "2、项目大气环境质量引用《佛山市生态环境局顺德分局关于发布2021年度佛山市顺德区环境质量状况公报的通知（佛顺环函〔2021〕19号）》。因缺少对应年度公报（知识库未覆盖2021年度），暂无法核验。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。",
+    "surface_water_statement": "项目地表水环境质量引用《佛山市生态环境局顺德分局关于发布2021年度佛山市顺德区环境质量状况公报的通知（佛顺环函〔2021〕19号）》。因缺少对应年度公报（知识库未覆盖2021年度），暂无法核验。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。",
+    "update_notice": [
+      "报告引用2021年度公报，编制时（约2023-03）2022年度公报尚未发布（发布日期2023-03-29），2021年度公报为当时可用的最新公报，引用年度合理。",
+      "截至审核日（2026-07-27），知识库中已发布2022年度、2023年度、2024年度佛山市顺德区生态环境状况公报，可供参考更新。",
+      "知识库未覆盖2021年度公报，无法核验报告引用的2021年度大气和地表水数据，需人工补充2021年度公报原文后复核。"
+    ],
+    "readable_answer": "1、大气及地表水环境质量引用数据无法判断，需补充2021年度佛山市顺德区环境质量状况公报原文；\n2、项目大气环境质量引用《佛山市生态环境局顺德分局关于发布2021年度佛山市顺德区环境质量状况公报的通知（佛顺环函〔2021〕19号）》。因缺少对应年度公报（知识库未覆盖2021年度），暂无法核验。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。\n项目地表水环境质量引用《佛山市生态环境局顺德分局关于发布2021年度佛山市顺德区环境质量状况公报的通知（佛顺环函〔2021〕19号）》。因缺少对应年度公报（知识库未覆盖2021年度），暂无法核验。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。"
+  },
+  "human_review": {
+    "status": "待人工确认",
+    "focus": [
+      "报告引用2021年度公报（佛顺环函〔2021〕19号），知识库未覆盖2021年度公报，大气和地表水数据均无法核验，需人工补充2021年度公报原文后复核。",
+      "报告无明确编制/送审/公示日期，as_of_date=2023-03-14为推定值（基于文件元数据修改日期），需人工核实确切日期。",
+      "报告编制时2022年度公报尚未发布（发布日期2023-03-29），2021年度公报为当时可用的最新公报，引用年度合理性需人工确认。",
+      "截至审核日（2026-07-27）已晚于2024年度公报发布日（2025-04-03），实际审批中应先确认是否已发布2025年度公报。"
+    ],
+    "reviewer": null,
+    "review_date": null
+  },
+  "quality_control": {
+    "report_evidence_traceable": true,
+    "knowledge_evidence_traceable": false,
+    "air_water_separately_checked": true,
+    "no_future_bulletin_used": true,
+    "no_scope_inference": true
+  }
+}

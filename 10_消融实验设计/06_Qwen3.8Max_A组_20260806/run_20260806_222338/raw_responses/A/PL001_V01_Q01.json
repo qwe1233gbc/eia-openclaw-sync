@@ -1,0 +1,19 @@
+{
+  "id": "resp_c42abb8e-c878-4a75-a6df-d6aefa3f516e",
+  "model": "qwen3.8-max",
+  "status": "completed",
+  "created_at": 1786026220,
+  "usage": {
+    "input_tokens": 24605,
+    "output_tokens": 1831,
+    "total_tokens": 26436,
+    "output_tokens_details": {
+      "reasoning_tokens": 751
+    },
+    "input_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "output_text": "```json\n{\n  \"question_id\": \"PL001_V01_Q01\",\n  \"group\": \"A\",\n  \"project_id\": \"PL001\",\n  \"source_json\": \"PL001_佛山市亮正新材料有限公司新建项目.json\",\n  \"skill_id\": \"\",\n  \"audit_category\": \"国民经济行业分类\",\n  \"report_internal_result\": {\n    \"status\": \"pass\",\n    \"conclusion\": \"报告将项目行业类别定为C2223加工纸制造及C2921塑料薄膜制造，与产品（保护纸、保护膜）、原辅材料（牛皮纸、PE原膜、水性胶）及工艺（涂布上胶、复合、熟化）基本对应，内部逻辑一致。\",\n    \"evidence\": [\n      {\n        \"fact\": \"报告明确项目行业类别为C2223加工纸制造及C2921塑料薄膜制造\",\n        \"source_location\": \"root[1].content#4400\",\n        \"source_excerpt\": \"本项目属于C2223加工纸制造及C2921塑料薄膜制造。\"\n      },\n      {\n        \"fact\": \"产品为保护纸（牛皮纸涂胶）和保护膜（PE膜涂胶），工艺为胶水调配、上胶、复合、熟化\",\n        \"source_location\": \"root[3].content#0\",\n        \"source_excerpt\": \"主要从事纸制品制造，年产保护纸400万米、保护膜200万米。\"\n      }\n    ],\n    \"checks\": [\n      {\n        \"check_name\": \"产品与行业代码对应性\",\n        \"result\": \"pass\",\n        \"explanation\": \"保护纸为牛皮纸涂布加工，对应C2223加工纸制造；保护膜为PE膜涂胶复合，对应C2921塑料薄膜制造，分类基本合理。\"\n      },\n      {\n        \"check_name\": \"环评分类管理名录与行业代码一致性\",\n        \"result\": \"pass\",\n        \"explanation\": \"报告引用名录中'造纸222*有涂布、浸渍、印刷、粘胶工艺的加工纸制造'及'塑料制品业292-其他'，与C2223和C2921对应。\"\n      },\n      {\n        \"check_name\": \"产业政策符合性分析中行业代码引用一致性\",\n        \"result\": \"pass\",\n        \"explanation\": \"产业政策分析部分同样引用C2223及C2921，与全文一致。\"\n      }\n    ],\n    \"calculations\": [],\n    \"issues\": []\n  },\n  \"external_validation_result\": {\n    \"status\": \"verified\",\n    \"conclusion\": \"依据GB/T 4754-2017，C2223加工纸制造涵盖对纸张进行涂布、浸渍等加工；C2921塑料薄膜制造涵盖塑料薄膜的生产及涂覆加工。本项目在牛皮纸上涂胶属加工纸制造，在PE膜上涂胶复合归入塑料薄膜制造在实务中可接受。\",\n    \"references_used\": [\n      {\n        \"reference_id\": \"GB/T 4754-2017\",\n        \"title\": \"国民经济行业分类\",\n        \"clause_or_table\": \"C2223加工纸制造；C2921塑料薄膜制造\",\n        \"supporting_text\": \"C2223指对纸张进行涂布、浸渍、印刷、粘胶等加工；C2921指用于包装、农业等方面的塑料薄膜制造。\"\n      }\n    ],\n    \"missing_references\": []\n  },\n  \"final_answer\": {\n    \"judgement\": \"正确\",\n    \"analysis\": \"项目产品为保护纸（牛皮纸涂水性胶）和保护膜（PE膜涂胶复合），核心工艺为涂布上胶、复合、熟化。C2223加工纸制造覆盖纸张涂布加工，C2921塑料薄膜制造在实务中涵盖对塑料薄膜的涂覆复合加工。报告全文行业代码引用一致，与环评分类管理名录对应正确，行业分类基本合理。\",\n    \"scope_note\": \"C2921严格定义为塑料薄膜'制造'，本项目为外购PE膜涂胶，部分审核人员可能认为应归入C2929其他塑料制品制造，但当前分类在环评实务中普遍接受。\"\n  },\n  \"answer_mode\": \"full_validation\",\n  \"safety_flags\": {\n    \"used_unprovided_external_knowledge\": true,\n    \"whole_task_abstention\": false,\n    \"report_evidence_hallucination_risk\": false,\n    \"manual_review_needed\": false\n  }\n}\n```",
+  "reasoning_removed": true
+}

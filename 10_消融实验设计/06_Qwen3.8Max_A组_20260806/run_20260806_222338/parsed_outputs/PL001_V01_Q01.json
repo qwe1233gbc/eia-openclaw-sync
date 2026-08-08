@@ -1,0 +1,68 @@
+{
+  "question_id": "PL001_V01_Q01",
+  "group": "A",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告将项目行业类别定为C2223加工纸制造及C2921塑料薄膜制造，与产品（保护纸、保护膜）、原辅材料（牛皮纸、PE原膜、水性胶）及工艺（涂布上胶、复合、熟化）基本对应，内部逻辑一致。",
+    "evidence": [
+      {
+        "fact": "报告明确项目行业类别为C2223加工纸制造及C2921塑料薄膜制造",
+        "source_location": "root[1].content#4400",
+        "source_excerpt": "本项目属于C2223加工纸制造及C2921塑料薄膜制造。"
+      },
+      {
+        "fact": "产品为保护纸（牛皮纸涂胶）和保护膜（PE膜涂胶），工艺为胶水调配、上胶、复合、熟化",
+        "source_location": "root[3].content#0",
+        "source_excerpt": "主要从事纸制品制造，年产保护纸400万米、保护膜200万米。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "产品与行业代码对应性",
+        "result": "pass",
+        "explanation": "保护纸为牛皮纸涂布加工，对应C2223加工纸制造；保护膜为PE膜涂胶复合，对应C2921塑料薄膜制造，分类基本合理。"
+      },
+      {
+        "check_name": "环评分类管理名录与行业代码一致性",
+        "result": "pass",
+        "explanation": "报告引用名录中'造纸222*有涂布、浸渍、印刷、粘胶工艺的加工纸制造'及'塑料制品业292-其他'，与C2223和C2921对应。"
+      },
+      {
+        "check_name": "产业政策符合性分析中行业代码引用一致性",
+        "result": "pass",
+        "explanation": "产业政策分析部分同样引用C2223及C2921，与全文一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "依据GB/T 4754-2017，C2223加工纸制造涵盖对纸张进行涂布、浸渍等加工；C2921塑料薄膜制造涵盖塑料薄膜的生产及涂覆加工。本项目在牛皮纸上涂胶属加工纸制造，在PE膜上涂胶复合归入塑料薄膜制造在实务中可接受。",
+    "references_used": [
+      {
+        "reference_id": "GB/T 4754-2017",
+        "title": "国民经济行业分类",
+        "clause_or_table": "C2223加工纸制造；C2921塑料薄膜制造",
+        "supporting_text": "C2223指对纸张进行涂布、浸渍、印刷、粘胶等加工；C2921指用于包装、农业等方面的塑料薄膜制造。"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "项目产品为保护纸（牛皮纸涂水性胶）和保护膜（PE膜涂胶复合），核心工艺为涂布上胶、复合、熟化。C2223加工纸制造覆盖纸张涂布加工，C2921塑料薄膜制造在实务中涵盖对塑料薄膜的涂覆复合加工。报告全文行业代码引用一致，与环评分类管理名录对应正确，行业分类基本合理。",
+    "scope_note": "C2921严格定义为塑料薄膜'制造'，本项目为外购PE膜涂胶，部分审核人员可能认为应归入C2929其他塑料制品制造，但当前分类在环评实务中普遍接受。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

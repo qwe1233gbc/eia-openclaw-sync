@@ -1,0 +1,18 @@
+version: "1.0"
+reference_bundle_id: ""
+audit_cutoff_date: ""
+files:
+  - reference_id: ""
+    category: "industry_classification|environmental_bulletin|wastewater_standard|air_standard|noise_standard|solid_waste_standard"
+    title: ""
+    document_number: ""
+    issuing_authority: ""
+    issue_date: ""
+    effective_date: ""
+    expiry_or_replacement: ""
+    applicable_region: []
+    applicable_industry: []
+    local_path: ""
+    sha256: ""
+    verified_by_human: false
+notes: ""

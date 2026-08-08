@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\ylx\Documents\Playground\batch_parse_ordered_reports.py", line 366, in main
+    row = parse_one(path, OUTPUT_DIR)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ylx\Documents\Playground\batch_parse_ordered_reports.py", line 272, in parse_one
+    html_path.write_text(html_content, encoding="utf-8")
+  File "C:\Users\ylx\miniconda3\Lib\pathlib.py", line 1048, in write_text
+    return f.write(data)
+           ^^^^^^^^^^^^^
+UnicodeEncodeError: 'utf-8' codec can't encode characters in position 37062-37063: surrogates not allowed

@@ -1,0 +1,348 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chatgpt.com/schemas/manual-audit-national-economic-industry-classification/answer-schema-v1.0.json",
+  "title": "国民经济行业分类人工辅助复核记录",
+  "description": "一份环评报告的一个版本对应一条记录。机器完成抽取与独立复核，human_review保留给研究者人工确认。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record",
+    "question",
+    "source_extraction",
+    "evidence_chain",
+    "economic_activities",
+    "classification_assessment",
+    "audit_result",
+    "human_review",
+    "quality_control"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_file", "relative_path", "project_name", "version_round"],
+      "properties": {
+        "source_file": {"type": "string", "minLength": 1},
+        "relative_path": {"type": "string", "minLength": 1},
+        "project_name": {"type": ["string", "null"]},
+        "version_round": {"type": ["string", "null"]}
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["question_text"],
+      "properties": {
+        "question_text": {
+          "const": "请根据项目最终产品、主要原辅材料、核心生产工艺、产品用途及主要活动证据，判断报告填报的国民经济行业类别是否正确，并说明依据。"
+        }
+      }
+    },
+    "source_extraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reported_industry_classifications",
+        "products",
+        "materials",
+        "production_processes",
+        "product_uses",
+        "main_activity_evidence"
+      ],
+      "properties": {
+        "reported_industry_classifications": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/reportedClassification"}
+        },
+        "products": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/product"}
+        },
+        "materials": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/material"}
+        },
+        "production_processes": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/process"}
+        },
+        "product_uses": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/productUse"}
+        },
+        "main_activity_evidence": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/mainActivityEvidence"}
+        }
+      }
+    },
+    "evidence_chain": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"$ref": "#/$defs/evidence"},
+      "allOf": [
+        {"contains": {"type": "object", "properties": {"evidence_id": {"type": "string", "pattern": "^E1(?:-[0-9]+)?$"}}, "required": ["evidence_id"]}},
+        {"contains": {"type": "object", "properties": {"evidence_id": {"type": "string", "pattern": "^E2(?:-[0-9]+)?$"}}, "required": ["evidence_id"]}},
+        {"contains": {"type": "object", "properties": {"evidence_id": {"type": "string", "pattern": "^E3(?:-[0-9]+)?$"}}, "required": ["evidence_id"]}},
+        {"contains": {"type": "object", "properties": {"evidence_id": {"type": "string", "pattern": "^E4(?:-[0-9]+)?$"}}, "required": ["evidence_id"]}},
+        {"contains": {"type": "object", "properties": {"evidence_id": {"type": "string", "pattern": "^E5(?:-[0-9]+)?$"}}, "required": ["evidence_id"]}},
+        {"contains": {"type": "object", "properties": {"evidence_id": {"type": "string", "pattern": "^E6(?:-[0-9]+)?$"}}, "required": ["evidence_id"]}},
+        {"contains": {"type": "object", "properties": {"evidence_id": {"type": "string", "pattern": "^E7(?:-[0-9]+)?$"}}, "required": ["evidence_id"]}}
+      ]
+    },
+    "economic_activities": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/economicActivity"}
+    },
+    "classification_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identified_classifications", "neighbor_class_exclusions", "main_activity_determination"],
+      "properties": {
+        "identified_classifications": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/identifiedClassification"}
+        },
+        "neighbor_class_exclusions": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/neighborExclusion"}
+        },
+        "main_activity_determination": {
+          "$ref": "#/$defs/mainActivityDetermination"
+        }
+      }
+    },
+    "audit_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["conclusion", "reason_codes", "production_activity_summary", "specific_analysis", "formatted_answer"],
+      "properties": {
+        "conclusion": {"enum": ["正确", "需复核"]},
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "MATCH",
+              "REPORTED_CODE_NAME_MISMATCH",
+              "IDENTIFIED_CLASS_DIFFERS",
+              "INDEPENDENT_ACTIVITY_OMITTED",
+              "PRODUCT_EVIDENCE_MISSING",
+              "MATERIAL_EVIDENCE_MISSING",
+              "PROCESS_EVIDENCE_MISSING",
+              "USE_EVIDENCE_MISSING",
+              "MAIN_ACTIVITY_EVIDENCE_MISSING",
+              "NEIGHBOR_CLASS_NOT_EXCLUDED",
+              "OFFICIAL_BASIS_MISSING",
+              "SOURCE_STRUCTURE_LOSS",
+              "OTHER"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "production_activity_summary": {"type": ["string", "null"]},
+        "specific_analysis": {"type": "string", "minLength": 1},
+        "formatted_answer": {
+          "type": "string",
+          "pattern": "^1、国民经济行业类型判定结论：(正确|需复核)；\\n2、具体分析："
+        }
+      }
+    },
+    "human_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "final_conclusion", "revision_comments", "reviewer", "review_date"],
+      "properties": {
+        "status": {"const": "待人工确认"},
+        "final_conclusion": {"type": "null"},
+        "revision_comments": {"type": "null"},
+        "reviewer": {"type": "null"},
+        "review_date": {"type": "null"}
+      }
+    },
+    "quality_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_required_locations_checked",
+        "all_facts_traceable",
+        "code_name_pairs_checked",
+        "different_capacity_units_not_compared",
+        "auxiliary_activities_not_misclassified",
+        "schema_valid",
+        "warnings"
+      ],
+      "properties": {
+        "all_required_locations_checked": {"type": "boolean"},
+        "all_facts_traceable": {"type": "boolean"},
+        "code_name_pairs_checked": {"type": "boolean"},
+        "different_capacity_units_not_compared": {"type": "boolean"},
+        "auxiliary_activities_not_misclassified": {"type": "boolean"},
+        "schema_valid": {"type": "boolean"},
+        "warnings": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  },
+  "$defs": {
+    "sourceLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["section", "subsection", "table_number", "table_name", "field_name", "page"],
+      "properties": {
+        "section": {"type": ["string", "null"]},
+        "subsection": {"type": ["string", "null"]},
+        "table_number": {"type": ["string", "null"]},
+        "table_name": {"type": ["string", "null"]},
+        "field_name": {"type": ["string", "null"]},
+        "page": {"type": ["integer", "null"], "minimum": 1}
+      }
+    },
+    "reportedClassification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw_text", "display_code", "numeric_code", "name", "source_location", "evidence_id"],
+      "properties": {
+        "raw_text": {"type": "string"},
+        "display_code": {"type": ["string", "null"], "pattern": "^[A-Z][0-9]{4}$"},
+        "numeric_code": {"type": ["string", "null"], "pattern": "^[0-9]{4}$"},
+        "name": {"type": ["string", "null"]},
+        "source_location": {"$ref": "#/$defs/sourceLocation"},
+        "evidence_id": {"type": "string", "pattern": "^E1(?:-[0-9]+)?$"}
+      }
+    },
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product_name", "product_remark", "capacity", "unit", "external_sale", "source_location", "evidence_id"],
+      "properties": {
+        "product_name": {"type": "string", "minLength": 1},
+        "product_remark": {"type": ["string", "null"]},
+        "capacity": {"anyOf": [{"type": "number"}, {"type": "string"}, {"type": "null"}]},
+        "unit": {"type": ["string", "null"]},
+        "external_sale": {"type": ["boolean", "null"]},
+        "source_location": {"$ref": "#/$defs/sourceLocation"},
+        "evidence_id": {"type": "string", "pattern": "^E2(?:-[0-9]+)?$"}
+      }
+    },
+    "material": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["material_name", "source_location", "evidence_id"],
+      "properties": {
+        "material_name": {"type": "string", "minLength": 1},
+        "source_location": {"$ref": "#/$defs/sourceLocation"},
+        "evidence_id": {"type": "string", "pattern": "^E3(?:-[0-9]+)?$"}
+      }
+    },
+    "process": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["process_name", "raw_basis", "source_location", "evidence_ids"],
+      "properties": {
+        "process_name": {"type": "string", "minLength": 1},
+        "raw_basis": {"type": "string", "minLength": 1},
+        "source_location": {"$ref": "#/$defs/sourceLocation"},
+        "evidence_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^E4(?:-[0-9]+)?$"}
+        }
+      }
+    },
+    "productUse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product_name", "use_text", "is_explicit", "source_location", "evidence_id"],
+      "properties": {
+        "product_name": {"type": "string"},
+        "use_text": {"type": ["string", "null"]},
+        "is_explicit": {"type": "boolean"},
+        "source_location": {"$ref": "#/$defs/sourceLocation"},
+        "evidence_id": {"type": "string", "pattern": "^E5(?:-[0-9]+)?$"}
+      }
+    },
+    "mainActivityEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric", "activity_name", "value", "unit", "source_location", "evidence_id"],
+      "properties": {
+        "metric": {"enum": ["增加值", "销售收入", "营业收入", "从业人员", "未提供"]},
+        "activity_name": {"type": ["string", "null"]},
+        "value": {"anyOf": [{"type": "number"}, {"type": "string"}, {"type": "null"}]},
+        "unit": {"type": ["string", "null"]},
+        "source_location": {"$ref": "#/$defs/sourceLocation"},
+        "evidence_id": {"type": "string", "pattern": "^E6(?:-[0-9]+)?$"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "evidence_type", "status", "source_file", "source_location", "quote"],
+      "properties": {
+        "evidence_id": {"type": "string", "pattern": "^E[1-7](?:-[0-9]+)?$"},
+        "evidence_type": {
+          "enum": ["填报行业", "最终产品", "主要原料", "核心工艺", "产品用途", "主要活动", "官方分类依据"]
+        },
+        "status": {"enum": ["found", "missing", "structure_lost"]},
+        "source_file": {"type": ["string", "null"]},
+        "source_location": {"$ref": "#/$defs/sourceLocation"},
+        "quote": {"type": ["string", "null"]}
+      }
+    },
+    "economicActivity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["activity_id", "activity_summary", "products", "materials", "processes", "uses", "external_activity", "evidence_ids"],
+      "properties": {
+        "activity_id": {"type": "string", "pattern": "^A[0-9]+$"},
+        "activity_summary": {"type": "string"},
+        "products": {"type": "array", "items": {"type": "string"}},
+        "materials": {"type": "array", "items": {"type": "string"}},
+        "processes": {"type": "array", "items": {"type": "string"}},
+        "uses": {"type": "array", "items": {"type": "string"}},
+        "external_activity": {"type": ["boolean", "null"]},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "identifiedClassification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["display_code", "numeric_code", "name", "activity_ids", "official_basis_evidence_ids", "confidence"],
+      "properties": {
+        "display_code": {"type": "string", "pattern": "^[A-Z][0-9]{4}$"},
+        "numeric_code": {"type": "string", "pattern": "^[0-9]{4}$"},
+        "name": {"type": "string", "minLength": 1},
+        "activity_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^A[0-9]+$"}},
+        "official_basis_evidence_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^E7(?:-[0-9]+)?$"}},
+        "confidence": {"enum": ["high", "medium", "low"]}
+      }
+    },
+    "neighborExclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["display_code", "name", "excluded", "reason", "evidence_ids"],
+      "properties": {
+        "display_code": {"type": "string", "pattern": "^[A-Z][0-9]{4}$"},
+        "name": {"type": "string"},
+        "excluded": {"type": "boolean"},
+        "reason": {"type": "string"},
+        "evidence_ids": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "mainActivityDetermination": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "basis_metric", "main_activity_ids", "reason"],
+      "properties": {
+        "status": {"enum": ["single_activity", "same_class_combined", "determined", "insufficient_evidence"]},
+        "basis_metric": {"enum": ["增加值", "销售收入", "营业收入", "从业人员", "不适用", "未提供"]},
+        "main_activity_ids": {"type": "array", "items": {"type": "string", "pattern": "^A[0-9]+$"}},
+        "reason": {"type": "string"}
+      }
+    }
+  }
+}

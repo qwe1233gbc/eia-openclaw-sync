@@ -1,0 +1,25 @@
+{
+  "source_count": 211,
+  "matched_and_completed": 211,
+  "missing_or_unconverted": [],
+  "execution_failures": [],
+  "verdict_counts": {
+    "自动预检通过，待关键证据抽查": 34,
+    "修复后可用": 3,
+    "待PDF视觉与关键证据抽查": 158,
+    "不可用": 16
+  },
+  "source_type_counts": {
+    "DOCX": 35,
+    "PDF": 174,
+    "DOC": 2
+  },
+  "issue_counts": {
+    "source_heading_ambiguity": 3,
+    "pdf_layout_manual_review": 174,
+    "pdf_text_unavailable": 16,
+    "low_body_coverage": 16,
+    "low_number_unit_coverage": 16,
+    "empty_text_placeholder": 16
+  }
+}

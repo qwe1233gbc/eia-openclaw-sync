@@ -1,0 +1,68 @@
+{
+  "question_id": "PL003_V01_Q01",
+  "group": "A",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告将项目行业类别定为C2921塑料薄膜制造，与项目产品（塑料薄膜）、主要原料（PE塑料粒）及核心工艺（吹膜）一致，内部逻辑自洽。",
+    "evidence": [
+      {
+        "fact": "报告明确行业类别为C2921塑料薄膜制造，产品为塑料薄膜，主要工艺为混料、吹膜、涂布、烘干、分切、复卷",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "项目主要从事塑料薄膜的加工生产，属于C2921塑料薄膜制造行业。C制造业大类中类小类29橡胶和塑料制品业292塑料制品业2921塑料薄膜制造"
+      },
+      {
+        "fact": "主要原料为PE塑料粒（235.872t/a），产品为塑料薄膜（242.368t/a），用途为保护膜",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "从事塑料薄膜的加工生产，年产塑料薄膜242.368吨，主要用作保护膜用途"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "产品与行业代码匹配性",
+        "result": "pass",
+        "explanation": "项目产品为PE塑料薄膜，核心工艺为吹膜成型，符合C2921塑料薄膜制造的定义。"
+      },
+      {
+        "check_name": "环评分类管理名录类别一致性",
+        "result": "pass",
+        "explanation": "报告将项目归入'二十六、橡胶和塑料制品业29-53塑料制品业292'，与C2921对应，且因使用非溶剂型低VOCs涂布胶年用量>10吨，编制报告表，逻辑正确。"
+      },
+      {
+        "check_name": "排污许可管理类别一致性",
+        "result": "pass",
+        "explanation": "年产量242.368吨<1万吨且不涉及改性，按名录应为登记管理，报告判定正确。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "依据GB/T 4754-2017（2019年修订），C2921塑料薄膜制造指'用于包装、农业、建筑、电子电器等领域的塑料薄膜制造'，本项目以PE粒为原料经吹膜工艺生产保护膜用塑料薄膜，行业归类正确。",
+    "references_used": [
+      {
+        "reference_id": "GB/T 4754-2017",
+        "title": "国民经济行业分类",
+        "clause_or_table": "C2921塑料薄膜制造",
+        "supporting_text": "指用于包装、农业、建筑、电子电器等领域的塑料薄膜制造"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "项目以PE塑料粒为主要原料，经吹膜工艺生产塑料薄膜，再涂布保护胶后用作不锈钢/电子产品保护膜。核心产品为塑料薄膜，核心工艺为吹膜，行业归类C2921塑料薄膜制造准确。报告内部产品、原料、工艺、行业代码、环评分类名录类别及排污许可管理级别之间逻辑一致，无矛盾。",
+    "scope_note": "涂布工序为辅助加工，不改变产品本质属性，不影响行业归类判断。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

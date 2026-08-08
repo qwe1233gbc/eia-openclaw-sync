@@ -1,0 +1,4 @@
+{"child_id": "GUIDE_17_C001", "parent_id": "GUIDE_17_P001", "source_id": "GUIDE_17", "content": "# 废气收集形式及排气量计算审核指南\n\n> 来源: HJ 2026-2013 6.2; GB 37822-2019"}
+{"child_id": "GUIDE_17_C002", "parent_id": "GUIDE_17_P002", "source_id": "GUIDE_17", "content": "## 收集形式\n| 收集方式 | 说明 | 控制要求 |\n|---|---|---|\n| 密闭负压 | 设备/车间密闭，负压收集 | 控制风速不作要求 |\n| 包围式集气罩 | 三面围挡，一面开口 | 开口面控制风速≥0.5m/s |\n| 外部集气罩 | 顶吸/侧吸 | 控制风速≥0.3m/s |"}
+{"child_id": "GUIDE_17_C003", "parent_id": "GUIDE_17_P003", "source_id": "GUIDE_17", "content": "## 排气量计算\nQ = 3600 x F x v\n其中 F为罩口面积(m2), v为控制风速(m/s)"}
+{"child_id": "GUIDE_17_C004", "parent_id": "GUIDE_17_P004", "source_id": "GUIDE_17", "content": "## 审核要点\n1. 收集形式应与工艺和设备布局匹配\n2. 控制风速取值应有依据\n3. 多罩口并联时阻力差不超过10%"}

@@ -1,0 +1,88 @@
+{
+  "question_id": "PL006_EnvQuality_Q01",
+  "group": "C",
+  "project_id": "PL006",
+  "source_json": "PL006_佛山市顺德区乐鲸科技有限公司年产五金拉手300万个新建项目.json",
+  "skill_id": "review-eia-environmental-quality-data",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告内部大气和地表水环境质量数据引用在年份、数值、占标率计算、达标判定和结论方面均自洽一致，未发现内部矛盾。",
+    "evidence": [
+      {
+        "fact": "大气数据引用《2022年度佛山市顺德区环境质量状况公报》，表3-1中O3占标率118.7%为唯一超标项，结论判定为不达标区",
+        "source_location": "root[3].content#0",
+        "source_excerpt": "O3（ug/m3）90百分位数最大8小时平均质量浓度190160118.7不达标"
+      },
+      {
+        "fact": "地表水引用同一公报（佛顺环函〔2023〕26号），结论为顺德支流满足Ⅲ类水功能要求",
+        "source_location": "root[3].content#0",
+        "source_excerpt": "项目纳污水体顺德支流的水质满足《地表水环境质量标准》（GB3838-2002）之Ⅲ类水功能要求，水质良好。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "大气占标率计算复核",
+        "result": "pass",
+        "explanation": "SO2:5/60=8.3%、NO2:29/40=72.5%、PM10:32/70=45.7%、PM2.5:19/35=54.3%、CO:1.1/4=27.5%、O3:190/160=118.7%，均与表格一致。"
+      },
+      {
+        "check_name": "达标区判定与数据一致性",
+        "result": "pass",
+        "explanation": "仅O3超标，报告判定为不达标区，与HJ2.2-2018规定一致；正文多处（三线一单分析、环境质量底线）均引用同一结论，无矛盾。"
+      },
+      {
+        "check_name": "地表水对象与结论一致性",
+        "result": "pass",
+        "explanation": "排水去向为杏坛污水处理厂→顺德支流，公报称顺德区5个断面均达标、优良率100%，报告据此判定顺德支流满足Ⅲ类要求，逻辑自洽。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "O3占标率 = 现状浓度/标准值×100%",
+        "inputs": {
+          "现状浓度": 190,
+          "标准值": 160
+        },
+        "result": "118.75≈118.7",
+        "unit": "%"
+      },
+      {
+        "formula": "NO2占标率 = 29/40×100%",
+        "inputs": {
+          "现状浓度": 29,
+          "标准值": 40
+        },
+        "result": "72.5",
+        "unit": "%"
+      }
+    ],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "未提供《2022年度佛山市顺德区环境质量状况公报》原文，无法核验报告数值与官方公报是否一致。",
+    "references_used": [],
+    "missing_references": [
+      {
+        "title": "《2022年度佛山市顺德区环境质量状况公报》",
+        "needed_items": [
+          "大气六项污染物年均浓度及百分位浓度",
+          "顺德区主河道各断面水质类别及达标情况"
+        ]
+      }
+    ]
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "报告内部审核通过：大气表3-1六项污染物占标率计算均正确，O3为唯一超标因子，不达标区判定与数据一致；地表水引用同一公报，排水去向（杏坛污水处理厂→顺德支流）与水体功能（Ⅲ类）及达标结论一致，各章节引用无矛盾。因未提供公报原文，外部真实性核验未执行。",
+    "scope_note": "外部核验需补充《2022年度佛山市顺德区环境质量状况公报》（佛顺环函〔2023〕26号）原文，重点核对大气六项数值及顺德支流对应断面水质类别。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

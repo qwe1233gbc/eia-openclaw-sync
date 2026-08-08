@@ -1,0 +1,15 @@
+interface:
+  display_name: "\u73AF\u8BC4\u89E3\u6790\u6587\u672C\u4FDD\u771F\u6838\u67E5"
+  short_description: "\u5BF9\u7167\u539F\u59CBWord\u68C0\u67E5\u8F7B\u91CF\u5316\u89E3\
+    \u6790\u6587\u672C\u80FD\u5426\u4F5C\u4E3A\u4EBA\u5DE5\u73AF\u8BC4\u5BA1\u6838\
+    \u8F93\u5165"
+  default_prompt: "\u8BF7\u4F7F\u7528 $validate-eia-parsed-text\uFF0C\u5BF9\u7167\u539F\
+    \u59CBWord\u68C0\u67E5\u89E3\u6790\u540E\u7684JSON\u6216\u6587\u672C\u80FD\u5426\
+    \u4F5C\u4E3A\u4EBA\u5DE5\u73AF\u8BC4\u5BA1\u6838\u8F93\u5165\u3002"
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

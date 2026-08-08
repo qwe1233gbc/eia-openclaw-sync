@@ -1,0 +1,99 @@
+{
+  "question_id": "PL001_EnvQuality_Q01",
+  "group": "A",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "EnvQuality",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "大气环境质量表3-1存在年份标注与变化率符号错误；地表水部分存在河涌名称前后不一致问题。",
+    "evidence": [
+      {
+        "fact": "表3-1标题为'2022年顺德区…年度比较'，但浓度均值列标注为2020和2021年，与2022年度公报不符",
+        "source_location": "root[3].content#11000",
+        "source_excerpt": "表3-1 2022年顺德区（国控测点）环境空气污染物浓度水平年度比较…浓度均值…2020…2021…标准值/…变化（%）"
+      },
+      {
+        "fact": "正文称'新涌大河'达标，但表3-2标题及表格内容使用'东海大河'名称，前后不一致",
+        "source_location": "root[3].content#11000",
+        "source_excerpt": "新涌大河环境质量达标情况如下表所示。表3-2 2021年1-12月市控考核断面水质情况（东海大河）河涌断面…东海大河ⅤⅤ0达标"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "表3-1数据年份与公报年份一致性",
+        "result": "fail",
+        "explanation": "报告引用佛环顺函〔2023〕26号（2022年度公报），但表3-1浓度列标注为2020和2021年，应为2021和2022年数据，存在年份错配。"
+      },
+      {
+        "check_name": "PM10和PM2.5变化率符号",
+        "result": "fail",
+        "explanation": "PM10从42降至32，变化率应为-23.8%；PM2.5从22降至19，应为-13.6%。报告均标注为正值，符号错误。"
+      },
+      {
+        "check_name": "地表水河涌名称一致性",
+        "result": "fail",
+        "explanation": "正文多处使用'新涌大河'，但表3-2标题及表格中使用'东海大河'，名称不统一，可能为同一水体但表述混乱。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "PM10变化率=(2021值-2020值)/2020值×100%",
+        "inputs": {
+          "2020": 42,
+          "2021": 32
+        },
+        "result": "-23.8%（报告标注为+23.8%，符号错误）",
+        "unit": "%"
+      },
+      {
+        "formula": "PM2.5变化率=(2021值-2020值)/2020值×100%",
+        "inputs": {
+          "2020": 22,
+          "2021": 19
+        },
+        "result": "-13.6%（报告标注为+13.6%，符号错误）",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "表3-1年份列标注为2020/2021，与所引2022年度公报不匹配，疑似直接复制旧版数据未更新",
+      "PM10和PM2.5变化率符号错误（应为负值表示改善）",
+      "新涌大河与东海大河名称混用"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB3095-2012二级标准限值引用正确；GB3838-2002水功能区划类别引用合理；但无法核实佛环顺函〔2023〕26号公报中具体数值是否与报告一致。",
+    "references_used": [
+      {
+        "reference_id": "GB3095-2012",
+        "title": "环境空气质量标准",
+        "clause_or_table": "表1 二级标准",
+        "supporting_text": "SO2年均60、NO2年均40、PM10年均70、PM2.5年均35、O3-8h-90%为160、CO-24h-95%为4 mg/m³，报告引用均正确"
+      },
+      {
+        "reference_id": "GB3838-2002",
+        "title": "地表水环境质量标准",
+        "clause_or_table": "表1 Ⅲ类及Ⅴ类标准",
+        "supporting_text": "顺德支流执行Ⅲ类、新涌大河执行Ⅴ类，与顺德区水环境功能区划一致"
+      }
+    ],
+    "missing_references": [
+      "无法获取佛环顺函〔2023〕26号原文，无法逐项核实公报中具体浓度数值"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告大气环境质量数据引用存在三处问题：①表3-1标题为2022年度比较，但数据列标注为2020/2021年，与所引2022年度公报（佛环顺函〔2023〕26号）不匹配，疑似沿用旧数据未更新；②PM10变化率应为-23.8%、PM2.5应为-13.6%，报告均误标为正值；③地表水部分正文使用'新涌大河'而表格使用'东海大河'，名称不统一。标准限值（GB3095-2012二级、GB3838-2002Ⅲ/Ⅴ类）引用本身正确。",
+    "scope_note": "因无法获取公报原文，具体浓度数值（如SO2=6μg/m³等）无法与原始公报逐项比对，仅能判断内部逻辑一致性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

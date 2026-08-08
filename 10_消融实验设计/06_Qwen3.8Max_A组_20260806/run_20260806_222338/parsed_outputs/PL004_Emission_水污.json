@@ -1,0 +1,76 @@
+{
+  "question_id": "PL004_Emission_水污",
+  "group": "A",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告整体排放路径（生活污水→三级化粪池→杏坛镇生活污水处理厂→顺德支流）各章节一致，企业排口执行DB44/26-2001第二时段三级标准、尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准较严值的表述前后一致。但表3-8中DB44/26-2001第二时段三级标准的SS与氨氮限值疑似互换（SS显示'--'、氨氮显示'≤400'），与标准原文不符。",
+    "evidence": [
+      {
+        "fact": "企业排口执行DB44/26-2001第二时段三级标准，排入杏坛镇生活污水处理厂，尾水排至顺德支流",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "生活污水经三级化粪池处理后，水质执行广东省地方标准《水污染物排放限值》（DB44/26-2001）中的第二时段三级标准，即CODcr≤500mg/L，BOD5≤300mg/L，然后通过污水管网排至杏坛镇生活污水处理厂处理"
+      },
+      {
+        "fact": "表3-8中三级标准行SS列为'--'、氨氮列为'≤400'，与DB44/26-2001原文（SS≤400、氨氮无要求）不符",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "广东省地方标准《水污染物排放限值》（DB44/26-2001）中的第二时段三级标准 ≤500 ≤300 -- ≤400"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "排放路径一致性",
+        "result": "pass",
+        "explanation": "生活污水→三级化粪池→杏坛镇生活污水处理厂→顺德支流，在规划符合性、标准章节、源强核算、环保措施清单中均一致。"
+      },
+      {
+        "check_name": "尾水标准一致性",
+        "result": "pass",
+        "explanation": "尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准较严值（CODcr≤40、BOD5≤10、SS≤10、NH3-N≤5），各章节表述一致且数值正确。"
+      },
+      {
+        "check_name": "表3-8三级标准限值正确性",
+        "result": "fail",
+        "explanation": "DB44/26-2001第二时段三级标准应为SS≤400mg/L、氨氮无限值要求，报告将两者互换。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "表3-8中DB44/26-2001第二时段三级标准SS与氨氮限值互换：SS应为≤400，氨氮应为'--'（无要求）"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "企业排口执行DB44/26-2001第二时段三级标准用于间接排放（排入城镇污水处理厂）选取正确；尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准较严值符合广东省及顺德区规划环评要求。但表3-8中三级标准SS和氨氮数值与DB44/26-2001原文不符。",
+    "references_used": [
+      {
+        "reference_id": "DB44/26-2001",
+        "title": "广东省地方标准《水污染物排放限值》",
+        "clause_or_table": "第二时段三级标准",
+        "supporting_text": "CODcr≤500、BOD5≤300、SS≤400、氨氮无三级标准限值要求"
+      },
+      {
+        "reference_id": "GB18918-2002",
+        "title": "《城镇污水处理厂污染物排放标准》",
+        "clause_or_table": "一级A标准",
+        "supporting_text": "CODcr≤50、BOD5≤10、SS≤10、NH3-N≤5(8)"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告水污染物排放标准选取路径正确：生活污水经三级化粪池预处理执行DB44/26-2001第二时段三级标准后排入杏坛镇生活污水处理厂，尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准较严值后排至顺德支流，各章节表述一致。但表3-8存在一处数值错误：DB44/26-2001第二时段三级标准中SS应为≤400mg/L、氨氮应无要求（'--'），报告将两者互换（SS显示'--'、氨氮显示'≤400'），需修正。",
+    "scope_note": "审核范围限于报告提供的水污染物排放标准选取及限值，未涉及水量平衡核算。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

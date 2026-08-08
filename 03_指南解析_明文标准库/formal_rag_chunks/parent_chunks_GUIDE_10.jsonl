@@ -1,0 +1,3 @@
+{"parent_id": "GUIDE_10_P001", "source_id": "GUIDE_10", "content": "# 产污系数定量核算审核指南\n\n> 来源: HJ 1122-2020 表22; 广东省工业源VOCs减排量核算方法(2023修订版)", "content_sha256": "d7dde5b2a47e00e07cf281f115b9eecab99a2d5506c7c12a40370661f0b9e560"}
+{"parent_id": "GUIDE_10_P002", "source_id": "GUIDE_10", "content": "## 审核要点\n1. 产污系数选用应与行业类别和产品类型匹配\n2. VOCs产污系数须有来源依据\n3. 核算公式须完整: E=sum(产污系数x产量)\n4. 塑料制品常见系数:\n   - 塑料薄膜(配料-挤出): 2.50 kg/t\n   - 塑料包装容器: 2.70 kg/t\n   - 日用塑料制品: 2.70 kg/t\n   - 泡沫塑料(模塑发泡): 30 kg/t", "content_sha256": "0b0a698cb21bc3b2eab37a9a6b620ed99c1a6332fe9a8e7a37cf722da77cd36c"}
+{"parent_id": "GUIDE_10_P003", "source_id": "GUIDE_10", "content": "## 常见问题\n- 产污系数与产品类型不匹配\n- 未注明系数来源", "content_sha256": "4e92f7af6a0219be5b3e3e35046e159bdf0c1b886776f8b4ce0c0a011fbb7f4f"}

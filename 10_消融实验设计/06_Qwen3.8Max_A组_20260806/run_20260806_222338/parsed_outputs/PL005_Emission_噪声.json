@@ -1,0 +1,68 @@
+{
+  "question_id": "PL005_Emission_噪声",
+  "group": "A",
+  "project_id": "PL005",
+  "source_json": "PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "噪声排放标准",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告内部噪声标准选取一致：声功能区为3类（编号3322），厂界执行GB12348-2008的3类标准，昼间≤65dB(A)、夜间≤55dB(A)，各章节引用一致，预测值60.96dB(A)低于昼间限值。",
+    "evidence": [
+      {
+        "fact": "项目位于3类声环境功能区（编号3322），依据佛环〔2024〕1号",
+        "source_location": "root[6].content#0",
+        "source_excerpt": "声环境功能区《佛山市声环境功能区划》的通知（佛环〔2024〕1号）3类声环境功能区（编号：3322）"
+      },
+      {
+        "fact": "厂界执行GB12348-2008中3类标准，昼间≤65dB(A)，夜间≤55dB(A)",
+        "source_location": "root[6].content#6600",
+        "source_excerpt": "噪声排放标准:项目厂界执行《工业企业厂界环境噪声排放标准》（GB12348-2008）中的3类标准，即昼间≤65dB（A），夜间≤55dB（A）。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "声功能区类别与排放标准类别一致性",
+        "result": "pass",
+        "explanation": "声环境功能区为3类，厂界噪声排放标准亦选取3类，类别匹配。"
+      },
+      {
+        "check_name": "预测值与限值对比",
+        "result": "pass",
+        "explanation": "厂界噪声贡献值60.96dB(A)＜昼间限值65dB(A)，达标。夜间不生产，无需校核夜间。"
+      },
+      {
+        "check_name": "监测计划与标准一致性",
+        "result": "pass",
+        "explanation": "监测计划中四个厂界点位均执行3类标准65dB(A)昼间限值，与标准章节一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB12348-2008中3类标准限值为昼间65dB(A)、夜间55dB(A)，适用于工业生产、仓储物流为主的区域。项目位于工业用地，属3类声环境功能区，标准选取正确。",
+    "references_used": [
+      {
+        "reference_id": "GB12348-2008",
+        "title": "工业企业厂界环境噪声排放标准",
+        "clause_or_table": "表1 厂界环境噪声排放限值",
+        "supporting_text": "3类：昼间65dB(A)，夜间55dB(A)，适用于工业生产、仓储物流为主要功能的区域。"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "项目位于佛山市顺德区杏坛镇工业片区，依据佛环〔2024〕1号划定为3类声环境功能区（编号3322）。报告选取GB12348-2008中3类标准（昼间≤65dB(A)、夜间≤55dB(A)）作为厂界噪声排放标准，与声功能区类别匹配。预测厂界噪声贡献值60.96dB(A)低于昼间限值，达标。项目夜间不生产（6:00-22:00），仅监测昼间，逻辑自洽。标准选取合理，各章节引用一致，无矛盾。",
+    "scope_note": ""
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

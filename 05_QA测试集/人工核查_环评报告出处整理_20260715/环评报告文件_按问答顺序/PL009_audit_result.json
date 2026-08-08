@@ -1,0 +1,484 @@
+{
+  "record": {
+    "project_id": "PL009",
+    "project_name": "广东威诺高科技股份有限公司搬迁项目",
+    "report_name": "广东威诺高科技股份有限公司搬迁项目环境影响报告表",
+    "report_version": "01"
+  },
+  "report_evidence": {
+    "report_date": {
+      "evidence_id": "R0",
+      "quote": null,
+      "source_section": "报告全文/文件元数据",
+      "source_location": "报告全文无明确编制/送审/公示日期；文件元数据创建日期2022-11-07，修改日期2023-08-02；报告引用2022年度公报（佛环顺函〔2023〕26号，发布日期2023-03-29），推定编制时间不早于2023-03-29"
+    },
+    "air": {
+      "functional_zone": "二类区",
+      "bulletin_title": "佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知（佛环顺函〔2023〕26号）",
+      "bulletin_year": 2022,
+      "full_analysis": {
+        "evidence_id": "R1",
+        "quote": "为评价本项目所在区域的环境空气质量现状，引用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知》（佛环顺函〔2023〕26号）中的监测数据进行评价…2022年顺德区空气质量综合指数为3.27，比2021年下降6.0%，在全市五区中排名第二。按照《环境空气质量标准》评价，2022年顺德区二氧化硫（SO2）、二氧化氮（NO2）、可吸入颗粒物（PM10）、细颗粒物（PM2.5）、一氧化碳（CO）五项污染物年评价浓度均达到二级标准，臭氧（O3）超标。2022年顺德区AQI达标率为78.8%…2022年全区SO2年平均浓度为5微克/立方米…NO2年平均浓度为29微克/立方米…PM10年平均浓度为32微克/立方米…PM2.5年平均浓度为19微克/立方米…O3年评价浓度为190微克/立方米…CO年评价浓度为1.1毫克/立方米…",
+        "source_section": "三、区域环境质量现状、环境保护目标及评价标准",
+        "source_location": "表2第0行第1列（大气环境段落）"
+      },
+      "claims": [
+        {
+          "evidence_id": "R1-01",
+          "item": "空气质量综合指数",
+          "value": 3.27,
+          "unit": null,
+          "scope": "顺德区全区2022年"
+        },
+        {
+          "evidence_id": "R1-02",
+          "item": "综合指数同比变化",
+          "value": "下降6.0%",
+          "unit": null,
+          "scope": "较2021年"
+        },
+        {
+          "evidence_id": "R1-03",
+          "item": "全市排名",
+          "value": 2,
+          "unit": null,
+          "scope": "全市五区"
+        },
+        {
+          "evidence_id": "R1-04",
+          "item": "SO2年平均浓度",
+          "value": 5,
+          "unit": "μg/m³",
+          "scope": "国控测点2022年"
+        },
+        {
+          "evidence_id": "R1-05",
+          "item": "NO2年平均浓度",
+          "value": 29,
+          "unit": "μg/m³",
+          "scope": "国控测点2022年"
+        },
+        {
+          "evidence_id": "R1-06",
+          "item": "PM10年平均浓度",
+          "value": 32,
+          "unit": "μg/m³",
+          "scope": "国控测点2022年"
+        },
+        {
+          "evidence_id": "R1-07",
+          "item": "PM2.5年平均浓度",
+          "value": 19,
+          "unit": "μg/m³",
+          "scope": "国控测点2022年"
+        },
+        {
+          "evidence_id": "R1-08",
+          "item": "O3年评价浓度",
+          "value": 190,
+          "unit": "μg/m³",
+          "scope": "国控测点2022年"
+        },
+        {
+          "evidence_id": "R1-09",
+          "item": "CO年评价浓度",
+          "value": 1.1,
+          "unit": "mg/m³",
+          "scope": "国控测点2022年"
+        },
+        {
+          "evidence_id": "R1-10",
+          "item": "AQI达标率",
+          "value": 78.8,
+          "unit": "%",
+          "scope": "全区2022年"
+        },
+        {
+          "evidence_id": "R1-11",
+          "item": "首要污染物",
+          "value": "O3占71.4%，NO2占26.0%",
+          "unit": null,
+          "scope": "全区2022年"
+        },
+        {
+          "evidence_id": "R1-12",
+          "item": "达标情况",
+          "value": "SO2、NO2、PM10、PM2.5、CO五项达标，O3超标",
+          "unit": null,
+          "scope": "全区2022年"
+        }
+      ]
+    },
+    "surface_water": {
+      "wastewater_treatment_plant": "杏坛污水处理厂",
+      "receiving_water": "顺德支流",
+      "bulletin_title": "佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知（佛环顺函〔2023〕26号）",
+      "bulletin_year": 2022,
+      "full_analysis": {
+        "evidence_id": "R2",
+        "quote": "项目位于杏坛污水处理厂纳污范围…尾水排入顺德支流。…为评价顺德支流水质，参考《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知》（佛环顺函〔2023〕26号），2022年顺德区2个国控断面（乌洲、顺德港）、3个省控断面（杨滘、海凌、飞鹅山）均达到相应的水质目标，水质优良率（Ⅰ～Ⅲ类）为100%…项目纳污水体顺德支流断面监测的水质达到了Ⅲ类标准要求，水质良好。表3-2 2022年顺德支流质量评价及年度对比。从监测结果可知，顺德支流新涌和飞鹅山断面2021年的水质定类为Ⅲ类，符合《地表水环境质量标准》（GB3838-2020）之Ⅲ类标准的要求，故水质达标。",
+        "source_section": "三、区域环境质量现状、环境保护目标及评价标准",
+        "source_location": "表2第0行第1列（地表水环境段落）"
+      },
+      "claims": [
+        {
+          "evidence_id": "R2-01",
+          "item": "国控断面达标情况",
+          "value": "2个国控断面（乌洲、顺德港）均达到相应水质目标",
+          "unit": null,
+          "scope": "全区2022年"
+        },
+        {
+          "evidence_id": "R2-02",
+          "item": "省控断面达标情况",
+          "value": "3个省控断面（杨滘、海凌、飞鹅山）均达到相应水质目标",
+          "unit": null,
+          "scope": "全区2022年"
+        },
+        {
+          "evidence_id": "R2-03",
+          "item": "水质优良率",
+          "value": "100%",
+          "unit": null,
+          "scope": "全区2022年"
+        },
+        {
+          "evidence_id": "R2-04",
+          "item": "顺德支流新涌断面水质类别",
+          "value": "Ⅲ",
+          "unit": null,
+          "scope": "顺德支流新涌断面（报告标注2021年，实际应为2022年）"
+        },
+        {
+          "evidence_id": "R2-05",
+          "item": "顺德支流飞鹅山断面水质类别",
+          "value": "Ⅲ",
+          "unit": null,
+          "scope": "顺德支流飞鹅山断面（报告标注2021年，实际应为2022年）"
+        },
+        {
+          "evidence_id": "R2-06",
+          "item": "地表水达标判定",
+          "value": "达标",
+          "unit": null,
+          "scope": "项目受纳水体"
+        }
+      ]
+    }
+  },
+  "time_basis": {
+    "as_of_date": "2023-08-02",
+    "basis_status": "inferred",
+    "available_years": [
+      2022
+    ],
+    "valid_three_year_window": [
+      2020,
+      2021,
+      2022
+    ],
+    "coverage_gap": [
+      2020,
+      2021
+    ]
+  },
+  "knowledge_matches": [
+    {
+      "knowledge_id": "K-2022-AIR",
+      "source_id": "shunde-bulletin-2022",
+      "element": "air",
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "record": {
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "data_year": 2022,
+        "publication_date": "2023-03-29",
+        "quality_index": 3.27,
+        "city_rank": 2,
+        "aqi_compliance_rate_percent": 78.8,
+        "overall_status": "O3超标；SO2、NO2、PM10、PM2.5、CO五项污染物年评价浓度达到二级标准",
+        "pollutant_metrics": [
+          {
+            "pollutant": "SO2",
+            "value": 5,
+            "unit": "μg/m³",
+            "trend": "较2021年下降16.7%"
+          },
+          {
+            "pollutant": "NO2",
+            "value": 29,
+            "unit": "μg/m³",
+            "trend": "较2021年下降12.1%"
+          },
+          {
+            "pollutant": "PM10",
+            "value": 32,
+            "unit": "μg/m³",
+            "trend": "较2021年下降23.8%"
+          },
+          {
+            "pollutant": "PM2.5",
+            "value": 19,
+            "unit": "μg/m³",
+            "trend": "较2021年下降13.6%"
+          },
+          {
+            "pollutant": "O3",
+            "value": 190,
+            "unit": "μg/m³",
+            "trend": "较2021年上升9.8%"
+          },
+          {
+            "pollutant": "CO",
+            "value": 1.1,
+            "unit": "mg/m³",
+            "trend": "较2021年上升10.0%"
+          }
+        ]
+      }
+    },
+    {
+      "knowledge_id": "K-2022-WATER",
+      "source_id": "shunde-bulletin-2022",
+      "element": "surface_water",
+      "pdf_pages": [
+        5,
+        6,
+        7
+      ],
+      "record": {
+        "title": "2022年度佛山市顺德区生态环境状况公报",
+        "data_year": 2022,
+        "publication_date": "2023-03-29",
+        "main_rivers_stations_matched": [
+          {
+            "river": "顺德支流",
+            "station": "新涌",
+            "class": "Ⅲ"
+          },
+          {
+            "river": "顺德支流",
+            "station": "飞鹅山",
+            "class": "Ⅲ"
+          }
+        ]
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "element": "air",
+      "report_evidence_id": "R1-01",
+      "knowledge_id": "K-2022-AIR",
+      "item": "空气质量综合指数",
+      "status": "exact",
+      "report_value": 3.27,
+      "knowledge_value": 3.27,
+      "note": "报告值与公报一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-02",
+      "knowledge_id": "K-2022-AIR",
+      "item": "综合指数同比变化",
+      "status": "exact",
+      "report_value": "下降6.0%",
+      "knowledge_value": "比2021年下降6.0%",
+      "note": "报告值与公报一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-03",
+      "knowledge_id": "K-2022-AIR",
+      "item": "全市排名",
+      "status": "exact",
+      "report_value": 2,
+      "knowledge_value": 2,
+      "note": "报告'排名第二'与公报一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-04",
+      "knowledge_id": "K-2022-AIR",
+      "item": "SO2年平均浓度",
+      "status": "exact",
+      "report_value": 5,
+      "knowledge_value": 5,
+      "note": "单位μg/m³一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-05",
+      "knowledge_id": "K-2022-AIR",
+      "item": "NO2年平均浓度",
+      "status": "exact",
+      "report_value": 29,
+      "knowledge_value": 29,
+      "note": "单位μg/m³一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-06",
+      "knowledge_id": "K-2022-AIR",
+      "item": "PM10年平均浓度",
+      "status": "exact",
+      "report_value": 32,
+      "knowledge_value": 32,
+      "note": "单位μg/m³一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-07",
+      "knowledge_id": "K-2022-AIR",
+      "item": "PM2.5年平均浓度",
+      "status": "exact",
+      "report_value": 19,
+      "knowledge_value": 19,
+      "note": "单位μg/m³一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-08",
+      "knowledge_id": "K-2022-AIR",
+      "item": "O3年评价浓度",
+      "status": "exact",
+      "report_value": 190,
+      "knowledge_value": 190,
+      "note": "单位μg/m³一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-09",
+      "knowledge_id": "K-2022-AIR",
+      "item": "CO年评价浓度",
+      "status": "exact",
+      "report_value": 1.1,
+      "knowledge_value": 1.1,
+      "note": "单位mg/m³一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-10",
+      "knowledge_id": "K-2022-AIR",
+      "item": "AQI达标率",
+      "status": "exact",
+      "report_value": 78.8,
+      "knowledge_value": 78.8,
+      "note": "报告值与公报一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-11",
+      "knowledge_id": "K-2022-AIR",
+      "item": "首要污染物",
+      "status": "exact",
+      "report_value": "O3占71.4%，NO2占26.0%",
+      "knowledge_value": "O3占71.4%，NO2占26.0%",
+      "note": "报告值与公报一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-12",
+      "knowledge_id": "K-2022-AIR",
+      "item": "达标情况",
+      "status": "exact",
+      "report_value": "SO2、NO2、PM10、PM2.5、CO五项达标，O3超标",
+      "knowledge_value": "O3超标；SO2、NO2、PM10、PM2.5、CO五项达标",
+      "note": "报告与公报结论一致"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-01",
+      "knowledge_id": "K-2022-WATER",
+      "item": "国控断面达标情况",
+      "status": "exact",
+      "report_value": "2个国控断面（乌洲、顺德港）均达到相应水质目标",
+      "knowledge_value": "2个国控断面均符合相应水质目标",
+      "note": "报告与公报一致（公报PDF第5-7页）"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-02",
+      "knowledge_id": "K-2022-WATER",
+      "item": "省控断面达标情况",
+      "status": "exact",
+      "report_value": "3个省控断面（杨滘、海凌、飞鹅山）均达到相应水质目标",
+      "knowledge_value": "3个省控断面均符合相应水质目标",
+      "note": "报告与公报一致（公报PDF第5-7页）"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-03",
+      "knowledge_id": "K-2022-WATER",
+      "item": "水质优良率",
+      "status": "exact",
+      "report_value": "100%",
+      "knowledge_value": "100%",
+      "note": "报告与公报一致"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-04",
+      "knowledge_id": "K-2022-WATER",
+      "item": "顺德支流新涌断面水质类别",
+      "status": "partial",
+      "report_value": "Ⅲ（报告标注2021年）",
+      "knowledge_value": "Ⅲ（2022年）",
+      "note": "水质类别Ⅲ类与公报2022年度一致，但报告文字误写'2021年'，实际应为2022年；不影响达标结论"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-05",
+      "knowledge_id": "K-2022-WATER",
+      "item": "顺德支流飞鹅山断面水质类别",
+      "status": "partial",
+      "report_value": "Ⅲ（报告标注2021年）",
+      "knowledge_value": "Ⅲ（2022年）",
+      "note": "水质类别Ⅲ类与公报2022年度一致，但报告文字误写'2021年'，实际应为2022年；不影响达标结论"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-06",
+      "knowledge_id": "K-2022-WATER",
+      "item": "地表水达标判定",
+      "status": "exact",
+      "report_value": "达标",
+      "knowledge_value": "新涌、飞鹅山断面均为Ⅲ类，满足Ⅲ类水功能要求",
+      "note": "报告基于断面水质达标判定，与公报数据一致"
+    }
+  ],
+  "audit_result": {
+    "conclusion": "正确",
+    "air_result": "正确",
+    "surface_water_result": "正确",
+    "summary_sentence": "1、大气及地表水环境质量引用数据正确；",
+    "air_statement": "2、项目大气环境质量引用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知（佛环顺函〔2023〕26号）》。环评对大气环境质量分析内容与《2022年度佛山市顺德区生态环境状况公报》中大气环境状况描述一致。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。",
+    "surface_water_statement": "项目地表水环境质量引用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知（佛环顺函〔2023〕26号）》。环评对地表水环境质量分析内容与《2022年度佛山市顺德区生态环境状况公报》中地表水环境状况描述一致。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。",
+    "update_notice": [
+      "截至审核日（2026-07-27），知识库中已发布2023年度佛山市顺德区生态环境状况公报（发布日期2024-03-26，数据年度2023），报告编制时可能尚未发布，现可供参考更新。",
+      "截至审核日（2026-07-27），知识库中已发布2024年度佛山市顺德区生态环境状况公报（发布日期2025-04-03，数据年度2024），为知识库中最新公报，可供参考更新。",
+      "审核日（2026-07-27）晚于2024年度公报发布日（2025-04-03），实际审批中应先核验是否已有2025年度或更新公报。"
+    ],
+    "readable_answer": "1、大气及地表水环境质量引用数据正确；\n2、项目大气环境质量引用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知（佛环顺函〔2023〕26号）》。环评对大气环境质量分析内容与《2022年度佛山市顺德区生态环境状况公报》中大气环境状况描述一致。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。\n项目地表水环境质量引用《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知（佛环顺函〔2023〕26号）》。环评对地表水环境质量分析内容与《2022年度佛山市顺德区生态环境状况公报》中地表水环境状况描述一致。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》，可供参考。"
+  },
+  "human_review": {
+    "status": "待人工确认",
+    "focus": [
+      "报告无明确编制/送审/公示日期，as_of_date=2023-08-02为推定值（基于文件元数据修改日期），需人工核实确切日期。",
+      "报告地表水段落文字'顺德支流新涌和飞鹅山断面2021年的水质定类为Ⅲ类'误写'2021年'，表3-2标题为'2022年顺德支流质量评价及年度对比'，该数据实为2022年度公报中2022年数据，年份标注有误但不影响水质类别（Ⅲ类）和达标结论，需人工核实是否为笔误。",
+      "报告引用《地表水环境质量标准》标注为'GB3838-2020'，正确编号应为'GB3838-2002'，属标准编号错误，非环境质量数据错误，需人工核实。",
+      "截至审核日（2026-07-27）已晚于2024年度公报发布日（2025-04-03），实际审批中应先确认是否已发布2025年度公报。"
+    ],
+    "reviewer": null,
+    "review_date": null
+  },
+  "quality_control": {
+    "report_evidence_traceable": true,
+    "knowledge_evidence_traceable": true,
+    "air_water_separately_checked": true,
+    "no_future_bulletin_used": true,
+    "no_scope_inference": true
+  }
+}

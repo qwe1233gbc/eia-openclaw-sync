@@ -1,0 +1,458 @@
+{
+  "record": {
+    "project_id": "PL036",
+    "project_name": "广东梅州磁性材料有限公司顺德分公司迁扩建项目",
+    "report_name": "PL036_广东梅州磁性材料有限公司顺德分公司迁扩建项目_01_受理公告或公示版.pdf",
+    "report_version": "受理公告或公示版"
+  },
+  "report_evidence": {
+    "report_date": {
+      "evidence_id": "R0-PL036",
+      "quote": "文件名标注为“受理公告或公示版”；报告引用佛环顺函〔2024〕44号（2024-03-26发布），可推断报告编制/公示时点不早于2024-03-26；报告正文未给出明确编制或公示日期。",
+      "source_section": "文件元数据/封面",
+      "source_location": "PL036_广东梅州磁性材料有限公司顺德分公司迁扩建项目_01_受理公告或公示版.pdf"
+    },
+    "air": {
+      "functional_zone": "二类环境空气质量功能区",
+      "bulletin_title": "2023年度佛山市顺德区生态环境状况公报",
+      "bulletin_year": 2023,
+      "full_analysis": {
+        "evidence_id": "R1-PL036",
+        "quote": "2023年顺德区空气质量综合指数为3.14，比2022年下降4.0%，在全市五区中排名第二。2023年顺德区二氧化硫（SO2）、二氧化氮（NO2）、可吸入颗粒物（PM10）、细颗粒物（PM2.5）、一氧化碳（CO）五项污染物年评价浓度符合二级浓度限值，臭氧（O3）超二级浓度限值。2023年顺德区AQI达标率为87.4%，与上年相比增加8.6个百分点。首要污染物主要为臭氧（占73.8%），其次为二氧化氮（占14.4%）。SO2年平均浓度6微克/立方米，上升20.0%；NO2=28，下降3.4%；PM10=35，上升9.4%；PM2.5=20，上升5.3%；O3=164，下降13.7%；CO=1.0，下降9.1%。",
+        "source_section": "三、区域环境质量现状 1、大气环境",
+        "source_location": "Page 42"
+      },
+      "claims": [
+        {
+          "evidence_id": "R1-PL036",
+          "item": "空气质量综合指数",
+          "value": 3.14,
+          "unit": null,
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL036",
+          "item": "综合指数变化趋势",
+          "value": "比2022年下降4.0%",
+          "unit": null,
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL036",
+          "item": "全市排名",
+          "value": 2,
+          "unit": null,
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL036",
+          "item": "AQI达标率",
+          "value": 87.4,
+          "unit": "%",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL036",
+          "item": "SO2年平均浓度",
+          "value": 6,
+          "unit": "μg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL036",
+          "item": "NO2年平均浓度",
+          "value": 28,
+          "unit": "μg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL036",
+          "item": "PM10年平均浓度",
+          "value": 35,
+          "unit": "μg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL036",
+          "item": "PM2.5年平均浓度",
+          "value": 20,
+          "unit": "μg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL036",
+          "item": "O3年评价浓度",
+          "value": 164,
+          "unit": "μg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL036",
+          "item": "CO年评价浓度",
+          "value": 1.0,
+          "unit": "mg/m³",
+          "scope": "顺德区全区"
+        },
+        {
+          "evidence_id": "R1-PL036",
+          "item": "达标区判定",
+          "value": "不达标区(O3超标，五项达标)",
+          "unit": null,
+          "scope": "顺德区全区"
+        }
+      ]
+    },
+    "surface_water": {
+      "wastewater_treatment_plant": "均安污水处理厂",
+      "receiving_water": "海洲水道(古镇水道)",
+      "bulletin_title": "2023年度佛山市顺德区生态环境状况公报",
+      "bulletin_year": 2023,
+      "full_analysis": {
+        "evidence_id": "R2-PL036",
+        "quote": "项目生活污水经预处理后由市政管网进入均安污水处理厂，纳污水体为海洲水道。海洲水道水质执行《地表水环境质量标准》Ⅲ类标准。根据《佛山市生态环境局顺德分局关于发布2023年度佛山市顺德区环境质量状况公报的通知》（佛环顺函〔2024〕44号），项目纳污水体海洲水道(古镇水道)鹅洋沙断面2023年河流定类为II类，符合《地表水环境质量标准》Ⅲ类标准，水质良好。",
+        "source_section": "三、区域环境质量现状 2、地表水环境",
+        "source_location": "Page 44"
+      },
+      "claims": [
+        {
+          "evidence_id": "R2-PL036",
+          "item": "海洲水道(古镇水道) 鹅洋沙断面 2023年定类",
+          "value": "Ⅱ",
+          "unit": null,
+          "scope": "古镇水道/鹅洋沙"
+        },
+        {
+          "evidence_id": "R2-PL036",
+          "item": "水质结论",
+          "value": "符合Ⅲ类标准，水质良好",
+          "unit": null,
+          "scope": "海洲水道(古镇水道)"
+        }
+      ]
+    }
+  },
+  "time_basis": {
+    "as_of_date": null,
+    "basis_status": "inferred",
+    "available_years": [
+      2022,
+      2023
+    ],
+    "valid_three_year_window": [
+      2022,
+      2023
+    ],
+    "coverage_gap": [
+      2021
+    ]
+  },
+  "knowledge_matches": [
+    {
+      "knowledge_id": "K-2023-AIR",
+      "source_id": "shunde-bulletin-2023",
+      "element": "air",
+      "pdf_pages": [
+        2,
+        3
+      ],
+      "record": {
+        "knowledge_id": "K-2023-AIR",
+        "source_id": "shunde-bulletin-2023",
+        "pdf_pages": [
+          2,
+          3
+        ],
+        "quality_index": 3.14,
+        "city_rank": 2,
+        "aqi_compliance_rate_percent": 87.4,
+        "overall_status": "O3超二级浓度限值；SO2、NO2、PM10、PM2.5、CO五项污染物年评价浓度符合二级浓度限值",
+        "pollutant_metrics": {
+          "SO2": {
+            "value": 6,
+            "unit": "μg/m³",
+            "trend": "较2022年上升20.0%"
+          },
+          "NO2": {
+            "value": 28,
+            "unit": "μg/m³",
+            "trend": "较2022年下降3.4%"
+          },
+          "PM10": {
+            "value": 35,
+            "unit": "μg/m³",
+            "trend": "较2022年上升9.4%"
+          },
+          "PM2.5": {
+            "value": 20,
+            "unit": "μg/m³",
+            "trend": "较2022年上升5.3%"
+          },
+          "O3": {
+            "value": 164,
+            "unit": "μg/m³",
+            "trend": "较2022年下降13.7%"
+          },
+          "CO": {
+            "value": 1.0,
+            "unit": "mg/m³",
+            "trend": "较2022年下降9.1%"
+          }
+        }
+      }
+    },
+    {
+      "knowledge_id": "K-2023-WATER",
+      "source_id": "shunde-bulletin-2023",
+      "element": "surface_water",
+      "pdf_pages": [
+        5,
+        6,
+        7
+      ],
+      "record": {
+        "knowledge_id": "K-2023-WATER",
+        "source_id": "shunde-bulletin-2023",
+        "pdf_pages": [
+          5,
+          6,
+          7
+        ],
+        "controlled_section_compliance": "2个国控断面和3个省控断面均符合相应水质目标，水质优良率100%",
+        "river_count": 16,
+        "section_count": 24,
+        "class_distribution": {
+          "Ⅱ": {
+            "count": 19,
+            "percent": 79
+          },
+          "Ⅲ": {
+            "count": 5,
+            "percent": 21
+          }
+        },
+        "stations": [
+          {
+            "river": "顺德支流",
+            "station": "新涌",
+            "class": "Ⅲ"
+          },
+          {
+            "river": "顺德支流",
+            "station": "飞鹅山",
+            "class": "Ⅲ"
+          },
+          {
+            "river": "顺德水道",
+            "station": "杨滘",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "鸡鸦水道",
+            "station": "细滘大桥",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "桂州水道",
+            "station": "南头大桥",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "古镇水道",
+            "station": "鹅洋沙",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "洪奇沥",
+            "station": "高黎",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "容桂水道",
+            "station": "顺德港",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "东海水道",
+            "station": "海凌",
+            "class": "Ⅱ"
+          },
+          {
+            "river": "东海水道",
+            "station": "星槎",
+            "class": "Ⅱ"
+          }
+        ]
+      }
+    }
+  ],
+  "comparison": [
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "空气质量综合指数",
+      "status": "exact",
+      "report_value": 3.14,
+      "knowledge_value": 3.14,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "综合指数变化趋势",
+      "status": "exact",
+      "report_value": "比2022年下降4.0%",
+      "knowledge_value": "较2022年下降4.0%(推算)",
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "全市排名",
+      "status": "exact",
+      "report_value": 2,
+      "knowledge_value": 2,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "AQI达标率",
+      "status": "exact",
+      "report_value": 87.4,
+      "knowledge_value": 87.4,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "SO2年平均浓度",
+      "status": "exact",
+      "report_value": 6,
+      "knowledge_value": 6,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "NO2年平均浓度",
+      "status": "exact",
+      "report_value": 28,
+      "knowledge_value": 28,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "PM10年平均浓度",
+      "status": "exact",
+      "report_value": 35,
+      "knowledge_value": 35,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "PM2.5年平均浓度",
+      "status": "exact",
+      "report_value": 20,
+      "knowledge_value": 20,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "O3年评价浓度",
+      "status": "exact",
+      "report_value": 164,
+      "knowledge_value": 164,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "CO年评价浓度",
+      "status": "exact",
+      "report_value": 1.0,
+      "knowledge_value": 1.0,
+      "note": "一致"
+    },
+    {
+      "element": "air",
+      "report_evidence_id": "R1-PL036",
+      "knowledge_id": "K-2023-AIR",
+      "item": "达标区判定",
+      "status": "exact",
+      "report_value": "不达标区(O3超标，五项达标)",
+      "knowledge_value": "O3超二级浓度限值；五项达标",
+      "note": "一致"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-PL036",
+      "knowledge_id": "K-2023-WATER",
+      "item": "古镇水道 鹅洋沙断面 2023年定类",
+      "status": "exact",
+      "report_value": "Ⅱ",
+      "knowledge_value": "Ⅱ",
+      "note": "一致（公报P5-7：古镇水道/鹅洋沙=Ⅱ）"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-PL036",
+      "knowledge_id": "K-2023-WATER",
+      "item": "水质结论",
+      "status": "exact",
+      "report_value": "符合Ⅲ类标准，水质良好",
+      "knowledge_value": "Ⅱ类(优于Ⅲ类)",
+      "note": "一致"
+    },
+    {
+      "element": "surface_water",
+      "report_evidence_id": "R2-PL036",
+      "knowledge_id": "K-2023-WATER",
+      "item": "纳污水体名称",
+      "status": "partial",
+      "report_value": "海洲水道(古镇水道)",
+      "knowledge_value": "古镇水道",
+      "note": "报告将纳污水体称“海洲水道”并以括号标注“古镇水道”；公报河流名为“古镇水道”。两者等同关系系报告自行推断，需人工确认“海洲水道”是否即“古镇水道”别称，鹅洋沙断面水质数据可核验一致。"
+    }
+  ],
+  "audit_result": {
+    "conclusion": "正确",
+    "air_result": "正确",
+    "surface_water_result": "正确",
+    "summary_sentence": "1、【大气及地表水环境质量引用数据正确】；",
+    "air_statement": "2、项目大气环境质量引用《2023年度佛山市顺德区生态环境状况公报》。环评对大气环境质量分析内容与《2023年度佛山市顺德区生态环境状况公报》中大气环境状况描述一致（综合指数3.14、排名第二、AQI达标率87.4%、SO2=6、NO2=28、PM10=35、PM2.5=20、O3=164、CO=1.0，各项趋势及不达标区结论均与公报一致）。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》（佛环顺函〔2025〕12号，2025-04-03发布），可供参考。",
+    "surface_water_statement": "项目地表水环境质量引用《2023年度佛山市顺德区生态环境状况公报》。环评对地表水环境质量分析内容与《2023年度佛山市顺德区生态环境状况公报》中地表水环境状况描述一致（鹅洋沙断面2023年定类Ⅱ类，符合Ⅲ类标准，水质良好；公报P5-7：古镇水道/鹅洋沙=Ⅱ）。报告将纳污水体称“海洲水道”并以括号标注“古镇水道”，该等同关系需人工确认。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》（佛环顺函〔2025〕12号，2025-04-03发布），可供参考。",
+    "update_notice": [
+      "经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》（佛环顺函〔2025〕12号，2025-04-03发布），可供参考。"
+    ],
+    "readable_answer": "1、【大气及地表水环境质量引用数据正确】；2、项目大气环境质量引用《2023年度佛山市顺德区生态环境状况公报》。环评对大气环境质量分析内容与《2023年度佛山市顺德区生态环境状况公报》中大气环境状况描述一致（综合指数3.14、排名第二、AQI达标率87.4%、SO2=6、NO2=28、PM10=35、PM2.5=20、O3=164、CO=1.0，各项趋势及不达标区结论均与公报一致）。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》（佛环顺函〔2025〕12号，2025-04-03发布），可供参考。项目地表水环境质量引用《2023年度佛山市顺德区生态环境状况公报》。环评对地表水环境质量分析内容与《2023年度佛山市顺德区生态环境状况公报》中地表水环境状况描述一致（鹅洋沙断面2023年定类Ⅱ类，符合Ⅲ类标准，水质良好；公报P5-7：古镇水道/鹅洋沙=Ⅱ）。报告将纳污水体称“海洲水道”并以括号标注“古镇水道”，该等同关系需人工确认。经检索，截至审核日该地区最新的环境状况公报为《2024年度佛山市顺德区生态环境状况公报》（佛环顺函〔2025〕12号，2025-04-03发布），可供参考。"
+  },
+  "human_review": {
+    "status": "待人工确认",
+    "focus": [
+      "纳污水体“海洲水道”与公报“古镇水道”的等同关系系报告以括号推断，鹅洋沙断面水质数据可核验一致，需人工确认水体名称对应关系。",
+      "报告未给出明确编制/公示日期，时间基准依据引用公报发布日期推断（as_of_date≥2024-03-26）。"
+    ],
+    "reviewer": null,
+    "review_date": null
+  },
+  "quality_control": {
+    "report_evidence_traceable": true,
+    "knowledge_evidence_traceable": true,
+    "air_water_separately_checked": true,
+    "no_future_bulletin_used": true,
+    "no_scope_inference": true
+  }
+}

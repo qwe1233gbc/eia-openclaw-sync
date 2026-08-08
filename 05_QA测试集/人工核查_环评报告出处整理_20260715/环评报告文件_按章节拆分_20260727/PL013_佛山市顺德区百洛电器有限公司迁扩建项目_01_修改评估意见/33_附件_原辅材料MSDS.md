@@ -1,0 +1,15 @@
+<!-- source_file: E:\华南理工项目\环评文件汇总\01_GitHub项目与研究文档\eia-openclaw-sync-chen2026\05_QA测试集\人工核查_环评报告出处整理_20260715\环评报告文件_按问答顺序\PL013_佛山市顺德区百洛电器有限公司迁扩建项目_01_修改评估意见.docx -->
+<!-- source_relative_path: PL013_佛山市顺德区百洛电器有限公司迁扩建项目_01_修改评估意见.docx -->
+<!-- parser: docx -->
+<!-- chapter_index: 33 -->
+<!-- chapter_title: 附件 原辅材料MSDS -->
+
+# 附件 原辅材料MSDS
+
+附件4 原辅材料MSDS
+助焊剂
+三防漆
+无铅锡条
+无铅锡丝
+无铅锡膏
+红胶

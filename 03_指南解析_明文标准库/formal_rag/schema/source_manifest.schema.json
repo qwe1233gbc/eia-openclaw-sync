@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "source_id",
+    "title",
+    "source_sha256",
+    "eligible_for_formal_rag"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "source_sha256": {
+      "type": "string"
+    },
+    "eligible_for_formal_rag": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "question_id": "PL003_V01_Q03",
+  "group": "B",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "",
+  "audit_category": "环评投资概算",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "总投资100万元、环保投资15万元、环保工程明细合计15万元及占比15%一致；但废气处理设施投资在另一处表述为约10万元，与明细表11.50万元不一致。",
+    "evidence": [
+      {
+        "fact": "报告载明总投资100万元、环保投资15万元、环保投资占比15%。",
+        "source_location": "root[2].content#0",
+        "source_excerpt": "总投资（万元） 100. 00 环保投资（万元） 15. 00 环保投资占比（%） 15. 00"
+      },
+      {
+        "fact": "环保工程投资明细合计15.0万元，占总投资15.0%。",
+        "source_location": "root[5].content#4400",
+        "source_excerpt": "1污水处理工程三级化粪池1.01.02废气控制工程集气罩+二级活性炭吸附装置+废气排放管道11.5011.53噪声防治工程设备减振、墙体隔声等1.01.04固废危废暂存间1.51.5小计15.0占总投资的15.0%"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "总投资与环保投资一致性",
+        "result": "pass",
+        "explanation": "报告首页及工程分析均表述总投资100万元、环保投资15万元。"
+      },
+      {
+        "check_name": "环保投资明细合计与占比",
+        "result": "pass",
+        "explanation": "明细1.0+11.5+1.0+1.5=15.0万元，占总投资100万元的15.0%。"
+      },
+      {
+        "check_name": "废气处理设施投资前后一致性",
+        "result": "fail",
+        "explanation": "表2-9废气控制工程为11.50万元；root[8].content#6600又称废气处理设施投资约10万元、占10%，前后不一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "污水处理+废气控制+噪声防治+固废=环保投资明细合计",
+        "inputs": {
+          "污水处理": 1.0,
+          "废气控制": 11.5,
+          "噪声防治": 1.0,
+          "固废": 1.5
+        },
+        "result": "15.0",
+        "unit": "万元"
+      },
+      {
+        "formula": "环保投资/总投资×100%",
+        "inputs": {
+          "环保投资": 15.0,
+          "总投资": 100.0
+        },
+        "result": "15.0",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "废气处理设施投资约10万元与环保投资明细表中废气控制工程11.50万元不一致。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "冻结RAG未提供环评投资概算相关外部规范证据，无法进行外部规范核验。",
+    "references_used": [],
+    "missing_references": [
+      "冻结RAG未提供环评投资概算相关法规、导则或编制要求。"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告首页及工程分析均载明总投资100万元、环保投资15万元；环保工程明细合计1.0+11.5+1.0+1.5=15万元，占比15%，总量与比例一致。但后文称废气处理设施投资约10万元、占10%，与明细表废气控制工程11.50万元、11.5%不一致，故前后一致性存在问题。冻结RAG无外部规范，未开展外部核验。",
+    "scope_note": "仅依据报告上下文完成内部一致性核算；外部规范核验因冻结RAG缺失未执行。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

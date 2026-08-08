@@ -1,0 +1,80 @@
+{
+  "question_id": "PL001_Emission_固体",
+  "group": "C",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "07_review-eia-pollutant-discharge-standards",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告固体废物标准体系基本完整，但标准章节（第三章）未明确列出《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020），该标准仅在第四章措施部分出现，标准章节与措施章节存在覆盖不一致。",
+    "evidence": [
+      {
+        "fact": "标准章节列出一般固废执行《广东省固体废物污染环境防治条例》和GB/T39198-2020鉴别，危废执行《国家危险废物名录》(2021版)和GB18597-2023",
+        "source_location": "root[3].content#17600",
+        "source_excerpt": "一般工业固体废物参照《一般固体废物分类及代码》（GB/T39198-2020）进行鉴别，危险废物执行《国家危险废物名录》（2021版）以及《危险废物贮存污染控制标准》（GB18597-2023）。"
+      },
+      {
+        "fact": "措施章节补充引用了GB18599-2020用于一般固废暂存间建设要求",
+        "source_location": "root[6].content#0",
+        "source_excerpt": "一般固废暂存间的建设应满足《广东省固体废物污染环境防治条例》、《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）相关要求"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "固废种类与产污环节完整性",
+        "result": "pass",
+        "explanation": "产污环节表列出废化学包装桶、废机油、含油废抹布、废含油桶罐、废活性炭，与固废正文和汇总表一致。"
+      },
+      {
+        "check_name": "危废数量小计核验",
+        "result": "pass",
+        "explanation": "1.1190+0.005+0.0005+0.01+4.2264=5.3609≈5.361t/a，与报告小计一致。"
+      },
+      {
+        "check_name": "标准章节是否完整覆盖一般固废贮存标准",
+        "result": "fail",
+        "explanation": "第三章标准节未列出GB18599-2020，仅在第四章措施中引用，标准选取章节存在遗漏。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "危废小计=废化学包装桶+废机油+废含油桶罐+含油废抹布+废活性炭",
+        "inputs": {
+          "废化学包装桶": 1.119,
+          "废机油": 0.005,
+          "废含油桶罐": 0.0005,
+          "含油废抹布": 0.01,
+          "废活性炭": 4.2264
+        },
+        "result": "5.3609",
+        "unit": "t/a"
+      }
+    ],
+    "issues": [
+      "第三章'固体废物污染控制标准'段落未明确列出《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020），该标准仅在第四章措施部分出现，标准选取章节覆盖不完整。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "本组未提供冻结RAG，无法对标准版本有效性、适用性及限值进行外部核验。",
+    "references_used": [],
+    "missing_references": [
+      "《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）正式文本",
+      "《危险废物贮存污染控制标准》（GB18597-2023）正式文本",
+      "《国家危险废物名录》（2021版）正式文本"
+    ]
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "报告内部审核发现：固废种类、代码、数量在各章节间基本一致，危废小计5.361t/a核算正确。标准体系涵盖《固废法》、《广东省固废条例》、GB34330-2017、GB/T39198-2020、《国家危险废物名录》(2021版)和GB18597-2023。但第三章标准选取段落未将GB18599-2020纳入一般工业固废贮存标准条目，仅在第四章措施中引用，存在标准章节覆盖不完整的内部不一致。外部规范核验因无冻结RAG未执行。",
+    "scope_note": "外部标准版本有效性和适用性未核验，仅完成报告内部一致性审核。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

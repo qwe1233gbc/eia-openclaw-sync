@@ -1,0 +1,87 @@
+{
+  "question_id": "PL001_EnvQuality_Q01",
+  "group": "C",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "review-eia-environmental-quality-data",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "大气表3-1存在列年份标注与公报年份不一致及变化率正负号错误；地表水部分存在河涌名称不统一（新涌大河/东海大河）。",
+    "evidence": [
+      {
+        "fact": "表3-1标题为'2022年顺德区…年度比较'，但列年份标注为2020和2021，与2022年度公报不匹配",
+        "source_location": "root[3].content#11000",
+        "source_excerpt": "表3-1 2022年顺德区（国控测点）环境空气污染物浓度水平年度比较…浓度均值…2020…2021"
+      },
+      {
+        "fact": "表3-2河涌断面名称为'东海大河'，而正文排放路径描述为'新涌大河'",
+        "source_location": "root[3].content#11000",
+        "source_excerpt": "表3-2 2021年1-12月市控考核断面水质情况（东海大河）河涌断面…东海大河…Ⅴ…达标"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "大气表格列年份与公报年份一致性",
+        "result": "fail",
+        "explanation": "公报为2022年度，表格标题含'2022年'，但数据列标注为2020和2021，应为2021和2022"
+      },
+      {
+        "check_name": "变化率正负号一致性",
+        "result": "fail",
+        "explanation": "PM10从42降至32、PM2.5从22降至19，均为下降，但变化率标注为正值(23.8%、13.6%)，而SO2和NO2下降正确标注负值"
+      },
+      {
+        "check_name": "地表水达标结论与表格一致性",
+        "result": "pass",
+        "explanation": "顺德支流新涌、飞鹅山断面均为Ⅲ类，满足Ⅲ类标准，结论'达标区'与数据一致"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "PM10变化率=(32-42)/42×100",
+        "inputs": {
+          "2021值": 42,
+          "2022值": 32
+        },
+        "result": "-23.8%，报告标注+23.8%，符号错误",
+        "unit": "%"
+      },
+      {
+        "formula": "PM2.5变化率=(19-22)/22×100",
+        "inputs": {
+          "2021值": 22,
+          "2022值": 19
+        },
+        "result": "-13.6%，报告标注+13.6%，符号错误",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "表3-1列年份标注(2020/2021)与2022年度公报不匹配，疑为笔误",
+      "PM10和PM2.5变化率正负号与SO2、NO2不一致，下降应为负值",
+      "表3-2使用'东海大河'名称，正文使用'新涌大河'，未说明二者关系"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "未提供冻结RAG或正式公报原文，无法核验报告引用数值与官方公报原文的一致性。",
+    "references_used": [],
+    "missing_references": [
+      "《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区生态环境状况公报的通知》（佛环顺函〔2023〕26号）原文",
+      "《2021年1-12月市控考核断面水质情况》原文"
+    ]
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "报告内部审核发现三类问题：(1)表3-1列年份标注为2020/2021，但公报为2022年度，标题也写'2022年'，列年份应修正为2021/2022；(2)PM10和PM2.5浓度下降但变化率标注为正值，与同表SO2、NO2的负值标注规则不一致；(3)地表水表3-2断面名称'东海大河'与正文'新涌大河'不统一，存在对象错配风险。达标结论方向正确（O3不达标→不达标区；地表水达标）。外部公报核验因无冻结RAG未执行。",
+    "scope_note": "外部核验需补充佛环顺函〔2023〕26号公报原文及2021年市控断面水质报告原文。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

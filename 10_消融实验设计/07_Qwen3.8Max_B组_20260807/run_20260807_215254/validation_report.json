@@ -1,0 +1,73 @@
+{
+  "group": "B",
+  "description": "LLM + 法规库（有RAG、无Skill）",
+  "rows": 21,
+  "valid_json": 21,
+  "metrics": {
+    "total": 21,
+    "valid_json": 21,
+    "evidence_backcheck": 20,
+    "whole_task_abstention": 0,
+    "manual_review_needed": 18,
+    "used_unprovided_external_knowledge": 0,
+    "external_verified": 4,
+    "external_not_performed": 6,
+    "external_insufficient_reference": 11,
+    "external_not_required": 0,
+    "judgement_correct": 2,
+    "judgement_issue": 10,
+    "judgement_partial": 5,
+    "judgement_manual": 4,
+    "mode_determinate_internal": 1,
+    "mode_full_validation": 6,
+    "mode_partial_internal": 14,
+    "mode_insufficient_report": 0
+  },
+  "category_stats": {
+    "固体废物控制标准": {
+      "total": 5,
+      "verified": 1,
+      "not_performed": 0,
+      "insufficient": 4
+    },
+    "环境质量数据引用": {
+      "total": 3,
+      "verified": 1,
+      "not_performed": 0,
+      "insufficient": 2
+    },
+    "国民经济行业分类": {
+      "total": 4,
+      "verified": 2,
+      "not_performed": 0,
+      "insufficient": 2
+    },
+    "噪声排放标准": {
+      "total": 4,
+      "verified": 0,
+      "not_performed": 3,
+      "insufficient": 1
+    },
+    "大气污染物排放标准": {
+      "total": 1,
+      "verified": 0,
+      "not_performed": 0,
+      "insufficient": 1
+    },
+    "水污染物排放标准": {
+      "total": 3,
+      "verified": 0,
+      "not_performed": 2,
+      "insufficient": 1
+    },
+    "环评投资概算": {
+      "total": 1,
+      "verified": 0,
+      "not_performed": 1,
+      "insufficient": 0
+    }
+  },
+  "manual_review_queue": 18,
+  "failed_tasks": [],
+  "note": "PL005_Emission_固体因输出截断重试成功（max_output_tokens=16000）"
+}

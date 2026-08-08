@@ -1,0 +1,133 @@
+{
+  "log_dir": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\_missing_PL006_PL015_search_20260722_221157",
+  "scanned_roots": [
+    "C:\\",
+    "D:\\",
+    "E:\\"
+  ],
+  "scanned_file_count": 712349,
+  "result_count": 85,
+  "targets": [
+    {
+      "canonical_project_id": "PL006",
+      "project_name": "佛山市顺德区乐鲸科技有限公司年产五金拉手300万个新建项目",
+      "hit_count": 7,
+      "best_paths": [
+        "C:\\Users\\ylx\\WPS Cloud Files\\.1128205161\\cachedata\\E2ABB669C1DA462B9B74046C24FC209A\\006_佛山市顺德区乐鲸科技有限公司年产五金拉手300万个新建项目_01_修改评估意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\058_202403061513437166乐鲸修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\原始修改文件\\202403061513437166乐鲸修改意见.docx",
+        "E:\\openclaw_archive\\workspace\\agent\\workspace\\ai_packages_extracted\\ai_packages\\原始Word修改意见文件\\202403061513437166乐鲸修改意见.docx",
+        "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\_removed_non_report_files_20260722_172319\\006_佛山市顺德区乐鲸科技有限公司年产五金拉手300万个新建项目_01_修改评估意见.docx"
+      ]
+    },
+    {
+      "canonical_project_id": "PL007",
+      "project_name": "广东云晟新材料有限公司年产水性涂料2400吨新建项目",
+      "hit_count": 15,
+      "best_paths": [
+        "C:\\Users\\ylx\\WPS Cloud Files\\.1128205161\\cachedata\\C4FBE84A2FEA49D9A54EB514DE590032\\202303091446684010云晟新材料修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\20230206143628723云晟新材料 修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\008_20230206143628723云晟新材料 修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\012_202303091446684010云晟新材料修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\原始修改文件\\20230206143628723云晟新材料 修改意见.docx"
+      ]
+    },
+    {
+      "canonical_project_id": "PL008",
+      "project_name": "佛山市顺德区亚马逊涂料有限公司迁扩建项目",
+      "hit_count": 14,
+      "best_paths": [
+        "C:\\Users\\ylx\\Downloads\\（20230603第二次修改版）佛山市顺德区亚马逊涂料有限公司迁扩建项目修改意见.docx",
+        "C:\\Users\\ylx\\WPS Cloud Files\\.1128205161\\cachedata\\3DA6957EA4484AF09A60EEC1327DBF34\\（20230603第二次修改版）佛山市顺德区亚马逊涂料有限公司迁扩建项目修改意见.docx",
+        "C:\\Users\\ylx\\WPS Cloud Files\\.1128205161\\cachedata\\649776DB2BB341B4940FF04EFA29E7D6\\（20230603第二次修改版）佛山市顺德区亚马逊涂料有限公司迁扩建项目修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\ai_packages\\（20230603第二次修改版）佛山市顺德区亚马逊涂料有限公司迁扩建项目修改意见.zip",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\088_（20230603第二次修改版）佛山市顺德区亚马逊涂料有限公司迁扩建项目修改意见.docx"
+      ]
+    },
+    {
+      "canonical_project_id": "PL009",
+      "project_name": "广东威诺高科技股份有限公司搬迁项目",
+      "hit_count": 6,
+      "best_paths": [
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\039_202307319405849广东威诺高科技股份有限公司搬迁项目修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\原始修改文件\\202307319405849广东威诺高科技股份有限公司搬迁项目修改意见.docx",
+        "E:\\openclaw_archive\\workspace\\agent\\workspace\\ai_packages_extracted\\ai_packages\\原始Word修改意见文件\\202307319405849广东威诺高科技股份有限公司搬迁项目修改意见.docx",
+        "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\_removed_non_report_files_20260722_172319\\010_广东威诺高科技股份有限公司搬迁项目_01_修改评估意见.docx",
+        "E:\\软件\\eia_plastic_guide_research_pack\\test_report_威诺\\202307319405849广东威诺高科技股份有限公司搬迁项目修改意见.docx"
+      ]
+    },
+    {
+      "canonical_project_id": "PL010",
+      "project_name": "悍高集团股份有限公司功能拉篮车间搬迁扩建项目",
+      "hit_count": 6,
+      "best_paths": [
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\052_2023101914551665922.悍高集团股份有限公司功能拉篮车间搬迁扩建项目（修改意见).docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\原始修改文件\\2023101914551665922.悍高集团股份有限公司功能拉篮车间搬迁扩建项目（修改意见).docx",
+        "E:\\openclaw_archive\\workspace\\agent\\workspace\\ai_packages_extracted\\ai_packages\\原始Word修改意见文件\\2023101914551665922.悍高集团股份有限公司功能拉篮车间搬迁扩建项目（修改意见).docx",
+        "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\_removed_non_report_files_20260722_172319\\011_悍高集团股份有限公司功能拉篮车间搬迁扩建项目_01_修改评估意见.docx",
+        "E:\\软件\\eia_plastic_guide_research_pack\\test_report_悍高\\2023101914551665922.悍高集团股份有限公司功能拉篮车间搬迁扩建项目（修改意见).docx"
+      ]
+    },
+    {
+      "canonical_project_id": "PL011",
+      "project_name": "广东潜龙化工有限公司新建项目",
+      "hit_count": 6,
+      "best_paths": [
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\061_20240327150247848广东潜龙化工有限公司新建项目修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\原始修改文件\\20240327150247848广东潜龙化工有限公司新建项目修改意见.docx",
+        "E:\\openclaw_archive\\workspace\\agent\\workspace\\ai_packages_extracted\\ai_packages\\原始Word修改意见文件\\20240327150247848广东潜龙化工有限公司新建项目修改意见.docx",
+        "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\_removed_non_report_files_20260722_172319\\012_广东潜龙化工有限公司新建项目_01_修改评估意见.docx",
+        "E:\\软件\\eia_plastic_guide_research_pack\\test_report_潜龙\\20240327150247848广东潜龙化工有限公司新建项目修改意见.docx"
+      ]
+    },
+    {
+      "canonical_project_id": "PL012",
+      "project_name": "佛山市瀚铭新材料有限公司新建项目",
+      "hit_count": 6,
+      "best_paths": [
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\057_20240223佛山市瀚铭新材料有限公司新建项目修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\原始修改文件\\20240223佛山市瀚铭新材料有限公司新建项目修改意见.docx",
+        "E:\\openclaw_archive\\workspace\\agent\\workspace\\ai_packages_extracted\\ai_packages\\原始Word修改意见文件\\20240223佛山市瀚铭新材料有限公司新建项目修改意见.docx",
+        "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\_removed_non_report_files_20260722_172319\\013_佛山市瀚铭新材料有限公司新建项目_01_修改评估意见.docx",
+        "E:\\软件\\eia_plastic_guide_research_pack\\test_report_瀚铭\\20240223佛山市瀚铭新材料有限公司新建项目修改意见.docx"
+      ]
+    },
+    {
+      "canonical_project_id": "PL013",
+      "project_name": "佛山市顺德区百洛电器有限公司迁扩建项目",
+      "hit_count": 11,
+      "best_paths": [
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\048_2023091815484454110佛山市顺德区百洛电器有限公司迁扩建项目（修改意见）.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\078_佛山市顺德区百洛电器有限公司迁扩建项目（修改意见）.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\原始修改文件\\2023091815484454110佛山市顺德区百洛电器有限公司迁扩建项目（修改意见）.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\原始修改文件\\佛山市顺德区百洛电器有限公司迁扩建项目（修改意见）.docx",
+        "E:\\openclaw_archive\\workspace\\agent\\workspace\\ai_packages_extracted\\ai_packages\\原始Word修改意见文件\\2023091815484454110佛山市顺德区百洛电器有限公司迁扩建项目（修改意见）.docx"
+      ]
+    },
+    {
+      "canonical_project_id": "PL014",
+      "project_name": "佛山市顺德区蓝顿涂料有限公司迁建项目",
+      "hit_count": 8,
+      "best_paths": [
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\079_佛山市顺德区蓝顿涂料有限公司迁建项目修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\原始修改文件\\佛山市顺德区蓝顿涂料有限公司迁建项目修改意见.docx",
+        "E:\\openclaw_archive\\workspace\\agent\\workspace\\ai_packages_extracted\\ai_packages\\原始Word修改意见文件\\佛山市顺德区蓝顿涂料有限公司迁建项目修改意见.docx",
+        "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\_removed_non_report_files_20260722_172319\\015_佛山市顺德区蓝顿涂料有限公司迁建项目_01_修改评估意见.docx",
+        "E:\\华南理工项目\\环评文件汇总\\02_环评原始资料_受理报告批复评估意见\\E环评资料汇总_plastic_new_reports\\佛山市顺德区蓝顿涂料有限公司迁建项目\\佛山市顺德区蓝顿涂料有限公司迁建项目修改意见.docx"
+      ]
+    },
+    {
+      "canonical_project_id": "PL015",
+      "project_name": "佛山市镪优金属制品有限公司迁扩建项目",
+      "hit_count": 6,
+      "best_paths": [
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\交给claude code的脚本\\eia_verified_outputs\\renamed_inputs\\030_20230529101652538佛山市镪优金属制品有限公司修改意见.docx",
+        "D:\\华南理工项目\\环评知识库文件\\环评（识别+审核）资料\\环评审批资料\\环评审批资料\\修改意见\\原始修改文件\\20230529101652538佛山市镪优金属制品有限公司修改意见.docx",
+        "E:\\openclaw_archive\\workspace\\agent\\workspace\\ai_packages_extracted\\ai_packages\\原始Word修改意见文件\\20230529101652538佛山市镪优金属制品有限公司修改意见.docx",
+        "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\_removed_non_report_files_20260722_172319\\016_佛山市镪优金属制品有限公司迁扩建项目_01_修改评估意见.docx",
+        "E:\\软件\\eia_plastic_guide_research_pack\\test_report_镪优\\20230529101652538佛山市镪优金属制品有限公司修改意见.docx"
+      ]
+    }
+  ],
+  "error_count": 35
+}

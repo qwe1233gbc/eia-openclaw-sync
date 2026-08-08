@@ -1,0 +1,95 @@
+{
+  "question_id": "PL003_Emission_水污",
+  "group": "A",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告各章节对废水类型（生活污水+冷却废水）、预处理方式（三级化粪池/沉淀池）、排放去向（杏坛镇吉祐村红砖厂农村生活污水处理站）、企业排口标准（DB44/26-2001第二时段三级标准）、尾水排放河道（砖厂涌→顺德支流）、尾水执行标准（GB18918-2002一级B）表述一致。但存在一处数值矛盾：给排水章节称'生活污水排放量约为360m3/a'，而水平衡图及后续章节均按90m3/a计算。",
+    "evidence": [
+      {
+        "fact": "生活污水经三级化粪池预处理后执行DB44/26-2001第二时段三级标准，排入杏坛镇吉祐村红砖厂农村生活污水处理站，尾水执行GB18918-2002一级B标准",
+        "source_location": "root[6].content#4400",
+        "source_excerpt": "处理后的废水执行广东省地方标准《水污染物排放限值》（DB44/26-2001）第二时段三级标准后排入杏坛镇吉祐村红砖厂农村生活污水处理站处理，尾水排至内河涌（砖厂涌）后排入其他内河涌，然后汇入顺德支流。"
+      },
+      {
+        "fact": "给排水章节出现生活污水排放量360m3/a的表述，与水平衡图90m3/a不一致",
+        "source_location": "root[5].content#4400",
+        "source_excerpt": "根据《排放源统计调查产排污核算方法和系数手册》（公告2021年第24号），生产污水产污系数按0.8计算，则生活污水排放量约为360m3/a"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "企业排口标准与排放去向匹配性",
+        "result": "pass",
+        "explanation": "间接排放至污水处理站，执行DB44/26-2001第二时段三级标准，选取合理。"
+      },
+      {
+        "check_name": "尾水标准限值数值与GB18918-2002一级B对照",
+        "result": "pass",
+        "explanation": "报告列出CODCr≤60、BOD5≤20、SS≤20、氨氮≤8、石油类≤3，与一级B标准一致。"
+      },
+      {
+        "check_name": "生活污水排放量内部一致性",
+        "result": "fail",
+        "explanation": "一处写360m3/a（疑为笔误），其余章节及水平衡图均为90m3/a（100×0.9），存在矛盾。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "生活用水量×产污系数",
+        "inputs": {
+          "生活用水量": "100 m³/a",
+          "产污系数": 0.9
+        },
+        "result": "90",
+        "unit": "m³/a"
+      },
+      {
+        "formula": "冷却废水CODCr排放量=废水量×浓度",
+        "inputs": {
+          "废水量": "2.4 m³/a",
+          "浓度": "50 mg/L"
+        },
+        "result": "0.00012",
+        "unit": "t/a"
+      }
+    ],
+    "issues": [
+      "root[5]中'生活污水排放量约为360m3/a'与全文其他章节90m3/a不一致，疑为笔误，不影响标准选取结论但应修正。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "DB44/26-2001第二时段三级标准限值（CODCr≤500、BOD5≤300、SS≤400、氨氮无要求）正确；GB18918-2002一级B标准限值（CODCr≤60、BOD5≤20、SS≤20、氨氮≤8、石油类≤3）正确。农村分散式处理设施执行一级B标准合理，三线一单仅要求杏坛污水处理厂执行一级A。",
+    "references_used": [
+      {
+        "reference_id": "DB44/26-2001",
+        "title": "广东省《水污染物排放限值》",
+        "clause_or_table": "第二时段三级标准",
+        "supporting_text": "CODCr≤500、BOD5≤300、SS≤400，氨氮无三级标准限值要求"
+      },
+      {
+        "reference_id": "GB18918-2002",
+        "title": "《城镇污水处理厂污染物排放标准》",
+        "clause_or_table": "表1 一级B标准",
+        "supporting_text": "CODCr≤60、BOD5≤20、SS≤20、氨氮≤8（水温>12℃）、石油类≤3"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告水污染物排放标准选取合理：①生活污水和冷却废水均为间接排放至杏坛镇吉祐村红砖厂农村生活污水处理站，企业排口执行DB44/26-2001第二时段三级标准正确；②该处理站为农村分散式设施，尾水执行GB18918-2002一级B标准，限值数值与国标一致；③尾水经砖厂涌汇入顺德支流（Ⅲ类达标水域），排放路径各章节表述一致；④三线一单仅要求杏坛污水处理厂执行一级A，本项目所依托的吉祐村处理站不在该要求范围内，执行一级B合理。存在一处笔误（360m³/a应为90m³/a），不影响标准选取结论。",
+    "scope_note": "审核范围限于水污染物排放标准选取的合理性，未涉及废气、噪声等其他要素。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

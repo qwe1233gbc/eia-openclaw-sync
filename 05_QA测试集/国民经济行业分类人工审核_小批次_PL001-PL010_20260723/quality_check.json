@@ -1,0 +1,10 @@
+{
+  "actual_report_version_count": 10,
+  "jsonl_record_count": 10,
+  "docx_count": 10,
+  "pdf_count": 0,
+  "source_excel": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\seed_qa_942题_151项目_phase1+phase2合并.xlsx",
+  "date": "2026-07-23",
+  "batch_start": "PL001",
+  "batch_end": "PL010"
+}

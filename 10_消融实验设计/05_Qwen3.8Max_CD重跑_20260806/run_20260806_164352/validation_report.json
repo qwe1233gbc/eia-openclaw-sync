@@ -1,0 +1,29 @@
+{
+  "rows": 42,
+  "valid_json": 42,
+  "complete_pairs": 21,
+  "metrics": {
+    "C": {
+      "determinate_internal": 13,
+      "partial_internal": 8,
+      "insufficient_report": 0,
+      "whole_task_abstention": 0,
+      "unsupported_external": 0,
+      "evidence_backcheck": 17,
+      "manual_review": 6
+    },
+    "D": {
+      "full_validation": 19,
+      "insufficient_reference": 2,
+      "rag_backcheck": 19,
+      "manual_review": 2
+    },
+    "pairs": {
+      "D补依据并改结论": 18,
+      "D仍无法补全": 2,
+      "异常不一致": 1
+    }
+  },
+  "manual_review_queue": 20,
+  "failed_tasks": []
+}

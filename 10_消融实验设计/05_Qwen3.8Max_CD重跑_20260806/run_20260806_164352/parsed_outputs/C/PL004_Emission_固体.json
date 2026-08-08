@@ -1,0 +1,90 @@
+{
+  "question_id": "PL004_Emission_固体",
+  "group": "C",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "07_review-eia-pollutant-discharge-standards",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告列出了固体废物控制标准体系，涵盖一般固废和危废的鉴别、分类、贮存标准，但存在次品废物代码前后不一致的内部矛盾。",
+    "evidence": [
+      {
+        "fact": "次品废物代码在正文中为292-009-16，但在表4-20中为292-009-06",
+        "source_location": "root[7].content#4400 vs root[7].content#13200",
+        "source_excerpt": "次品产生量约为原料量的5%，即次品产生量为36t/a，其废物代码为292-009-16"
+      },
+      {
+        "fact": "固体废物污染控制标准章节列出了GB34330-2017、GB/T39198-2020、国家危险废物名录(2021版)、GB18597-2023",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "一般工业固体废物参照《一般固体废物分类及代码》（GB/T39198-2020）进行鉴别，危险废物执行《国家危险废物名录》（2021版）以及《危险废物贮存污染控制标准》（GB18597-2023）"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "固废种类与标准覆盖完整性",
+        "result": "pass",
+        "explanation": "报告识别了一般固废（生活垃圾、废包装材料、次品）和危废（废机油、废活性炭、废油包装桶、含油废抹布），并分别引用了鉴别、分类和贮存标准。"
+      },
+      {
+        "check_name": "次品废物代码内部一致性",
+        "result": "fail",
+        "explanation": "正文写292-009-16，表4-20写292-009-06，两处不一致。"
+      },
+      {
+        "check_name": "数量小计核算",
+        "result": "pass",
+        "explanation": "一般固废小计0.75+3.456+36=40.206t/a，危废小计0.025+5.043+0.002+0.05=5.120t/a，均与报告一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "一般固废小计 = 生活垃圾 + 废包装材料 + 次品",
+        "inputs": {
+          "生活垃圾": 0.75,
+          "废包装材料": 3.456,
+          "次品": 36
+        },
+        "result": "40.206",
+        "unit": "t/a"
+      },
+      {
+        "formula": "危废小计 = 废机油 + 废活性炭 + 废油包装桶 + 含油废抹布",
+        "inputs": {
+          "废机油": 0.025,
+          "废活性炭": 5.043,
+          "废油包装桶": 0.002,
+          "含油废抹布": 0.05
+        },
+        "result": "5.120",
+        "unit": "t/a"
+      }
+    ],
+    "issues": [
+      "次品废物代码正文(292-009-16)与表4-20(292-009-06)不一致"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "C组未提供冻结RAG，无法对标准版本、编号和适用性进行外部核验。",
+    "references_used": [],
+    "missing_references": [
+      "GB18599-2020正式文本",
+      "GB18597-2023正式文本",
+      "国家危险废物名录(2021版)正式文本",
+      "GB/T39198-2020正式文本"
+    ]
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "报告引用的固废控制标准包括：一般固废方面引用了《固体废物鉴别标准通则》(GB34330-2017)、《一般固体废物分类及代码》(GB/T39198-2020)、《一般工业固体废物贮存和填埋污染控制标准》(GB18599-2020)；危废方面引用了《国家危险废物名录》(2021版)和《危险废物贮存污染控制标准》(GB18597-2023)。标准体系框架基本完整，但存在次品废物代码前后不一致的内部矛盾（正文292-009-16 vs 表格292-009-06）。外部标准版本和适用性因无冻结RAG未核验。",
+    "scope_note": "外部规范核验标记为not_performed，仅完成报告内部一致性审核。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

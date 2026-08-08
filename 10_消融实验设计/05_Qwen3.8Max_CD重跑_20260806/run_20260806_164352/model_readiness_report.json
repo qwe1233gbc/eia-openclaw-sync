@@ -1,0 +1,14 @@
+{
+  "requested_by_current_user": "qwen3.8-max",
+  "task_document_legacy_id": "qwen3.8-max-preview",
+  "actual_model_id": "qwen3.8-max",
+  "base_url": "https://one-hub.hycx-gd.cn/v1",
+  "models_endpoint_verified": true,
+  "responses_endpoint_verified": true,
+  "temperature_zero_supported": true,
+  "max_output_tokens": 10000,
+  "reasoning_effort": "low",
+  "reasoning_budget": 4096,
+  "effective_output_budget": 5904,
+  "api_key_saved": false
+}

@@ -1,0 +1,63 @@
+{
+  "question_id": "PL004_V01_Q01",
+  "group": "C",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "01_manual-audit-national-economic-industry-classification",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告将项目归入橡胶和塑料制品业（C29）塑料制品业（C292），与项目产品（改性SEBS塑料）、原料（SEBS+增粘树脂）及核心工艺（混料、挤出、切粒）一致，行业类别基本合理。",
+    "evidence": [
+      {
+        "fact": "项目产品为改性SEBS塑料，年产720吨，属塑料改性加工",
+        "source_location": "root[5].content#0 表2-2",
+        "source_excerpt": "主要从事改性SEBS塑料的生产，预计投产后年产改性SEBS塑料720吨"
+      },
+      {
+        "fact": "核心工艺为混料后经双螺杆挤出机约200℃挤出成型、水下切粒，属塑料加工成型工艺",
+        "source_location": "root[5].content#8800 工艺流程简述",
+        "source_excerpt": "经吸料机在空压机的动力辅助下吸入双螺杆挤出机料桶在双螺杆机挤出机组内于约200℃的温度下挤出成型，胶条水下切粒系统冷却切粒"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "产品与行业归属一致性",
+        "result": "pass",
+        "explanation": "改性SEBS塑料为塑料改性粒料，属塑料制品业范畴，非合成树脂聚合（C2651），非橡胶制品（C291）"
+      },
+      {
+        "check_name": "工艺与行业归属一致性",
+        "result": "pass",
+        "explanation": "挤出、切粒为典型塑料加工成型工艺，与C292塑料制品业定义吻合"
+      },
+      {
+        "check_name": "原料与行业归属一致性",
+        "result": "pass",
+        "explanation": "SEBS和增粘树脂均为外购聚合物原料，项目仅进行物理共混改性，不涉及聚合反应"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "C组未提供冻结RAG，无法对GB/T 4754-2017具体小类注释进行逐字核验。",
+    "references_used": [],
+    "missing_references": [
+      "《国民经济行业分类》(GB/T 4754-2017)及第1号修改单中C2929小类注释原文"
+    ]
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "项目以SEBS和增粘树脂为原料，通过混料、双螺杆挤出（约200℃）、水下切粒工艺生产改性SEBS塑料粒料，年产720吨。产品为塑料改性粒料，核心工艺为挤出成型，不涉及聚合反应，不属于初级形态塑料及合成树脂制造（C2651）；产品非橡胶制品，不属于C291。报告归入橡胶和塑料制品业（C29）塑料制品业（C292）方向正确，具体小类应为C2929其他塑料制品制造。行业类别基本合理。",
+    "scope_note": "外部规范核验因C组未提供冻结RAG标记为not_performed，结论基于报告内部事实一致性判断。"
+  },
+  "answer_mode": "determinate_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

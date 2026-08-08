@@ -1,0 +1,67 @@
+{
+  "question_id": "PL003_Emission_水污",
+  "group": "C",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "07_review-eia-pollutant-discharge-standards",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告内部废水路径、标准选取和数值总体一致，但污水处理厂名称在不同章节存在不一致：三线一单相符性分析章节使用'吉祐村分散式农村污水处理站'，其余章节均使用'杏坛镇吉祐村红砖厂农村生活污水处理站'。生活污水执行DB44/26-2001第二时段三级标准、尾水执行GB18918-2002一级B标准在各章节一致，排放路径（砖厂涌→其他内河涌→顺德支流）前后统一。",
+    "evidence": [
+      {
+        "fact": "三线一单章节将处理站称为'吉祐村分散式农村污水处理站'，与其余章节'杏坛镇吉祐村红砖厂农村生活污水处理站'名称不一致",
+        "source_location": "root[4].content#0",
+        "source_excerpt": "本项目生活污水经三级化粪池预处理后排入吉祐村分散式农村污水处理站处理，尾水排至内河涌（砖厂涌）后排入其他内河涌，然后汇入顺德支流"
+      },
+      {
+        "fact": "污染物排放管控章节及标准表均使用'杏坛镇吉祐村红砖厂农村生活污水处理站'，尾水执行GB18918-2002一级B标准",
+        "source_location": "root[6].content#4400",
+        "source_excerpt": "杏坛镇吉祐村红砖厂农村生活污水处理站尾水执行《城镇污水处理厂污染物排放标准》（GB18918-2002）一级B标准"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "污水处理厂名称一致性",
+        "result": "fail",
+        "explanation": "root[4]使用'吉祐村分散式农村污水处理站'，root[2]/[5]/[6]/[9]均使用'杏坛镇吉祐村红砖厂农村生活污水处理站'，名称不统一"
+      },
+      {
+        "check_name": "企业排口标准与尾水标准是否混用",
+        "result": "pass",
+        "explanation": "企业排口执行DB44/26-2001第二时段三级标准（CODCr≤500），尾水执行GB18918-2002一级B（CODCr≤60），各章节未混用"
+      },
+      {
+        "check_name": "排放路径与尾水受纳水体一致性",
+        "result": "pass",
+        "explanation": "各章节均表述为尾水排至砖厂涌→其他内河涌→顺德支流，路径一致"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "污水处理厂名称在三线一单章节（root[4]）与其余章节不一致，应统一为'杏坛镇吉祐村红砖厂农村生活污水处理站'"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "C组未提供冻结RAG，无法对DB44/26-2001第二时段三级标准限值、GB18918-2002一级B标准限值及该农村生活污水处理站适用GB18918-2002的合规性进行外部核验。",
+    "references_used": [],
+    "missing_references": [
+      "DB44/26-2001《水污染物排放限值》第二时段三级标准原文",
+      "GB18918-2002《城镇污水处理厂污染物排放标准》一级B标准原文",
+      "农村分散式生活污水处理站是否适用GB18918-2002的政策依据"
+    ]
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "报告内部废水路径清晰：生活污水经三级化粪池预处理达DB44/26-2001第二时段三级标准后排入杏坛镇吉祐村红砖厂农村生活污水处理站，冷却废水经沉淀后经市政管网排入同一处理站，尾水执行GB18918-2002一级B标准后排入砖厂涌最终汇入顺德支流。各章节标准限值数值一致，未出现企业排口标准与尾水标准混用。但三线一单相符性分析章节将处理站简称为'吉祐村分散式农村污水处理站'，与其余章节全称不一致，属文本规范性问题。外部标准适用性因无冻结RAG未核验。",
+    "scope_note": "外部规范核验（标准限值正确性、农村处理站适用GB18918-2002的政策依据）因C组无冻结RAG标记为not_performed"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

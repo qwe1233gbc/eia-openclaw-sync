@@ -1,0 +1,96 @@
+{
+  "question_id": "PL002_EnvQuality_Q01",
+  "group": "A",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "EnvQuality",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "表3-1标题为\"2022年\"年度比较，但列标注为2020和2021年，与正文引用的2022年度公报矛盾；PM10和PM2.5变化率符号有误（应为负值）。地表水数据引用内部一致。",
+    "evidence": [
+      {
+        "fact": "表3-1标题为2022年年度比较，但浓度均值列标注为2020和2021",
+        "source_location": "root[8].content#0",
+        "source_excerpt": "表3-1 2022年顺德区（国控测点）环境空气污染物浓度水平年度比较…浓度均值…2020…2021"
+      },
+      {
+        "fact": "正文明确引用2022年度公报并描述2022年数据",
+        "source_location": "root[8].content#0",
+        "source_excerpt": "根据《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区生态环境状况公报的通知（佛环顺函〔2023〕26号）》，2022年顺德区空气质量综合指数为3.27"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "大气表3-1年份列标注与标题一致性",
+        "result": "fail",
+        "explanation": "标题为\"2022年…年度比较\"，正文引用2022年度公报，但表格列标注为2020和2021，应为2021和2022"
+      },
+      {
+        "check_name": "PM10/PM2.5变化率符号",
+        "result": "fail",
+        "explanation": "PM10从42降至32，变化率应为-23.8%，表中为23.8；PM2.5从22降至19，应为-13.6%，表中为13.6"
+      },
+      {
+        "check_name": "地表水表3-2数据与引用公报年份一致性",
+        "result": "pass",
+        "explanation": "表3-2标题为2022年，列含2022年和2021年对比，与引用2022年度公报一致"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "PM10变化率=(32-42)/42×100%",
+        "inputs": {
+          "2021值": 42,
+          "2022值": 32
+        },
+        "result": "-23.8",
+        "unit": "%"
+      },
+      {
+        "formula": "PM2.5变化率=(19-22)/22×100%",
+        "inputs": {
+          "2021值": 22,
+          "2022值": 19
+        },
+        "result": "-13.6",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "表3-1列年份标注（2020/2021）与标题及正文引用的2022年度公报不一致，疑为复制旧表未更新列标注",
+      "PM10和PM2.5变化率缺少负号"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "所引标准限值（SO2≤60、NO2≤40、PM10≤70、PM2.5≤35、O3-8h-90%≤160 μg/m³、CO-24h-95%≤4 mg/m³）均与GB3095-2012二级标准一致；地表水Ⅲ类标准引用GB3838-2002正确。",
+    "references_used": [
+      {
+        "reference_id": "GB3095-2012",
+        "title": "环境空气质量标准",
+        "clause_or_table": "表1 二级标准",
+        "supporting_text": "SO2年均60、NO2年均40、PM10年均70、PM2.5年均35、O3-8h-90th 160 μg/m³、CO-24h-95th 4 mg/m³"
+      },
+      {
+        "reference_id": "GB3838-2002",
+        "title": "地表水环境质量标准",
+        "clause_or_table": "Ⅲ类标准",
+        "supporting_text": "顺德支流执行Ⅲ类标准，报告引用正确"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "大气环境质量数据存在两处内部不一致：①表3-1标题为\"2022年年度比较\"且正文明确引用2022年度公报，但表格浓度列标注为\"2020\"和\"2021\"，应为\"2021\"和\"2022\"；②PM10和PM2.5浓度下降但变化率标注为正值（23.8%和13.6%），应为负值。地表水数据引用2022年度公报，表3-2年份标注与内容一致，结论（Ⅲ类达标）正确。标准限值引用均与GB3095-2012和GB3838-2002吻合。",
+    "scope_note": "无法核实公报原文具体数值是否与实际发布一致，仅审核报告内部逻辑和标准限值正确性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

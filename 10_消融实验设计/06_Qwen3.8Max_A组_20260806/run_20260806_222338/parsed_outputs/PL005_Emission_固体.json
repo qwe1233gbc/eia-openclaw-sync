@@ -1,0 +1,78 @@
+{
+  "question_id": "PL005_Emission_固体",
+  "group": "A",
+  "project_id": "PL005",
+  "source_json": "PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告列出了固体废物管理依据和危险废物贮存标准，但一般工业固体废物贮存标准缺失GB 18599-2020；各章节固废种类和数量一致。",
+    "evidence": [
+      {
+        "fact": "固体废物标准章节列出一般固废执行《一般固体废物分类与代码》（GB/T39198-2020），危废执行《危险废物贮存污染控制标准》（GB18597-2023）",
+        "source_location": "root[6].content#4400",
+        "source_excerpt": "固体废物管理应遵照《中华人民共和国固体废物污染环境防治法》、《广东省固体废物污染环境防治条例》、《一般固体废物分类与代码》（GB/T39198-2020），固体废物暂存于一般固体废物仓库，仓库应满足防渗漏、防雨淋、防扬尘等要求。（2）危险废物执行《国家危险废物名录》（2021年版）、《危险废物贮存污染控制标准》（GB18597-2023）。"
+      },
+      {
+        "fact": "固废种类包括生活垃圾3t/a、废包装材料0.5t/a、废机油0.05t/a、废机油桶0.006t/a、含油废抹布和手套0.002t/a、废活性炭7.4439t/a",
+        "source_location": "root[9].content#0",
+        "source_excerpt": "序号1生活垃圾3t/a；序号2废包装材料0.5t/a；废机油0.05t/a HW08 900-249-08；废机油桶0.006t/a；含油废抹布和手套0.002t/a HW49 900-041-49；废活性炭7.4439t/a HW49 900-039-49"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "一般工业固废贮存标准是否完整",
+        "result": "fail",
+        "explanation": "报告仅引用GB/T39198-2020（分类代码），未引用《一般工业固体废物贮存和填埋污染控制标准》（GB 18599-2020），该标准是一般工业固废贮存的核心控制标准。"
+      },
+      {
+        "check_name": "危险废物贮存标准是否正确",
+        "result": "pass",
+        "explanation": "GB18597-2023为现行有效版本，替代了GB18597-2001，引用正确。"
+      },
+      {
+        "check_name": "危废类别及代码与名录一致性",
+        "result": "pass",
+        "explanation": "废机油HW08/900-249-08、含油抹布HW49/900-041-49、废活性炭HW49/900-039-49均与《国家危险废物名录》（2021年版）一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "一般工业固体废物贮存缺少《一般工业固体废物贮存和填埋污染控制标准》（GB 18599-2020）的引用"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB18597-2023为现行危废贮存标准，引用正确；GB/T39198-2020为一般固废分类标准，引用正确；但缺少GB 18599-2020（一般工业固废贮存和填埋污染控制标准）。",
+    "references_used": [
+      {
+        "reference_id": "GB 18599-2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "该标准规定了一般工业固体废物贮存设施的选址、设计、运行及封场等污染控制要求，是一般工业固废贮存的核心标准。"
+      },
+      {
+        "reference_id": "GB 18597-2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "2023年修订版替代GB18597-2001，为现行有效的危废贮存标准。"
+      }
+    ],
+    "missing_references": [
+      "《一般工业固体废物贮存和填埋污染控制标准》（GB 18599-2020）"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告固体废物标准选取基本合理，危险废物部分引用《国家危险废物名录》（2021年版）和《危险废物贮存污染控制标准》（GB18597-2023）均正确。但一般工业固体废物部分仅引用了分类标准GB/T39198-2020，缺少核心贮存标准《一般工业固体废物贮存和填埋污染控制标准》（GB 18599-2020）。报告虽描述了'防渗漏、防雨淋、防扬尘'等要求，但未明确引用该标准编号，属于标准条目缺失。",
+    "scope_note": "审核范围限于报告所列固废标准选取的完整性和正确性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

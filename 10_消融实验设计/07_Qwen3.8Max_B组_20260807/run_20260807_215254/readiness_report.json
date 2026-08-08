@@ -1,0 +1,14 @@
+{
+  "group": "B",
+  "description": "LLM + 法规库（有RAG、无Skill）",
+  "ready": true,
+  "model": "qwen3.8-max",
+  "max_output_tokens": 10000,
+  "rows": 21,
+  "run_dir": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\10_消融实验设计\\07_Qwen3.8Max_B组_20260807\\run_20260807_215254",
+  "all_21_completed": true,
+  "all_valid_json": true,
+  "evidence_backcheck_rate": "20/21",
+  "external_verified_rate": "4/21",
+  "ablation_role": "B组（LLM+RAG）用于计算：①RAG增量效应（B vs A）②Skill增量效应（B vs D）"
+}

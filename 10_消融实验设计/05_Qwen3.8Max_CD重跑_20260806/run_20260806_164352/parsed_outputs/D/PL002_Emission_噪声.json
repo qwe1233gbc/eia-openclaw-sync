@@ -1,0 +1,76 @@
+{
+  "question_id": "PL002_Emission_噪声",
+  "group": "D",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "07_review-eia-pollutant-discharge-standards",
+  "audit_category": "噪声排放标准",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告内部各章节对噪声标准的引用一致：均执行GB12348-2008中3类标准，昼间≤65dB(A)、夜间≤55dB(A)。预测值52.24dB(A)低于昼间限值，结论达标。报告明确夜间不生产，但监测计划仍列夜间监测，逻辑上可接受（验证背景值）。",
+    "evidence": [
+      {
+        "fact": "评价标准章节明确执行GB12348-2008中3类标准，昼间≤65dB(A)、夜间≤55dB(A)",
+        "source_location": "root[8].content#4400",
+        "source_excerpt": "噪声排放标准项目厂界外1m执行《工业企业厂界环境噪声排放标准》（GB12348-2008）中的3类标准：昼间≤65dB(A)、夜间≤55dB(A)。"
+      },
+      {
+        "fact": "噪声预测表显示厂界贡献值52.24dB(A)，标准值昼间65、夜间55，判定达标；备注夜间不生产",
+        "source_location": "root[10].content#2200",
+        "source_excerpt": "昼间 厂界四周 92.24 40 52.24 65 55 达标 备注：项目夜间不进行生产活动。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "各章节标准引用一致性",
+        "result": "pass",
+        "explanation": "评价标准、预测分析、监测计划、监督检查清单四处均引用GB12348-2008中3类标准，限值65/55一致。"
+      },
+      {
+        "check_name": "夜间生产与监测计划逻辑",
+        "result": "pass",
+        "explanation": "报告明确夜间不生产，预测仅评价昼间；监测计划列昼间和夜间监测，用于验证背景值，逻辑合理。"
+      },
+      {
+        "check_name": "预测值与达标结论一致性",
+        "result": "pass",
+        "explanation": "贡献值52.24dB(A)＜昼间限值65dB(A)，达标结论正确。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "冻结RAG确认3类声环境功能区定义为'以工业生产、仓储物流为主要功能'的区域，与本项目（改性塑料粒加工，位于顺德西部生态产业区）性质吻合。GB12348-2008适用范围确认覆盖工业企业。但RAG未提供3类具体限值数值，无法从外部核验65/55的准确性。",
+    "references_used": [
+      {
+        "reference_id": "NOISE_FOSHAN_ZONING_2024_P0006",
+        "title": "佛山市声环境功能区划（佛环〔2024〕1号）",
+        "clause_or_table": "3类声环境功能区定义",
+        "supporting_text": "以工业生产、仓储物流为主要功能，需要防止工业噪声对周围环境产生严重影响的区域。"
+      },
+      {
+        "reference_id": "NOISE_GB12348_2008_P0025",
+        "title": "工业企业厂界环境噪声排放标准（GB 12348-2008）",
+        "clause_or_table": "适用范围",
+        "supporting_text": "本标准规定了工业企业和固定设备厂界环境噪声排放限值及其测量方法。本标准适用于工业企业噪声排放的管理、评价及控制。"
+      }
+    ],
+    "missing_references": [
+      "GB12348-2008中3类标准具体限值（昼间/夜间dB(A)数值）未在冻结RAG中提供"
+    ]
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告内部各章节一致执行GB12348-2008中3类标准（昼间≤65dB(A)、夜间≤55dB(A)），预测贡献值52.24dB(A)满足昼间限值，夜间不生产。外部核验方面，冻结RAG确认3类区定义为工业生产、仓储物流功能区，与本项目改性塑料粒加工性质及所在产业园区定位吻合；GB12348-2008适用范围覆盖工业企业。标准选取合理。3类具体限值数值未在RAG中列出，但报告内部引用自洽。",
+    "scope_note": "3类限值65/55的外部数值核验因RAG未提供该具体行而标记为未独立验证，但功能区类别适用性和标准适用性已确认。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "question_id": "PL004_Emission_水污",
+  "group": "B",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告内部废水类型、预处理、排放去向、企业排口标准和尾水标准路径总体一致；但源强表存在数值不一致。",
+    "evidence": [
+      {
+        "fact": "生活污水经三级化粪池预处理，执行DB44/26-2001第二时段三级标准后排至杏坛镇生活污水处理厂，尾水排至顺德支流。",
+        "source_location": "root[7].content#0",
+        "source_excerpt": "生活废水经三级化粪池预处理达到广东省地方标准《水污染物排放限值》（DB44/26-2001）中的第二时段三级标准，即CODcr≤500mg/L，BOD5≤300mg/L，然后通过污水管网排至杏坛镇生活污水处理厂处理，尾水排至顺德支流。"
+      },
+      {
+        "fact": "杏坛镇生活污水处理厂尾水执行GB18918-2002一级A及DB44/26-2001第二时段一级较严值。",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "杏坛镇生活污水处理厂的尾水执行《城镇污水处理厂污染物排放标准》（GB18918-2002）一级A标准及《水污染物排放限值》（DB44/26-2001）第二时段一级标准的较严值。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "废水类型、预处理、排放去向与企业排口标准一致性",
+        "result": "pass",
+        "explanation": "生活污水经三级化粪池处理，执行DB44/26-2001第二时段三级标准；冷却水经沉淀后回用冲厕，再与生活污水一并排入杏坛镇生活污水处理厂，路径前后一致。"
+      },
+      {
+        "check_name": "尾水排放河道与尾水执行标准一致性",
+        "result": "pass",
+        "explanation": "多处均表述尾水排至顺德支流，并执行GB18918-2002一级A及DB44/26-2001第二时段一级较严值，章节间一致。"
+      },
+      {
+        "check_name": "源强核算数值一致性",
+        "result": "fail",
+        "explanation": "表4-9生活污水COD产生量0.0045t/a、排放量0.0040t/a，与按45t/a和250/220mg/L核算的0.0113/0.0099t/a及表4-10不一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "生活污水排放量=生活用水量×排水系数",
+        "inputs": {
+          "生活用水量_m3_a": 50,
+          "排水系数": 0.9
+        },
+        "result": "45",
+        "unit": "m3/a"
+      },
+      {
+        "formula": "COD产生量=COD浓度×废水量/1000000（按1t水≈1m3）",
+        "inputs": {
+          "COD_mg_L": 250,
+          "废水量_t_a": 45
+        },
+        "result": "0.01125，约0.0113",
+        "unit": "t/a"
+      }
+    ],
+    "issues": [
+      "表4-9生活污水COD产生量0.0045t/a、排放量0.0040t/a，与表4-10及按45t/a、250/220mg/L核算结果不一致。",
+      "污水处理厂名称存在杏坛污水处理厂、杏坛镇生活污水处理厂、杏坛生活污水处理厂等表述，建议统一。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "冻结RAG仅能证明DB44/26-2001适用、GB18918标准分级及GB/T18920冲厕用途部分限值；缺少具体限值、接管适用条款及尾水标准与顺德支河的对应依据，无法完成完整核验。",
+    "references_used": [
+      {
+        "reference_id": "WATER_DB44_26_2001",
+        "title": "水污染物排放限值 DB44/26-2001",
+        "clause_or_table": "1 范围",
+        "supporting_text": "本标准适用于广东省境内除船舶、船舶工业、海洋石油开发工业、航天推进剂使用、兵器工业、污水海洋处置工程等行业外的现有单位水污染物的排放管理、建设项目的环境影响评价、建设项目环境保护设施设计、竣工验收及其投产后的排放管理。"
+      },
+      {
+        "reference_id": "WATER_GB18918_2002",
+        "title": "城镇污水处理厂污染物排放标准 GB 18918-2002",
+        "clause_or_table": "4.1.2 标准分级",
+        "supporting_text": "将基本控制项目的常规污染物标准值分为一级标准、二级标准、三级标准。一级标准分为 A 标准和 B 标准。"
+      },
+      {
+        "reference_id": "WATER_GBT18920_2020",
+        "title": "城市污水再生利用 城市杂用水水质 GB/T 18920-2020",
+        "clause_or_table": "表1 城市杂用水水质基本控制项目及限值",
+        "supporting_text": "五日生化需氧量（BOD5）/(mg/L)（≤）：A 10；B 10。氨氮/(mg/L)（≤）：A 5；B 8。"
+      }
+    ],
+    "missing_references": [
+      "DB44/26-2001第二时段三级、一级具体限值及排入城镇污水处理厂适用条款。",
+      "GB18918-2002一级A具体限值及按受纳水体/河道确定尾水标准的条款。",
+      "杏坛镇生活污水处理厂纳污范围、尾水排顺德支流及执行标准的地方管理依据。"
+    ]
+  },
+  "final_answer": {
+    "judgement": "待人工复核",
+    "analysis": "报告内部：生活污水经三级化粪池预处理，执行DB44/26-2001第二时段三级标准后排入杏坛镇生活污水处理厂，尾水排至顺德支流，执行GB18918-2002一级A及DB44/26-2001第二时段一级较严值，标准路径基本一致；冷却水沉淀后回用冲厕再进入污水厂。但表4-9 COD产生/排放量0.0045/0.0040t/a与45t/a、250/220mg/L核算的0.0113/0.0099t/a及表4-10不一致。外部：RAG不足以完整核验接管标准、尾水标准与河道对应关系。",
+    "scope_note": "外部规范核验仅基于冻结RAG；因缺少具体限值及适用条款，未完成完整规范符合性判定。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

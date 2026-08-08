@@ -1,0 +1,14 @@
+{
+  "pdf_files": 155,
+  "status_counter": {
+    "需复核": 142,
+    "需OCR复核": 9,
+    "未匹配md": 2,
+    "PDF表格不可稳定抽取": 2
+  },
+  "checked_rows": 184736,
+  "complete_rows": 162056,
+  "partial_rows": 6349,
+  "missing_rows": 16331,
+  "output_dir": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\解析文本输出_按目录章节_20000token\\大模型拼接_每20个文件_表格清洗增强_20260723\\PDF表格完整性核查_20260723"
+}

@@ -1,0 +1,81 @@
+{
+  "question_id": "PL003_V01_Q01",
+  "group": "D",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "01_manual-audit-national-economic-industry-classification",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告填报C2921塑料薄膜制造与项目产品、原料、工艺一致，行业类别基本合理。",
+    "evidence": [
+      {
+        "fact": "报告填报国民经济行业类别为C2921塑料薄膜制造",
+        "source_location": "root[2].content#0",
+        "source_excerpt": "国民经济行业类别 C2921塑料薄膜制造"
+      },
+      {
+        "fact": "最终产品为塑料薄膜242.368吨/年，用作不锈钢或电子产品保护膜",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "产品方案塑料薄膜242.368 吨/年 参数宽1.5m，厚度0.1mm 产品用途用作不锈钢产品或电子产品的保护膜"
+      },
+      {
+        "fact": "主要原料为PE塑料粒235.872t/a，核心工艺为吹膜",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "PE塑料粒235.872 20 t/a 新料 粒料 袋装，25kg/袋 原料"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "产品与行业名称一致性",
+        "result": "pass",
+        "explanation": "最终产品为塑料薄膜，与C2921塑料薄膜制造名称直接对应"
+      },
+      {
+        "check_name": "原料与工艺匹配性",
+        "result": "pass",
+        "explanation": "PE塑料粒为合成树脂，吹膜为塑料薄膜典型成型工艺，与C292中类定义吻合"
+      },
+      {
+        "check_name": "涂布工序是否改变行业归属",
+        "result": "pass",
+        "explanation": "涂布为薄膜后处理工序，产品仍为塑料薄膜，不改变主行业归属"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "冻结RAG中C292中类定义明确包含吹塑工艺和合成树脂原料，项目特征符合；近邻小类C2922、C2925、C2926均可排除。C2921具体定义未在RAG中提供，但基于上位类和近邻排除，分类方向正确。",
+    "references_used": [
+      {
+        "reference_id": "IND_GBT4754_2017_P0022",
+        "title": "GB/T 4754-2017 C292塑料制品业",
+        "clause_or_table": "中类292定义",
+        "supporting_text": "指以合成树脂（高分子化合物）为主要原料，经采用挤塑、注塑、吹塑、压延、层压等工艺加工成型的各种制品的生产"
+      },
+      {
+        "reference_id": "IND_GBT4754_2017_P0024",
+        "title": "GB/T 4754-2017 C2922塑料板、管、型材制造",
+        "clause_or_table": "小类2922定义",
+        "supporting_text": "指各种塑料板、管及管件、棒材、薄片等生产活动，以及以聚氯乙烯为主要原料，经连续挤出成型的塑料异型材的生产活动"
+      }
+    ],
+    "missing_references": [
+      "C2921塑料薄膜制造的具体小类定义未在冻结RAG中提供"
+    ]
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "项目以PE塑料粒（合成树脂）为原料，经吹膜工艺生产塑料薄膜，涂布保护胶后用作保护膜。C292中类定义明确涵盖以合成树脂为原料、经吹塑等工艺加工成型制品的生产活动。近邻小类C2922（板管型材）、C2925（人造革合成革）、C2926（包装箱容器）均与项目产品形态和用途不符，可排除。报告填报C2921塑料薄膜制造基本合理。",
+    "scope_note": "冻结RAG未包含C2921小类具体定义文本，外部核验基于C292中类定义及近邻排除完成。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

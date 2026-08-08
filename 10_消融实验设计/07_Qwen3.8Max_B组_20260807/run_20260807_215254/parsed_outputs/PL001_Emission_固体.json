@@ -1,0 +1,92 @@
+{
+  "question_id": "PL001_Emission_固体",
+  "group": "B",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "PL001_Emission_固体",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告已识别生活垃圾、一般工业固废和危险废物，并引用危废名录、危废贮存标准及一般工业固废贮存标准，基本覆盖项目固废类型；但控制标准章节未集中列出一般工业固废贮存标准，且引用版本存在时效性待核。",
+    "evidence": [
+      {
+        "fact": "报告在污染物排放控制标准中列明一般工业固废鉴别及危险废物执行标准。",
+        "source_location": "root[3].content#17600",
+        "source_excerpt": "一般工业固体废物参照《一般固体废物分类及代码》（GB/T39198-2020）进行鉴别，危险废物执行《国家危险废物名录》（2021版）以及《危险废物贮存污染控制标准》（GB18597-2023）。"
+      },
+      {
+        "fact": "报告在固废措施中补充一般固废暂存间应满足GB18599-2020。",
+        "source_location": "root[6].content#0",
+        "source_excerpt": "一般固废暂存间的建设应满足《广东省固体废物污染环境防治条例》、《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）相关要求"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "固废类型与控制标准匹配性",
+        "result": "pass",
+        "explanation": "项目产生生活垃圾、一般工业固废和危险废物，报告分别提出环卫处置、一般固废暂存和危废贮存管理要求。"
+      },
+      {
+        "check_name": "一般工业固废标准引用完整性",
+        "result": "fail",
+        "explanation": "污染物排放控制标准章节仅列GB/T39198-2020鉴别标准，未集中列出GB18599-2020贮存污染控制标准。"
+      },
+      {
+        "check_name": "危险废物标准与危废清单一致性",
+        "result": "pass",
+        "explanation": "废化学包装桶、废机油、废含油桶罐、含油废抹布、废活性炭均按危废管理，并引用GB18597-2023。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "一般工业固体废物贮存污染控制标准GB18599-2020未在污染物排放控制标准章节集中列出。",
+      "报告引用GB34330-2017和2021版危废名录，需结合冻结RAG中2025版标准/名录复核时效性。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "insufficient_reference",
+    "conclusion": "冻结RAG可支持危废贮存适用GB18597-2023、一般工业固废贮存适用GB18599-2020，并可支持固废鉴别通则及危废名录管理要求；但RAG未提供2025版标准/名录实施日期或替代关系，无法完全判定报告引用2017版鉴别通则和2021版名录是否仍有效。",
+    "references_used": [
+      {
+        "reference_id": "SOLID_GB18597_2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "1 适用范围",
+        "supporting_text": "本标准规 定了 危险 废物 贮存 污染 控制 的总 体要 求"
+      },
+      {
+        "reference_id": "SOLID_GB18599_2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "前言",
+        "supporting_text": "本标准规定了一般工业固体废物贮存场、 填埋场的选址、 建设、运行、封场、 土地复垦等过程的环境保护要求"
+      },
+      {
+        "reference_id": "SOLID_GB34330_2025",
+        "title": "固体废物鉴别标准 通则",
+        "clause_or_table": "1 适用范围",
+        "supporting_text": "本标准适用于物质（或材料）和物品（包括产品、商品）（以下简称物质）的固体废物鉴别。"
+      },
+      {
+        "reference_id": "SOLID_HW2025_CURRENT",
+        "title": "国家危险废物名录（2025年版）",
+        "clause_or_table": "1 生活垃圾中的危险废物",
+        "supporting_text": "废矿物油及其包装物"
+      }
+    ],
+    "missing_references": [
+      "RAG未提供GB34330-2025实施日期及替代GB34330-2017的明确条款。",
+      "RAG未提供国家危险废物名录（2025年版）实施日期及替代2021版的明确条款。"
+    ]
+  },
+  "final_answer": {
+    "judgement": "待人工复核",
+    "analysis": "报告已覆盖生活垃圾、一般工业固废和危险废物管理要求，并引用GB18599-2020、GB18597-2023、2021版危废名录、GB/T39198-2020及GB34330-2017，标准类型基本匹配。问题在于控制标准章节未集中列出GB18599-2020；且RAG显示存在GB34330-2025和2025版危废名录，报告未说明版本适用性，需人工复核时效性。",
+    "scope_note": "外部规范核验仅依据冻结RAG，未使用RAG之外的法规知识。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

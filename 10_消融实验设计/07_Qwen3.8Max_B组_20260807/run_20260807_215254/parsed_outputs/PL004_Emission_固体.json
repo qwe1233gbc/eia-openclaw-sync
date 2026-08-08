@@ -1,0 +1,93 @@
+{
+  "question_id": "PL004_Emission_固体",
+  "group": "B",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "PL004_Emission_固体",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告已列出固废法、广东条例、GB34330-2017、GB/T39198-2020、2021版危废名录和GB18597-2023；危废贮存标准与项目危废类型基本匹配。但一般工业固废贮存控制标准GB18599-2020未在标准章节完整列出，且后文标准名称出现错误。",
+    "evidence": [
+      {
+        "fact": "标准章节将一般工业固废指向GB/T39198-2020分类代码，危废执行2021版名录和GB18597-2023。",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "一般工业固体废物参照《一般固体废物分类及代码》（GB/T39198-2020）进行鉴别，危险废物执行《国家危险废物名录》（2021版）以及《危险废物贮存污染控制标准》（GB18597-2023）。"
+      },
+      {
+        "fact": "措施部分提出一般固废暂存间满足GB18599-2020，但同时出现“污染物控制标准”名称。",
+        "source_location": "root[8].content#0",
+        "source_excerpt": "一般固废暂存间的建设应满足《广东省固体废物污染环境防治条例》、《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）以及《一般工业固体废物贮存和填埋污染物控制标准》（GB18599-2020）相关要求"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "一般工业固废贮存标准条目完整性",
+        "result": "fail",
+        "explanation": "标准章节仅列GB/T39198-2020分类代码，未将GB18599-2020作为一般工业固废贮存污染控制标准列出；措施部分才出现该标准，标准选取章节不完整。"
+      },
+      {
+        "check_name": "危险废物贮存标准匹配性",
+        "result": "pass",
+        "explanation": "项目产生废机油、废活性炭、废油包装桶、含油废抹布等危险废物，报告列出GB18597-2023并设置危废暂存间，标准选取与危废类型匹配。"
+      },
+      {
+        "check_name": "标准名称一致性",
+        "result": "fail",
+        "explanation": "同一GB18599-2020在报告中分别写为“污染控制标准”和“污染物控制标准”，标准名称不一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "一般工业固体废物贮存控制标准GB18599-2020未在固体废物污染控制标准章节明确列出。",
+      "GB18599-2020标准名称被误写为《一般工业固体废物贮存和填埋污染物控制标准》。",
+      "报告引用《国家危险废物名录》（2021版）和GB34330-2017，需核实现行有效版本。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "insufficient_reference",
+    "conclusion": "冻结RAG可支持GB18599-2020适用于一般工业固废贮存、GB18597-2023适用于危废贮存。RAG同时显示存在2025版危废名录和GB34330-2025，但缺少实施日期及替代关系条款，无法直接判定报告引用的2021版名录和2017版通则是否仍适用。",
+    "references_used": [
+      {
+        "reference_id": "SOLID_GB18599_2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "前言",
+        "supporting_text": "修改标准名称为《一般工业固体废物贮存和填埋污染控制标准》；"
+      },
+      {
+        "reference_id": "SOLID_GB18597_2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "1 适用范围",
+        "supporting_text": "本标 准适 用于 产生 、收集 、贮存 、利用 、处置 危险 废物 的单 位"
+      },
+      {
+        "reference_id": "SOLID_HW2025_CURRENT",
+        "title": "国家危险废物名录（2025年版）",
+        "clause_or_table": "标题",
+        "supporting_text": "国家危险废物名录（2025年版）｜生态环境部令第36号"
+      },
+      {
+        "reference_id": "SOLID_GB34330_2025",
+        "title": "固体废物鉴别标准 通则",
+        "clause_or_table": "标题",
+        "supporting_text": "固体废物鉴别标准 通则｜GB 34330-2025"
+      }
+    ],
+    "missing_references": [
+      "缺少2025版国家危险废物名录实施日期及是否替代2021版的明确条款。",
+      "缺少GB34330-2025实施日期及是否替代GB34330-2017的明确条款。"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告固废标准章节列明固废法、广东条例、GB34330-2017、GB/T39198-2020、2021版危废名录、GB18597-2023；危废贮存标准与废机油、废活性炭等危废管理匹配。问题：一般工业固废贮存仅在措施部分提出GB18599-2020，标准章节未作为执行标准列出，且将名称误写为“污染物控制标准”。外部RAG可证GB18599-2020、GB18597-2023适用，但显示存在2025版危废名录和GB34330-2025，报告仍引用2021版和2017版，需核实现行版本。",
+    "scope_note": "内部审核基于报告文本；外部审核仅依据冻结RAG，未使用RAG之外法规知识。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

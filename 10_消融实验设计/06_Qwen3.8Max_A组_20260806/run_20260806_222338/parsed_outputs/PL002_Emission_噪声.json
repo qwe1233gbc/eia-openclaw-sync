@@ -1,0 +1,80 @@
+{
+  "question_id": "PL002_Emission_噪声",
+  "group": "A",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "",
+  "audit_category": "噪声排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告整体选取GB12348-2008中3类标准（昼间≤65dB(A)、夜间≤55dB(A)），与项目位于顺德西部生态产业区（工业区）的声功能区划一致，各章节限值引用一致。但在噪声达标分析段落中误引《声环境质量标准》（GB3096-2008）作为厂界排放达标依据，属标准名称引用错误。",
+    "evidence": [
+      {
+        "fact": "报告明确厂界执行GB12348-2008中3类标准，昼间≤65dB(A)、夜间≤55dB(A)",
+        "source_location": "root[8].content#4400",
+        "source_excerpt": "项目厂界外1m执行《工业企业厂界环境噪声排放标准》（GB12348-2008）中的3类标准：昼间≤65dB(A)、夜间≤55dB(A)。"
+      },
+      {
+        "fact": "噪声达标分析段落误引GB3096-2008作为厂界排放达标标准",
+        "source_location": "root[10].content#2200",
+        "source_excerpt": "能使项目厂界噪声达到《声环境质量标准》（GB3096-2008）3类标准，即昼间≤65dB(A)"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "声功能区类别与标准类别匹配性",
+        "result": "pass",
+        "explanation": "项目位于顺德西部生态产业区（工业区），对应声环境3类功能区，执行GB12348-2008中3类标准合理。"
+      },
+      {
+        "check_name": "各章节噪声限值一致性",
+        "result": "pass",
+        "explanation": "root[5]、root[8]、root[10]、root[12]中均统一引用3类标准昼间65dB(A)、夜间55dB(A)，数值一致。"
+      },
+      {
+        "check_name": "标准名称引用正确性",
+        "result": "fail",
+        "explanation": "root[10]噪声达标分析中将厂界排放达标依据误写为《声环境质量标准》（GB3096-2008），应为《工业企业厂界环境噪声排放标准》（GB12348-2008）。GB3096为环境质量标准，非排放标准。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "厂界贡献值 = 噪声源强 - 隔声衰减值",
+        "inputs": {
+          "噪声源强": 92.24,
+          "隔声衰减值": 40
+        },
+        "result": "52.24 < 65（昼间限值），达标",
+        "unit": "dB(A)"
+      }
+    ],
+    "issues": [
+      "噪声达标分析段落误引《声环境质量标准》（GB3096-2008）作为厂界排放达标判据，应更正为GB12348-2008。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB12348-2008中3类标准限值确为昼间≤65dB(A)、夜间≤55dB(A)，适用于工业生产为主的区域。项目位于顺德西部生态产业区，属工业区，选取3类标准正确。",
+    "references_used": [
+      {
+        "reference_id": "GB12348-2008",
+        "title": "工业企业厂界环境噪声排放标准",
+        "clause_or_table": "表1 厂界环境噪声排放限值",
+        "supporting_text": "3类：昼间65dB(A)，夜间55dB(A)，适用于工业生产为主的区域。"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "项目位于顺德西部生态产业区（工业区），声环境功能区为3类区，厂界噪声执行GB12348-2008中3类标准（昼间≤65dB(A)、夜间≤55dB(A)）选取正确，各章节限值一致，预测贡献值52.24dB(A)满足昼间限值。但报告在噪声影响达标分析段落中将达标判据误写为《声环境质量标准》（GB3096-2008），该标准为环境质量标准而非排放标准，属引用错误，应更正为GB12348-2008。",
+    "scope_note": "声功能区划图（附图9）未提供具体内容，功能区类别依据报告文字描述及项目所在工业园区性质判定。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

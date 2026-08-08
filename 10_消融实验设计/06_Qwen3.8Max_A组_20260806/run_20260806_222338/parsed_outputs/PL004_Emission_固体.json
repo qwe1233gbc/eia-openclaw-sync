@@ -1,0 +1,77 @@
+{
+  "question_id": "PL004_Emission_固体",
+  "group": "A",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告列出了固废相关标准，但存在两处内部问题：①次品废物代码在正文与汇总表中不一致（正文为292-009-16，表格为292-009-06）；②root[8]中GB18599-2020标准名称重复出现且第二次名称有误（多了一个'物'字）。",
+    "evidence": [
+      {
+        "fact": "正文中次品废物代码为292-009-16，但固废汇总表中次品废物代码为292-009-06",
+        "source_location": "root[7].content#4400 vs root[7].content#13200",
+        "source_excerpt": "其次品产生量约为原料量的5%，即次品产生量为36t/a，其废物代码为292-009-16，回用于生产过程。"
+      },
+      {
+        "fact": "报告在固废标准段落中列出GB34330-2017、GB/T39198-2020、GB18599-2020、GB18597-2023及国家危险废物名录(2021版)",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "一般工业固体废物参照《一般固体废物分类及代码》（GB/T39198-2020）进行鉴别，危险废物执行《国家危险废物名录》（2021版）以及《危险废物贮存污染控制标准》（GB18597-2023）。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "次品废物代码一致性",
+        "result": "fail",
+        "explanation": "正文写292-009-16，表4-20写292-009-06，两处矛盾。根据GB/T39198-2020，废塑料制品代码应为292-009-06，正文中292-009-16疑为笔误。"
+      },
+      {
+        "check_name": "GB18599-2020标准名称准确性",
+        "result": "fail",
+        "explanation": "root[8]中同一标准出现两次，第二次名称为'一般工业固体废物贮存和填埋污染物控制标准'，多了一个'物'字，属笔误。"
+      },
+      {
+        "check_name": "标准体系完整性",
+        "result": "pass",
+        "explanation": "报告涵盖了鉴别(GB34330)、分类(GB/T39198)、一般固废贮存(GB18599)、危废名录及危废贮存(GB18597)等核心标准，体系基本完整。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "次品废物代码正文(292-009-16)与表格(292-009-06)不一致",
+      "GB18599-2020标准名称在root[8]中重复且第二次有误"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "报告引用的标准名称和编号均真实存在且适用：GB34330-2017为固废鉴别通则，GB/T39198-2020为一般固废分类代码，GB18599-2020为一般工业固废贮存和填埋污染控制标准，GB18597-2023为危险废物贮存污染控制标准（2023年修订版），国家危险废物名录(2021版)均正确。未引用《危险废物管理计划和管理台账制定技术导则》(HJ1259-2022)，但报告正文已涉及台账管理要求，影响不大。",
+    "references_used": [
+      {
+        "reference_id": "GB18597-2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "2023年修订发布，替代GB18597-2001，报告引用版本正确"
+      },
+      {
+        "reference_id": "GB18599-2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "2020年发布，替代GB18599-2001，报告引用版本正确"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "报告固废标准选取总体合理，涵盖了一般固废鉴别(GB34330-2017)、分类(GB/T39198-2020)、贮存(GB18599-2020)及危废名录(2021版)、危废贮存(GB18597-2023)等核心标准。但存在两处内部瑕疵：①次品废物代码正文与汇总表不一致（292-009-16 vs 292-009-06）；②GB18599-2020在环保措施章节重复出现且第二次名称多一'物'字。建议统一修正。",
+    "scope_note": "审核基于报告提供的上下文，未涉及现场核实。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

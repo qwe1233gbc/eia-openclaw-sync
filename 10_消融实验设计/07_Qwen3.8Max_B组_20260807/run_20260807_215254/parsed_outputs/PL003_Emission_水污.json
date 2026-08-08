@@ -1,0 +1,107 @@
+{
+  "question_id": "PL003_Emission_水污",
+  "group": "B",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "Emission_水污",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告内部存在生活污水量、污水站名称和冷却废水石油类限值不一致问题，标准选取链条需复核。",
+    "evidence": [
+      {
+        "fact": "生活污水经三级化粪池预处理执行DB44/26-2001第二时段三级标准，排入杏坛镇吉祐村红砖厂农村生活污水处理站。",
+        "source_location": "root[6].content#4400",
+        "source_excerpt": "项目运营期间产生的生活废水经三级化粪池处理，处理后的废水执行广东省地方标准《水污染物排放限值》（DB44/26-2001）第二时段三级标准，后排入杏坛镇吉祐村红砖厂农村生活污水处理站处理"
+      },
+      {
+        "fact": "报告一处给出生活污水排放量约360m3/a，与其他章节90m3/a不一致。",
+        "source_location": "root[5].content#4400",
+        "source_excerpt": "生活污水排放量约为360m3/a，项目生活污水经三级化粪池预处理后达到广东省《水污染物排放限值》（DB44/26-2001）第二时段三级标准后排入杏坛镇吉祐村红砖厂农村生活污水处理站处理"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "排放标准链条一致性",
+        "result": "pass",
+        "explanation": "生活污水三级化粪池→DB44/26-2001第二时段三级→红砖厂农村生活污水处理站→砖厂涌→顺德支流→GB18918一级B主线基本存在。"
+      },
+      {
+        "check_name": "生活污水量一致性",
+        "result": "fail",
+        "explanation": "生活用水100m3/a，按0.9系数应为90m3/a；报告一处360m3/a，与水平衡及总排水量不符。"
+      },
+      {
+        "check_name": "冷却废水限值一致性",
+        "result": "fail",
+        "explanation": "冷却废水石油类限值在表3-6为≤20mg/L，在表4-15相关限值处出现30mg/L，内部不一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "生活污水排放量=生活用水量×排污系数",
+        "inputs": {
+          "生活用水量_m3_a": 100,
+          "排污系数": 0.9
+        },
+        "result": "90",
+        "unit": "m3/a"
+      },
+      {
+        "formula": "总废水排放量=生活污水+冷却废水",
+        "inputs": {
+          "生活污水_m3_a": 90,
+          "冷却废水_m3_a": 2.4
+        },
+        "result": "92.4",
+        "unit": "m3/a"
+      }
+    ],
+    "issues": [
+      "生活污水排放量360m3/a与90m3/a及计算结果不一致。",
+      "污水站名称存在红砖厂农村生活污水处理站与吉祐村分散式农村污水处理站表述不一致。",
+      "冷却废水石油类排放限值20mg/L与30mg/L不一致。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "冻结RAG仅能支持DB44/26-2001适用性及GB18918分级框架，缺少具体限值和适用条件，无法判定标准选取完全合理。",
+    "references_used": [
+      {
+        "reference_id": "WATER_DB44_26_2001",
+        "title": "水污染物排放限值",
+        "clause_or_table": "范围",
+        "supporting_text": "本标准适用于广东省境内除船舶、船舶工业、海洋石油开发工业、航天推进剂使用、兵器工业、污水海洋处置工程等行业外的现有单位水污染物的排放管理"
+      },
+      {
+        "reference_id": "WATER_GB18918_2002",
+        "title": "城镇污水处理厂污染物排放标准",
+        "clause_or_table": "前言",
+        "supporting_text": "排入城镇污水处理厂的工业废水和医院污水，应达到 GB8978《污水综合排放标准》、相关行业的国家排放标准、地方排放标准的相应规定限值及地方总量控制的要求。"
+      },
+      {
+        "reference_id": "WATER_GB18918_2002",
+        "title": "城镇污水处理厂污染物排放标准",
+        "clause_or_table": "4.1.2",
+        "supporting_text": "一级标准分为 A标准和 B 标准。"
+      }
+    ],
+    "missing_references": [
+      "DB44/26-2001第二时段三级标准具体限值及排入污水处理厂适用条款。",
+      "GB18918-2002一级B标准限值及与受纳水体环境功能对应条款。",
+      "农村分散式生活污水处理站是否按城镇污水处理厂执行GB18918的明确条款。"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告内部主线为生活污水经三级化粪池预处理达DB44/26-2001第二时段三级后，排入杏坛镇吉祐村红砖厂农村生活污水处理站，尾水经砖厂涌汇入顺德支流，尾水执行GB18918-2002一级B。该链条在标准章节和措施章节基本对应。但内部存在明显不一致：生活污水量一处为360m3/a，与100m3/a用水及0.9系数推算的90m3/a、水平衡90m3/a不符；污水站名称有“红砖厂”与“分散式”表述差异；冷却废水石油类限值出现20mg/L与30mg/L不一致。冻结RAG仅能支持DB44/26-2001适用性和排入污水处理厂应满足地方限值，缺少第二时段三级、一级B具体限值及适用条件，无法完成外部一致性判定。",
+    "scope_note": "外部审核仅基于冻结RAG；因缺少标准限值和适用条款，外部核验标注为证据不足。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

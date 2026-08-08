@@ -1,0 +1,4 @@
+interface:
+  display_name: "环评排放标准知识检索"
+  short_description: "结构化整理并按地区行业工艺污染物和排放形式检索标准依据"
+  default_prompt: "Use $retrieve-eia-discharge-standard-knowledge to 为这份环评检索适用的污染物排放标准知识。"

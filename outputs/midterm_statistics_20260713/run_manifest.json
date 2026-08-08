@@ -1,0 +1,49 @@
+{
+  "run_time": "2026-07-13T12:36:32",
+  "git_commit": "a7e11906a5e95e7f43c2825c3585d2dc1c33d683",
+  "git_branch": "codex/update-readme-research-direction",
+  "github_scanned_dirs": [
+    "00_先看这里_README",
+    "01_塑胶指南原文与适用范围",
+    "02_适用行业与样本筛选",
+    "03_指南解析_明文标准库",
+    "06_Dify工作流",
+    "08_进度与缺口报告",
+    "09_环评审核技能库",
+    "12_论文借鉴_Chen2026_TianGong",
+    "13_数据准备_简化版",
+    "outputs"
+  ],
+  "local_scanned_dirs": [
+    "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026",
+    "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\outputs\\midterm_basic_statistics"
+  ],
+  "used_files": [
+    "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\seed_qa_942题_151项目_phase1+phase2合并_sample_chain_95_20260706.xlsx",
+    "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\seed_qa_942题_151项目_phase1+phase2合并.xlsx",
+    "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\03_指南解析_明文标准库\\plastic_guide_standard_library_v4_skill_aligned_pilot.jsonl",
+    "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\09_环评审核技能库\\skill_registry.yaml",
+    "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\outputs\\midterm_basic_statistics\\project_process_matrix.csv",
+    "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\outputs\\midterm_basic_statistics\\process_statistics.csv"
+  ],
+  "excluded_files": [
+    "backup QA workbooks",
+    "old v3 standard library",
+    "Dify candidate entries",
+    "sample chain folders as formal sample-chain statistics"
+  ],
+  "project_count": 151,
+  "knowledge_count": 124,
+  "single_skill_count": 15,
+  "controller_skill_count": 1,
+  "qa_count": 1037,
+  "abnormal_files": [
+    "local untracked files exist; not modified"
+  ],
+  "unparsed_files": [],
+  "version_conflict_files": [
+    "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\seed_qa_942题_151项目_phase1+phase2合并.xlsx",
+    "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\seed_qa_942题_151项目_phase1+phase2合并_sample_chain_95_20260706.xlsx"
+  ],
+  "script_version": "midterm_statistics_package_20260713_v1"
+}

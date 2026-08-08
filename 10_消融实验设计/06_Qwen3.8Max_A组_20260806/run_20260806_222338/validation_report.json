@@ -1,0 +1,18 @@
+{
+  "group": "A",
+  "rows": 21,
+  "valid_json": 21,
+  "metrics": {
+    "determinate_internal": 1,
+    "full_validation": 20,
+    "partial_internal": 0,
+    "insufficient_report": 0,
+    "whole_task_abstention": 0,
+    "evidence_backcheck": 18,
+    "manual_review": 1,
+    "external_verified": 20,
+    "external_not_performed": 0
+  },
+  "manual_review_queue": 4,
+  "failed_tasks": []
+}

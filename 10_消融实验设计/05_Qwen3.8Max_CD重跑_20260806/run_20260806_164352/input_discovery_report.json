@@ -1,0 +1,8 @@
+{
+  "selected_question_workbook": "E:\\浏览器下载内容\\21题问答对相关Skill_GPT完整性审查包_20260806\\21题问答对相关Skill审查包\\21题问答对_Skill对应与完善审查清单.xlsx",
+  "question_count": 21,
+  "selection_reason": "指定搜索范围内优先文件名，含所需字段且21个唯一Question ID；只读取Question ID、审核类别、项目名称、问题、主Skill，未读取金标列。",
+  "json_mapping_workbook": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\05_QA测试集\\人工核查_环评报告出处整理_20260715\\问答对涉及项目_JSON汇总_20260803\\00_JSON文件对应清单.xlsx",
+  "rag_snapshot": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-rag-skill-refactor-20260804\\10_消融实验设计\\02_RAG冻结快照\\rag_contexts_frozen.jsonl",
+  "rag_is_external_existing_snapshot": true
+}

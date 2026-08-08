@@ -1,0 +1,8 @@
+{
+  "group": "A",
+  "ready": true,
+  "model": "qwen3.8-max",
+  "max_output_tokens": 10000,
+  "rows": 21,
+  "run_dir": "E:\\华南理工项目\\环评文件汇总\\01_GitHub项目与研究文档\\eia-openclaw-sync-chen2026\\10_消融实验设计\\06_Qwen3.8Max_A组_20260806\\run_20260806_222338"
+}

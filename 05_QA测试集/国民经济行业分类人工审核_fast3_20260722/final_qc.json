@@ -1,0 +1,22 @@
+{
+  "actual_report_versions": 157,
+  "jsonl_records": 157,
+  "summary_data_rows": 157,
+  "marked_files": 157,
+  "format_bad_count": 0,
+  "manual_nonblank_count": 0,
+  "open_bad_count": 0,
+  "seed_changed_answer_rows": 153,
+  "zip_has_required": [
+    true,
+    true,
+    true
+  ],
+  "conclusion_counts": {
+    "需复核": 136,
+    "正确": 21
+  },
+  "highlight_degraded_count": 17,
+  "sample_open_bad": [],
+  "sample_format_bad": []
+}

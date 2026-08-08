@@ -1,0 +1,1684 @@
+{
+  "question_id": "PL001_Emission_固体",
+  "group": "A",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告列出了固废鉴别、分类、贮存及危废名录等标准，与项目产生的固废类型（一般工业固废废包装材料、5类危险废物）基本对应，内部一致性良好。",
+    "evidence": [
+      {
+        "fact": "报告标准章节列明固废执行标准包括GB34330-2017、GB/T39198-2020、国家危险废物名录(2021版)、GB18597-2023",
+        "source_location": "root[3].content#17600",
+        "source_excerpt": "一般工业固体废物参照《一般固体废物分类及代码》（GB/T39198-2020）进行鉴别，危险废物执行《国家危险废物名录》（2021版）以及《危险废物贮存污染控制标准》（GB18597-2023）。"
+      },
+      {
+        "fact": "环保措施章节补充引用了一般工业固废贮存标准GB18599-2020",
+        "source_location": "root[6].content#0",
+        "source_excerpt": "一般固废暂存间的建设应满足《广东省固体废物污染环境防治条例》、《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）相关要求"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "一般工业固废贮存标准是否引用",
+        "result": "pass",
+        "explanation": "GB18599-2020在环保措施章节（root[6].content#0）中明确引用，与废包装材料暂存需求匹配。"
+      },
+      {
+        "check_name": "危险废物贮存标准版本是否正确",
+        "result": "pass",
+        "explanation": "报告引用GB18597-2023并注明执行日期2023年7月1日，为现行有效版本。"
+      },
+      {
+        "check_name": "危废类别与废物代码对应性",
+        "result": "pass",
+        "explanation": "废化学包装桶900-041-49、废机油900-214-08、废含油桶罐900-249-08、含油废抹布900-041-49、废活性炭900-039-49均与2021版名录一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "报告引用的固废标准名称及编号均正确且现行有效。GB18599-2020、GB18597-2023、GB34330-2017、GB/T39198-2020及国家危险废物名录(2021版)均为适用标准。未缺少关键标准条目。",
+    "references_used": [
+      {
+        "reference_id": "GB18599-2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "适用于一般工业固体废物贮存设施的建设和运行管理"
+      },
+      {
+        "reference_id": "GB18597-2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "全文，2023年7月1日实施",
+        "supporting_text": "替代GB18597-2001，适用于危险废物贮存设施"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告固废标准选取合理完整：一般工业固废鉴别引用GB34330-2017，分类引用GB/T39198-2020，贮存引用GB18599-2020；危险废物鉴别引用《国家危险废物名录》(2021版)，贮存引用GB18597-2023。各标准编号正确、版本现行有效，与项目产生的废包装材料（一般固废）及5类危险废物（废化学包装桶、废机油、废含油桶罐、含油废抹布、废活性炭）的管理需求相匹配，未发现缺少必要标准条目。",
+    "scope_note": "报告标准章节与环保措施章节分别引用了不同层级的固废标准，整体覆盖完整。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL001_EnvQuality_Q01",
+  "group": "A",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "EnvQuality",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "大气环境质量表3-1存在年份标注与变化率符号错误；地表水部分存在河涌名称前后不一致问题。",
+    "evidence": [
+      {
+        "fact": "表3-1标题为'2022年顺德区…年度比较'，但浓度均值列标注为2020和2021年，与2022年度公报不符",
+        "source_location": "root[3].content#11000",
+        "source_excerpt": "表3-1 2022年顺德区（国控测点）环境空气污染物浓度水平年度比较…浓度均值…2020…2021…标准值/…变化（%）"
+      },
+      {
+        "fact": "正文称'新涌大河'达标，但表3-2标题及表格内容使用'东海大河'名称，前后不一致",
+        "source_location": "root[3].content#11000",
+        "source_excerpt": "新涌大河环境质量达标情况如下表所示。表3-2 2021年1-12月市控考核断面水质情况（东海大河）河涌断面…东海大河ⅤⅤ0达标"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "表3-1数据年份与公报年份一致性",
+        "result": "fail",
+        "explanation": "报告引用佛环顺函〔2023〕26号（2022年度公报），但表3-1浓度列标注为2020和2021年，应为2021和2022年数据，存在年份错配。"
+      },
+      {
+        "check_name": "PM10和PM2.5变化率符号",
+        "result": "fail",
+        "explanation": "PM10从42降至32，变化率应为-23.8%；PM2.5从22降至19，应为-13.6%。报告均标注为正值，符号错误。"
+      },
+      {
+        "check_name": "地表水河涌名称一致性",
+        "result": "fail",
+        "explanation": "正文多处使用'新涌大河'，但表3-2标题及表格中使用'东海大河'，名称不统一，可能为同一水体但表述混乱。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "PM10变化率=(2021值-2020值)/2020值×100%",
+        "inputs": {
+          "2020": 42,
+          "2021": 32
+        },
+        "result": "-23.8%（报告标注为+23.8%，符号错误）",
+        "unit": "%"
+      },
+      {
+        "formula": "PM2.5变化率=(2021值-2020值)/2020值×100%",
+        "inputs": {
+          "2020": 22,
+          "2021": 19
+        },
+        "result": "-13.6%（报告标注为+13.6%，符号错误）",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "表3-1年份列标注为2020/2021，与所引2022年度公报不匹配，疑似直接复制旧版数据未更新",
+      "PM10和PM2.5变化率符号错误（应为负值表示改善）",
+      "新涌大河与东海大河名称混用"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB3095-2012二级标准限值引用正确；GB3838-2002水功能区划类别引用合理；但无法核实佛环顺函〔2023〕26号公报中具体数值是否与报告一致。",
+    "references_used": [
+      {
+        "reference_id": "GB3095-2012",
+        "title": "环境空气质量标准",
+        "clause_or_table": "表1 二级标准",
+        "supporting_text": "SO2年均60、NO2年均40、PM10年均70、PM2.5年均35、O3-8h-90%为160、CO-24h-95%为4 mg/m³，报告引用均正确"
+      },
+      {
+        "reference_id": "GB3838-2002",
+        "title": "地表水环境质量标准",
+        "clause_or_table": "表1 Ⅲ类及Ⅴ类标准",
+        "supporting_text": "顺德支流执行Ⅲ类、新涌大河执行Ⅴ类，与顺德区水环境功能区划一致"
+      }
+    ],
+    "missing_references": [
+      "无法获取佛环顺函〔2023〕26号原文，无法逐项核实公报中具体浓度数值"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告大气环境质量数据引用存在三处问题：①表3-1标题为2022年度比较，但数据列标注为2020/2021年，与所引2022年度公报（佛环顺函〔2023〕26号）不匹配，疑似沿用旧数据未更新；②PM10变化率应为-23.8%、PM2.5应为-13.6%，报告均误标为正值；③地表水部分正文使用'新涌大河'而表格使用'东海大河'，名称不统一。标准限值（GB3095-2012二级、GB3838-2002Ⅲ/Ⅴ类）引用本身正确。",
+    "scope_note": "因无法获取公报原文，具体浓度数值（如SO2=6μg/m³等）无法与原始公报逐项比对，仅能判断内部逻辑一致性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}
+{
+  "question_id": "PL001_V01_Q01",
+  "group": "A",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告将项目行业类别定为C2223加工纸制造及C2921塑料薄膜制造，与产品（保护纸、保护膜）、原辅材料（牛皮纸、PE原膜、水性胶）及工艺（涂布上胶、复合、熟化）基本对应，内部逻辑一致。",
+    "evidence": [
+      {
+        "fact": "报告明确项目行业类别为C2223加工纸制造及C2921塑料薄膜制造",
+        "source_location": "root[1].content#4400",
+        "source_excerpt": "本项目属于C2223加工纸制造及C2921塑料薄膜制造。"
+      },
+      {
+        "fact": "产品为保护纸（牛皮纸涂胶）和保护膜（PE膜涂胶），工艺为胶水调配、上胶、复合、熟化",
+        "source_location": "root[3].content#0",
+        "source_excerpt": "主要从事纸制品制造，年产保护纸400万米、保护膜200万米。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "产品与行业代码对应性",
+        "result": "pass",
+        "explanation": "保护纸为牛皮纸涂布加工，对应C2223加工纸制造；保护膜为PE膜涂胶复合，对应C2921塑料薄膜制造，分类基本合理。"
+      },
+      {
+        "check_name": "环评分类管理名录与行业代码一致性",
+        "result": "pass",
+        "explanation": "报告引用名录中'造纸222*有涂布、浸渍、印刷、粘胶工艺的加工纸制造'及'塑料制品业292-其他'，与C2223和C2921对应。"
+      },
+      {
+        "check_name": "产业政策符合性分析中行业代码引用一致性",
+        "result": "pass",
+        "explanation": "产业政策分析部分同样引用C2223及C2921，与全文一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "依据GB/T 4754-2017，C2223加工纸制造涵盖对纸张进行涂布、浸渍等加工；C2921塑料薄膜制造涵盖塑料薄膜的生产及涂覆加工。本项目在牛皮纸上涂胶属加工纸制造，在PE膜上涂胶复合归入塑料薄膜制造在实务中可接受。",
+    "references_used": [
+      {
+        "reference_id": "GB/T 4754-2017",
+        "title": "国民经济行业分类",
+        "clause_or_table": "C2223加工纸制造；C2921塑料薄膜制造",
+        "supporting_text": "C2223指对纸张进行涂布、浸渍、印刷、粘胶等加工；C2921指用于包装、农业等方面的塑料薄膜制造。"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "项目产品为保护纸（牛皮纸涂水性胶）和保护膜（PE膜涂胶复合），核心工艺为涂布上胶、复合、熟化。C2223加工纸制造覆盖纸张涂布加工，C2921塑料薄膜制造在实务中涵盖对塑料薄膜的涂覆复合加工。报告全文行业代码引用一致，与环评分类管理名录对应正确，行业分类基本合理。",
+    "scope_note": "C2921严格定义为塑料薄膜'制造'，本项目为外购PE膜涂胶，部分审核人员可能认为应归入C2929其他塑料制品制造，但当前分类在环评实务中普遍接受。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL002_Emission_大气",
+  "group": "A",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "PL002_Emission_大气",
+  "audit_category": "大气污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "标准选取总体合理，但报告内部存在限值不一致问题：表3-3中NMHC有组织排放限值为60mg/m³（GB31572-2015表5特别排放限值），而表4-7监测计划中同一排气筒G1的NMHC限值却写为100mg/m³（对应表4一般排放限值），两处矛盾。",
+    "evidence": [
+      {
+        "fact": "表3-3规定挤出、抽检NMHC有组织排放执行GB31572-2015，浓度限值60mg/m³",
+        "source_location": "root[8].content#2200",
+        "source_excerpt": "挤出、抽检非甲烷总烃（NMHC）G1（30m）60----GB31572-2015"
+      },
+      {
+        "fact": "表4-7监测计划中G1排气筒NMHC浓度限值写为100mg/m³",
+        "source_location": "root[9].content#6600",
+        "source_excerpt": "G1非甲烷总烃1次/年《合成树脂工业污染物排放标准》（GB31572-2015）100/"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "污染源覆盖完整性",
+        "result": "pass",
+        "explanation": "报告识别了混料/破碎（颗粒物）、挤出/抽检（NMHC、臭气浓度）三类大气污染源，并分别对应了GB31572-2015和GB14554-93，覆盖完整。"
+      },
+      {
+        "check_name": "有组织与无组织标准配套",
+        "result": "pass",
+        "explanation": "有组织执行GB31572-2015表5，无组织执行表9及DB44/2367-2022表3，层次完整。"
+      },
+      {
+        "check_name": "表3-3与表4-7限值一致性",
+        "result": "fail",
+        "explanation": "表3-3取60mg/m³（表5特别排放限值），表4-7取100mg/m³（表4一般排放限值），同一排气筒同一污染物限值不一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "表4-7监测计划中G1排气筒NMHC限值100mg/m³与表3-3中60mg/m³矛盾，应统一为60mg/m³（表5特别排放限值）。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB31572-2015适用于合成树脂加工（含挤出、注塑等），本项目为改性塑料粒生产（C2929），属合成树脂加工范畴，标准选取正确。GB31572-2015表5 NMHC特别排放限值确为60mg/m³，表9颗粒物企业边界限值确为1.0mg/m³。GB14554-93表2中25m排气筒臭气浓度限值为6000（无量纲），报告对30m排气筒采用25m限值属保守取值，可接受。DB44/2367-2022为广东省现行有效的VOCs无组织排放地方标准。",
+    "references_used": [
+      {
+        "reference_id": "GB31572-2015",
+        "title": "合成树脂工业污染物排放标准",
+        "clause_or_table": "表5、表9",
+        "supporting_text": "表5规定NMHC特别排放限值60mg/m³；表9规定企业边界颗粒物1.0mg/m³、NMHC 4.0mg/m³"
+      },
+      {
+        "reference_id": "GB14554-93",
+        "title": "恶臭污染物排放标准",
+        "clause_or_table": "表2",
+        "supporting_text": "25m排气筒臭气浓度排放标准值6000（无量纲），厂界二级新扩改建标准20（无量纲）"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "项目为C2929改性塑料粒生产，主要大气污染源为混料/破碎（颗粒物）和挤出/抽检（NMHC、臭气浓度）。标准选取GB31572-2015（表5特别排放限值+表9边界限值）、GB14554-93、DB44/2367-2022总体正确，污染源覆盖完整。但报告内部存在明显矛盾：表3-3明确NMHC有组织限值60mg/m³（表5），而表4-7监测计划中同一排气筒写为100mg/m³（表4一般限值），应统一修正为60mg/m³。此外，臭气浓度对30m排气筒采用25m对应限值6000属保守做法，可接受但建议注明。",
+    "scope_note": "审核范围限于大气污染物排放标准选取的合理性和内部一致性，未涉及排放量核算准确性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL002_Emission_固体",
+  "group": "A",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告列出了固废控制标准体系，但存在内部不一致：废含油桶罐在搬迁前章节归类为HW49(900-041-49)，在搬迁后表4-17中归类为HW08(900-249-08)；同时引用了已废止的GB18599-2001与现行GB18599-2020并列，表述混乱。",
+    "evidence": [
+      {
+        "fact": "固废标准章节列出GB34330-2017、GB/T39198-2020、国家危险废物名录(2021版)、GB18597-2023",
+        "source_location": "root[8].content#4400",
+        "source_excerpt": "一般工业固体废物参照《一般固体废物分类及代码》（GB/T39198-2020）进行鉴别，危险废物执行《国家危险废物名录》（2021版）以及《危险废物贮存污染控制标准》（GB18597-2023）。"
+      },
+      {
+        "fact": "废含油桶罐在搬迁后固废表中归类为HW08/900-249-08，与搬迁前章节HW49/900-041-49不一致",
+        "source_location": "root[10].content#11000",
+        "source_excerpt": "废含油桶罐…0.0040…HW08 废矿物油与含矿物油废物…900-249-08…固态…矿物油…T/In…桶装"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "废含油桶罐危废类别前后一致性",
+        "result": "fail",
+        "explanation": "搬迁前章节(root[5].content#11000)将废含油桶罐归为HW49/900-041-49，搬迁后表4-17归为HW08/900-249-08，分类矛盾。"
+      },
+      {
+        "check_name": "一般固废贮存标准引用准确性",
+        "result": "fail",
+        "explanation": "root[11].content#0同时引用GB18599-2020和已废止的GB18599-2001，表述为'以及《关于发布〈一般工业固体废物贮存、处置场污染控制标准〉（GB18599-2001）相关要求'，逻辑混乱。"
+      },
+      {
+        "check_name": "危废贮存标准版本",
+        "result": "pass",
+        "explanation": "报告引用GB18597-2023为现行有效版本，正确。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "废含油桶罐危废类别在报告不同章节归类不一致（HW49 vs HW08）",
+      "一般固废贮存标准同时引用新旧版本GB18599-2020和GB18599-2001，应仅引用现行标准"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "报告所列标准名称和编号基本正确：GB18597-2023、GB18599-2020、GB/T39198-2020、GB34330-2017均为现行有效标准。但缺少《危险废物转移管理办法》(2022年)的明确引用，且废含油桶罐按2021版名录应归入900-249-08(HW08)更为准确。",
+    "references_used": [
+      {
+        "reference_id": "GB18597-2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "2023年发布实施，替代GB18597-2001，报告引用正确"
+      },
+      {
+        "reference_id": "GB18599-2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "2020年发布，替代GB18599-2001，报告引用正确但不应同时引用旧版"
+      }
+    ],
+    "missing_references": [
+      "《危险废物转移管理办法》（生态环境部令第23号，2022年）未在标准章节明确列出"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告固废标准体系框架基本完整，涵盖GB34330-2017(鉴别)、GB/T39198-2020(分类)、GB18599-2020(一般固废贮存)、GB18597-2023(危废贮存)及国家危险废物名录(2021版)。但存在两个问题：①废含油桶罐在搬迁前章节归为HW49/900-041-49，搬迁后表4-17归为HW08/900-249-08，内部矛盾，按2021版名录900-249-08更准确；②一般固废贮存部分同时引用GB18599-2020和已废止的GB18599-2001，应删除旧标准引用。此外，建议补充《危险废物转移管理办法》作为管理依据。",
+    "scope_note": "审核范围限于报告所列固废控制标准的完整性、版本正确性及内部一致性"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL002_Emission_噪声",
+  "group": "A",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "",
+  "audit_category": "噪声排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告整体选取GB12348-2008中3类标准（昼间≤65dB(A)、夜间≤55dB(A)），与项目位于顺德西部生态产业区（工业区）的声功能区划一致，各章节限值引用一致。但在噪声达标分析段落中误引《声环境质量标准》（GB3096-2008）作为厂界排放达标依据，属标准名称引用错误。",
+    "evidence": [
+      {
+        "fact": "报告明确厂界执行GB12348-2008中3类标准，昼间≤65dB(A)、夜间≤55dB(A)",
+        "source_location": "root[8].content#4400",
+        "source_excerpt": "项目厂界外1m执行《工业企业厂界环境噪声排放标准》（GB12348-2008）中的3类标准：昼间≤65dB(A)、夜间≤55dB(A)。"
+      },
+      {
+        "fact": "噪声达标分析段落误引GB3096-2008作为厂界排放达标标准",
+        "source_location": "root[10].content#2200",
+        "source_excerpt": "能使项目厂界噪声达到《声环境质量标准》（GB3096-2008）3类标准，即昼间≤65dB(A)"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "声功能区类别与标准类别匹配性",
+        "result": "pass",
+        "explanation": "项目位于顺德西部生态产业区（工业区），对应声环境3类功能区，执行GB12348-2008中3类标准合理。"
+      },
+      {
+        "check_name": "各章节噪声限值一致性",
+        "result": "pass",
+        "explanation": "root[5]、root[8]、root[10]、root[12]中均统一引用3类标准昼间65dB(A)、夜间55dB(A)，数值一致。"
+      },
+      {
+        "check_name": "标准名称引用正确性",
+        "result": "fail",
+        "explanation": "root[10]噪声达标分析中将厂界排放达标依据误写为《声环境质量标准》（GB3096-2008），应为《工业企业厂界环境噪声排放标准》（GB12348-2008）。GB3096为环境质量标准，非排放标准。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "厂界贡献值 = 噪声源强 - 隔声衰减值",
+        "inputs": {
+          "噪声源强": 92.24,
+          "隔声衰减值": 40
+        },
+        "result": "52.24 < 65（昼间限值），达标",
+        "unit": "dB(A)"
+      }
+    ],
+    "issues": [
+      "噪声达标分析段落误引《声环境质量标准》（GB3096-2008）作为厂界排放达标判据，应更正为GB12348-2008。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB12348-2008中3类标准限值确为昼间≤65dB(A)、夜间≤55dB(A)，适用于工业生产为主的区域。项目位于顺德西部生态产业区，属工业区，选取3类标准正确。",
+    "references_used": [
+      {
+        "reference_id": "GB12348-2008",
+        "title": "工业企业厂界环境噪声排放标准",
+        "clause_or_table": "表1 厂界环境噪声排放限值",
+        "supporting_text": "3类：昼间65dB(A)，夜间55dB(A)，适用于工业生产为主的区域。"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "项目位于顺德西部生态产业区（工业区），声环境功能区为3类区，厂界噪声执行GB12348-2008中3类标准（昼间≤65dB(A)、夜间≤55dB(A)）选取正确，各章节限值一致，预测贡献值52.24dB(A)满足昼间限值。但报告在噪声影响达标分析段落中将达标判据误写为《声环境质量标准》（GB3096-2008），该标准为环境质量标准而非排放标准，属引用错误，应更正为GB12348-2008。",
+    "scope_note": "声功能区划图（附图9）未提供具体内容，功能区类别依据报告文字描述及项目所在工业园区性质判定。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL002_EnvQuality_Q01",
+  "group": "A",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "EnvQuality",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "表3-1标题为\"2022年\"年度比较，但列标注为2020和2021年，与正文引用的2022年度公报矛盾；PM10和PM2.5变化率符号有误（应为负值）。地表水数据引用内部一致。",
+    "evidence": [
+      {
+        "fact": "表3-1标题为2022年年度比较，但浓度均值列标注为2020和2021",
+        "source_location": "root[8].content#0",
+        "source_excerpt": "表3-1 2022年顺德区（国控测点）环境空气污染物浓度水平年度比较…浓度均值…2020…2021"
+      },
+      {
+        "fact": "正文明确引用2022年度公报并描述2022年数据",
+        "source_location": "root[8].content#0",
+        "source_excerpt": "根据《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区生态环境状况公报的通知（佛环顺函〔2023〕26号）》，2022年顺德区空气质量综合指数为3.27"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "大气表3-1年份列标注与标题一致性",
+        "result": "fail",
+        "explanation": "标题为\"2022年…年度比较\"，正文引用2022年度公报，但表格列标注为2020和2021，应为2021和2022"
+      },
+      {
+        "check_name": "PM10/PM2.5变化率符号",
+        "result": "fail",
+        "explanation": "PM10从42降至32，变化率应为-23.8%，表中为23.8；PM2.5从22降至19，应为-13.6%，表中为13.6"
+      },
+      {
+        "check_name": "地表水表3-2数据与引用公报年份一致性",
+        "result": "pass",
+        "explanation": "表3-2标题为2022年，列含2022年和2021年对比，与引用2022年度公报一致"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "PM10变化率=(32-42)/42×100%",
+        "inputs": {
+          "2021值": 42,
+          "2022值": 32
+        },
+        "result": "-23.8",
+        "unit": "%"
+      },
+      {
+        "formula": "PM2.5变化率=(19-22)/22×100%",
+        "inputs": {
+          "2021值": 22,
+          "2022值": 19
+        },
+        "result": "-13.6",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "表3-1列年份标注（2020/2021）与标题及正文引用的2022年度公报不一致，疑为复制旧表未更新列标注",
+      "PM10和PM2.5变化率缺少负号"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "所引标准限值（SO2≤60、NO2≤40、PM10≤70、PM2.5≤35、O3-8h-90%≤160 μg/m³、CO-24h-95%≤4 mg/m³）均与GB3095-2012二级标准一致；地表水Ⅲ类标准引用GB3838-2002正确。",
+    "references_used": [
+      {
+        "reference_id": "GB3095-2012",
+        "title": "环境空气质量标准",
+        "clause_or_table": "表1 二级标准",
+        "supporting_text": "SO2年均60、NO2年均40、PM10年均70、PM2.5年均35、O3-8h-90th 160 μg/m³、CO-24h-95th 4 mg/m³"
+      },
+      {
+        "reference_id": "GB3838-2002",
+        "title": "地表水环境质量标准",
+        "clause_or_table": "Ⅲ类标准",
+        "supporting_text": "顺德支流执行Ⅲ类标准，报告引用正确"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "大气环境质量数据存在两处内部不一致：①表3-1标题为\"2022年年度比较\"且正文明确引用2022年度公报，但表格浓度列标注为\"2020\"和\"2021\"，应为\"2021\"和\"2022\"；②PM10和PM2.5浓度下降但变化率标注为正值（23.8%和13.6%），应为负值。地表水数据引用2022年度公报，表3-2年份标注与内容一致，结论（Ⅲ类达标）正确。标准限值引用均与GB3095-2012和GB3838-2002吻合。",
+    "scope_note": "无法核实公报原文具体数值是否与实际发布一致，仅审核报告内部逻辑和标准限值正确性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL002_V01_Q01",
+  "group": "A",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "项目产品为改性塑料粒（PP、PC、PA、PPT、PET），原料为塑料新粒料+玻璃纤维+色母，工艺为混料→挤出拉粒→冷却→切粒，属于典型塑料加工行业，适合作为塑胶行业种子问答样本。行业类别C2929基本合理，但存在内部数据不一致及原料名称疑似错误。",
+    "evidence": [
+      {
+        "fact": "报告明确行业类别为C2929塑料零件及其他塑料制品制造",
+        "source_location": "root[1].content#2200",
+        "source_excerpt": "本项目属于C2929 塑料零件及其他塑料制品制造，无燃煤燃油火电机组和企业自备电站、供热锅炉。"
+      },
+      {
+        "fact": "原料中出现非标准塑料缩写'PPT'，疑为PBT之误",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "塑料新粒料（PP、PC、PA、PPT、PET）t/a 0 1600 +1600 200 固态颗粒 25kg/袋 混料、挤出"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "行业分类与产品工艺匹配性",
+        "result": "pass",
+        "explanation": "改性塑料粒生产（混料+挤出造粒）归入C2929其他塑料制品制造，在实务中可接受。"
+      },
+      {
+        "check_name": "VOCs有组织排放量内部一致性",
+        "result": "fail",
+        "explanation": "root[1]称有组织总排放量5.1520t/a，root[3]及root[9]计算结果为1.6100t/a，两处矛盾。"
+      },
+      {
+        "check_name": "原料名称规范性",
+        "result": "fail",
+        "explanation": "'PPT'非标准塑料缩写，应为PBT（聚对苯二甲酸丁二醇酯），报告多处重复出现该错误。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "有组织排放量 = 产生量 × 收集效率 × (1-处理效率)",
+        "inputs": {
+          "产生量": 9.2,
+          "收集效率": 0.7,
+          "处理效率": 0.75
+        },
+        "result": "9.2×0.7×(1-0.75)=1.61",
+        "unit": "t/a"
+      }
+    ],
+    "issues": [
+      "VOCs有组织排放量在不同章节出现5.1520t/a与1.6100t/a两个矛盾数值",
+      "原料'PPT'为非标准缩写，疑为PBT笔误"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "C2929为GB/T 4754-2017中'塑料零件及其他塑料制品制造'，改性塑料粒（造粒/共混改性）归入该类别在环评实务中普遍接受。环评分类管理名录引用'二十六、橡胶和塑料制品业29→53塑料制品业292→其他'亦正确。",
+    "references_used": [
+      {
+        "reference_id": "GB/T 4754-2017",
+        "title": "国民经济行业分类",
+        "clause_or_table": "C2929",
+        "supporting_text": "塑料零件及其他塑料制品制造，包括未列明的塑料制品制造活动"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "该项目产品为改性塑料粒，原料为PP/PC/PA/PET等新粒料及玻璃纤维、色母，工艺为混料-挤出造粒，属典型塑胶加工项目，适合作为塑胶行业种子问答样本。行业类别C2929（塑料零件及其他塑料制品制造）基本合理。但存在两处问题：①VOCs有组织排放量在不同章节出现5.1520t/a与1.6100t/a的矛盾；②原料名称'PPT'非标准缩写，应为PBT。建议修正后使用。",
+    "scope_note": "行业分类合理性基于GB/T 4754-2017判断；内部一致性基于报告文本交叉核验。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL003_Emission_固体",
+  "group": "A",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告列出了固体废物执行标准，但缺少《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）；泥垢编码在表4-24与表4-25之间存在不一致（292-001-61 vs 383-001-61）。",
+    "evidence": [
+      {
+        "fact": "报告固体废物标准清单列出了5项标准/法规",
+        "source_location": "root[6].content#6600",
+        "source_excerpt": "执行《中华人民共和国固体废物污染环境防治法》（2020修订）、《国家危险废物名录》（2021年）、《固体废物鉴别标准 通则》（GB34330-2017）、《危险废物贮存污染控制标准》（GB18597-2023）、《一般固体废物分类和代码》（GB/T39198-2020）"
+      },
+      {
+        "fact": "泥垢编码在表4-25中为383-001-61，与表4-24中292-001-61不一致",
+        "source_location": "root[10].content#2200",
+        "source_excerpt": "泥垢 无机废水污泥，383-001-61 固态 灰尘、泥沙、微生物"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "一般工业固废贮存标准是否列出",
+        "result": "fail",
+        "explanation": "项目产生废包装袋、边角料、次品、泥垢等一般工业固废，但标准清单未列入GB18599-2020《一般工业固体废物贮存和填埋污染控制标准》。"
+      },
+      {
+        "check_name": "泥垢固废编码内部一致性",
+        "result": "fail",
+        "explanation": "表4-24中泥垢编码为292-001-61，表4-25中为383-001-61，两处不一致。项目行业为292塑料制品业，应为292-001-61。"
+      },
+      {
+        "check_name": "危险废物贮存标准引用",
+        "result": "pass",
+        "explanation": "报告正确引用了GB18597-2023作为危废贮存标准，与项目产生HW08、HW49类危废相匹配。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "缺少《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）",
+      "泥垢编码在表4-24（292-001-61）与表4-25（383-001-61）之间不一致"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "报告引用的GB18597-2023、GB34330-2017、GB/T39198-2020、《国家危险废物名录》（2021年版）均为现行有效标准，编号正确。但缺少GB18599-2020这一一般工业固废贮存的核心标准。",
+    "references_used": [
+      {
+        "reference_id": "GB18599-2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "该标准规定了一般工业固体废物贮存设施的防渗、防雨、防扬尘等要求，是报告所述'防渗漏、防雨淋、防扬尘'要求的法规依据，应明确列出。"
+      },
+      {
+        "reference_id": "GB18597-2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "2023年修订版为现行有效版本，报告引用正确。"
+      }
+    ],
+    "missing_references": [
+      "《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）未在标准清单中列出"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告固体废物标准选取基本框架合理，涵盖了固废法、国家危险废物名录、GB34330-2017（鉴别）、GB18597-2023（危废贮存）和GB/T39198-2020（分类代码）。但存在两个问题：①缺少《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020），该标准是一般工业固废贮存的核心依据，报告正文虽描述了防渗防雨防扬尘要求但未明确引用该标准编号；②泥垢编码在表4-24与表4-25之间不一致（292-001-61 vs 383-001-61），应统一为292-001-61。",
+    "scope_note": "审核范围限于报告所列固体废物控制标准的完整性和内部一致性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL003_Emission_水污",
+  "group": "A",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告各章节对废水类型（生活污水+冷却废水）、预处理方式（三级化粪池/沉淀池）、排放去向（杏坛镇吉祐村红砖厂农村生活污水处理站）、企业排口标准（DB44/26-2001第二时段三级标准）、尾水排放河道（砖厂涌→顺德支流）、尾水执行标准（GB18918-2002一级B）表述一致。但存在一处数值矛盾：给排水章节称'生活污水排放量约为360m3/a'，而水平衡图及后续章节均按90m3/a计算。",
+    "evidence": [
+      {
+        "fact": "生活污水经三级化粪池预处理后执行DB44/26-2001第二时段三级标准，排入杏坛镇吉祐村红砖厂农村生活污水处理站，尾水执行GB18918-2002一级B标准",
+        "source_location": "root[6].content#4400",
+        "source_excerpt": "处理后的废水执行广东省地方标准《水污染物排放限值》（DB44/26-2001）第二时段三级标准后排入杏坛镇吉祐村红砖厂农村生活污水处理站处理，尾水排至内河涌（砖厂涌）后排入其他内河涌，然后汇入顺德支流。"
+      },
+      {
+        "fact": "给排水章节出现生活污水排放量360m3/a的表述，与水平衡图90m3/a不一致",
+        "source_location": "root[5].content#4400",
+        "source_excerpt": "根据《排放源统计调查产排污核算方法和系数手册》（公告2021年第24号），生产污水产污系数按0.8计算，则生活污水排放量约为360m3/a"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "企业排口标准与排放去向匹配性",
+        "result": "pass",
+        "explanation": "间接排放至污水处理站，执行DB44/26-2001第二时段三级标准，选取合理。"
+      },
+      {
+        "check_name": "尾水标准限值数值与GB18918-2002一级B对照",
+        "result": "pass",
+        "explanation": "报告列出CODCr≤60、BOD5≤20、SS≤20、氨氮≤8、石油类≤3，与一级B标准一致。"
+      },
+      {
+        "check_name": "生活污水排放量内部一致性",
+        "result": "fail",
+        "explanation": "一处写360m3/a（疑为笔误），其余章节及水平衡图均为90m3/a（100×0.9），存在矛盾。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "生活用水量×产污系数",
+        "inputs": {
+          "生活用水量": "100 m³/a",
+          "产污系数": 0.9
+        },
+        "result": "90",
+        "unit": "m³/a"
+      },
+      {
+        "formula": "冷却废水CODCr排放量=废水量×浓度",
+        "inputs": {
+          "废水量": "2.4 m³/a",
+          "浓度": "50 mg/L"
+        },
+        "result": "0.00012",
+        "unit": "t/a"
+      }
+    ],
+    "issues": [
+      "root[5]中'生活污水排放量约为360m3/a'与全文其他章节90m3/a不一致，疑为笔误，不影响标准选取结论但应修正。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "DB44/26-2001第二时段三级标准限值（CODCr≤500、BOD5≤300、SS≤400、氨氮无要求）正确；GB18918-2002一级B标准限值（CODCr≤60、BOD5≤20、SS≤20、氨氮≤8、石油类≤3）正确。农村分散式处理设施执行一级B标准合理，三线一单仅要求杏坛污水处理厂执行一级A。",
+    "references_used": [
+      {
+        "reference_id": "DB44/26-2001",
+        "title": "广东省《水污染物排放限值》",
+        "clause_or_table": "第二时段三级标准",
+        "supporting_text": "CODCr≤500、BOD5≤300、SS≤400，氨氮无三级标准限值要求"
+      },
+      {
+        "reference_id": "GB18918-2002",
+        "title": "《城镇污水处理厂污染物排放标准》",
+        "clause_or_table": "表1 一级B标准",
+        "supporting_text": "CODCr≤60、BOD5≤20、SS≤20、氨氮≤8（水温>12℃）、石油类≤3"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告水污染物排放标准选取合理：①生活污水和冷却废水均为间接排放至杏坛镇吉祐村红砖厂农村生活污水处理站，企业排口执行DB44/26-2001第二时段三级标准正确；②该处理站为农村分散式设施，尾水执行GB18918-2002一级B标准，限值数值与国标一致；③尾水经砖厂涌汇入顺德支流（Ⅲ类达标水域），排放路径各章节表述一致；④三线一单仅要求杏坛污水处理厂执行一级A，本项目所依托的吉祐村处理站不在该要求范围内，执行一级B合理。存在一处笔误（360m³/a应为90m³/a），不影响标准选取结论。",
+    "scope_note": "审核范围限于水污染物排放标准选取的合理性，未涉及废气、噪声等其他要素。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL003_Emission_噪声",
+  "group": "A",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "",
+  "audit_category": "噪声排放标准",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告明确项目位于声环境3类功能区，厂界噪声执行GB12348-2008中3类标准（昼间65dB(A)、夜间55dB(A)），各章节表述一致，噪声预测最大值60dB(A)低于昼间限值。",
+    "evidence": [
+      {
+        "fact": "项目位于声环境3类功能区，依据佛环〔2024〕1号",
+        "source_location": "root[6].content#0",
+        "source_excerpt": "根据《佛山市生态环境局关于印发<佛山市声环境功能区划>的通知》（佛环〔2024〕1号），项目位于3328吉佑北水工业区片区，属于声环境3类功能区"
+      },
+      {
+        "fact": "厂界噪声执行GB12348-2008中3类标准，昼间65dB(A)，夜间55dB(A)",
+        "source_location": "root[6].content#6600",
+        "source_excerpt": "本项目营运期边界噪声执行《工业企业厂界环境噪声排放标准》（GB12348-2008）3类区标准……3类 65 dB(A) 55 dB(A)"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "声功能区类别与标准类别一致性",
+        "result": "pass",
+        "explanation": "项目位于3类声环境功能区，执行GB12348-2008中3类标准，类别对应正确。"
+      },
+      {
+        "check_name": "昼夜限值数值正确性",
+        "result": "pass",
+        "explanation": "报告列出3类昼间65dB(A)、夜间55dB(A)，与GB12348-2008表1规定一致。"
+      },
+      {
+        "check_name": "噪声预测值与限值对比",
+        "result": "pass",
+        "explanation": "降噪后最大噪声排放值为60dB(A)（风机），低于昼间限值65dB(A)，达标。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB12348-2008中3类标准限值为昼间65dB(A)、夜间55dB(A)，报告引用正确。项目位于工业区，划为3类声环境功能区合理。",
+    "references_used": [
+      {
+        "reference_id": "GB12348-2008",
+        "title": "工业企业厂界环境噪声排放标准",
+        "clause_or_table": "表1 厂界环境噪声排放限值",
+        "supporting_text": "3类：昼间65dB(A)，夜间55dB(A)"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "项目位于佛山市顺德区杏坛镇吉祐工业区，依据佛环〔2024〕1号划定为声环境3类功能区。报告选取GB12348-2008中3类标准（昼间65dB(A)、夜间55dB(A)）作为厂界噪声排放执行标准，标准类别与功能区类别对应正确，限值数值准确。降噪后最大噪声排放值60dB(A)满足昼间限值要求，各章节表述一致，标准选取合理。",
+    "scope_note": ""
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL003_V01_Q01",
+  "group": "A",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告将项目行业类别定为C2921塑料薄膜制造，与项目产品（塑料薄膜）、主要原料（PE塑料粒）及核心工艺（吹膜）一致，内部逻辑自洽。",
+    "evidence": [
+      {
+        "fact": "报告明确行业类别为C2921塑料薄膜制造，产品为塑料薄膜，主要工艺为混料、吹膜、涂布、烘干、分切、复卷",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "项目主要从事塑料薄膜的加工生产，属于C2921塑料薄膜制造行业。C制造业大类中类小类29橡胶和塑料制品业292塑料制品业2921塑料薄膜制造"
+      },
+      {
+        "fact": "主要原料为PE塑料粒（235.872t/a），产品为塑料薄膜（242.368t/a），用途为保护膜",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "从事塑料薄膜的加工生产，年产塑料薄膜242.368吨，主要用作保护膜用途"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "产品与行业代码匹配性",
+        "result": "pass",
+        "explanation": "项目产品为PE塑料薄膜，核心工艺为吹膜成型，符合C2921塑料薄膜制造的定义。"
+      },
+      {
+        "check_name": "环评分类管理名录类别一致性",
+        "result": "pass",
+        "explanation": "报告将项目归入'二十六、橡胶和塑料制品业29-53塑料制品业292'，与C2921对应，且因使用非溶剂型低VOCs涂布胶年用量>10吨，编制报告表，逻辑正确。"
+      },
+      {
+        "check_name": "排污许可管理类别一致性",
+        "result": "pass",
+        "explanation": "年产量242.368吨<1万吨且不涉及改性，按名录应为登记管理，报告判定正确。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "依据GB/T 4754-2017（2019年修订），C2921塑料薄膜制造指'用于包装、农业、建筑、电子电器等领域的塑料薄膜制造'，本项目以PE粒为原料经吹膜工艺生产保护膜用塑料薄膜，行业归类正确。",
+    "references_used": [
+      {
+        "reference_id": "GB/T 4754-2017",
+        "title": "国民经济行业分类",
+        "clause_or_table": "C2921塑料薄膜制造",
+        "supporting_text": "指用于包装、农业、建筑、电子电器等领域的塑料薄膜制造"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "项目以PE塑料粒为主要原料，经吹膜工艺生产塑料薄膜，再涂布保护胶后用作不锈钢/电子产品保护膜。核心产品为塑料薄膜，核心工艺为吹膜，行业归类C2921塑料薄膜制造准确。报告内部产品、原料、工艺、行业代码、环评分类名录类别及排污许可管理级别之间逻辑一致，无矛盾。",
+    "scope_note": "涂布工序为辅助加工，不改变产品本质属性，不影响行业归类判断。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL003_V01_Q03",
+  "group": "A",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "",
+  "audit_category": "环评投资概算",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "环保投资明细表各项合计与总投资、环保投资占比一致，但正文经济效益分析段落中废气处理设施投资金额与明细表不一致（正文称约10万元，明细表为11.50万元）。",
+    "evidence": [
+      {
+        "fact": "表2-9环保工程措施投资明细：污水处理1.0万元+废气控制11.50万元+噪声防治1.0万元+固废1.5万元=15.0万元，占总投资15.0%",
+        "source_location": "root[5].content#4400",
+        "source_excerpt": "序号工程类别环保措施名称投资（万元）占项目总投资比例（%）1污水处理工程三级化粪池1.01.02废气控制工程集气罩+二级活性炭吸附装置+废气排放管道11.5011.53噪声防治工程设备减振、墙体隔声等1.01.04固废危废暂存间1.51.5小计15.0占总投资的15.0%"
+      },
+      {
+        "fact": "经济效益可行性分析中称废气处理设施投资约为10万元，占总投资10%，与表2-9中11.50万元（11.5%）不一致",
+        "source_location": "root[8].content#6600",
+        "source_excerpt": "本项目总投资为100万元，其中的废气处理设施的投资约为10万元，占总投资的10%，因此在经济效益上考虑，本项目废气处理设施是合理的。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "环保投资明细合计与总投资一致性",
+        "result": "pass",
+        "explanation": "1.0+11.50+1.0+1.5=15.0万元，与报告首页环保投资15.00万元一致"
+      },
+      {
+        "check_name": "环保投资占比计算正确性",
+        "result": "pass",
+        "explanation": "15.0/100×100%=15.0%，与报告首页环保投资占比15.00%一致"
+      },
+      {
+        "check_name": "正文与明细表废气投资金额一致性",
+        "result": "fail",
+        "explanation": "正文1.6.5节称废气处理设施投资约10万元（占10%），而表2-9明确为11.50万元（占11.5%），存在前后不一致"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "各项环保投资之和",
+        "inputs": {
+          "污水处理": 1.0,
+          "废气控制": 11.5,
+          "噪声防治": 1.0,
+          "固废": 1.5
+        },
+        "result": "15.0",
+        "unit": "万元"
+      },
+      {
+        "formula": "环保投资占比=环保投资/总投资×100%",
+        "inputs": {
+          "环保投资": 15.0,
+          "总投资": 100.0
+        },
+        "result": "15.0",
+        "unit": "%"
+      }
+    ],
+    "issues": [
+      "报告1.6.5节经济效益可行性分析中废气处理设施投资表述为'约10万元，占总投资的10%'，与表2-9中废气控制工程投资11.50万元（占11.5%）不一致，应统一修正。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_required",
+    "conclusion": "环保投资核算属于报告内部一致性问题，无需引用外部标准进行验证。",
+    "references_used": [],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告表2-9环保投资明细各项合计15.0万元，与首页总投资100万元、环保投资15万元、占比15%均一致，比例计算正确。但报告第1.6.5节'经济效益可行性'中称废气处理设施投资'约为10万元，占总投资的10%'，与表2-9中废气控制工程11.50万元（11.5%）存在矛盾，属于前后表述不一致，应予以修正。",
+    "scope_note": "仅审核报告内部投资数据一致性，未涉及外部规范对环保投资比例的强制性要求。"
+  },
+  "answer_mode": "determinate_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL004_Emission_固体",
+  "group": "A",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告列出了固废相关标准，但存在两处内部问题：①次品废物代码在正文与汇总表中不一致（正文为292-009-16，表格为292-009-06）；②root[8]中GB18599-2020标准名称重复出现且第二次名称有误（多了一个'物'字）。",
+    "evidence": [
+      {
+        "fact": "正文中次品废物代码为292-009-16，但固废汇总表中次品废物代码为292-009-06",
+        "source_location": "root[7].content#4400 vs root[7].content#13200",
+        "source_excerpt": "其次品产生量约为原料量的5%，即次品产生量为36t/a，其废物代码为292-009-16，回用于生产过程。"
+      },
+      {
+        "fact": "报告在固废标准段落中列出GB34330-2017、GB/T39198-2020、GB18599-2020、GB18597-2023及国家危险废物名录(2021版)",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "一般工业固体废物参照《一般固体废物分类及代码》（GB/T39198-2020）进行鉴别，危险废物执行《国家危险废物名录》（2021版）以及《危险废物贮存污染控制标准》（GB18597-2023）。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "次品废物代码一致性",
+        "result": "fail",
+        "explanation": "正文写292-009-16，表4-20写292-009-06，两处矛盾。根据GB/T39198-2020，废塑料制品代码应为292-009-06，正文中292-009-16疑为笔误。"
+      },
+      {
+        "check_name": "GB18599-2020标准名称准确性",
+        "result": "fail",
+        "explanation": "root[8]中同一标准出现两次，第二次名称为'一般工业固体废物贮存和填埋污染物控制标准'，多了一个'物'字，属笔误。"
+      },
+      {
+        "check_name": "标准体系完整性",
+        "result": "pass",
+        "explanation": "报告涵盖了鉴别(GB34330)、分类(GB/T39198)、一般固废贮存(GB18599)、危废名录及危废贮存(GB18597)等核心标准，体系基本完整。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "次品废物代码正文(292-009-16)与表格(292-009-06)不一致",
+      "GB18599-2020标准名称在root[8]中重复且第二次有误"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "报告引用的标准名称和编号均真实存在且适用：GB34330-2017为固废鉴别通则，GB/T39198-2020为一般固废分类代码，GB18599-2020为一般工业固废贮存和填埋污染控制标准，GB18597-2023为危险废物贮存污染控制标准（2023年修订版），国家危险废物名录(2021版)均正确。未引用《危险废物管理计划和管理台账制定技术导则》(HJ1259-2022)，但报告正文已涉及台账管理要求，影响不大。",
+    "references_used": [
+      {
+        "reference_id": "GB18597-2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "2023年修订发布，替代GB18597-2001，报告引用版本正确"
+      },
+      {
+        "reference_id": "GB18599-2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "2020年发布，替代GB18599-2001，报告引用版本正确"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "报告固废标准选取总体合理，涵盖了一般固废鉴别(GB34330-2017)、分类(GB/T39198-2020)、贮存(GB18599-2020)及危废名录(2021版)、危废贮存(GB18597-2023)等核心标准。但存在两处内部瑕疵：①次品废物代码正文与汇总表不一致（292-009-16 vs 292-009-06）；②GB18599-2020在环保措施章节重复出现且第二次名称多一'物'字。建议统一修正。",
+    "scope_note": "审核基于报告提供的上下文，未涉及现场核实。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL004_Emission_水污",
+  "group": "A",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告整体排放路径（生活污水→三级化粪池→杏坛镇生活污水处理厂→顺德支流）各章节一致，企业排口执行DB44/26-2001第二时段三级标准、尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准较严值的表述前后一致。但表3-8中DB44/26-2001第二时段三级标准的SS与氨氮限值疑似互换（SS显示'--'、氨氮显示'≤400'），与标准原文不符。",
+    "evidence": [
+      {
+        "fact": "企业排口执行DB44/26-2001第二时段三级标准，排入杏坛镇生活污水处理厂，尾水排至顺德支流",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "生活污水经三级化粪池处理后，水质执行广东省地方标准《水污染物排放限值》（DB44/26-2001）中的第二时段三级标准，即CODcr≤500mg/L，BOD5≤300mg/L，然后通过污水管网排至杏坛镇生活污水处理厂处理"
+      },
+      {
+        "fact": "表3-8中三级标准行SS列为'--'、氨氮列为'≤400'，与DB44/26-2001原文（SS≤400、氨氮无要求）不符",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "广东省地方标准《水污染物排放限值》（DB44/26-2001）中的第二时段三级标准 ≤500 ≤300 -- ≤400"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "排放路径一致性",
+        "result": "pass",
+        "explanation": "生活污水→三级化粪池→杏坛镇生活污水处理厂→顺德支流，在规划符合性、标准章节、源强核算、环保措施清单中均一致。"
+      },
+      {
+        "check_name": "尾水标准一致性",
+        "result": "pass",
+        "explanation": "尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准较严值（CODcr≤40、BOD5≤10、SS≤10、NH3-N≤5），各章节表述一致且数值正确。"
+      },
+      {
+        "check_name": "表3-8三级标准限值正确性",
+        "result": "fail",
+        "explanation": "DB44/26-2001第二时段三级标准应为SS≤400mg/L、氨氮无限值要求，报告将两者互换。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "表3-8中DB44/26-2001第二时段三级标准SS与氨氮限值互换：SS应为≤400，氨氮应为'--'（无要求）"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "企业排口执行DB44/26-2001第二时段三级标准用于间接排放（排入城镇污水处理厂）选取正确；尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准较严值符合广东省及顺德区规划环评要求。但表3-8中三级标准SS和氨氮数值与DB44/26-2001原文不符。",
+    "references_used": [
+      {
+        "reference_id": "DB44/26-2001",
+        "title": "广东省地方标准《水污染物排放限值》",
+        "clause_or_table": "第二时段三级标准",
+        "supporting_text": "CODcr≤500、BOD5≤300、SS≤400、氨氮无三级标准限值要求"
+      },
+      {
+        "reference_id": "GB18918-2002",
+        "title": "《城镇污水处理厂污染物排放标准》",
+        "clause_or_table": "一级A标准",
+        "supporting_text": "CODcr≤50、BOD5≤10、SS≤10、NH3-N≤5(8)"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告水污染物排放标准选取路径正确：生活污水经三级化粪池预处理执行DB44/26-2001第二时段三级标准后排入杏坛镇生活污水处理厂，尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准较严值后排至顺德支流，各章节表述一致。但表3-8存在一处数值错误：DB44/26-2001第二时段三级标准中SS应为≤400mg/L、氨氮应无要求（'--'），报告将两者互换（SS显示'--'、氨氮显示'≤400'），需修正。",
+    "scope_note": "审核范围限于报告提供的水污染物排放标准选取及限值，未涉及水量平衡核算。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL004_Emission_噪声",
+  "group": "A",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "PL004",
+  "audit_category": "噪声排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "声功能区划为3类（杏坛东部工业区片区），执行GB12348-2008 3类标准（昼间≤65dB(A)、夜间≤55dB(A)），标准选取正确且各章节限值一致。但噪声影响分析段落误将排放标准写为《声环境质量标准》（GB3096-2008），属标准引用错误。",
+    "evidence": [
+      {
+        "fact": "项目属3321杏坛东部工业区片区，执行GB12348-2008 3类标准，昼间≤65dB(A)、夜间≤55dB(A)",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "项目位置属于3321杏坛东部工业区片区，厂界外1m执行《工业企业厂界环境噪声排放标准》（GB12348-2008）中的3类标准：昼间≤65dB(A)、夜间≤55dB(A)。"
+      },
+      {
+        "fact": "噪声影响分析段落错误引用GB3096-2008作为厂界排放达标依据",
+        "source_location": "root[7].content#4400",
+        "source_excerpt": "能使项目厂界噪声达到《声环境质量标准》（GB3096-2008）3类标准，即昼间≤65dB(A)，，预计达标排放的噪声对周围环境影响不大。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "声功能区类别与标准类别匹配",
+        "result": "pass",
+        "explanation": "项目位于工业区片区（3类声环境功能区），对应执行GB12348-2008 3类标准，匹配正确。"
+      },
+      {
+        "check_name": "各章节限值一致性",
+        "result": "pass",
+        "explanation": "标准章节、预测表（65/55）、监测计划表（65/55）、监督检查清单均为3类65/55，数值一致。"
+      },
+      {
+        "check_name": "标准名称引用准确性",
+        "result": "fail",
+        "explanation": "噪声影响及达标分析段落将厂界排放标准误写为《声环境质量标准》（GB3096-2008），应为《工业企业厂界环境噪声排放标准》（GB12348-2008）。GB3096为环境质量标准，不用于厂界排放达标判定。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "噪声影响分析段落将GB3096-2008（声环境质量标准）误作厂界噪声排放标准引用，应更正为GB12348-2008。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB12348-2008中3类标准限值为昼间≤65dB(A)、夜间≤55dB(A)，报告所列限值正确。工业区对应3类声环境功能区，标准类别选取合理。",
+    "references_used": [
+      {
+        "reference_id": "GB12348-2008",
+        "title": "工业企业厂界环境噪声排放标准",
+        "clause_or_table": "表1 厂界环境噪声排放限值",
+        "supporting_text": "3类：昼间65dB(A)，夜间55dB(A)"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "项目位于佛山市顺德区杏坛东部工业区片区（3321），属3类声环境功能区，执行GB12348-2008 3类标准（昼间≤65dB(A)、夜间≤55dB(A)），标准类别和限值选取正确，各章节数值一致。但报告第四章噪声影响及达标分析段落将厂界排放达标依据误写为《声环境质量标准》（GB3096-2008），该标准为环境质量标准而非排放标准，属标准引用错误，应更正为GB12348-2008。",
+    "scope_note": "审核范围限于噪声排放标准选取及内部一致性，未涉及噪声预测模型合理性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL004_V01_Q01",
+  "group": "A",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告将项目归入'二十六、橡胶和塑料制品业29、53塑料制品业-292、其他'，与项目产品（改性SEBS塑料）、原辅材料（SEBS、增粘树脂）及生产工艺（混料→挤出→切粒）一致，行业分类基本合理。",
+    "evidence": [
+      {
+        "fact": "项目产品为改性SEBS塑料，年产720吨，工艺为混料、挤出、水下切粒",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "主要从事改性SEBS塑料的生产，预计投产后年产改性SEBS塑料720吨"
+      },
+      {
+        "fact": "报告明确行业类别为塑料制品业292其他",
+        "source_location": "root[5].content#0",
+        "source_excerpt": "属于\"二十六、橡胶和塑料制品业29、53塑料制品业-292、其他（年用非溶剂型低VOCs含量涂料10吨以下的除外）\"类别，需编制建设项目环境影响报告表"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "产品与行业分类一致性",
+        "result": "pass",
+        "explanation": "改性SEBS塑料属于塑料改性加工产品，归入C292塑料制品业合理"
+      },
+      {
+        "check_name": "工艺与行业分类一致性",
+        "result": "pass",
+        "explanation": "挤出、切粒为典型塑料加工工艺，非橡胶硫化工艺，归入塑料制品业而非橡胶制品业正确"
+      },
+      {
+        "check_name": "环评分类管理名录引用一致性",
+        "result": "pass",
+        "explanation": "项目不使用溶剂型涂料，符合'其他'子类中排除条件，编制报告表正确"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "依据《国民经济行业分类》(GB/T 4754-2017)，C2929'其他塑料制品制造'涵盖塑料改性、共混造粒等活动；依据《建设项目环境影响评价分类管理名录（2021年版）》第53项，塑料制品业中'其他'类需编制报告表，报告引用正确。",
+    "references_used": [
+      {
+        "reference_id": "GB/T 4754-2017",
+        "title": "国民经济行业分类",
+        "clause_or_table": "C2929 其他塑料制品制造",
+        "supporting_text": "指塑料板、管、型材、薄膜、丝、绳、编织品、人造革、合成革、泡沫塑料、塑料包装箱及容器、日用塑料制品、人造草坪等的制造，以及塑料改性加工"
+      },
+      {
+        "reference_id": "2021年版名录",
+        "title": "建设项目环境影响评价分类管理名录（2021年版）",
+        "clause_or_table": "二十六、橡胶和塑料制品业，第53项",
+        "supporting_text": "塑料制品业292：其他（年用非溶剂型低VOCs含量涂料10吨以下的除外）→报告表"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "项目以SEBS和增粘树脂为原料，通过混料、双螺杆挤出、水下切粒工艺生产改性SEBS塑料粒料。SEBS虽为热塑性弹性体，但本项目加工方式为塑料挤出造粒，产品定性为'改性SEBS塑料'，归入C292塑料制品业（C2929其他塑料制品制造）合理。报告引用环评分类管理名录第53项'塑料制品业-其他'编制报告表，与项目不使用溶剂型涂料的实际情况相符，行业分类基本正确。",
+    "scope_note": ""
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL005_Emission_固体",
+  "group": "A",
+  "project_id": "PL005",
+  "source_json": "PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告列出了固体废物管理依据和危险废物贮存标准，但一般工业固体废物贮存标准缺失GB 18599-2020；各章节固废种类和数量一致。",
+    "evidence": [
+      {
+        "fact": "固体废物标准章节列出一般固废执行《一般固体废物分类与代码》（GB/T39198-2020），危废执行《危险废物贮存污染控制标准》（GB18597-2023）",
+        "source_location": "root[6].content#4400",
+        "source_excerpt": "固体废物管理应遵照《中华人民共和国固体废物污染环境防治法》、《广东省固体废物污染环境防治条例》、《一般固体废物分类与代码》（GB/T39198-2020），固体废物暂存于一般固体废物仓库，仓库应满足防渗漏、防雨淋、防扬尘等要求。（2）危险废物执行《国家危险废物名录》（2021年版）、《危险废物贮存污染控制标准》（GB18597-2023）。"
+      },
+      {
+        "fact": "固废种类包括生活垃圾3t/a、废包装材料0.5t/a、废机油0.05t/a、废机油桶0.006t/a、含油废抹布和手套0.002t/a、废活性炭7.4439t/a",
+        "source_location": "root[9].content#0",
+        "source_excerpt": "序号1生活垃圾3t/a；序号2废包装材料0.5t/a；废机油0.05t/a HW08 900-249-08；废机油桶0.006t/a；含油废抹布和手套0.002t/a HW49 900-041-49；废活性炭7.4439t/a HW49 900-039-49"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "一般工业固废贮存标准是否完整",
+        "result": "fail",
+        "explanation": "报告仅引用GB/T39198-2020（分类代码），未引用《一般工业固体废物贮存和填埋污染控制标准》（GB 18599-2020），该标准是一般工业固废贮存的核心控制标准。"
+      },
+      {
+        "check_name": "危险废物贮存标准是否正确",
+        "result": "pass",
+        "explanation": "GB18597-2023为现行有效版本，替代了GB18597-2001，引用正确。"
+      },
+      {
+        "check_name": "危废类别及代码与名录一致性",
+        "result": "pass",
+        "explanation": "废机油HW08/900-249-08、含油抹布HW49/900-041-49、废活性炭HW49/900-039-49均与《国家危险废物名录》（2021年版）一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "一般工业固体废物贮存缺少《一般工业固体废物贮存和填埋污染控制标准》（GB 18599-2020）的引用"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB18597-2023为现行危废贮存标准，引用正确；GB/T39198-2020为一般固废分类标准，引用正确；但缺少GB 18599-2020（一般工业固废贮存和填埋污染控制标准）。",
+    "references_used": [
+      {
+        "reference_id": "GB 18599-2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "该标准规定了一般工业固体废物贮存设施的选址、设计、运行及封场等污染控制要求，是一般工业固废贮存的核心标准。"
+      },
+      {
+        "reference_id": "GB 18597-2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "2023年修订版替代GB18597-2001，为现行有效的危废贮存标准。"
+      }
+    ],
+    "missing_references": [
+      "《一般工业固体废物贮存和填埋污染控制标准》（GB 18599-2020）"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告固体废物标准选取基本合理，危险废物部分引用《国家危险废物名录》（2021年版）和《危险废物贮存污染控制标准》（GB18597-2023）均正确。但一般工业固体废物部分仅引用了分类标准GB/T39198-2020，缺少核心贮存标准《一般工业固体废物贮存和填埋污染控制标准》（GB 18599-2020）。报告虽描述了'防渗漏、防雨淋、防扬尘'等要求，但未明确引用该标准编号，属于标准条目缺失。",
+    "scope_note": "审核范围限于报告所列固废标准选取的完整性和正确性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL005_Emission_水污",
+  "group": "A",
+  "project_id": "PL005",
+  "source_json": "PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告内部水污染物排放标准选取逻辑一致：生活污水经三级化粪池预处理执行DB44/26-2001第二时段三级标准排入杏坛污水处理厂，尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准较严值，排入顺德支流。各章节表述一致，表3-4数值与较严值取法吻合。",
+    "evidence": [
+      {
+        "fact": "企业排口执行DB44/26-2001第二时段三级标准，排入杏坛污水处理厂，尾水排入顺德支流",
+        "source_location": "root[6].content#4400",
+        "source_excerpt": "生活污水经三级化粪池处理达广东省地方标准《水污染物排放限值》表3-4 水污染物排放标准…DB44/26-2001第二时段三级标准…污水处理厂尾水"
+      },
+      {
+        "fact": "杏坛污水处理厂尾水执行GB18918-2002一级A及DB44/26-2001第二时段一级标准较严值",
+        "source_location": "root[4].content#0",
+        "source_excerpt": "2025年前完成杏坛污水处理厂扩建，尾水应执行《城镇污水处理厂污染物排放标准》（GB18918-2002）一级A标准及《广东省水污染物排放限值》（DB44/26-2001）的较严值。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "企业排口标准与排放去向匹配性",
+        "result": "pass",
+        "explanation": "生活污水间接排入城镇污水处理厂，执行DB44/26-2001第二时段三级标准，符合规划环评要求。"
+      },
+      {
+        "check_name": "尾水标准数值与较严值取法一致性",
+        "result": "pass",
+        "explanation": "表3-4尾水值CODCr40、BOD5 10、SS10、NH3-N 5，为GB18918-2002一级A（50/10/10/5）与DB44/26-2001一级（40/20/20/10）逐项取严的结果，正确。"
+      },
+      {
+        "check_name": "各章节排放去向表述一致性",
+        "result": "pass",
+        "explanation": "规划相符性、工程分析、环保措施清单均统一表述为'杏坛污水处理厂，尾水排入顺德支流'，无矛盾。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "尾水较严值= min(GB18918-2002一级A, DB44/26-2001第二时段一级)",
+        "inputs": {
+          "CODCr": [
+            50,
+            40
+          ],
+          "BOD5": [
+            10,
+            20
+          ],
+          "SS": [
+            10,
+            20
+          ],
+          "NH3-N": [
+            5,
+            10
+          ]
+        },
+        "result": "CODCr=40, BOD5=10, SS=10, NH3-N=5",
+        "unit": "mg/L"
+      }
+    ],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "DB44/26-2001第二时段三级标准限值（CODCr≤500、BOD5≤300、SS≤400、NH3-N不限）正确；GB18918-2002一级A标准限值（CODCr≤50、BOD5≤10、SS≤10、NH3-N≤5）正确；DB44/26-2001第二时段一级标准限值（CODCr≤40、BOD5≤20、SS≤20、NH3-N≤10）正确。较严值取法合理。",
+    "references_used": [
+      {
+        "reference_id": "DB44/26-2001",
+        "title": "广东省《水污染物排放限值》",
+        "clause_or_table": "第二时段三级标准/第二时段一级标准",
+        "supporting_text": "三级标准适用于排入城镇污水处理厂的间接排放；一级标准适用于直接排放。"
+      },
+      {
+        "reference_id": "GB18918-2002",
+        "title": "《城镇污水处理厂污染物排放标准》",
+        "clause_or_table": "一级A标准",
+        "supporting_text": "CODCr≤50, BOD5≤10, SS≤10, NH3-N≤5(8)mg/L"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告水污染物排放标准选取合理：①废水类型为生活污水，经三级化粪池预处理后执行DB44/26-2001第二时段三级标准（CODCr≤500、BOD5≤300、SS≤400），排入杏坛污水处理厂；②杏坛污水处理厂尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准的较严值（CODCr 40、BOD5 10、SS 10、NH3-N 5 mg/L），排入顺德支流（Ⅲ类水体）；③与规划环评要求一致，各章节表述统一，数值经核算无误。",
+    "scope_note": "审核范围限于报告提供的水污染物排放标准选取逻辑及数值一致性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL005_Emission_噪声",
+  "group": "A",
+  "project_id": "PL005",
+  "source_json": "PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "噪声排放标准",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告内部噪声标准选取一致：声功能区为3类（编号3322），厂界执行GB12348-2008的3类标准，昼间≤65dB(A)、夜间≤55dB(A)，各章节引用一致，预测值60.96dB(A)低于昼间限值。",
+    "evidence": [
+      {
+        "fact": "项目位于3类声环境功能区（编号3322），依据佛环〔2024〕1号",
+        "source_location": "root[6].content#0",
+        "source_excerpt": "声环境功能区《佛山市声环境功能区划》的通知（佛环〔2024〕1号）3类声环境功能区（编号：3322）"
+      },
+      {
+        "fact": "厂界执行GB12348-2008中3类标准，昼间≤65dB(A)，夜间≤55dB(A)",
+        "source_location": "root[6].content#6600",
+        "source_excerpt": "噪声排放标准:项目厂界执行《工业企业厂界环境噪声排放标准》（GB12348-2008）中的3类标准，即昼间≤65dB（A），夜间≤55dB（A）。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "声功能区类别与排放标准类别一致性",
+        "result": "pass",
+        "explanation": "声环境功能区为3类，厂界噪声排放标准亦选取3类，类别匹配。"
+      },
+      {
+        "check_name": "预测值与限值对比",
+        "result": "pass",
+        "explanation": "厂界噪声贡献值60.96dB(A)＜昼间限值65dB(A)，达标。夜间不生产，无需校核夜间。"
+      },
+      {
+        "check_name": "监测计划与标准一致性",
+        "result": "pass",
+        "explanation": "监测计划中四个厂界点位均执行3类标准65dB(A)昼间限值，与标准章节一致。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "GB12348-2008中3类标准限值为昼间65dB(A)、夜间55dB(A)，适用于工业生产、仓储物流为主的区域。项目位于工业用地，属3类声环境功能区，标准选取正确。",
+    "references_used": [
+      {
+        "reference_id": "GB12348-2008",
+        "title": "工业企业厂界环境噪声排放标准",
+        "clause_or_table": "表1 厂界环境噪声排放限值",
+        "supporting_text": "3类：昼间65dB(A)，夜间55dB(A)，适用于工业生产、仓储物流为主要功能的区域。"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "项目位于佛山市顺德区杏坛镇工业片区，依据佛环〔2024〕1号划定为3类声环境功能区（编号3322）。报告选取GB12348-2008中3类标准（昼间≤65dB(A)、夜间≤55dB(A)）作为厂界噪声排放标准，与声功能区类别匹配。预测厂界噪声贡献值60.96dB(A)低于昼间限值，达标。项目夜间不生产（6:00-22:00），仅监测昼间，逻辑自洽。标准选取合理，各章节引用一致，无矛盾。",
+    "scope_note": ""
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}
+{
+  "question_id": "PL006_EnvQuality_Q01",
+  "group": "A",
+  "project_id": "PL006",
+  "source_json": "PL006_佛山市顺德区乐鲸科技有限公司年产五金拉手300万个新建项目.json",
+  "skill_id": "EnvQuality",
+  "audit_category": "环境质量数据引用",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "大气和地表水环境质量现状数据引用在报告内部各章节之间保持一致，占标率计算正确，达标判定逻辑自洽。",
+    "evidence": [
+      {
+        "fact": "大气数据引用《2022年度佛山市顺德区环境质量状况公报》，O3超标判定为不达标区",
+        "source_location": "root[3].content#0",
+        "source_excerpt": "引用佛山市生态环境局顺德分局发布的《2022年度佛山市顺德区环境质量状况公报》中的数据…O3（ug/m3）90百分位数最大8小时平均质量浓度190160118.7不达标"
+      },
+      {
+        "fact": "地表水引用同一公报，顺德支流水质满足Ⅲ类标准",
+        "source_location": "root[3].content#0",
+        "source_excerpt": "参照《佛山市生态环境局顺德分局关于发布2022年度佛山市顺德区环境质量状况公报的通知》（佛顺环函〔2023〕26号），2022年顺德区…水质优良率（Ⅰ～Ⅲ类）为100%"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "大气占标率计算一致性",
+        "result": "pass",
+        "explanation": "SO2:5/60=8.3%、NO2:29/40=72.5%、PM10:32/70=45.7%、PM2.5:19/35=54.3%、CO:1.1/4=27.5%、O3:190/160=118.7%，均与表中数值一致。"
+      },
+      {
+        "check_name": "章节间引用一致性",
+        "result": "pass",
+        "explanation": "三线一单分析章节（root[1]）同样引用该公报判定不达标区及顺德支流Ⅲ类达标，与第三章结论一致。"
+      },
+      {
+        "check_name": "纳污水体与功能区划对应",
+        "result": "pass",
+        "explanation": "报告明确顺德支流执行GB3838-2002Ⅲ类标准，与杏坛污水处理厂尾水排入顺德支流的描述一致。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "O3占标率 = 现状浓度/标准值×100%",
+        "inputs": {
+          "现状浓度": 190,
+          "标准值": 160
+        },
+        "result": "118.75≈118.7",
+        "unit": "%"
+      },
+      {
+        "formula": "PM2.5占标率 = 19/35×100%",
+        "inputs": {
+          "现状浓度": 19,
+          "标准值": 35
+        },
+        "result": "54.3",
+        "unit": "%"
+      }
+    ],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "报告引用的GB3095-2012二级标准限值（SO2≤60、NO2≤40、PM10≤70、PM2.5≤35、CO≤4mg/m³、O3≤160μg/m³）均正确；GB3838-2002Ⅲ类标准用于顺德支流功能区划合理。",
+    "references_used": [
+      {
+        "reference_id": "GB3095-2012",
+        "title": "环境空气质量标准",
+        "clause_or_table": "表1 二级标准",
+        "supporting_text": "O3日最大8小时平均第90百分位数二级标准限值为160μg/m³"
+      },
+      {
+        "reference_id": "GB3838-2002",
+        "title": "地表水环境质量标准",
+        "clause_or_table": "表1 Ⅲ类",
+        "supporting_text": "Ⅲ类适用于集中式生活饮用水地表水源地二级保护区等"
+      }
+    ],
+    "missing_references": [
+      "无法获取《2022年度佛山市顺德区环境质量状况公报》原文，无法核实具体监测数值是否与公报完全一致"
+    ]
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告大气环境质量数据引用《2022年度佛山市顺德区环境质量状况公报》，6项基本污染物浓度、标准值及占标率计算均正确，O3超标判定为不达标区逻辑成立。地表水引用同一公报（佛顺环函〔2023〕26号），顺德支流满足Ⅲ类标准的结论与报告各章节（三线一单分析、水环境影响分析）保持一致。标准引用（GB3095-2012二级、GB3838-2002Ⅲ类）均正确。唯一不足是无法逐字核实公报原始数值，但报告内部逻辑完全自洽。",
+    "scope_note": "未能获取公报原文进行逐字比对，仅完成内部一致性验证及标准限值外部核验。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

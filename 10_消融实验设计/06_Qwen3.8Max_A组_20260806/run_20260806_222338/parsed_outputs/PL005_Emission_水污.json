@@ -1,0 +1,98 @@
+{
+  "question_id": "PL005_Emission_水污",
+  "group": "A",
+  "project_id": "PL005",
+  "source_json": "PL005_佛山市润特龙清洁用品有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "水污染物排放标准",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告内部水污染物排放标准选取逻辑一致：生活污水经三级化粪池预处理执行DB44/26-2001第二时段三级标准排入杏坛污水处理厂，尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准较严值，排入顺德支流。各章节表述一致，表3-4数值与较严值取法吻合。",
+    "evidence": [
+      {
+        "fact": "企业排口执行DB44/26-2001第二时段三级标准，排入杏坛污水处理厂，尾水排入顺德支流",
+        "source_location": "root[6].content#4400",
+        "source_excerpt": "生活污水经三级化粪池处理达广东省地方标准《水污染物排放限值》表3-4 水污染物排放标准…DB44/26-2001第二时段三级标准…污水处理厂尾水"
+      },
+      {
+        "fact": "杏坛污水处理厂尾水执行GB18918-2002一级A及DB44/26-2001第二时段一级标准较严值",
+        "source_location": "root[4].content#0",
+        "source_excerpt": "2025年前完成杏坛污水处理厂扩建，尾水应执行《城镇污水处理厂污染物排放标准》（GB18918-2002）一级A标准及《广东省水污染物排放限值》（DB44/26-2001）的较严值。"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "企业排口标准与排放去向匹配性",
+        "result": "pass",
+        "explanation": "生活污水间接排入城镇污水处理厂，执行DB44/26-2001第二时段三级标准，符合规划环评要求。"
+      },
+      {
+        "check_name": "尾水标准数值与较严值取法一致性",
+        "result": "pass",
+        "explanation": "表3-4尾水值CODCr40、BOD5 10、SS10、NH3-N 5，为GB18918-2002一级A（50/10/10/5）与DB44/26-2001一级（40/20/20/10）逐项取严的结果，正确。"
+      },
+      {
+        "check_name": "各章节排放去向表述一致性",
+        "result": "pass",
+        "explanation": "规划相符性、工程分析、环保措施清单均统一表述为'杏坛污水处理厂，尾水排入顺德支流'，无矛盾。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "尾水较严值= min(GB18918-2002一级A, DB44/26-2001第二时段一级)",
+        "inputs": {
+          "CODCr": [
+            50,
+            40
+          ],
+          "BOD5": [
+            10,
+            20
+          ],
+          "SS": [
+            10,
+            20
+          ],
+          "NH3-N": [
+            5,
+            10
+          ]
+        },
+        "result": "CODCr=40, BOD5=10, SS=10, NH3-N=5",
+        "unit": "mg/L"
+      }
+    ],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "DB44/26-2001第二时段三级标准限值（CODCr≤500、BOD5≤300、SS≤400、NH3-N不限）正确；GB18918-2002一级A标准限值（CODCr≤50、BOD5≤10、SS≤10、NH3-N≤5）正确；DB44/26-2001第二时段一级标准限值（CODCr≤40、BOD5≤20、SS≤20、NH3-N≤10）正确。较严值取法合理。",
+    "references_used": [
+      {
+        "reference_id": "DB44/26-2001",
+        "title": "广东省《水污染物排放限值》",
+        "clause_or_table": "第二时段三级标准/第二时段一级标准",
+        "supporting_text": "三级标准适用于排入城镇污水处理厂的间接排放；一级标准适用于直接排放。"
+      },
+      {
+        "reference_id": "GB18918-2002",
+        "title": "《城镇污水处理厂污染物排放标准》",
+        "clause_or_table": "一级A标准",
+        "supporting_text": "CODCr≤50, BOD5≤10, SS≤10, NH3-N≤5(8)mg/L"
+      }
+    ],
+    "missing_references": []
+  },
+  "final_answer": {
+    "judgement": "正确",
+    "analysis": "报告水污染物排放标准选取合理：①废水类型为生活污水，经三级化粪池预处理后执行DB44/26-2001第二时段三级标准（CODCr≤500、BOD5≤300、SS≤400），排入杏坛污水处理厂；②杏坛污水处理厂尾水执行GB18918-2002一级A与DB44/26-2001第二时段一级标准的较严值（CODCr 40、BOD5 10、SS 10、NH3-N 5 mg/L），排入顺德支流（Ⅲ类水体）；③与规划环评要求一致，各章节表述统一，数值经核算无误。",
+    "scope_note": "审核范围限于报告提供的水污染物排放标准选取逻辑及数值一致性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

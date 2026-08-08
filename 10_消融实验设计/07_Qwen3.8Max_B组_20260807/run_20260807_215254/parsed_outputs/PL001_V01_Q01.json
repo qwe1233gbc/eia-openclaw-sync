@@ -1,0 +1,77 @@
+{
+  "question_id": "PL001_V01_Q01",
+  "group": "B",
+  "project_id": "PL001",
+  "source_json": "PL001_佛山市亮正新材料有限公司新建项目.json",
+  "skill_id": "IND_GBT4754_2017",
+  "audit_category": "国民经济行业分类",
+  "report_internal_result": {
+    "status": "pass",
+    "conclusion": "报告内部载明的产品、原辅料和工艺与所报C2223加工纸制造、C2921塑料薄膜制造方向基本对应，行业类别表述在章节间基本一致。",
+    "evidence": [
+      {
+        "fact": "报告明确本项目行业类别为C2223加工纸制造及C2921塑料薄膜制造。",
+        "source_location": "root[1].content#4400",
+        "source_excerpt": "1-2本项目属于C2223加工纸制造及C2921塑料薄膜制造。"
+      },
+      {
+        "fact": "报告载明产品为保护纸、保护膜，并包含胶水调配、上胶、复合、熟化等生产加工过程。",
+        "source_location": "root[3].content#8800",
+        "source_excerpt": "本项目主要从事保护纸和保护膜的生产加工，具体生产工艺及产污流程如下图所示。保护纸生产流程图2-2 保护纸生产流程图保护纸工艺流程简述：项目将水性丙烯酸酯压敏胶和和合成硅油309按2:1的比例使用胶水搅拌机混合均匀"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "产品与行业类别对应性",
+        "result": "pass",
+        "explanation": "保护纸为纸基涂布加工产品，保护膜为PE原膜涂布复合产品，报告分别归入C2223加工纸制造和C2921塑料薄膜制造，内部方向基本匹配。"
+      },
+      {
+        "check_name": "原辅材料与工艺一致性",
+        "result": "pass",
+        "explanation": "报告使用牛皮纸、PE原膜、水性胶、水性油墨等，并涉及胶水调配、上胶、复合、熟化、印刷等工艺，与所报行业类别未见明显内部冲突。"
+      },
+      {
+        "check_name": "章节表述一致性",
+        "result": "pass",
+        "explanation": "报告在规划相符性和产业政策分析中均表述为C2223加工纸制造及C2921塑料薄膜制造。"
+      }
+    ],
+    "calculations": [],
+    "issues": []
+  },
+  "external_validation_result": {
+    "status": "insufficient_reference",
+    "conclusion": "冻结RAG仅提供C制造业、C223纸制品制造、C292塑料制品业等上位类，未提供C2223加工纸制造和C2921塑料薄膜制造具体条目，无法完成行业代码完整外部核验。",
+    "references_used": [
+      {
+        "reference_id": "IND_GBT4754_2017_C223",
+        "title": "国民经济行业分类 GB/T 4754-2017",
+        "clause_or_table": "C223 纸制品制造",
+        "supporting_text": "指用纸及纸板为原料，进一步加工制成纸制品的生产活动"
+      },
+      {
+        "reference_id": "IND_GBT4754_2017_C292",
+        "title": "国民经济行业分类 GB/T 4754-2017",
+        "clause_or_table": "C292 塑料制品业",
+        "supporting_text": "指以合成树脂（高分子化合物）为主要原料，经采用挤塑、注塑、吹塑、压延、层压等工艺加工成型的各种制品的生产"
+      }
+    ],
+    "missing_references": [
+      "GB/T 4754-2017中C2223加工纸制造条目",
+      "GB/T 4754-2017中C2921塑料薄膜制造条目"
+    ]
+  },
+  "final_answer": {
+    "judgement": "部分完成",
+    "analysis": "报告内部载明产品为保护纸、保护膜，原辅料含牛皮纸、PE原膜、水性胶/油墨，工艺为胶水调配、上胶、复合、熟化、印刷；行业类别多处表述为C2223加工纸制造及C2921塑料薄膜制造，内部基本一致。冻结RAG未提供C2223、C2921具体条目，仅有C223、C292等上位类，外部代码准确性无法完全核验。",
+    "scope_note": "外部规范核验仅基于冻结RAG；因缺少C2223和C2921具体分类条目，未完成完整外部规范核验。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

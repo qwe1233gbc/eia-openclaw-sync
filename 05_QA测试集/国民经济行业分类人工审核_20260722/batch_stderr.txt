@@ -1,0 +1,4 @@
+C:\Users\ylx\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\site-packages\openpyxl\worksheet\_reader.py:329: UserWarning: Conditional Formatting extension is not supported and will be removed
+  warn(msg)
+Ignoring wrong pointing object 506 0 (offset 0)
+Object 431 0 not defined.

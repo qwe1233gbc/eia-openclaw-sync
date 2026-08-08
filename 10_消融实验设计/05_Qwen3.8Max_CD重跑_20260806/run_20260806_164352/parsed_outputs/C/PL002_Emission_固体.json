@@ -1,0 +1,93 @@
+{
+  "question_id": "PL002_Emission_固体",
+  "group": "C",
+  "project_id": "PL002",
+  "source_json": "PL002_佛山市顺德区启卓工程塑料实业有限公司搬迁项目.json",
+  "skill_id": "07_review-eia-pollutant-discharge-standards",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告固废标准章节基本覆盖了一般固废和危废的鉴别、分类及贮存标准，但存在两处内部不一致：①废含油桶罐在搬迁前章节归类为HW49/900-041-49，在搬迁后表4-17中变为HW08/900-249-08；②一般固废贮存标准在标准章节（root[8]）未列出GB18599-2020，而在环保措施章节（root[11]）又同时引用了GB18599-2020和已废止的GB18599-2001。",
+    "evidence": [
+      {
+        "fact": "废含油桶罐在搬迁前章节归类为HW49/900-041-49，搬迁后表4-17中归类为HW08/900-249-08",
+        "source_location": "root[5].content#11000 vs root[10].content#11000",
+        "source_excerpt": "废含油桶罐产生量为0.0040t/a，属于HW49其他废物，废物代码为900-041-49"
+      },
+      {
+        "fact": "一般固废贮存标准在root[11]中同时引用GB18599-2020和GB18599-2001",
+        "source_location": "root[11].content#0",
+        "source_excerpt": "一般固废暂存间的建设应满足《广东省固体废物污染环境防治条例》、《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）以及《关于发布〈一般工业固体废物贮存、处置场污染控制标准〉（GB18599-2001）相关要求"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "固废标准覆盖完整性",
+        "result": "pass",
+        "explanation": "标准章节列出了固废法、省条例、GB34330-2017、GB/T39198-2020、国家危险废物名录(2021版)、GB18597-2023，覆盖了一般固废鉴别分类和危废鉴别贮存"
+      },
+      {
+        "check_name": "废含油桶罐类别代码一致性",
+        "result": "fail",
+        "explanation": "搬迁前章节为HW49/900-041-49，搬迁后表4-17为HW08/900-249-08，两处矛盾"
+      },
+      {
+        "check_name": "一般固废贮存标准章节间一致性",
+        "result": "fail",
+        "explanation": "root[8]标准章节未列GB18599-2020，root[11]措施章节引用了该标准且并列已废止的GB18599-2001"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "一般固废小计 = 生活垃圾 + 废试样品 + 废包装材料 + 沉降塑料粉尘",
+        "inputs": {
+          "生活垃圾": 2.25,
+          "废试样品": 2.0,
+          "废包装材料": 9.6,
+          "沉降塑料粉尘": 0.0095
+        },
+        "result": "13.8595",
+        "unit": "t/a"
+      },
+      {
+        "formula": "危险废物小计 = 废机油 + 废活性炭 + 废含油桶罐 + 含油废抹布",
+        "inputs": {
+          "废机油": 0.1,
+          "废活性炭": 63.15,
+          "废含油桶罐": 0.004,
+          "含油废抹布": 0.02
+        },
+        "result": "63.274",
+        "unit": "t/a"
+      }
+    ],
+    "issues": [
+      "废含油桶罐废物类别在报告内部前后不一致（HW49 vs HW08）",
+      "一般固废贮存标准新旧并列引用，GB18599-2001已被GB18599-2020替代",
+      "标准章节（root[8]）未将GB18599-2020纳入固体废物控制标准清单"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "本组未提供冻结RAG，无法对标准版本有效性、废物代码正确性及标准适用性进行外部核验。",
+    "references_used": [],
+    "missing_references": [
+      "《国家危险废物名录》（2021版）正式文本",
+      "GB18597-2023正式文本",
+      "GB18599-2020正式文本",
+      "GB/T39198-2020正式文本"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告固废标准章节列出了固废法、省条例、GB34330-2017、GB/T39198-2020、国家危险废物名录(2021版)和GB18597-2023，基本覆盖了一般固废鉴别分类和危废贮存要求。但存在两处内部矛盾：①废含油桶罐在搬迁前章节归为HW49/900-041-49，搬迁后表4-17中变为HW08/900-249-08，类别和代码不一致；②一般固废贮存标准在措施章节同时引用GB18599-2020和已废止的GB18599-2001，且标准章节未将GB18599-2020列入。数量核算方面，一般固废小计13.8595t/a和危废小计63.274t/a均与分项加总一致。外部标准版本和代码正确性因无冻结RAG未核验。",
+    "scope_note": "外部规范核验因C组无冻结RAG标记为not_performed，内部矛盾已据报告文本确认。"
+  },
+  "answer_mode": "determinate_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

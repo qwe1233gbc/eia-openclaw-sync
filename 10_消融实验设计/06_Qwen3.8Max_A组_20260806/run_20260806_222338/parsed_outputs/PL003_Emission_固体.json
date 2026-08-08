@@ -1,0 +1,79 @@
+{
+  "question_id": "PL003_Emission_固体",
+  "group": "A",
+  "project_id": "PL003",
+  "source_json": "PL003_佛山市顺德区康明新材料厂新建项目.json",
+  "skill_id": "",
+  "audit_category": "固体废物控制标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告列出了固体废物执行标准，但缺少《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）；泥垢编码在表4-24与表4-25之间存在不一致（292-001-61 vs 383-001-61）。",
+    "evidence": [
+      {
+        "fact": "报告固体废物标准清单列出了5项标准/法规",
+        "source_location": "root[6].content#6600",
+        "source_excerpt": "执行《中华人民共和国固体废物污染环境防治法》（2020修订）、《国家危险废物名录》（2021年）、《固体废物鉴别标准 通则》（GB34330-2017）、《危险废物贮存污染控制标准》（GB18597-2023）、《一般固体废物分类和代码》（GB/T39198-2020）"
+      },
+      {
+        "fact": "泥垢编码在表4-25中为383-001-61，与表4-24中292-001-61不一致",
+        "source_location": "root[10].content#2200",
+        "source_excerpt": "泥垢 无机废水污泥，383-001-61 固态 灰尘、泥沙、微生物"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "一般工业固废贮存标准是否列出",
+        "result": "fail",
+        "explanation": "项目产生废包装袋、边角料、次品、泥垢等一般工业固废，但标准清单未列入GB18599-2020《一般工业固体废物贮存和填埋污染控制标准》。"
+      },
+      {
+        "check_name": "泥垢固废编码内部一致性",
+        "result": "fail",
+        "explanation": "表4-24中泥垢编码为292-001-61，表4-25中为383-001-61，两处不一致。项目行业为292塑料制品业，应为292-001-61。"
+      },
+      {
+        "check_name": "危险废物贮存标准引用",
+        "result": "pass",
+        "explanation": "报告正确引用了GB18597-2023作为危废贮存标准，与项目产生HW08、HW49类危废相匹配。"
+      }
+    ],
+    "calculations": [],
+    "issues": [
+      "缺少《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）",
+      "泥垢编码在表4-24（292-001-61）与表4-25（383-001-61）之间不一致"
+    ]
+  },
+  "external_validation_result": {
+    "status": "verified",
+    "conclusion": "报告引用的GB18597-2023、GB34330-2017、GB/T39198-2020、《国家危险废物名录》（2021年版）均为现行有效标准，编号正确。但缺少GB18599-2020这一一般工业固废贮存的核心标准。",
+    "references_used": [
+      {
+        "reference_id": "GB18599-2020",
+        "title": "一般工业固体废物贮存和填埋污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "该标准规定了一般工业固体废物贮存设施的防渗、防雨、防扬尘等要求，是报告所述'防渗漏、防雨淋、防扬尘'要求的法规依据，应明确列出。"
+      },
+      {
+        "reference_id": "GB18597-2023",
+        "title": "危险废物贮存污染控制标准",
+        "clause_or_table": "全文",
+        "supporting_text": "2023年修订版为现行有效版本，报告引用正确。"
+      }
+    ],
+    "missing_references": [
+      "《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020）未在标准清单中列出"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告固体废物标准选取基本框架合理，涵盖了固废法、国家危险废物名录、GB34330-2017（鉴别）、GB18597-2023（危废贮存）和GB/T39198-2020（分类代码）。但存在两个问题：①缺少《一般工业固体废物贮存和填埋污染控制标准》（GB18599-2020），该标准是一般工业固废贮存的核心依据，报告正文虽描述了防渗防雨防扬尘要求但未明确引用该标准编号；②泥垢编码在表4-24与表4-25之间不一致（292-001-61 vs 383-001-61），应统一为292-001-61。",
+    "scope_note": "审核范围限于报告所列固体废物控制标准的完整性和内部一致性。"
+  },
+  "answer_mode": "full_validation",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": true,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": false
+  }
+}

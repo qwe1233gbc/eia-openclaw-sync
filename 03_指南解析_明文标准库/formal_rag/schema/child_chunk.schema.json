@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "child_id",
+    "parent_id",
+    "source_id",
+    "content"
+  ],
+  "properties": {
+    "child_id": {
+      "type": "string"
+    },
+    "parent_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}

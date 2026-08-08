@@ -1,0 +1,112 @@
+[
+  {
+    "path": "Codex_执行提示词.md",
+    "sha256": "194f7fba1c10a02c5fc2daf71d85cbe85cb9cf0f4b81567a108b316cc59f0132",
+    "bytes": 1896
+  },
+  {
+    "path": "README.md",
+    "sha256": "38eb9e2f99b9dcba22827e887d7be24cceb465a422b5cd0fbf4e882a1ce0f35a",
+    "bytes": 3089
+  },
+  {
+    "path": "Skill清单.md",
+    "sha256": "69f8875dd65d155d943b249bed25853359b7c75cca68a84addfaeb631f6fd3f5",
+    "bytes": 1156
+  },
+  {
+    "path": "shared/output_schema.json",
+    "sha256": "42c198b2fa4c1f51053fa4cd3e4904eb7909407814213cfba0eead3bb5af84cc",
+    "bytes": 699
+  },
+  {
+    "path": "shared/reference_bundle_manifest_template.yaml",
+    "sha256": "7fa80fcb40466fc6db0f407bafa44e0a3642fdd1f2ef77b804149c92c0b637a3",
+    "bytes": 484
+  },
+  {
+    "path": "skills/01_manual-audit-national-economic-industry-classification/SKILL.md",
+    "sha256": "729c5c1cc3b29df16a682023a4357495ca8f6aa593af66310abd3aa401167a76",
+    "bytes": 3037
+  },
+  {
+    "path": "skills/01_manual-audit-national-economic-industry-classification/references/2017国民经济行业分类注释_按第1号修改单修订.xlsx",
+    "sha256": "979edb53854fc055ba349f72321a27a909617d90dfc31d04453641a2d419329e",
+    "bytes": 1078748
+  },
+  {
+    "path": "skills/01_manual-audit-national-economic-industry-classification/references/answer-schema.json",
+    "sha256": "ac31089407a1e2b6e4cd5947e209142d9fd8a26e8d8217e79640736b132fb208",
+    "bytes": 14389
+  },
+  {
+    "path": "skills/01_manual-audit-national-economic-industry-classification/references/manual-audit-guide.md",
+    "sha256": "bc3c7e7791911854669273f0bbfda5cdeeca5ee7d4d01a3cbc374e00aa21c9f5",
+    "bytes": 8223
+  },
+  {
+    "path": "skills/01_manual-audit-national-economic-industry-classification/scripts/search_industry_classification.py",
+    "sha256": "2f66c3d50cdd8379e08aa36a51d838e0e244601d73a75c40237eee1f33710937",
+    "bytes": 5355
+  },
+  {
+    "path": "skills/02_review-eia-environmental-investment/SKILL.md",
+    "sha256": "c30b23e50454fff3d631bb9c3d354e3a8b7bb9847b298ef214a16800aa6eaaaf",
+    "bytes": 1692
+  },
+  {
+    "path": "skills/05_review-eia-environmental-quality-data/SKILL.md",
+    "sha256": "91bc12b50cf7a1e217c2be2c7250be064ca136ddaac1ccca70ae9fd38b034872",
+    "bytes": 2278
+  },
+  {
+    "path": "skills/07_review-eia-pollutant-discharge-standards/SKILL.md",
+    "sha256": "2e1690881eb810a3eab8a6a875b3d87c578d87272f3d4ef13b7fb85942da7c19",
+    "bytes": 4679
+  },
+  {
+    "path": "support/00_validate-eia-parsed-text/SKILL.md",
+    "sha256": "ce2b75edfe42587e450d6b7bfb413899c87ebdba6b50c83e96cfb38e12f4fa9b",
+    "bytes": 5793
+  },
+  {
+    "path": "support/00_validate-eia-parsed-text/agents/openai.yaml",
+    "sha256": "d925a9206b8343736cd654b65459fd3683ca06dd5d2bb492500cbd99e0186af7",
+    "bytes": 621
+  },
+  {
+    "path": "support/00_validate-eia-parsed-text/references/acceptance-criteria.md",
+    "sha256": "776240e3eef1627453368ac7b03fae468ffe4febc5fc4ec4a6bd71c666ee725f",
+    "bytes": 5053
+  },
+  {
+    "path": "support/00_validate-eia-parsed-text/references/output-template.md",
+    "sha256": "ecc02e61cf0fc07d537102f3838d0c0a2ce4a0abf3d6264add753a76abb4d99e",
+    "bytes": 1405
+  },
+  {
+    "path": "support/00_validate-eia-parsed-text/scripts/compare_docx_parsed.py",
+    "sha256": "aae2c66f673608870eadad2bbb2b7476bf9d01219d16e9df8f1f11f915071cdf",
+    "bytes": 20611
+  },
+  {
+    "path": "support/retrieve-eia-discharge-standard-knowledge/SKILL.md",
+    "sha256": "e9fa801aba54c6352b1419abd90f3a12c99b084d6ef1d89a7c5ccc6d1ce85e9c",
+    "bytes": 3607
+  },
+  {
+    "path": "support/retrieve-eia-discharge-standard-knowledge/agents/openai.yaml",
+    "sha256": "0f397833e4d457dacf63c85f178bec2e343aea4ff5d399bc22964627e1f4ff7a",
+    "bytes": 296
+  },
+  {
+    "path": "support/retrieve-eia-discharge-standard-knowledge/references/workflow-source.md",
+    "sha256": "8379f9f4ed455a450785ae9a213a783d29bbaf5e43875dfabcccce38092d9650",
+    "bytes": 932
+  },
+  {
+    "path": "需要补充的参考资料.md",
+    "sha256": "a734c93bd40078385c4f6bcea75596d48d700d76f9d17532b5a9dbc7230d3691",
+    "bytes": 1297
+  }
+]

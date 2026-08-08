@@ -1,0 +1,13 @@
+数据层级,数据名称,当前位置,当前数量或状态,是否可直接用于实验,下一步处理
+标准依据,主标准卡,03_指南解析_明文标准库/standard_cards.jsonl,37条,部分可用,优先校准高频30-50条
+标准依据,旧版深度标准库,03_指南解析_明文标准库/plastic_guide_standard_library_v3_deep.jsonl,71条,不可直接全用,去重后作为补充
+标准依据,Dify解析候选条目,03_指南解析_明文标准库/dify_kb_standard_entries_pilot.jsonl,292条,不可直接用,人工筛选和校准来源
+标准依据,v4技能对齐标准条目,03_指南解析_明文标准库/plastic_guide_standard_library_v4_skill_aligned_pilot.jsonl,124条,候选可用,和技能库逐项绑定
+审核技能,审核技能库,09_环评审核技能库/,16个目录,方法可用,用真实样本验证输出
+项目样本链,本地主链精简版,05_样本链（按项目组织）/主链精简版_4项目_20260703,4个项目,部分可用,艾心和彩川优先复核
+项目样本链,数据库候选完整链,outputs/plastic_complete_sample_chain_db_20260705/project_summary.csv,50个项目,不可直接当金标,先从16个重点候选选3-5个
+项目样本链,数据库文件索引,outputs/plastic_complete_sample_chain_db_20260705/file_index.csv,201条索引,不可直接当文件内容,按索引下载或定位四类文件
+项目样本链,重点涉胶/VOCs候选,outputs/plastic_complete_sample_chain_db_20260705/priority_plastic_vocs_candidates.csv,16个项目,优先候选,人工打开确认是否符合研究边界
+审核问题,seed QA测试集,05_QA测试集/seed_qa_942题_151项目_phase1+phase2合并.xlsx,约942题,不可直接当金标,按A/B/C三类分层筛选
+实验评价,消融实验设计,10_消融实验设计/,已有设计,暂不可跑正式结论,等人工复核题准备好后再实验
+论文方法参照,Chen2026借鉴材料,12_论文借鉴_Chen2026_TianGong/,已有多份文档,方法参照可用,只借鉴数据构建和评价逻辑

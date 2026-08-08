@@ -1,0 +1,100 @@
+{
+  "question_id": "PL004_Emission_噪声",
+  "group": "B",
+  "project_id": "PL004",
+  "source_json": "PL004_恒励新材料科技(佛山)有限公司新建项目.json",
+  "skill_id": "",
+  "audit_category": "噪声排放标准",
+  "report_internal_result": {
+    "status": "issue_found",
+    "conclusion": "报告将项目所在3321杏坛东部工业区片区确定为3类声环境功能区，厂界执行GB12348-2008中3类标准，昼间65dB(A)、夜间55dB(A)，预测贡献值53.67dB(A)数值上达标；但存在厂界达标表述误引GB3096及设备运行时段与工作制度不一致问题。",
+    "evidence": [
+      {
+        "fact": "项目声环境功能区类别及厂界噪声执行标准、昼夜限值",
+        "source_location": "root[5].content#17600",
+        "source_excerpt": "项目位置属于3321杏坛东部工业区片区，厂界外1m执行《工业企业厂界环境噪声排放标准》（GB12348-2008）中的3类标准：昼间≤65dB(A)、夜间≤55dB(A)。"
+      },
+      {
+        "fact": "厂界噪声预测贡献值及执行限值",
+        "source_location": "root[7].content#11000",
+        "source_excerpt": "昼间、夜间 厂界四周 93.67 40 53.67 65 55 达标"
+      }
+    ],
+    "checks": [
+      {
+        "check_name": "声功能区类别与厂界标准限值一致性",
+        "result": "pass",
+        "explanation": "标准章节、预测表、自行监测计划均表述为GB12348-2008中3类，昼间65dB(A)、夜间55dB(A)。"
+      },
+      {
+        "check_name": "厂界噪声预测达标性",
+        "result": "pass",
+        "explanation": "预测贡献值53.67dB(A)，低于昼间65dB(A)和夜间55dB(A)限值。"
+      },
+      {
+        "check_name": "标准引用与运行时段一致性",
+        "result": "fail",
+        "explanation": "噪声影响分析处将厂界达标表述为《声环境质量标准》（GB3096-2008）3类；且“生产设备每天运行24小时”与工程分析“每天12小时”不一致，夜间噪声评价依据不清。"
+      }
+    ],
+    "calculations": [
+      {
+        "formula": "厂界贡献值=噪声源强-隔声衰减",
+        "inputs": {
+          "噪声源强": 93.67,
+          "隔声衰减": 40
+        },
+        "result": "53.67",
+        "unit": "dB(A)"
+      },
+      {
+        "formula": "标准余量=标准限值-贡献值",
+        "inputs": {
+          "昼间限值": 65,
+          "夜间限值": 55,
+          "贡献值": 53.67
+        },
+        "result": "昼间余量11.33，夜间余量1.33",
+        "unit": "dB(A)"
+      }
+    ],
+    "issues": [
+      "厂界噪声达标分析误引《声环境质量标准》（GB3096-2008），厂界排放应表述为《工业企业厂界环境噪声排放标准》（GB12348-2008）。",
+      "噪声自行监测说明称设备每天运行24小时，与工程分析工作制度每天12小时不一致，影响夜间噪声评价依据。"
+    ]
+  },
+  "external_validation_result": {
+    "status": "not_performed",
+    "conclusion": "冻结RAG仅能证明GB12348-2008适用于工业企业厂界噪声排放管理评价，以及佛山市声环境功能区划包含3类；但未提供3321杏坛东部工业区片区对应类别、GB12348-2008中3类厂界排放限值，因此无法完成外部限值核验。",
+    "references_used": [
+      {
+        "reference_id": "NOISE_GB12348_2008",
+        "title": "工业企业厂界环境噪声排放标准 GB 12348-2008",
+        "clause_or_table": "适用范围",
+        "supporting_text": "本标准规定了工业企业和固定设备厂界环境噪声排放限值及其测量方法。本标准适用于工业企业噪声排放的管理、评价及控制。"
+      },
+      {
+        "reference_id": "NOISE_FOSHAN_ZONING_2024",
+        "title": "佛山市声环境功能区划（佛环〔2024〕1号）",
+        "clause_or_table": "功能区类别",
+        "supporting_text": "本次划分功能区类别为 1 类、2 类、3 类、4 类（4a、4b、既有铁路）。"
+      }
+    ],
+    "missing_references": [
+      "GB12348-2008中3类声环境功能区对应的厂界环境噪声排放限值（昼间/夜间）。",
+      "佛环〔2024〕1号中3321杏坛东部工业区片区对应声环境功能区类别及3类环境噪声限值。"
+    ]
+  },
+  "final_answer": {
+    "judgement": "存在问题",
+    "analysis": "报告将项目所在3321杏坛东部工业区片区确定为3类声环境功能区，厂界执行GB12348-2008 3类，昼65dB(A)、夜55dB(A)，预测贡献值53.67dB(A)，数值上满足限值。内部主要选取合理，但达标分析误引GB3096作为厂界标准，且设备每天运行24小时与工作制度12小时矛盾；RAG缺少3类限值及片区类别证据，外部核验未完成。",
+    "scope_note": "外部规范审核仅依据冻结RAG；因缺少GB12348-2008中3类限值和3321片区类别证据，未对外部限值进行核验。"
+  },
+  "answer_mode": "partial_internal",
+  "safety_flags": {
+    "used_unprovided_external_knowledge": false,
+    "whole_task_abstention": false,
+    "report_evidence_hallucination_risk": false,
+    "manual_review_needed": true
+  }
+}

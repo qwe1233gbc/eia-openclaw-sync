@@ -1,0 +1,38 @@
+{
+  "batch": "PL001-PL010",
+  "actual_report_count": 10,
+  "jsonl_record_count": 10,
+  "summary_rows": 10,
+  "marked_file_count": 10,
+  "ids_in_summary": [
+    "PL001",
+    "PL002",
+    "PL003",
+    "PL004",
+    "PL005",
+    "PL006",
+    "PL007",
+    "PL008",
+    "PL009",
+    "PL010"
+  ],
+  "project_ids_continuous": true,
+  "answer_format_bad_count": 0,
+  "marked_open_bad_count": 0,
+  "manual_blank_ok": true,
+  "seed_changed_answer_rows": 12,
+  "zip_has_required": {
+    "本批次_国民经济行业分类_schema.jsonl": true,
+    "本批次_国民经济行业分类_人工核查汇总.xlsx": true,
+    "本批次_seed_qa_国民经济行业answer格式版.xlsx": true,
+    "本批次_answer_updates.json": true,
+    "seed_excel_update_qc.json": true,
+    "quality_check.json": true
+  },
+  "conclusion_counts": {
+    "需复核": 10
+  },
+  "incomplete_source_count": 4,
+  "open_bad_sample": [],
+  "format_bad_sample": []
+}

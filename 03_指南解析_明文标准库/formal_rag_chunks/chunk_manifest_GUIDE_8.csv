@@ -1,0 +1,4 @@
+﻿chunk_id,source_id,chunk_type,content_length,content_sha256
+GUIDE_8_P001,GUIDE_8,parent,1507,4ac20a93bceb6c070d193aa31a028613579bb21efb5e27dd39b9378e0e885e2f
+GUIDE_8_C001,GUIDE_8,child,802,
+GUIDE_8_C002,GUIDE_8,child,855,
