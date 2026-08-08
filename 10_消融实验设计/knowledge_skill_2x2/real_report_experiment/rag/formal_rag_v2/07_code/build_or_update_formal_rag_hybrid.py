@@ -1,4 +1,4 @@
-"""build_or_update_formal_rag.py — Phase 1 正式 RAG 构建脚本 (v2 混合检索)
+"""build_or_update_formal_rag.py — 混合 RAG 版本
 
 在原有 BM25+固定来源优先复排的基础上，集成 DashScope text-embedding-v3 (dense embedding)
 和 qwen3-rerank (neural reranker)，实现三阶段混合检索：
@@ -41,7 +41,7 @@ TODAY = "2026-08-09"
 CODE_DIR = Path(__file__).parent if "__file__" in dir() else Path(r"E:\华南理工项目\环评文件汇总\01_GitHub项目与研究文档\eia-openclaw-sync-gold-governance\10_消融实验设计\knowledge_skill_2x2\real_report_experiment\rag\formal_rag_v2\07_code")
 sys.path.insert(0, str(CODE_DIR))
 # 同时加入临时目录（dashscope_rag.py 所在位置）
-# dashscope_rag.py 与本脚本同目录，已通过上方 CODE_DIR 导入
+sys.path.insert(0, r"c:\Users\ylx\.trae-cn\work\6a7440dbc2e5f7d2fcd31f9a")
 
 # 设置 DashScope API Key
 os.environ["DASHSCOPE_API_KEY"] = os.environ.get("DASHSCOPE_API_KEY", "sk-dd39d877ec55414ab9809fe32f4380e5")
@@ -755,7 +755,7 @@ B/D同题RAG哈希一致率为{sum(x['hash_equal'] for x in hashes)}/{len(hashes
         shutil.copy2(Path(__file__), ROOT / "07_code" / "build_or_update_formal_rag.py")
         shutil.copy2(Path(__file__).with_name("retrieve_formal_rag.py"), ROOT / "07_code" / "retrieve_formal_rag.py")
         # 复制 dashscope_rag.py
-        ds_path = CODE_DIR / "dashscope_rag.py"
+        ds_path = Path(r"c:\Users\ylx\.trae-cn\work\6a7440dbc2e5f7d2fcd31f9a\dashscope_rag.py")
         if ds_path.exists():
             shutil.copy2(ds_path, ROOT / "07_code" / "dashscope_rag.py")
     except Exception:
