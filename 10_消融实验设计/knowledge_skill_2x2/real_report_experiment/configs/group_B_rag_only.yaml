@@ -1,0 +1,4 @@
+group: B
+rag_enabled: true
+workflow_enabled: false
+rag_context_source: frozen

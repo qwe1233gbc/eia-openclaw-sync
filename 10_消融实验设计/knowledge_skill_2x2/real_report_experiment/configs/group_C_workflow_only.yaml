@@ -1,0 +1,4 @@
+group: C
+rag_enabled: false
+workflow_enabled: true
+workflow_type: procedure_only
